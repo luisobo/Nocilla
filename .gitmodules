@@ -1,0 +1,3 @@
+[submodule "Frameworks/Kiwi"]
+	path = Frameworks/Kiwi
+	url = https://github.com/allending/Kiwi.git
