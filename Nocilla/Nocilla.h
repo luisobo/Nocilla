@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Nocilla : NSObject
-
-@end
+#import "LSNocilla.h"
+#import "LSStubRequest.h"
+#import "LSStubResponse.h"

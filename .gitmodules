@@ -1,3 +1,6 @@
 [submodule "Frameworks/Kiwi"]
 	path = Frameworks/Kiwi
 	url = https://github.com/allending/Kiwi.git
+[submodule "Frameworks/CocoaHTTPServer"]
+	path = Frameworks/CocoaHTTPServer
+	url = https://github.com/robbiehanson/CocoaHTTPServer.git
