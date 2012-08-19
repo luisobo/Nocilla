@@ -15,7 +15,7 @@ it(@"should stub the request", ^{
     stubRequest(@"POST", @"http://localhost:12345/say-hello").
     withHeader(@"Content-Type", @"text/plain; charset=utf8").
     withHeader(@"Cacatuha!!!", @"sisisi").
-    andBody(@"caca").
+    withBody(@"caca").
     andReturn(403).
     withHeader(@"Content-Type", @"text/plain").
     withBody(@"Hello World!");
@@ -24,9 +24,6 @@ it(@"should stub the request", ^{
     [request addRequestHeader:@"Content-Type" value:@"text/plain; charset=utf8"];
     [request addRequestHeader:@"Cacatuha!!!" value:@"sisisi"];
     [request appendPostData:[[@"caca" dataUsingEncoding:NSUTF8StringEncoding] mutableCopy]];
-    
-    [request setRequestMethod:@"POST"];
-    
     [request startSynchronous];
     
     [request.error shouldBeNil];

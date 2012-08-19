@@ -39,7 +39,7 @@
     };
 }
 
-- (AndBodyMethod)andBody {
+- (AndBodyMethod)withBody {
     return ^(NSString *body) {
         self.body = body;
         return self;

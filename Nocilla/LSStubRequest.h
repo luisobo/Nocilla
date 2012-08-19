@@ -10,7 +10,7 @@ typedef LSStubResponse *(^AndReturnMethod)(NSInteger);
 
 @interface LSStubRequest : NSObject
 - (WithHeaderMethod)withHeader;
-- (AndBodyMethod)andBody;
+- (AndBodyMethod)withBody;
 - (AndReturnMethod)andReturn;
 
 @property (nonatomic, assign, readonly) NSString *method;
