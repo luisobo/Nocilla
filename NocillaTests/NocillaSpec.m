@@ -13,7 +13,7 @@ it(@"should stub the request", ^{
     [[LSNocilla sharedInstace] start];
     
     stubRequest(@"POST", @"http://localhost:12345/say-hello").
-    withHeader(@"Content-Type", @"text/plain; charset=utf8").
+    withHeader(@"Content-Type", @"text/plain").
     withHeader(@"Cacatuha!!!", @"sisisi").
     withBody(@"caca").
     andReturn(403).
@@ -21,7 +21,7 @@ it(@"should stub the request", ^{
     withBody(@"Hello World!");
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://localhost:12345/say-hello"]];
-    [request addRequestHeader:@"Content-Type" value:@"text/plain; charset=utf8"];
+    [request addRequestHeader:@"Content-Type" value:@"text/plain"];
     [request addRequestHeader:@"Cacatuha!!!" value:@"sisisi"];
     [request appendPostData:[[@"caca" dataUsingEncoding:NSUTF8StringEncoding] mutableCopy]];
     [request startSynchronous];
