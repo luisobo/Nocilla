@@ -29,11 +29,10 @@ it(@"should stub the request", ^{
     
     [request startSynchronous];
     
+    [request.error shouldBeNil];
     [[request.responseString should] equal:@"Hello World!"];
-    NSLog(@"%@", request.error);
-    NSLog(@"%@", request.responseString);
-    NSLog(@"%d", request.responseStatusCode);
-    NSLog(@"%@", request.responseHeaders);
+    [[theValue(request.responseStatusCode) should] equal:theValue(403)];
+    [[[request.responseHeaders objectForKey:@"Content-Type"] should] equal: @"text/plain"];
 });
 
 SPEC_END
