@@ -20,7 +20,6 @@
         self.method = method;
         self.urlObject = [NSURL URLWithString:url];
         self.mutableHeaders = [NSMutableDictionary dictionary];
-        self.body = @"";
     }
     return self;
 }

@@ -1,3 +1,4 @@
+
 #import "Kiwi.h"
 #import "ASIHTTPRequest.h"
 #import "JSONKit.h"
@@ -11,10 +12,21 @@ SPEC_BEGIN(NocillaSpec)
 it(@"should stub the request", ^{
     [[LSNocilla sharedInstace] start];
     
-//    stubRequest(@"POST", @"http://localhost:12345/say-hello").andReturn(403).withBody(@"Hello World!").withHeader(@"Content-Type", @"text/plain");
-    stubRequest(@"POST", @"http://localhost:12345/say-hello").andReturn(201);
+    stubRequest(@"POST", @"http://localhost:12345/say-hello").
+    withHeader(@"Content-Type", @"text/plain; charset=utf8").
+    withHeader(@"Cacatuha!!!", @"sisisi").
+    andBody(@"caca").
+    andReturn(403).
+    withHeader(@"Content-Type", @"text/plain").
+    withBody(@"Hello World!");
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://localhost:12345/say-hello"]];
+    [request addRequestHeader:@"Content-Type" value:@"text/plain; charset=utf8"];
+    [request addRequestHeader:@"Cacatuha!!!" value:@"sisisi"];
+    [request appendPostData:[[@"caca" dataUsingEncoding:NSUTF8StringEncoding] mutableCopy]];
+    
+    [request setRequestMethod:@"POST"];
+    
     [request startSynchronous];
     
     NSLog(@"%@", request.error);
