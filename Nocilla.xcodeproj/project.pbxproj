@@ -99,13 +99,10 @@
 		A05298A515AF9BC6002063D0 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A05298A215AF9BC6002063D0 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A077EB5815C7716600148BBB /* LSStubRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A077EB5615C7716600148BBB /* LSStubRequest.h */; };
 		A077EB5915C7716600148BBB /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB5715C7716600148BBB /* LSStubRequest.m */; };
-		A077EB5A15C7716600148BBB /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB5715C7716600148BBB /* LSStubRequest.m */; };
 		A077EB5D15C7725000148BBB /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A077EB5B15C7725000148BBB /* LSStubResponse.h */; };
 		A077EB5E15C7725000148BBB /* LSStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB5C15C7725000148BBB /* LSStubResponse.m */; };
-		A077EB5F15C7725000148BBB /* LSStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB5C15C7725000148BBB /* LSStubResponse.m */; };
 		A077EB6415C774ED00148BBB /* LSNocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A077EB6215C774ED00148BBB /* LSNocilla.h */; };
 		A077EB6515C774ED00148BBB /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB6315C774ED00148BBB /* LSNocilla.m */; };
-		A077EB6615C774ED00148BBB /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB6315C774ED00148BBB /* LSNocilla.m */; };
 		A0B667A715E0643500B2307D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B667A615E0643500B2307D /* Security.framework */; };
 		A0F8FD5415C75C8C006969ED /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = A0F8FD3F15C75C8C006969ED /* About.txt */; };
 		A0F8FD5515C75C8C006969ED /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4015C75C8C006969ED /* GCDAsyncSocket.h */; };
@@ -123,16 +120,12 @@
 		A0F8FD6115C75C8C006969ED /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4915C75C8C006969ED /* DDFileLogger.m */; };
 		A0F8FD6215C75C8C006969ED /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4A15C75C8C006969ED /* DDLog.h */; };
 		A0F8FD6315C75C8C006969ED /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4B15C75C8C006969ED /* DDLog.m */; };
-		A0F8FD6415C75C8C006969ED /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4B15C75C8C006969ED /* DDLog.m */; };
 		A0F8FD6515C75C8C006969ED /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4C15C75C8C006969ED /* DDTTYLogger.h */; };
 		A0F8FD6615C75C8C006969ED /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4D15C75C8C006969ED /* DDTTYLogger.m */; };
-		A0F8FD6715C75C8C006969ED /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4D15C75C8C006969ED /* DDTTYLogger.m */; };
 		A0F8FD6815C75C8C006969ED /* ContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4F15C75C8C006969ED /* ContextFilterLogFormatter.h */; };
 		A0F8FD6915C75C8C006969ED /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD5015C75C8C006969ED /* ContextFilterLogFormatter.m */; };
-		A0F8FD6A15C75C8C006969ED /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD5015C75C8C006969ED /* ContextFilterLogFormatter.m */; };
 		A0F8FD6B15C75C8C006969ED /* DispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD5115C75C8C006969ED /* DispatchQueueLogFormatter.h */; };
 		A0F8FD6C15C75C8C006969ED /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD5215C75C8C006969ED /* DispatchQueueLogFormatter.m */; };
-		A0F8FD6D15C75C8C006969ED /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD5215C75C8C006969ED /* DispatchQueueLogFormatter.m */; };
 		A0F8FD6E15C75C8C006969ED /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A0F8FD5315C75C8C006969ED /* README.txt */; };
 		A0F8FD9F15C75CA2006969ED /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD7215C75CA2006969ED /* DDData.m */; };
 		A0F8FDA015C75CA2006969ED /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD7415C75CA2006969ED /* DDNumber.m */; };
@@ -158,7 +151,6 @@
 		A0F8FDB515C75E3E006969ED /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F8FDB315C75E37006969ED /* libxml2.dylib */; };
 		A0F8FDC515C76073006969ED /* LSDynamicConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FDC315C76073006969ED /* LSDynamicConnection.h */; };
 		A0F8FDC615C76073006969ED /* LSDynamicConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FDC415C76073006969ED /* LSDynamicConnection.m */; };
-		A0F8FDC715C76073006969ED /* LSDynamicConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FDC415C76073006969ED /* LSDynamicConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -897,10 +889,6 @@
 				A0F8FD5B15C75C8C006969ED /* DDAbstractDatabaseLogger.m in Sources */,
 				A0F8FD5E15C75C8C006969ED /* DDASLLogger.m in Sources */,
 				A0F8FD6115C75C8C006969ED /* DDFileLogger.m in Sources */,
-				A0F8FD6415C75C8C006969ED /* DDLog.m in Sources */,
-				A0F8FD6715C75C8C006969ED /* DDTTYLogger.m in Sources */,
-				A0F8FD6A15C75C8C006969ED /* ContextFilterLogFormatter.m in Sources */,
-				A0F8FD6D15C75C8C006969ED /* DispatchQueueLogFormatter.m in Sources */,
 				A0F8FD9F15C75CA2006969ED /* DDData.m in Sources */,
 				A0F8FDA015C75CA2006969ED /* DDNumber.m in Sources */,
 				A0F8FDA115C75CA2006969ED /* DDRange.m in Sources */,
@@ -921,10 +909,6 @@
 				A0F8FDB015C75CA2006969ED /* DAVResponse.m in Sources */,
 				A0F8FDB115C75CA2006969ED /* DELETEResponse.m in Sources */,
 				A0F8FDB215C75CA2006969ED /* PUTResponse.m in Sources */,
-				A0F8FDC715C76073006969ED /* LSDynamicConnection.m in Sources */,
-				A077EB5A15C7716600148BBB /* LSStubRequest.m in Sources */,
-				A077EB5F15C7725000148BBB /* LSStubResponse.m in Sources */,
-				A077EB6615C774ED00148BBB /* LSNocilla.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
