@@ -16,10 +16,18 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 @implementation LSStubRequest (LSDyamicConnectionMatcher)
 
 -(BOOL)matchesRequest:(HTTPMessage *)request {
-    if ([self matchesURL:request]
+    if ([self matchesMethod:request]
+        && [self matchesURL:request]
         && [self matchesHeaders:request]
         && [self matchesBody:request]
         ) {
+        return YES;
+    }
+    return NO;
+}
+
+-(BOOL)matchesMethod:(HTTPMessage *)request {
+    if (!self.method || [self.method isEqualToString:request.method]) {
         return YES;
     }
     return NO;
