@@ -16,65 +16,46 @@
 		A0495BCA15AE699500A41607 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495B9515AE699500A41607 /* ASICacheDelegate.h */; };
 		A0495BCB15AE699500A41607 /* ASIDataCompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495B9615AE699500A41607 /* ASIDataCompressor.h */; };
 		A0495BCC15AE699500A41607 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9715AE699500A41607 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BCD15AE699500A41607 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9715AE699500A41607 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BCE15AE699500A41607 /* ASIDataDecompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495B9815AE699500A41607 /* ASIDataDecompressor.h */; };
 		A0495BCF15AE699500A41607 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9915AE699500A41607 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BD015AE699500A41607 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9915AE699500A41607 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BD115AE699500A41607 /* ASIDownloadCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495B9A15AE699500A41607 /* ASIDownloadCache.h */; };
 		A0495BD215AE699500A41607 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9B15AE699500A41607 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BD315AE699500A41607 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9B15AE699500A41607 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BD415AE699500A41607 /* ASIFormDataRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495B9C15AE699500A41607 /* ASIFormDataRequest.h */; };
 		A0495BD515AE699500A41607 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9D15AE699500A41607 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BD615AE699500A41607 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9D15AE699500A41607 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BD715AE699500A41607 /* ASIHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495B9E15AE699500A41607 /* ASIHTTPRequest.h */; };
 		A0495BD815AE699500A41607 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9F15AE699500A41607 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BD915AE699500A41607 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495B9F15AE699500A41607 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BDA15AE699500A41607 /* ASIHTTPRequestConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BA015AE699500A41607 /* ASIHTTPRequestConfig.h */; };
 		A0495BDB15AE699500A41607 /* ASIHTTPRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BA115AE699500A41607 /* ASIHTTPRequestDelegate.h */; };
 		A0495BDC15AE699500A41607 /* ASIInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BA215AE699500A41607 /* ASIInputStream.h */; };
 		A0495BDD15AE699500A41607 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BA315AE699500A41607 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BDE15AE699500A41607 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BA315AE699500A41607 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BDF15AE699500A41607 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BA415AE699500A41607 /* ASINetworkQueue.h */; };
 		A0495BE015AE699500A41607 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BA515AE699500A41607 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BE115AE699500A41607 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BA515AE699500A41607 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BE215AE699500A41607 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BA615AE699500A41607 /* ASIProgressDelegate.h */; };
 		A0495BE615AE699500A41607 /* ASICloudFilesCDNRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BAB15AE699500A41607 /* ASICloudFilesCDNRequest.h */; };
 		A0495BE715AE699500A41607 /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BAC15AE699500A41607 /* ASICloudFilesCDNRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BE815AE699500A41607 /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BAC15AE699500A41607 /* ASICloudFilesCDNRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BE915AE699500A41607 /* ASICloudFilesContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BAD15AE699500A41607 /* ASICloudFilesContainer.h */; };
 		A0495BEA15AE699500A41607 /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BAE15AE699500A41607 /* ASICloudFilesContainer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BEB15AE699500A41607 /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BAE15AE699500A41607 /* ASICloudFilesContainer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BEC15AE699500A41607 /* ASICloudFilesContainerRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BAF15AE699500A41607 /* ASICloudFilesContainerRequest.h */; };
 		A0495BED15AE699500A41607 /* ASICloudFilesContainerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB015AE699500A41607 /* ASICloudFilesContainerRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BEE15AE699500A41607 /* ASICloudFilesContainerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB015AE699500A41607 /* ASICloudFilesContainerRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BEF15AE699500A41607 /* ASICloudFilesContainerXMLParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BB115AE699500A41607 /* ASICloudFilesContainerXMLParserDelegate.h */; };
 		A0495BF015AE699500A41607 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB215AE699500A41607 /* ASICloudFilesContainerXMLParserDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BF115AE699500A41607 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB215AE699500A41607 /* ASICloudFilesContainerXMLParserDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BF215AE699500A41607 /* ASICloudFilesObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BB315AE699500A41607 /* ASICloudFilesObject.h */; };
 		A0495BF315AE699500A41607 /* ASICloudFilesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB415AE699500A41607 /* ASICloudFilesObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BF415AE699500A41607 /* ASICloudFilesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB415AE699500A41607 /* ASICloudFilesObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BF515AE699500A41607 /* ASICloudFilesObjectRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BB515AE699500A41607 /* ASICloudFilesObjectRequest.h */; };
 		A0495BF615AE699500A41607 /* ASICloudFilesObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB615AE699500A41607 /* ASICloudFilesObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BF715AE699500A41607 /* ASICloudFilesObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB615AE699500A41607 /* ASICloudFilesObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BF815AE699500A41607 /* ASICloudFilesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BB715AE699500A41607 /* ASICloudFilesRequest.h */; };
 		A0495BF915AE699500A41607 /* ASICloudFilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB815AE699500A41607 /* ASICloudFilesRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BFA15AE699500A41607 /* ASICloudFilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BB815AE699500A41607 /* ASICloudFilesRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BFB15AE699500A41607 /* ASINSXMLParserCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BBA15AE699500A41607 /* ASINSXMLParserCompat.h */; };
 		A0495BFC15AE699500A41607 /* ASIS3Bucket.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BBB15AE699500A41607 /* ASIS3Bucket.h */; };
 		A0495BFD15AE699500A41607 /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BBC15AE699500A41607 /* ASIS3Bucket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495BFE15AE699500A41607 /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BBC15AE699500A41607 /* ASIS3Bucket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495BFF15AE699500A41607 /* ASIS3BucketObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BBD15AE699500A41607 /* ASIS3BucketObject.h */; };
 		A0495C0015AE699500A41607 /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BBE15AE699500A41607 /* ASIS3BucketObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495C0115AE699500A41607 /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BBE15AE699500A41607 /* ASIS3BucketObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495C0215AE699500A41607 /* ASIS3BucketRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BBF15AE699500A41607 /* ASIS3BucketRequest.h */; };
 		A0495C0315AE699500A41607 /* ASIS3BucketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC015AE699500A41607 /* ASIS3BucketRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495C0415AE699500A41607 /* ASIS3BucketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC015AE699500A41607 /* ASIS3BucketRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495C0515AE699500A41607 /* ASIS3ObjectRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BC115AE699500A41607 /* ASIS3ObjectRequest.h */; };
 		A0495C0615AE699500A41607 /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC215AE699500A41607 /* ASIS3ObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495C0715AE699500A41607 /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC215AE699500A41607 /* ASIS3ObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495C0815AE699500A41607 /* ASIS3Request.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BC315AE699500A41607 /* ASIS3Request.h */; };
 		A0495C0915AE699500A41607 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC415AE699500A41607 /* ASIS3Request.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495C0A15AE699500A41607 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC415AE699500A41607 /* ASIS3Request.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495C0B15AE699500A41607 /* ASIS3ServiceRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BC515AE699500A41607 /* ASIS3ServiceRequest.h */; };
 		A0495C0C15AE699500A41607 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC615AE699500A41607 /* ASIS3ServiceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495C1115AE6A8600A41607 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495C0F15AE6A8600A41607 /* Reachability.h */; };
@@ -852,25 +833,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0495BCD15AE699500A41607 /* ASIDataCompressor.m in Sources */,
-				A0495BD015AE699500A41607 /* ASIDataDecompressor.m in Sources */,
-				A0495BD315AE699500A41607 /* ASIDownloadCache.m in Sources */,
-				A0495BD615AE699500A41607 /* ASIFormDataRequest.m in Sources */,
-				A0495BD915AE699500A41607 /* ASIHTTPRequest.m in Sources */,
-				A0495BDE15AE699500A41607 /* ASIInputStream.m in Sources */,
-				A0495BE115AE699500A41607 /* ASINetworkQueue.m in Sources */,
-				A0495BE815AE699500A41607 /* ASICloudFilesCDNRequest.m in Sources */,
-				A0495BEB15AE699500A41607 /* ASICloudFilesContainer.m in Sources */,
-				A0495BEE15AE699500A41607 /* ASICloudFilesContainerRequest.m in Sources */,
-				A0495BF115AE699500A41607 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */,
-				A0495BF415AE699500A41607 /* ASICloudFilesObject.m in Sources */,
-				A0495BF715AE699500A41607 /* ASICloudFilesObjectRequest.m in Sources */,
-				A0495BFA15AE699500A41607 /* ASICloudFilesRequest.m in Sources */,
-				A0495BFE15AE699500A41607 /* ASIS3Bucket.m in Sources */,
-				A0495C0115AE699500A41607 /* ASIS3BucketObject.m in Sources */,
-				A0495C0415AE699500A41607 /* ASIS3BucketRequest.m in Sources */,
-				A0495C0715AE699500A41607 /* ASIS3ObjectRequest.m in Sources */,
-				A0495C0A15AE699500A41607 /* ASIS3Request.m in Sources */,
 				A0495C2915AE728000A41607 /* SpecHelper.m in Sources */,
 				A052989F15AE7A5B002063D0 /* NocillaSpec.m in Sources */,
 				A0F8FD9F15C75CA2006969ED /* DDData.m in Sources */,
