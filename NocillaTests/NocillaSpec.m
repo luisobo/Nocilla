@@ -29,6 +29,7 @@ it(@"should stub the request", ^{
     
     [request startSynchronous];
     
+    [[request.responseString should] equal:@"Hello World!"];
     NSLog(@"%@", request.error);
     NSLog(@"%@", request.responseString);
     NSLog(@"%d", request.responseStatusCode);
