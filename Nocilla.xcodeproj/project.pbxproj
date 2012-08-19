@@ -77,14 +77,11 @@
 		A0495C0A15AE699500A41607 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC415AE699500A41607 /* ASIS3Request.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495C0B15AE699500A41607 /* ASIS3ServiceRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495BC515AE699500A41607 /* ASIS3ServiceRequest.h */; };
 		A0495C0C15AE699500A41607 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC615AE699500A41607 /* ASIS3ServiceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495C0D15AE699500A41607 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495BC615AE699500A41607 /* ASIS3ServiceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495C1115AE6A8600A41607 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495C0F15AE6A8600A41607 /* Reachability.h */; };
 		A0495C1215AE6A8600A41607 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495C1015AE6A8600A41607 /* Reachability.m */; };
-		A0495C1315AE6A8600A41607 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495C1015AE6A8600A41607 /* Reachability.m */; };
 		A0495C1615AE6A9F00A41607 /* libxml2.2.7.3.dylib in Sources */ = {isa = PBXBuildFile; fileRef = A0495C1415AE6A9800A41607 /* libxml2.2.7.3.dylib */; };
 		A0495C1915AE6B7500A41607 /* ASIAuthenticationDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = A0495C1715AE6B7500A41607 /* ASIAuthenticationDialog.h */; };
 		A0495C1A15AE6B7500A41607 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495C1815AE6B7500A41607 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A0495C1B15AE6B7500A41607 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495C1815AE6B7500A41607 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A0495C1C15AE6B8000A41607 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0495B8915AE681000A41607 /* UIKit.framework */; };
 		A0495C1E15AE6BB600A41607 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0495C1D15AE6BB600A41607 /* CFNetwork.framework */; };
 		A0495C1F15AE6BC400A41607 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0495C1D15AE6BB600A41607 /* CFNetwork.framework */; };
@@ -96,7 +93,6 @@
 		A052989F15AE7A5B002063D0 /* NocillaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0495AFA15AE5F3D00A41607 /* NocillaSpec.m */; };
 		A05298A315AF9BC6002063D0 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A05298A115AF9BC6002063D0 /* JSONKit.h */; };
 		A05298A415AF9BC6002063D0 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A05298A215AF9BC6002063D0 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A05298A515AF9BC6002063D0 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A05298A215AF9BC6002063D0 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A077EB5815C7716600148BBB /* LSStubRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A077EB5615C7716600148BBB /* LSStubRequest.h */; };
 		A077EB5915C7716600148BBB /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB5715C7716600148BBB /* LSStubRequest.m */; };
 		A077EB5D15C7725000148BBB /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A077EB5B15C7725000148BBB /* LSStubResponse.h */; };
@@ -107,17 +103,13 @@
 		A0F8FD5415C75C8C006969ED /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = A0F8FD3F15C75C8C006969ED /* About.txt */; };
 		A0F8FD5515C75C8C006969ED /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4015C75C8C006969ED /* GCDAsyncSocket.h */; };
 		A0F8FD5615C75C8C006969ED /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4115C75C8C006969ED /* GCDAsyncSocket.m */; };
-		A0F8FD5715C75C8C006969ED /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4115C75C8C006969ED /* GCDAsyncSocket.m */; };
 		A0F8FD5815C75C8C006969ED /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = A0F8FD4315C75C8C006969ED /* About.txt */; };
 		A0F8FD5915C75C8C006969ED /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4415C75C8C006969ED /* DDAbstractDatabaseLogger.h */; };
 		A0F8FD5A15C75C8C006969ED /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4515C75C8C006969ED /* DDAbstractDatabaseLogger.m */; };
-		A0F8FD5B15C75C8C006969ED /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4515C75C8C006969ED /* DDAbstractDatabaseLogger.m */; };
 		A0F8FD5C15C75C8C006969ED /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4615C75C8C006969ED /* DDASLLogger.h */; };
 		A0F8FD5D15C75C8C006969ED /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4715C75C8C006969ED /* DDASLLogger.m */; };
-		A0F8FD5E15C75C8C006969ED /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4715C75C8C006969ED /* DDASLLogger.m */; };
 		A0F8FD5F15C75C8C006969ED /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4815C75C8C006969ED /* DDFileLogger.h */; };
 		A0F8FD6015C75C8C006969ED /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4915C75C8C006969ED /* DDFileLogger.m */; };
-		A0F8FD6115C75C8C006969ED /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4915C75C8C006969ED /* DDFileLogger.m */; };
 		A0F8FD6215C75C8C006969ED /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4A15C75C8C006969ED /* DDLog.h */; };
 		A0F8FD6315C75C8C006969ED /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4B15C75C8C006969ED /* DDLog.m */; };
 		A0F8FD6515C75C8C006969ED /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4C15C75C8C006969ED /* DDTTYLogger.h */; };
@@ -879,16 +871,8 @@
 				A0495C0415AE699500A41607 /* ASIS3BucketRequest.m in Sources */,
 				A0495C0715AE699500A41607 /* ASIS3ObjectRequest.m in Sources */,
 				A0495C0A15AE699500A41607 /* ASIS3Request.m in Sources */,
-				A0495C0D15AE699500A41607 /* ASIS3ServiceRequest.m in Sources */,
-				A0495C1315AE6A8600A41607 /* Reachability.m in Sources */,
-				A0495C1B15AE6B7500A41607 /* ASIAuthenticationDialog.m in Sources */,
 				A0495C2915AE728000A41607 /* SpecHelper.m in Sources */,
 				A052989F15AE7A5B002063D0 /* NocillaSpec.m in Sources */,
-				A05298A515AF9BC6002063D0 /* JSONKit.m in Sources */,
-				A0F8FD5715C75C8C006969ED /* GCDAsyncSocket.m in Sources */,
-				A0F8FD5B15C75C8C006969ED /* DDAbstractDatabaseLogger.m in Sources */,
-				A0F8FD5E15C75C8C006969ED /* DDASLLogger.m in Sources */,
-				A0F8FD6115C75C8C006969ED /* DDFileLogger.m in Sources */,
 				A0F8FD9F15C75CA2006969ED /* DDData.m in Sources */,
 				A0F8FDA015C75CA2006969ED /* DDNumber.m in Sources */,
 				A0F8FDA115C75CA2006969ED /* DDRange.m in Sources */,
