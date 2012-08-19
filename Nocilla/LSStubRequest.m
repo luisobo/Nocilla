@@ -62,6 +62,14 @@
             self.body,
             self.response];
 }
+
+- (LSStubResponse *)response {
+    if (!_response) {
+        _response = [[LSStubResponse alloc] initDefaultResponse];
+    }
+    return _response;
+    
+}
 @end
 
 LSStubRequest * stubRequest(NSString *method, NSString *url) {

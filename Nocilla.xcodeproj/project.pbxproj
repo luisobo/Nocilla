@@ -106,6 +106,7 @@
 		A077EB6415C774ED00148BBB /* LSNocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A077EB6215C774ED00148BBB /* LSNocilla.h */; };
 		A077EB6515C774ED00148BBB /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB6315C774ED00148BBB /* LSNocilla.m */; };
 		A077EB6615C774ED00148BBB /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A077EB6315C774ED00148BBB /* LSNocilla.m */; };
+		A0B667A715E0643500B2307D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B667A615E0643500B2307D /* Security.framework */; };
 		A0F8FD5415C75C8C006969ED /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = A0F8FD3F15C75C8C006969ED /* About.txt */; };
 		A0F8FD5515C75C8C006969ED /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FD4015C75C8C006969ED /* GCDAsyncSocket.h */; };
 		A0F8FD5615C75C8C006969ED /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD4115C75C8C006969ED /* GCDAsyncSocket.m */; };
@@ -155,9 +156,6 @@
 		A0F8FDB215C75CA2006969ED /* PUTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FD9E15C75CA2006969ED /* PUTResponse.m */; };
 		A0F8FDB415C75E37006969ED /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F8FDB315C75E37006969ED /* libxml2.dylib */; };
 		A0F8FDB515C75E3E006969ED /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F8FDB315C75E37006969ED /* libxml2.dylib */; };
-		A0F8FDB715C75EA4006969ED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F8FDB615C75EA4006969ED /* Security.framework */; };
-		A0F8FDB815C75EAA006969ED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F8FDB615C75EA4006969ED /* Security.framework */; };
-		A0F8FDBE15C75FCB006969ED /* Web in Resources */ = {isa = PBXBuildFile; fileRef = A0F8FDBD15C75FCB006969ED /* Web */; };
 		A0F8FDC515C76073006969ED /* LSDynamicConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A0F8FDC315C76073006969ED /* LSDynamicConnection.h */; };
 		A0F8FDC615C76073006969ED /* LSDynamicConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FDC415C76073006969ED /* LSDynamicConnection.m */; };
 		A0F8FDC715C76073006969ED /* LSDynamicConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F8FDC415C76073006969ED /* LSDynamicConnection.m */; };
@@ -249,6 +247,7 @@
 		A077EB5C15C7725000148BBB /* LSStubResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponse.m; sourceTree = "<group>"; };
 		A077EB6215C774ED00148BBB /* LSNocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNocilla.h; sourceTree = "<group>"; };
 		A077EB6315C774ED00148BBB /* LSNocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocilla.m; sourceTree = "<group>"; };
+		A0B667A615E0643500B2307D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A0F8FD3F15C75C8C006969ED /* About.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = About.txt; sourceTree = "<group>"; };
 		A0F8FD4015C75C8C006969ED /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		A0F8FD4115C75C8C006969ED /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -311,8 +310,6 @@
 		A0F8FD9D15C75CA2006969ED /* PUTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUTResponse.h; sourceTree = "<group>"; };
 		A0F8FD9E15C75CA2006969ED /* PUTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUTResponse.m; sourceTree = "<group>"; };
 		A0F8FDB315C75E37006969ED /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		A0F8FDB615C75EA4006969ED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A0F8FDBD15C75FCB006969ED /* Web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Web; path = Resources/Web; sourceTree = "<group>"; };
 		A0F8FDC315C76073006969ED /* LSDynamicConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSDynamicConnection.h; sourceTree = "<group>"; };
 		A0F8FDC415C76073006969ED /* LSDynamicConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSDynamicConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -322,7 +319,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0F8FDB815C75EAA006969ED /* Security.framework in Frameworks */,
 				A0F8FDB515C75E3E006969ED /* libxml2.dylib in Frameworks */,
 				A0495C1E15AE6BB600A41607 /* CFNetwork.framework in Frameworks */,
 				A0495ADE15AE5F3D00A41607 /* Foundation.framework in Frameworks */,
@@ -333,7 +329,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0F8FDB715C75EA4006969ED /* Security.framework in Frameworks */,
+				A0B667A715E0643500B2307D /* Security.framework in Frameworks */,
 				A0F8FDB415C75E37006969ED /* libxml2.dylib in Frameworks */,
 				A0495C2715AE6C2000A41607 /* CoreGraphics.framework in Frameworks */,
 				A0495C2515AE6C1800A41607 /* MobileCoreServices.framework in Frameworks */,
@@ -354,8 +350,6 @@
 		A0495ACF15AE5F3D00A41607 = {
 			isa = PBXGroup;
 			children = (
-				A0F8FDB915C75F7D006969ED /* Resources */,
-				A0F8FDB615C75EA4006969ED /* Security.framework */,
 				A0495ADF15AE5F3D00A41607 /* Nocilla */,
 				A0495AF315AE5F3D00A41607 /* NocillaTests */,
 				A0495ADC15AE5F3D00A41607 /* Frameworks */,
@@ -376,6 +370,7 @@
 		A0495ADC15AE5F3D00A41607 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0B667A615E0643500B2307D /* Security.framework */,
 				A0F8FDB315C75E37006969ED /* libxml2.dylib */,
 				A05298A015AF9B9B002063D0 /* JSONKit */,
 				A0495C2615AE6C2000A41607 /* CoreGraphics.framework */,
@@ -680,14 +675,6 @@
 			path = WebDAV;
 			sourceTree = "<group>";
 		};
-		A0F8FDB915C75F7D006969ED /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A0F8FDBD15C75FCB006969ED /* Web */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -812,7 +799,6 @@
 				A0F8FD5415C75C8C006969ED /* About.txt in Resources */,
 				A0F8FD5815C75C8C006969ED /* About.txt in Resources */,
 				A0F8FD6E15C75C8C006969ED /* README.txt in Resources */,
-				A0F8FDBE15C75FCB006969ED /* Web in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,7 +816,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "networksetup -setwebproxy \"Wi-Fi\" 127.0.0.1 12345\n# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nwhile ps -p $PID >/dev/null 2>&1; do sleep 1; done\nnetworksetup -setwebproxystate \"Wi-Fi\" off\n";
+			shellScript = "#networksetup -setwebproxy \"Wi-Fi\" 127.0.0.1 12345\n# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n#while ps -p $PID >/dev/null 2>&1; do sleep 1; done\n#networksetup -setwebproxystate \"Wi-Fi\" off\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

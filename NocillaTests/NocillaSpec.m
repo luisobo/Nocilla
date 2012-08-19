@@ -9,19 +9,18 @@ SPEC_BEGIN(NocillaSpec)
 // networksetup -setwebproxystate "Wi-Fi" off
 
 it(@"should stub the request", ^{
-    
     [[LSNocilla sharedInstace] start];
     
-    stubRequest(@"POST", @"http://localhost:12345").andReturn(200).withBody(@"Hello World!").withHeader(@"Content-Type", @"text/plain");
+//    stubRequest(@"POST", @"http://localhost:12345/say-hello").andReturn(403).withBody(@"Hello World!").withHeader(@"Content-Type", @"text/plain");
+    stubRequest(@"POST", @"http://localhost:12345/say-hello").andReturn(201);
     
-    
-//    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"https://api.events.theshopkeep.com/healthcheck"]];
-    
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://localhost:12345"]];
-    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://localhost:12345/say-hello"]];
     [request startSynchronous];
     
+    NSLog(@"%@", request.error);
     NSLog(@"%@", request.responseString);
+    NSLog(@"%d", request.responseStatusCode);
+    NSLog(@"%@", request.responseHeaders);
 });
 
 SPEC_END

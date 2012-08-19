@@ -12,13 +12,12 @@
 
 @interface LSNocilla ()
 @property (nonatomic, strong) HTTPServer *server;
-@property (nonatomic, strong) NSMutableDictionary *mutableRequests;
+@property (nonatomic, strong) NSMutableArray *mutableRequests;
 
 @end
 static LSNocilla *sharedInstace = nil;
 @implementation LSNocilla
-@synthesize server = _server;
-@synthesize mutableRequests = _mutableRequests;
+
 
 +(LSNocilla *) sharedInstace {
     static dispatch_once_t onceToken;
@@ -31,7 +30,7 @@ static LSNocilla *sharedInstace = nil;
 - (id)init {
     self = [super init];
     if (self) {
-        self.mutableRequests = [NSMutableDictionary dictionary];
+        self.mutableRequests = [NSMutableArray array];
         self.server = [[HTTPServer alloc] init];
         [self.server setType:@"_http._tcp."];
         // TODO: Make port configurable
@@ -42,8 +41,8 @@ static LSNocilla *sharedInstace = nil;
     return self;
 }
 
-- (NSDictionary *)stubbedRequests {
-    return [NSDictionary dictionaryWithDictionary:self.mutableRequests];
+- (NSArray *)stubbedRequests {
+    return [NSArray arrayWithArray:self.mutableRequests];
 }
 
 - (void) start {
@@ -54,7 +53,7 @@ static LSNocilla *sharedInstace = nil;
 }
 
 -(void) addStubbedRequest:(LSStubRequest *)request {
-    [self.mutableRequests setValue:request forKey:request.url];
+    [self.mutableRequests addObject:request];
 }
 
 @end

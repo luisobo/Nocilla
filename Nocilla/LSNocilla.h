@@ -13,7 +13,7 @@
 
 @interface LSNocilla : NSObject
 +(LSNocilla *) sharedInstace;
-@property (nonatomic, strong, readonly) NSDictionary *stubbedRequests;
+@property (nonatomic, strong, readonly) NSArray *stubbedRequests;
 -(void) start;
 -(void) addStubbedRequest:(LSStubRequest *)request;
 @end

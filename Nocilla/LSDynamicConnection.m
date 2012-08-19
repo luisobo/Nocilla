@@ -11,23 +11,30 @@
 #import "HTTPMessage.h"
 #import "LSNocilla.h"
 
+NSString * const LSUnexpectedRequest = @"Unexpected Request";
+
 @implementation LSDynamicConnection
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
     
-    NSDictionary *requests = [LSNocilla sharedInstace].stubbedRequests;
+    NSArray *requests = [LSNocilla sharedInstace].stubbedRequests;
     
     NSLog(@"Real request:");
     NSLog(@"URL: %@", [request.url absoluteURL]);
     NSLog(@"Method: %@", request.method);
     NSLog(@"Headers: %@", request.allHeaderFields);
     
-    LSStubRequest *stubRequest = [requests objectForKey:[request.url absoluteString
-                                                         ]];
-
-    NSLog(@"Stub candidate:");
-    NSLog(@"%@", stubRequest);
+    NSData *body = [@"" dataUsingEncoding:NSUTF8StringEncoding];
+    for (LSStubRequest *stubRequest in requests) {
+        
+        NSString *a = [[NSURL URLWithString:stubRequest.url ] absoluteString];
+        NSString *b = [request.url absoluteString];
+        if ([a isEqualToString:b]) {
+            return stubRequest.response;
+        }
+    }
     
-    NSData *data = [@"Hello World!" dataUsingEncoding:NSUTF8StringEncoding];
-    return [[HTTPDataResponse alloc] initWithData:data];
+    [NSException raise:LSUnexpectedRequest format:@"Unexpected request received for url '%@'", [request.url absoluteString]];
+    NSObject<HTTPResponse> * response = [[HTTPDataResponse alloc] initWithData:body];
+    return response;
 }
 @end
