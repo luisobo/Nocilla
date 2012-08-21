@@ -16,4 +16,5 @@
 @property (nonatomic, strong, readonly) NSArray *stubbedRequests;
 -(void) start;
 -(void) addStubbedRequest:(LSStubRequest *)request;
+-(void) clearStubs;
 @end

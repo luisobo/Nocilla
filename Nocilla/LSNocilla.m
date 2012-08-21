@@ -56,4 +56,8 @@ static LSNocilla *sharedInstace = nil;
     [self.mutableRequests addObject:request];
 }
 
+-(void) clearStubs {
+    [self.mutableRequests removeAllObjects];
+}
+
 @end
