@@ -1,0 +1,7 @@
+PODS_ROOT = ${SRCROOT}/Pods
+PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
+ALWAYS_SEARCH_USER_PATHS = YES
+OTHER_LDFLAGS = -ObjC -lxml2 -lxml2.2 -lz.1 -framework CFNetwork -framework CoreGraphics -framework MobileCoreServices -framework Security -framework SystemConfiguration
+HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2 $(SDKROOT)/usr/include/libxml2 ${PODS_HEADERS_SEARCH_PATHS}
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/ASIHTTPRequest" "${PODS_ROOT}/BuildHeaders/CocoaAsyncSocket" "${PODS_ROOT}/BuildHeaders/CocoaHTTPServer" "${PODS_ROOT}/BuildHeaders/CocoaLumberjack" "${PODS_ROOT}/BuildHeaders/JSONKit" "${PODS_ROOT}/BuildHeaders/Reachability"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/ASIHTTPRequest" "${PODS_ROOT}/Headers/CocoaAsyncSocket" "${PODS_ROOT}/Headers/CocoaHTTPServer" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/JSONKit" "${PODS_ROOT}/Headers/Reachability"
