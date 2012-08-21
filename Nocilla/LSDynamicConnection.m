@@ -98,8 +98,7 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 - (void)processBodyData:(NSData *)postDataChunk {
 	BOOL result = [request appendData:postDataChunk];
 	if (!result) {
-		NSLog(@"%@[%p]: %@ - Couldn't append bytes!", __FILE__, self, __FUNCTION__
-              );
+		NSLog(@"Couldn't append bytes!");
 	}
 }
 @end
