@@ -1,4 +1,5 @@
 PODS:
+  - AFNetworking (1.0RC1)
   - ASIHTTPRequest (1.8.1):
     - ASIHTTPRequest/ASIWebPageRequest (= 1.8.1)
     - ASIHTTPRequest/CloudFiles (= 1.8.1)
@@ -20,8 +21,8 @@ PODS:
   - Reachability (3.0.0)
 
 DEPENDENCIES:
+  - AFNetworking (~> 1.0RC1)
   - ASIHTTPRequest (~> 1.8.1)
   - CocoaHTTPServer (~> 2.2.1)
   - JSONKit (~> 1.4)
   - Kiwi (~> 1.1.0)
-  - Reachability (~> 3.0.0)
