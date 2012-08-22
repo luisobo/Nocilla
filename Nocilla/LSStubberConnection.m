@@ -1,12 +1,4 @@
-    //
-//  MyHttpConnection.m
-//  Nocilla
-//
-//  Created by Luis Solano Bonet on 30/07/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
-#import "LSDynamicConnection.h"
+#import "LSStubberConnection.h"
 #import "HTTPDataResponse.h"
 #import "HTTPMessage.h"
 #import "LSNocilla.h"
@@ -62,7 +54,7 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
 @end
 
-@implementation LSDynamicConnection
+@implementation LSStubberConnection
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
     
     NSArray *requests = [LSNocilla sharedInstace].stubbedRequests;
