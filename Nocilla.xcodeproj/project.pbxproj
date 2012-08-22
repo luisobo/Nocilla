@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		41D450B99F6B46088DB143B3 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
 		A074ABAF15E30B0000730EE5 /* LSStubberConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABA815E30AFF00730EE5 /* LSStubberConnection.m */; };
+		A074ABAF15E30B0000730EE5 /* LSDynamicConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABA815E30AFF00730EE5 /* LSDynamicConnection.m */; };
 		A074ABB115E30B0000730EE5 /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAA15E30B0000730EE5 /* LSNocilla.m */; };
 		A074ABB315E30B0000730EE5 /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAC15E30B0000730EE5 /* LSStubRequest.m */; };
 		A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAE15E30B0000730EE5 /* LSStubResponse.m */; };
@@ -20,6 +21,7 @@
 		A07F6A3515E45B35009DE059 /* getshopkeep.key.pem in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A3215E45B35009DE059 /* getshopkeep.key.pem */; };
 		A07F6A4315E45FFE009DE059 /* LSHTTPSStubberConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A07F6A3A15E45F51009DE059 /* LSHTTPSStubberConnection.m */; };
 		A07F6A5115E467D3009DE059 /* getshopkeep.p12 in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A5015E467D3009DE059 /* getshopkeep.p12 */; };
+		A07F6A1E15E45224009DE059 /* LSMethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = A07F6A1D15E45224009DE059 /* LSMethodSwizzler.m */; };
 		A085B83C15E30749007D33C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83B15E30749007D33C1 /* Foundation.framework */; };
 		A085B84115E30749007D33C1 /* Nocilla.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; };
 		A085B84B15E30749007D33C1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B84A15E30749007D33C1 /* SenTestingKit.framework */; };
@@ -74,6 +76,8 @@
 		A07F6A3215E45B35009DE059 /* getshopkeep.key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getshopkeep.key.pem; sourceTree = "<group>"; };
 		A07F6A3A15E45F51009DE059 /* LSHTTPSStubberConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPSStubberConnection.m; sourceTree = "<group>"; };
 		A07F6A5015E467D3009DE059 /* getshopkeep.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = getshopkeep.p12; sourceTree = "<group>"; };
+		A07F6A1C15E45224009DE059 /* LSMethodSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMethodSwizzler.h; sourceTree = "<group>"; };
+		A07F6A1D15E45224009DE059 /* LSMethodSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMethodSwizzler.m; sourceTree = "<group>"; };
 		A085B83815E30749007D33C1 /* libNocilla.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNocilla.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A085B83B15E30749007D33C1 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A085B83F15E30749007D33C1 /* Nocilla-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocilla-Prefix.pch"; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				A07F6A2A15E45852009DE059 /* LSHTTPStubberConnection.m */,
 				A07F6A2C15E45876009DE059 /* LSHTTPSStubberConnection.h */,
 				A07F6A2D15E45876009DE059 /* LSHTTPSStubberConnection.m */,
+				A07F6A1C15E45224009DE059 /* LSMethodSwizzler.h */,
+				A07F6A1D15E45224009DE059 /* LSMethodSwizzler.m */,
 			);
 			path = Nocilla;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */,
 				A07F6A2B15E45852009DE059 /* LSHTTPStubberConnection.m in Sources */,
 				A07F6A2E15E45876009DE059 /* LSHTTPSStubberConnection.m in Sources */,
+				A07F6A1E15E45224009DE059 /* LSMethodSwizzler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

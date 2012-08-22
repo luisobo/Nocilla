@@ -46,7 +46,7 @@ context(@"ASIHTTPRequest", ^{
         withHeader(@"Content-Type", @"text/plain").
         withBody(@"Hello World!");
         
-        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"https://localhost:12346/say-hello"]];
+        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://www.google.com"]];
         [request addRequestHeader:@"Content-Type" value:@"text/plain"];
         [request addRequestHeader:@"Cacatuha!!!" value:@"sisisi"];
         [request appendPostData:[[@"caca" dataUsingEncoding:NSUTF8StringEncoding] mutableCopy]];
@@ -61,7 +61,7 @@ context(@"ASIHTTPRequest", ^{
         [[[request.responseHeaders objectForKey:@"Content-Type"] should] equal: @"text/plain"];
     });
 });
-
+//
 //context(@"AFNetworking", ^{
 //    it(@"should stub the request", ^{
 //        stubRequest(@"POST", @"http://localhost:12345/say-hello").

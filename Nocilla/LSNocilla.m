@@ -10,11 +10,15 @@
 #import "HTTPServer.h"
 #import "LSHTTPStubberConnection.h"
 #import "LSHTTPSStubberConnection.h"
+#import "LSMethodSwizzler.h"
 
 @interface LSNocilla ()
 @property (nonatomic, strong) HTTPServer *httpServer;
 @property (nonatomic, strong) HTTPServer *httpsServer;
 @property (nonatomic, strong) NSMutableArray *mutableRequests;
+
+-(void) loadAdapters;
+-(void) loadASIHTTPRequestAdapater;
 
 @end
 static LSNocilla *sharedInstace = nil;
@@ -70,6 +74,39 @@ static LSNocilla *sharedInstace = nil;
 
 -(void) clearStubs {
     [self.mutableRequests removeAllObjects];
+}
+
+#pragma mark - Private
+-(void) loadAdapters {
+    [self loadASIHTTPRequestAdapater];
+}
+
+static LSNocilla *instance = nil;
+static LSMethodSwizzler *swizzler = nil;
+
+-(void) loadASIHTTPRequestAdapater {
+    instance = self;
+    swizzler = [[LSMethodSwizzler alloc] init];
+
+    Class asiHttpRequestKlass = NSClassFromString(@"ASIHTTPRequest");
+    Class selfClass = [self class];
+
+    [swizzler swizzleInstanceMethod:@selector(startSynchronous)
+                                inClass:asiHttpRequestKlass
+                     withInstanceMethod:@selector(newStartSynchronous)
+                                inClass:selfClass];
+
+}
+
+-(void) newStartSynchronous {
+    /*
+     [request setProxyHost:@"localhost"];
+     [request setProxyPort:12345];
+     */
+    [self performSelector:@selector(setProxyHost:) withObject:@"localhost"];
+    [self performSelector:@selector(setProxyPort:) withObject:(__bridge id)((void*)12345)];
+    [swizzler deswizzle];
+    [self performSelector:@selector(startSynchronous)]; // calling the old method
 }
 
 @end
