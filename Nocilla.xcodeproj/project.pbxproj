@@ -14,14 +14,10 @@
 		A0708DA715E6FFB800352085 /* LSHTTPClientHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */; };
 		A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA815E7008200352085 /* LSNSURLHook.h */; };
 		A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA915E7008200352085 /* LSNSURLHook.m */; };
+		A0708DB415E70C6600352085 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0708DB315E70C6600352085 /* UIKit.framework */; };
 		A074ABB115E30B0000730EE5 /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAA15E30B0000730EE5 /* LSNocilla.m */; };
 		A074ABB315E30B0000730EE5 /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAC15E30B0000730EE5 /* LSStubRequest.m */; };
 		A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAE15E30B0000730EE5 /* LSStubResponse.m */; };
-		A074ABC915E310C400730EE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A074ABC815E310C400730EE5 /* UIKit.framework */; };
-		A07F6A3315E45B35009DE059 /* getshopkeep.cert in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A3015E45B35009DE059 /* getshopkeep.cert */; };
-		A07F6A3415E45B35009DE059 /* getshopkeep.csr.pem in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A3115E45B35009DE059 /* getshopkeep.csr.pem */; };
-		A07F6A3515E45B35009DE059 /* getshopkeep.key.pem in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A3215E45B35009DE059 /* getshopkeep.key.pem */; };
-		A07F6A5115E467D3009DE059 /* getshopkeep.p12 in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A5015E467D3009DE059 /* getshopkeep.p12 */; };
 		A085B83C15E30749007D33C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83B15E30749007D33C1 /* Foundation.framework */; };
 		A085B84115E30749007D33C1 /* Nocilla.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; };
 		A085B84B15E30749007D33C1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B84A15E30749007D33C1 /* SenTestingKit.framework */; };
@@ -66,17 +62,13 @@
 		A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPClientHook.m; sourceTree = "<group>"; };
 		A0708DA815E7008200352085 /* LSNSURLHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSNSURLHook.h; path = Hooks/NSURLRequest/LSNSURLHook.h; sourceTree = "<group>"; };
 		A0708DA915E7008200352085 /* LSNSURLHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSNSURLHook.m; path = Hooks/NSURLRequest/LSNSURLHook.m; sourceTree = "<group>"; };
+		A0708DB315E70C6600352085 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A074ABA915E30B0000730EE5 /* LSNocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNocilla.h; sourceTree = "<group>"; };
 		A074ABAA15E30B0000730EE5 /* LSNocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocilla.m; sourceTree = "<group>"; };
 		A074ABAB15E30B0000730EE5 /* LSStubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStubRequest.h; sourceTree = "<group>"; };
 		A074ABAC15E30B0000730EE5 /* LSStubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubRequest.m; sourceTree = "<group>"; };
 		A074ABAD15E30B0000730EE5 /* LSStubResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStubResponse.h; sourceTree = "<group>"; };
 		A074ABAE15E30B0000730EE5 /* LSStubResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponse.m; sourceTree = "<group>"; };
-		A074ABC815E310C400730EE5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A07F6A3015E45B35009DE059 /* getshopkeep.cert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getshopkeep.cert; sourceTree = "<group>"; };
-		A07F6A3115E45B35009DE059 /* getshopkeep.csr.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getshopkeep.csr.pem; sourceTree = "<group>"; };
-		A07F6A3215E45B35009DE059 /* getshopkeep.key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getshopkeep.key.pem; sourceTree = "<group>"; };
-		A07F6A5015E467D3009DE059 /* getshopkeep.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = getshopkeep.p12; sourceTree = "<group>"; };
 		A085B83815E30749007D33C1 /* libNocilla.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNocilla.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A085B83B15E30749007D33C1 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A085B83F15E30749007D33C1 /* Nocilla-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocilla-Prefix.pch"; sourceTree = "<group>"; };
@@ -104,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A074ABC915E310C400730EE5 /* UIKit.framework in Frameworks */,
+				A0708DB415E70C6600352085 /* UIKit.framework in Frameworks */,
 				A085B84B15E30749007D33C1 /* SenTestingKit.framework in Frameworks */,
 				A085B84E15E30749007D33C1 /* Foundation.framework in Frameworks */,
 				A085B85115E30749007D33C1 /* libNocilla.a in Frameworks */,
@@ -134,20 +126,10 @@
 			name = NSURLRequest;
 			sourceTree = "<group>";
 		};
-		A07F6A2F15E45B15009DE059 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A07F6A3015E45B35009DE059 /* getshopkeep.cert */,
-				A07F6A3115E45B35009DE059 /* getshopkeep.csr.pem */,
-				A07F6A3215E45B35009DE059 /* getshopkeep.key.pem */,
-				A07F6A5015E467D3009DE059 /* getshopkeep.p12 */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		A085B82D15E30749007D33C1 = {
 			isa = PBXGroup;
 			children = (
+				A0708DB315E70C6600352085 /* UIKit.framework */,
 				A085B83D15E30749007D33C1 /* Nocilla */,
 				A085B85215E30749007D33C1 /* NocillaTests */,
 				A085B83A15E30749007D33C1 /* Frameworks */,
@@ -169,7 +151,6 @@
 		A085B83A15E30749007D33C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A074ABC815E310C400730EE5 /* UIKit.framework */,
 				A085B83B15E30749007D33C1 /* Foundation.framework */,
 				A085B84A15E30749007D33C1 /* SenTestingKit.framework */,
 				FC5D6931A52E4D73994F1D0E /* libPods.a */,
@@ -207,7 +188,6 @@
 		A085B85215E30749007D33C1 /* NocillaTests */ = {
 			isa = PBXGroup;
 			children = (
-				A07F6A2F15E45B15009DE059 /* Resources */,
 				A085B85915E30749007D33C1 /* NocillaSpec.m */,
 				A085B85315E30749007D33C1 /* Supporting Files */,
 			);
@@ -313,10 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A085B85715E30749007D33C1 /* InfoPlist.strings in Resources */,
-				A07F6A3315E45B35009DE059 /* getshopkeep.cert in Resources */,
-				A07F6A3415E45B35009DE059 /* getshopkeep.csr.pem in Resources */,
-				A07F6A3515E45B35009DE059 /* getshopkeep.key.pem in Resources */,
-				A07F6A5115E467D3009DE059 /* getshopkeep.p12 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
