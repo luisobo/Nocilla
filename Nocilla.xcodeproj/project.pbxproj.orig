@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		41D450B99F6B46088DB143B3 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
-		A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */; };
-		A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */; };
-		A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */; };
-		A0708DA715E6FFB800352085 /* LSHTTPClientHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */; };
-		A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA815E7008200352085 /* LSNSURLHook.h */; };
-		A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA915E7008200352085 /* LSNSURLHook.m */; };
+		A074ABAF15E30B0000730EE5 /* LSStubberConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABA815E30AFF00730EE5 /* LSStubberConnection.m */; };
 		A074ABB115E30B0000730EE5 /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAA15E30B0000730EE5 /* LSNocilla.m */; };
 		A074ABB315E30B0000730EE5 /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAC15E30B0000730EE5 /* LSStubRequest.m */; };
 		A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAE15E30B0000730EE5 /* LSStubResponse.m */; };
 		A074ABC915E310C400730EE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A074ABC815E310C400730EE5 /* UIKit.framework */; };
+<<<<<<< HEAD
+		A07F6A2B15E45852009DE059 /* LSHTTPStubberConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A07F6A2A15E45852009DE059 /* LSHTTPStubberConnection.m */; };
+		A07F6A2E15E45876009DE059 /* LSHTTPSStubberConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A07F6A2D15E45876009DE059 /* LSHTTPSStubberConnection.m */; };
 		A07F6A3315E45B35009DE059 /* getshopkeep.cert in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A3015E45B35009DE059 /* getshopkeep.cert */; };
 		A07F6A3415E45B35009DE059 /* getshopkeep.csr.pem in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A3115E45B35009DE059 /* getshopkeep.csr.pem */; };
 		A07F6A3515E45B35009DE059 /* getshopkeep.key.pem in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A3215E45B35009DE059 /* getshopkeep.key.pem */; };
+		A07F6A4315E45FFE009DE059 /* LSHTTPSStubberConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A07F6A3A15E45F51009DE059 /* LSHTTPSStubberConnection.m */; };
 		A07F6A5115E467D3009DE059 /* getshopkeep.p12 in Resources */ = {isa = PBXBuildFile; fileRef = A07F6A5015E467D3009DE059 /* getshopkeep.p12 */; };
+=======
+		A07F6A1E15E45224009DE059 /* LSMethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = A07F6A1D15E45224009DE059 /* LSMethodSwizzler.m */; };
+>>>>>>> hook-into-asi
 		A085B83C15E30749007D33C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83B15E30749007D33C1 /* Foundation.framework */; };
 		A085B84115E30749007D33C1 /* Nocilla.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; };
 		A085B84B15E30749007D33C1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B84A15E30749007D33C1 /* SenTestingKit.framework */; };
@@ -29,8 +31,6 @@
 		A085B85115E30749007D33C1 /* libNocilla.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83815E30749007D33C1 /* libNocilla.a */; };
 		A085B85715E30749007D33C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A085B85515E30749007D33C1 /* InfoPlist.strings */; };
 		A085B85A15E30749007D33C1 /* NocillaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* NocillaSpec.m */; };
-		A08D52C715E5A6A7003650F7 /* LSNocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABA915E30B0000730EE5 /* LSNocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A08D52C815E5A6A7003650F7 /* Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D39CB7E03CA24559A66FFA31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5D6931A52E4D73994F1D0E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,12 +60,8 @@
 /* Begin PBXFileReference section */
 		3CB9A3DF4AB94FEA9A99A67B /* Pods-NocillaTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.xcconfig"; path = "Pods/Pods-NocillaTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		6E4115EECDDF4B99842D5C02 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPStubURLProtocol.h; sourceTree = "<group>"; };
-		A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPStubURLProtocol.m; sourceTree = "<group>"; };
-		A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPClientHook.h; sourceTree = "<group>"; };
-		A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPClientHook.m; sourceTree = "<group>"; };
-		A0708DA815E7008200352085 /* LSNSURLHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSNSURLHook.h; path = Hooks/NSURLRequest/LSNSURLHook.h; sourceTree = "<group>"; };
-		A0708DA915E7008200352085 /* LSNSURLHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSNSURLHook.m; path = Hooks/NSURLRequest/LSNSURLHook.m; sourceTree = "<group>"; };
+		A074ABA715E30AFF00730EE5 /* LSStubberConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStubberConnection.h; sourceTree = "<group>"; };
+		A074ABA815E30AFF00730EE5 /* LSStubberConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubberConnection.m; sourceTree = "<group>"; };
 		A074ABA915E30B0000730EE5 /* LSNocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNocilla.h; sourceTree = "<group>"; };
 		A074ABAA15E30B0000730EE5 /* LSNocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocilla.m; sourceTree = "<group>"; };
 		A074ABAB15E30B0000730EE5 /* LSStubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStubRequest.h; sourceTree = "<group>"; };
@@ -73,10 +69,20 @@
 		A074ABAD15E30B0000730EE5 /* LSStubResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStubResponse.h; sourceTree = "<group>"; };
 		A074ABAE15E30B0000730EE5 /* LSStubResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponse.m; sourceTree = "<group>"; };
 		A074ABC815E310C400730EE5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+<<<<<<< HEAD
+		A07F6A2915E45852009DE059 /* LSHTTPStubberConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPStubberConnection.h; sourceTree = "<group>"; };
+		A07F6A2A15E45852009DE059 /* LSHTTPStubberConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPStubberConnection.m; sourceTree = "<group>"; };
+		A07F6A2C15E45876009DE059 /* LSHTTPSStubberConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPSStubberConnection.h; sourceTree = "<group>"; };
+		A07F6A2D15E45876009DE059 /* LSHTTPSStubberConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPSStubberConnection.m; sourceTree = "<group>"; };
 		A07F6A3015E45B35009DE059 /* getshopkeep.cert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getshopkeep.cert; sourceTree = "<group>"; };
 		A07F6A3115E45B35009DE059 /* getshopkeep.csr.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getshopkeep.csr.pem; sourceTree = "<group>"; };
 		A07F6A3215E45B35009DE059 /* getshopkeep.key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = getshopkeep.key.pem; sourceTree = "<group>"; };
+		A07F6A3A15E45F51009DE059 /* LSHTTPSStubberConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPSStubberConnection.m; sourceTree = "<group>"; };
 		A07F6A5015E467D3009DE059 /* getshopkeep.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = getshopkeep.p12; sourceTree = "<group>"; };
+=======
+		A07F6A1C15E45224009DE059 /* LSMethodSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMethodSwizzler.h; sourceTree = "<group>"; };
+		A07F6A1D15E45224009DE059 /* LSMethodSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMethodSwizzler.m; sourceTree = "<group>"; };
+>>>>>>> hook-into-asi
 		A085B83815E30749007D33C1 /* libNocilla.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNocilla.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A085B83B15E30749007D33C1 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A085B83F15E30749007D33C1 /* Nocilla-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocilla-Prefix.pch"; sourceTree = "<group>"; };
@@ -115,25 +121,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0708DA215E6FF7200352085 /* Hooks */ = {
-			isa = PBXGroup;
-			children = (
-				A0708DA315E6FF7E00352085 /* NSURLRequest */,
-			);
-			name = Hooks;
-			sourceTree = "<group>";
-		};
-		A0708DA315E6FF7E00352085 /* NSURLRequest */ = {
-			isa = PBXGroup;
-			children = (
-				A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */,
-				A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */,
-				A0708DA815E7008200352085 /* LSNSURLHook.h */,
-				A0708DA915E7008200352085 /* LSNSURLHook.m */,
-			);
-			name = NSURLRequest;
-			sourceTree = "<group>";
-		};
 		A07F6A2F15E45B15009DE059 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +168,8 @@
 		A085B83D15E30749007D33C1 /* Nocilla */ = {
 			isa = PBXGroup;
 			children = (
-				A0708DA215E6FF7200352085 /* Hooks */,
+				A074ABA715E30AFF00730EE5 /* LSStubberConnection.h */,
+				A074ABA815E30AFF00730EE5 /* LSStubberConnection.m */,
 				A074ABA915E30B0000730EE5 /* LSNocilla.h */,
 				A074ABAA15E30B0000730EE5 /* LSNocilla.m */,
 				A074ABAB15E30B0000730EE5 /* LSStubRequest.h */,
@@ -190,8 +178,15 @@
 				A074ABAE15E30B0000730EE5 /* LSStubResponse.m */,
 				A085B84015E30749007D33C1 /* Nocilla.h */,
 				A085B83E15E30749007D33C1 /* Supporting Files */,
-				A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */,
-				A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */,
+<<<<<<< HEAD
+				A07F6A2915E45852009DE059 /* LSHTTPStubberConnection.h */,
+				A07F6A2A15E45852009DE059 /* LSHTTPStubberConnection.m */,
+				A07F6A2C15E45876009DE059 /* LSHTTPSStubberConnection.h */,
+				A07F6A2D15E45876009DE059 /* LSHTTPSStubberConnection.m */,
+=======
+				A07F6A1C15E45224009DE059 /* LSMethodSwizzler.h */,
+				A07F6A1D15E45224009DE059 /* LSMethodSwizzler.m */,
+>>>>>>> hook-into-asi
 			);
 			path = Nocilla;
 			sourceTree = "<group>";
@@ -210,6 +205,7 @@
 				A07F6A2F15E45B15009DE059 /* Resources */,
 				A085B85915E30749007D33C1 /* NocillaSpec.m */,
 				A085B85315E30749007D33C1 /* Supporting Files */,
+				A07F6A3A15E45F51009DE059 /* LSHTTPSStubberConnection.m */,
 			);
 			path = NocillaTests;
 			sourceTree = "<group>";
@@ -225,21 +221,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		A08D52C515E5A694003650F7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A08D52C715E5A6A7003650F7 /* LSNocilla.h in Headers */,
-				A08D52C815E5A6A7003650F7 /* Nocilla.h in Headers */,
-				A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */,
-				A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */,
-				A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		A085B83715E30749007D33C1 /* Nocilla */ = {
 			isa = PBXNativeTarget;
@@ -249,7 +230,6 @@
 				A085B83515E30749007D33C1 /* Frameworks */,
 				A085B83615E30749007D33C1 /* CopyFiles */,
 				F8E0F8B8F41841D7B46EB186 /* Copy Pods Resources */,
-				A08D52C515E5A694003650F7 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -371,12 +351,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A074ABAF15E30B0000730EE5 /* LSStubberConnection.m in Sources */,
 				A074ABB115E30B0000730EE5 /* LSNocilla.m in Sources */,
 				A074ABB315E30B0000730EE5 /* LSStubRequest.m in Sources */,
 				A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */,
-				A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */,
-				A0708DA715E6FFB800352085 /* LSHTTPClientHook.m in Sources */,
-				A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */,
+<<<<<<< HEAD
+				A07F6A2B15E45852009DE059 /* LSHTTPStubberConnection.m in Sources */,
+				A07F6A2E15E45876009DE059 /* LSHTTPSStubberConnection.m in Sources */,
+=======
+				A07F6A1E15E45224009DE059 /* LSMethodSwizzler.m in Sources */,
+>>>>>>> hook-into-asi
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A085B85A15E30749007D33C1 /* NocillaSpec.m in Sources */,
+				A07F6A4315E45FFE009DE059 /* LSHTTPSStubberConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +457,6 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = PublicHeaders;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -491,7 +475,6 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = PublicHeaders;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

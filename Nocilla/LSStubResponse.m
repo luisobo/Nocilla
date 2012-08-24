@@ -55,31 +55,14 @@
     return self;
 }
 
+-(NSDictionary *)headers{
+    return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];
+}
+
 - (NSString *) description {
     return [NSString stringWithFormat:@"StubRequest:\nStatus Code: %d\nHeaders: %@\nBody: %@",
             self.statusCode,
             self.mutableHeaders,
             self.body];
-}
-
-#pragma mark - HTTPResponse Protocol Methods
-- (UInt64)contentLength {
-    return [self.body length];
-}
-
-- (NSData *)readDataOfLength:(NSUInteger)length {
-    length = MIN([self.body length], length);
-    if (length >= [self.body length]) {
-        self.done = YES;
-    }
-    return [self.body subdataWithRange:NSMakeRange(0, length)];
-}
-
-- (NSInteger)status {
-    return self.statusCode;
-}
-
-- (NSDictionary *)httpHeaders {
-    return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];
 }
 @end

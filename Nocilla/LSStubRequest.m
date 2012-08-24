@@ -73,7 +73,7 @@
 
 LSStubRequest * stubRequest(NSString *method, NSString *url) {
     LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method url:url];
-    [[LSNocilla sharedInstace] addStubbedRequest:request];
+    [[LSNocilla sharedInstance] addStubbedRequest:request];
     return request;
 }
 
