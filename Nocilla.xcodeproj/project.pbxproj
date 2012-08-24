@@ -181,17 +181,17 @@
 		A085B83D15E30749007D33C1 /* Nocilla */ = {
 			isa = PBXGroup;
 			children = (
+				A085B84015E30749007D33C1 /* Nocilla.h */,
 				A0708DA215E6FF7200352085 /* Hooks */,
+				A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */,
+				A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */,
 				A074ABA915E30B0000730EE5 /* LSNocilla.h */,
 				A074ABAA15E30B0000730EE5 /* LSNocilla.m */,
 				A074ABAB15E30B0000730EE5 /* LSStubRequest.h */,
 				A074ABAC15E30B0000730EE5 /* LSStubRequest.m */,
 				A074ABAD15E30B0000730EE5 /* LSStubResponse.h */,
 				A074ABAE15E30B0000730EE5 /* LSStubResponse.m */,
-				A085B84015E30749007D33C1 /* Nocilla.h */,
 				A085B83E15E30749007D33C1 /* Supporting Files */,
-				A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */,
-				A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */,
 			);
 			path = Nocilla;
 			sourceTree = "<group>";
