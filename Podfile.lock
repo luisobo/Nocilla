@@ -1,7 +1,17 @@
 PODS:
   - AFNetworking (1.0RC1)
+  - CocoaAsyncSocket (0.0.1)
+  - CocoaHTTPServer (2.2.1):
+    - CocoaAsyncSocket (~> 0.0.1)
+    - CocoaLumberjack (~> 1.3.0)
+  - CocoaLumberjack (1.3.3)
   - Kiwi (1.1.0)
+  - MKNetworkKit (0.83):
+    - Reachability (~> 3.0)
+  - Reachability (3.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.0RC1)
+  - CocoaHTTPServer (~> 2.2.1)
   - Kiwi (~> 1.1.0)
+  - MKNetworkKit (~> 0.83)

@@ -15,6 +15,7 @@
 		A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA815E7008200352085 /* LSNSURLHook.h */; };
 		A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA915E7008200352085 /* LSNSURLHook.m */; };
 		A0708DB415E70C6600352085 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0708DB315E70C6600352085 /* UIKit.framework */; };
+		A0708DBD15E70D9800352085 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
 		A074ABB115E30B0000730EE5 /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAA15E30B0000730EE5 /* LSNocilla.m */; };
 		A074ABB315E30B0000730EE5 /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAC15E30B0000730EE5 /* LSStubRequest.m */; };
 		A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAE15E30B0000730EE5 /* LSStubResponse.m */; };
@@ -24,9 +25,11 @@
 		A085B84E15E30749007D33C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83B15E30749007D33C1 /* Foundation.framework */; };
 		A085B85115E30749007D33C1 /* libNocilla.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83815E30749007D33C1 /* libNocilla.a */; };
 		A085B85715E30749007D33C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A085B85515E30749007D33C1 /* InfoPlist.strings */; };
-		A085B85A15E30749007D33C1 /* NocillaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* NocillaSpec.m */; };
+		A085B85A15E30749007D33C1 /* AFNetworkingStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */; };
 		A08D52C715E5A6A7003650F7 /* LSNocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABA915E30B0000730EE5 /* LSNocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A08D52C815E5A6A7003650F7 /* Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0EE62F915EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE62F715EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.h */; };
+		A0EE62FA15EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE62F815EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.m */; };
 		D39CB7E03CA24559A66FFA31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5D6931A52E4D73994F1D0E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,7 @@
 		A0708DA815E7008200352085 /* LSNSURLHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSNSURLHook.h; path = Hooks/NSURLRequest/LSNSURLHook.h; sourceTree = "<group>"; };
 		A0708DA915E7008200352085 /* LSNSURLHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSNSURLHook.m; path = Hooks/NSURLRequest/LSNSURLHook.m; sourceTree = "<group>"; };
 		A0708DB315E70C6600352085 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkKitStubbingSpec.m; sourceTree = "<group>"; };
 		A074ABA915E30B0000730EE5 /* LSNocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNocilla.h; sourceTree = "<group>"; };
 		A074ABAA15E30B0000730EE5 /* LSNocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocilla.m; sourceTree = "<group>"; };
 		A074ABAB15E30B0000730EE5 /* LSStubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStubRequest.h; sourceTree = "<group>"; };
@@ -77,7 +81,9 @@
 		A085B84A15E30749007D33C1 /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A085B85415E30749007D33C1 /* NocillaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NocillaTests-Info.plist"; sourceTree = "<group>"; };
 		A085B85615E30749007D33C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A085B85915E30749007D33C1 /* NocillaSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NocillaSpec.m; sourceTree = "<group>"; };
+		A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingStubbingSpec.m; sourceTree = "<group>"; };
+		A0EE62F715EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LSStubRequest+NSURLRequestMatcher.h"; sourceTree = "<group>"; };
+		A0EE62F815EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LSStubRequest+NSURLRequestMatcher.m"; sourceTree = "<group>"; };
 		CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D6931A52E4D73994F1D0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,6 +128,8 @@
 				A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */,
 				A0708DA815E7008200352085 /* LSNSURLHook.h */,
 				A0708DA915E7008200352085 /* LSNSURLHook.m */,
+				A0EE62F715EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.h */,
+				A0EE62F815EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.m */,
 			);
 			name = NSURLRequest;
 			sourceTree = "<group>";
@@ -129,7 +137,6 @@
 		A085B82D15E30749007D33C1 = {
 			isa = PBXGroup;
 			children = (
-				A0708DB315E70C6600352085 /* UIKit.framework */,
 				A085B83D15E30749007D33C1 /* Nocilla */,
 				A085B85215E30749007D33C1 /* NocillaTests */,
 				A085B83A15E30749007D33C1 /* Frameworks */,
@@ -151,6 +158,7 @@
 		A085B83A15E30749007D33C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0708DB315E70C6600352085 /* UIKit.framework */,
 				A085B83B15E30749007D33C1 /* Foundation.framework */,
 				A085B84A15E30749007D33C1 /* SenTestingKit.framework */,
 				FC5D6931A52E4D73994F1D0E /* libPods.a */,
@@ -188,7 +196,8 @@
 		A085B85215E30749007D33C1 /* NocillaTests */ = {
 			isa = PBXGroup;
 			children = (
-				A085B85915E30749007D33C1 /* NocillaSpec.m */,
+				A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */,
+				A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */,
 				A085B85315E30749007D33C1 /* Supporting Files */,
 			);
 			path = NocillaTests;
@@ -215,6 +224,7 @@
 				A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */,
 				A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */,
 				A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */,
+				A0EE62F915EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +363,7 @@
 				A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */,
 				A0708DA715E6FFB800352085 /* LSHTTPClientHook.m in Sources */,
 				A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */,
+				A0EE62FA15EAD17E00009A08 /* LSStubRequest+NSURLRequestMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A085B85A15E30749007D33C1 /* NocillaSpec.m in Sources */,
+				A085B85A15E30749007D33C1 /* AFNetworkingStubbingSpec.m in Sources */,
+				A0708DBD15E70D9800352085 /* MKNetworkKitStubbingSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

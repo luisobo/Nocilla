@@ -3,7 +3,7 @@
 @interface LSStubRequest ()
 @property (nonatomic, assign, readwrite) NSString *method;
 @property (nonatomic, strong) NSURL *urlObject;
-@property (nonatomic, strong, readwrite) NSDictionary *mutableHeaders;
+@property (nonatomic, strong, readwrite) NSMutableDictionary *mutableHeaders;
 @property (nonatomic, strong, readwrite) NSString *body;
 @property (nonatomic, strong, readwrite) LSStubResponse *response;
 @end
@@ -30,6 +30,13 @@
 
 - (NSString *)url {
     return [self.urlObject absoluteString];
+}
+
+- (WithHeadersMethod)withHeaders {
+    return ^(NSDictionary *headers) {
+        [self.mutableHeaders addEntriesFromDictionary:headers];
+        return self;
+    };
 }
 
 - (WithHeaderMethod)withHeader {

@@ -9,6 +9,7 @@ extern NSString * const kLSUnexpectedRequest;
 +(LSNocilla *) sharedInstance;
 @property (nonatomic, strong, readonly) NSArray *stubbedRequests;
 -(void) start;
+-(void) stop;
 -(void) addStubbedRequest:(LSStubRequest *)request;
 -(void) clearStubs;
 @end

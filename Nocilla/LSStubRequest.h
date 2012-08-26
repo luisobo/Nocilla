@@ -5,11 +5,13 @@
 @class LSStubResponse;
 
 typedef LSStubRequest *(^WithHeaderMethod)(NSString *, NSString *);
+typedef LSStubRequest *(^WithHeadersMethod)(NSDictionary *);
 typedef LSStubRequest *(^AndBodyMethod)(NSString *);
 typedef LSStubResponse *(^AndReturnMethod)(NSInteger);
 
 @interface LSStubRequest : NSObject
 - (WithHeaderMethod)withHeader;
+- (WithHeadersMethod)withHeaders;
 - (AndBodyMethod)withBody;
 - (AndReturnMethod)andReturn;
 

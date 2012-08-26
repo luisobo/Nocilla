@@ -15,4 +15,8 @@
     [NSURLProtocol registerClass:[LSHTTPStubURLProtocol class]];
 }
 
+-(void) unload {
+    [NSURLProtocol unregisterClass:[LSHTTPStubURLProtocol class]];
+}
+
 @end

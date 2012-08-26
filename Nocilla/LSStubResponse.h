@@ -13,9 +13,11 @@
 
 typedef LSStubResponse *(^ResponseWithBodyMethod)(NSString *);
 typedef LSStubResponse *(^ResponseWithHeaderMethod)(NSString *, NSString *);
+typedef LSStubResponse *(^ResponseWithHeadersMethod)(NSDictionary *);
 
 @interface LSStubResponse : NSObject
 - (ResponseWithHeaderMethod)withHeader;
+- (ResponseWithHeadersMethod)withHeaders;
 - (ResponseWithBodyMethod)withBody;
 
 @property (nonatomic, assign, readonly) NSInteger statusCode;

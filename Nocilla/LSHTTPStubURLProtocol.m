@@ -8,58 +8,10 @@
 
 #import "LSHTTPStubURLProtocol.h"
 #import "LSNocilla.h"
+#import "LSStubRequest+NSURLRequestMatcher.h"
 
 @interface NSHTTPURLResponse(UndocumentedInitializer)
 - (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;
-@end
-
-@implementation LSStubRequest (MatchesNSURLRequest)
-
--(BOOL) matches:(NSURLRequest *)request {
-    if ([self matchesMethod:request]
-        && [self matchesURL:request]
-        && [self matchesHeaders:request]
-        && [self matchesBody:request]
-        ) {
-        return YES;
-    }
-    return NO;
-}
-
--(BOOL)matchesMethod:(NSURLRequest *)request {
-    if (!self.method || [self.method isEqualToString:request.HTTPMethod]) {
-        return YES;
-    }
-    return NO;
-}
-
--(BOOL)matchesURL:(NSURLRequest *)request {
-    NSString *a = [[NSURL URLWithString:self.url] absoluteString];
-    NSString *b = [request.URL absoluteString];
-    if ([a isEqualToString:b]) {
-        return YES;
-    }
-    return NO;
-}
-
--(BOOL)matchesHeaders:(NSURLRequest *)request {
-    for (NSString *header in self.headers) {
-        if (![[[request allHTTPHeaderFields] objectForKey:header] isEqualToString:[self.headers objectForKey:header]]) {
-            return NO;
-        }
-    }
-    return YES;
-}
-
--(BOOL)matchesBody:(NSURLRequest *)request {
-    NSData *selfBody = [self.body dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *reqBody = request.HTTPBody;
-    if (!selfBody || [selfBody isEqualToData:reqBody]) {
-        return YES;
-    }
-    return NO;
-}
-
 @end
 
 @implementation LSHTTPStubURLProtocol
@@ -71,6 +23,9 @@
 +(NSURLRequest *) canonicalRequestForRequest:(NSURLRequest *)request {
 	return request;
 }
++ (BOOL)requestIsCacheEquivalent:(NSURLRequest *)a toRequest:(NSURLRequest *)b {
+    return NO;
+}
 
 - (void)startLoading {
     NSURLRequest* request = [self request];
@@ -80,7 +35,7 @@
     LSStubResponse* stubbedResponse = nil;
     NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
     for(LSStubRequest *someStubbedRequest in requests) {
-        if ([someStubbedRequest matches:request]) {
+        if ([someStubbedRequest matchesNSURLRequest:request]) {
             stubbedRequest = someStubbedRequest;
             stubbedResponse = stubbedRequest.response;
             break;

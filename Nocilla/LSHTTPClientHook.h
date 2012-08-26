@@ -11,5 +11,6 @@
 @interface LSHTTPClientHook : NSObject
 
 -(void)load;
+-(void) unload;
 
 @end

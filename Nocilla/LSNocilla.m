@@ -13,9 +13,13 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
 @interface LSNocilla ()
 @property (nonatomic, strong) NSMutableArray *mutableRequests;
+@property (nonatomic, strong) NSMutableArray *hooks;
+@property (nonatomic, assign, getter = isStarted) BOOL started;
 
--(void) loadAdapters;
--(void) loadNSURLConnectionAdapter;
+-(void) loadHooks;
+-(void) unloadHooks;
+-(void) loadNSURLConnectionHook;
+-(void) unloadNSURLConnectionHook;
 
 @end
 static LSNocilla *sharedInstace = nil;
@@ -34,6 +38,7 @@ static LSNocilla *sharedInstace = nil;
     self = [super init];
     if (self) {
         _mutableRequests = [NSMutableArray array];
+        _hooks = [NSMutableArray array];
     }
     return self;
 }
@@ -43,7 +48,12 @@ static LSNocilla *sharedInstace = nil;
 }
 
 - (void) start {
-    [self loadAdapters];
+    [self loadHooks];
+}
+
+-(void) stop {
+    [self unloadHooks];
+    [self clearStubs];
 }
 
 -(void) addStubbedRequest:(LSStubRequest *)request {
@@ -55,12 +65,20 @@ static LSNocilla *sharedInstace = nil;
 }
 
 #pragma mark - Private
--(void) loadAdapters {
-    [self loadNSURLConnectionAdapter];
+-(void) loadHooks {
+    [self loadNSURLConnectionHook];
 }
 
--(void) loadNSURLConnectionAdapter {
-    [[[LSNSURLHook alloc] init] load];
+-(void) unloadHooks {
+    for (LSHTTPClientHook *hook in self.hooks) {
+        [hook unload];
+    }
+}
+
+-(void) loadNSURLConnectionHook {
+    LSHTTPClientHook *hook = [[LSNSURLHook alloc] init];
+    [self.hooks addObject:hook];
+    [hook load];
 }
 
 @end
