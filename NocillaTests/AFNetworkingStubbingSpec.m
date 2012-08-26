@@ -31,36 +31,39 @@ SPEC_BEGIN(AFNetworkingStubbingSpec)
 beforeAll(^{
     [[LSNocilla sharedInstance] start];
 });
+afterAll(^{
+    [[LSNocilla sharedInstance] stop];
+});
 afterEach(^{
     [[LSNocilla sharedInstance] clearStubs];
 });
 
 context(@"AFNetworking", ^{
-//    it(@"should stub the request", ^{
-//        stubRequest(@"POST", @"https://getshopkeep.com/say-hello").
-//        withHeader(@"Content-Type", @"text/plain").
-//        withHeader(@"Cacatuha!!!", @"sisisi").
-//        withBody(@"caca").
-//        andReturn(200).
-//        withHeader(@"Content-Type", @"text/plain").
-//        withBody(@"hola");
-//        
-//        NSURL *url = [NSURL URLWithString:@"https://getshopkeep.com/say-hello"];
-//        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-//        [request setHTTPMethod:@"POST"];
-//        [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
-//        [request setValue:@"sisisi" forHTTPHeaderField:@"Cacatuha!!!"];
-//        [request setHTTPBody:[@"caca" dataUsingEncoding:NSASCIIStringEncoding]];
-//        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-//        [operation start];
-//        
-//        [operation waitUntilFinished];
-//        
-//        [operation.error shouldBeNil];
-//        [[operation.responseString should] equal:@"hola"];
-//        [[theValue(operation.response.statusCode) should] equal:theValue(200)];
-//        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
-//    });
+    it(@"should stub the request", ^{
+        stubRequest(@"POST", @"https://getshopkeep.com/say-hello").
+        withHeader(@"Content-Type", @"text/plain").
+        withHeader(@"Cacatuha!!!", @"sisisi").
+        withBody(@"caca").
+        andReturn(200).
+        withHeader(@"Content-Type", @"text/plain").
+        withBody(@"hola");
+        
+        NSURL *url = [NSURL URLWithString:@"https://getshopkeep.com/say-hello"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"Cacatuha!!!"];
+        [request setHTTPBody:[@"caca" dataUsingEncoding:NSASCIIStringEncoding]];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation start];
+        
+        [operation waitUntilFinished];
+        
+        [operation.error shouldBeNil];
+        [[operation.responseString should] equal:@"hola"];
+        [[theValue(operation.response.statusCode) should] equal:theValue(200)];
+        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
+    });
     
 
     it(@"should have the same result as a real HTTP request", ^{
