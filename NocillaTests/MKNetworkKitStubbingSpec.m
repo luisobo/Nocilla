@@ -9,13 +9,33 @@ SPEC_BEGIN(MKNetworkKitStubbingSpec)
 beforeAll(^{
     [[LSNocilla sharedInstance] start];
 });
+afterAll(^{
+    [[LSNocilla sharedInstance] stop];
+});
 afterEach(^{
     [[LSNocilla sharedInstance] clearStubs];
 });
 
-//context(@"MKNetworkKit", ^{
+context(@"MKNetworkKit", ^{
+    it(@"should be able to dowload google.com", ^{
+        [[LSNocilla sharedInstance] stop];
+        MKNetworkOperation *operation = [[MKNetworkOperation alloc]
+                                         initWithURLString:@"http://www.google.com"
+                                         params:[@{} mutableCopy]
+                                         httpMethod:@"GET"];
+
+        [operation start];
+        
+        do {
+            [NSThread sleepForTimeInterval:0.3];
+        } while(!operation.readonlyResponse.statusCode);
+        
+        NSLog(@"%@", operation.responseString);
+        NSLog(@"%d", operation.readonlyResponse.statusCode);
+        [[LSNocilla sharedInstance] start];
+    });
 //    it(@"should stub the request", ^{
-//        stubRequest(@"POST", @"https://getshopkeep.com/say-hello").
+//        stubRequest(@"POST", @"http://getshopkeep.com/say-hello").
 //        withHeader(@"Content-Type", @"text/plain").
 //        withHeader(@"Cacatuha!!!", @"sisisi").
 //        withBody(@"caca").
@@ -24,7 +44,7 @@ afterEach(^{
 //        withBody(@"{\"text\":\"hola\"}");
 //        
 //        MKNetworkOperation *operation = [[MKNetworkOperation alloc]
-//                                         initWithURLString:@"https://getshopkeep.com/say-hello"
+//                                         initWithURLString:@"http://getshopkeep.com/say-hello"
 //                                         params:[@{ @"text" : @"hola" } mutableCopy]
 //                                         httpMethod:@"POST"];
 //        [operation addHeaders: @{
@@ -40,5 +60,5 @@ afterEach(^{
 //        [[theValue(operation.readonlyResponse.statusCode) should] equal:theValue(200)];
 //        [[[operation.readonlyResponse.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
 //    });
-//});
+});
 SPEC_END
