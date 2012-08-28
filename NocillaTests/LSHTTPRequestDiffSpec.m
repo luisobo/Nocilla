@@ -233,5 +233,40 @@ describe(@"diffing two LSHTTPRequests", ^{
             });
         });
     });
+    context(@"when the requests differ in everything", ^{
+        beforeEach(^{
+            oneRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://www.google.it"];
+            [oneRequest setHeader:@"X-API-TOKEN" value:@"123456789"];
+            [oneRequest setHeader:@"Accept" value:@"application/json"];
+            [oneRequest setHeader:@"X-Custom-Header" value:@"Really??"];
+            [oneRequest setBody:[@"This is a body" dataUsingEncoding:NSUTF8StringEncoding]];
+            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.luissolano.com"];
+            [anotherRequest setHeader:@"X-API-TOKEN" value:@"123456789"];
+            [anotherRequest setHeader:@"X-APP-ID" value:@"Nocilla"];
+            [anotherRequest setBody:[@"This is THE body" dataUsingEncoding:NSUTF8StringEncoding]];
+        });
+        context(@"in one direction", ^{
+            beforeEach(^{
+                diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest]; 
+            });
+            it(@"should have a description representing the diff", ^{
+                NSString *expected = @"- Method: PUT\n+ Method: GET\n- URL: https://www.google.it\n+ URL: http://www.luissolano.com\n  Headers:\n-\t\"Accept\": \"application/json\"\n-\t\"X-Custom-Header\": \"Really??\"\n+\t\"X-APP-ID\": \"Nocilla\"\n- Body: \"This is a body\"\n+ Body: \"This is THE body\"\n";
+                NSLog(@"actual:\n%@", [diff description]);
+                NSLog(@"expected:\n%@", expected);
+                [[[diff description] should] equal:expected];
+            });
+        });
+        context(@"in the other direction", ^{
+            beforeEach(^{
+               diff = [[LSHTTPRequestDiff alloc] initWithRequest:anotherRequest andRequest:oneRequest]; 
+            });
+            it(@"should have a description representing the diff", ^{
+                NSString *expected = @"- Method: GET\n+ Method: PUT\n- URL: http://www.luissolano.com\n+ URL: https://www.google.it\n  Headers:\n-\t\"X-APP-ID\": \"Nocilla\"\n+\t\"Accept\": \"application/json\"\n+\t\"X-Custom-Header\": \"Really??\"\n- Body: \"This is THE body\"\n+ Body: \"This is a body\"\n";
+                NSLog(@"actual:\n%@", [diff description]);
+                NSLog(@"expected:\n%@", expected);
+                [[[diff description] should] equal:expected];
+            });
+        });
+    });
 });
 SPEC_END
