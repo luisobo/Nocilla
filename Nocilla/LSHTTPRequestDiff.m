@@ -10,10 +10,10 @@
 - (BOOL)areHeadersDifferent;
 - (BOOL)isBodyDifferent;
 
-- (void) appendMethodDiff:(NSMutableString *)diff;
-- (void) appendUrlDiff:(NSMutableString *)diff;
-- (void) appendHeadersDiff:(NSMutableString *)diff;
-- (void) appendBodyDiff:(NSMutableString *)diff;
+- (void)appendMethodDiff:(NSMutableString *)diff;
+- (void)appendUrlDiff:(NSMutableString *)diff;
+- (void)appendHeadersDiff:(NSMutableString *)diff;
+- (void)appendBodyDiff:(NSMutableString *)diff;
 @end
 @implementation LSHTTPRequestDiff
 - (id)initWithRequest:(id<LSHTTPRequest>)oneRequest andRequest:(id<LSHTTPRequest>)anotherRequest {
@@ -70,14 +70,14 @@
     return (((self.oneRequest.body) && (![self.oneRequest.body isEqual:self.anotherRequest.body])) ||
             ((self.anotherRequest.body) && (![self.anotherRequest.body isEqual:self.oneRequest.body])));
 }
-- (void) appendMethodDiff:(NSMutableString *)diff {
+- (void)appendMethodDiff:(NSMutableString *)diff {
     [diff appendFormat:@"- Method: %@\n+ Method: %@\n", self.oneRequest.method, self.anotherRequest.method];
 }
-- (void) appendUrlDiff:(NSMutableString *)diff {
+- (void)appendUrlDiff:(NSMutableString *)diff {
     [diff appendFormat:@"- URL: %@\n+ URL: %@\n", [self.oneRequest.url absoluteString], [self.anotherRequest.url absoluteString]];
 }
 
-- (void) appendHeadersDiff:(NSMutableString *)diff {
+- (void)appendHeadersDiff:(NSMutableString *)diff {
     [diff appendString:@"  Headers:\n"];
     NSSet *headersInOneButNotInTheOther = [self.oneRequest.headers keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
         return ![self.anotherRequest.headers objectForKey:key] || ![obj isEqual:[self.anotherRequest.headers objectForKey:key]];
@@ -100,7 +100,7 @@
     }
 }
 
-- (void) appendBodyDiff:(NSMutableString *)diff {
+- (void)appendBodyDiff:(NSMutableString *)diff {
     NSString *oneBody = [[NSString alloc] initWithData:self.oneRequest.body encoding:NSUTF8StringEncoding];
     if (oneBody.length) {
         [diff appendFormat:@"- Body: \"%@\"\n", oneBody];
