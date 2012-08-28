@@ -4,7 +4,6 @@
 @property (nonatomic, assign, readwrite) NSString *method;
 @property (nonatomic, strong, readwrite) NSURL *url;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *mutableHeaders;
-@property (nonatomic, strong, readwrite) LSStubResponse *response;
 @end
 @implementation LSStubRequest
 - (id)initWithMethod:(NSString *)method url:(NSString *)url {
@@ -23,34 +22,6 @@
 
 - (NSDictionary *) headers {
     return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];;
-}
-
-- (WithHeadersMethod)withHeaders {
-    return ^(NSDictionary *headers) {
-        [self.mutableHeaders addEntriesFromDictionary:headers];
-        return self;
-    };
-}
-
-- (WithHeaderMethod)withHeader {
-    return ^(NSString * header, NSString * value) {
-        [self.mutableHeaders setValue:value forKey:header];
-        return self;
-    };
-}
-
-- (AndBodyMethod)withBody {
-    return ^(NSString *body) {
-        self.body = [body dataUsingEncoding:NSUTF8StringEncoding];
-        return self;
-    };
-}
-
--(AndReturnMethod)andReturn {
-    return ^(NSInteger statusCode) {
-        self.response = [[LSStubResponse alloc] initWithStatusCode:statusCode];
-        return self.response;
-    };
 }
 
 - (NSString *) description {
@@ -115,11 +86,5 @@
     return NO;
 }
 @end
-
-LSStubRequest * stubRequest(NSString *method, NSString *url) {
-    LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method url:url];
-    [[LSNocilla sharedInstance] addStubbedRequest:request];
-    return request;
-}
 
 

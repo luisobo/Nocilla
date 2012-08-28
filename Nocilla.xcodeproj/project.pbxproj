@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		41D450B99F6B46088DB143B3 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
 		A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */; };
+		A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; };
+		A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */; };
+		A02C7ADA15ED704F0061FCEE /* LSStubResponseDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */; };
+		A02C7ADB15ED704F0061FCEE /* LSStubResponseDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */; };
 		A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */; };
 		A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */; };
 		A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */; };
@@ -61,6 +65,10 @@
 /* Begin PBXFileReference section */
 		3CB9A3DF4AB94FEA9A99A67B /* Pods-NocillaTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.xcconfig"; path = "Pods/Pods-NocillaTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		6E4115EECDDF4B99842D5C02 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubRequestDSL.h; path = DSL/LSStubRequestDSL.h; sourceTree = "<group>"; };
+		A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestDSL.m; path = DSL/LSStubRequestDSL.m; sourceTree = "<group>"; };
+		A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubResponseDSL.h; path = DSL/LSStubResponseDSL.h; sourceTree = "<group>"; };
+		A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubResponseDSL.m; path = DSL/LSStubResponseDSL.m; sourceTree = "<group>"; };
 		A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPStubURLProtocol.h; sourceTree = "<group>"; };
 		A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPStubURLProtocol.m; sourceTree = "<group>"; };
 		A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPClientHook.h; sourceTree = "<group>"; };
@@ -120,6 +128,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A02C7ACF15ED70170061FCEE /* DSL */ = {
+			isa = PBXGroup;
+			children = (
+				A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */,
+				A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */,
+				A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */,
+				A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */,
+			);
+			name = DSL;
+			sourceTree = "<group>";
+		};
 		A0708DA215E6FF7200352085 /* Hooks */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +196,7 @@
 		A085B83D15E30749007D33C1 /* Nocilla */ = {
 			isa = PBXGroup;
 			children = (
+				A02C7ACF15ED70170061FCEE /* DSL */,
 				A085B84015E30749007D33C1 /* Nocilla.h */,
 				A0708DA215E6FF7200352085 /* Hooks */,
 				A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */,
@@ -238,6 +258,8 @@
 				A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */,
 				A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */,
 				A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */,
+				A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */,
+				A02C7ADA15ED704F0061FCEE /* LSStubResponseDSL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +400,8 @@
 				A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */,
 				A0EE630815EC217A00009A08 /* LSHTTPRequestDiff.m in Sources */,
 				A0EE631615ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m in Sources */,
+				A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */,
+				A02C7ADB15ED704F0061FCEE /* LSStubResponseDSL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

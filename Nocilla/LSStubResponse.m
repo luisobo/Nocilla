@@ -2,35 +2,12 @@
 
 @interface LSStubResponse ()
 @property (nonatomic, assign, readwrite) NSInteger statusCode;
-@property (nonatomic, strong, readwrite) NSData *body;
 @property (nonatomic, strong) NSMutableDictionary *mutableHeaders;
 @property (nonatomic, assign) UInt64 offset;
 @property (nonatomic, assign, getter = isDone) BOOL done;
 @end
 
 @implementation LSStubResponse
-
-#pragma mark - DSL Methods
-- (ResponseWithHeaderMethod)withHeader {
-    return ^(NSString * header, NSString * value) {
-        [self.mutableHeaders setValue:value forKey:header];
-        return self;
-    };
-}
-
-- (ResponseWithHeadersMethod)withHeaders; {
-    return ^(NSDictionary *headers) {
-        [self.mutableHeaders addEntriesFromDictionary:headers];
-        return self;
-    };
-}
-
-- (ResponseWithBodyMethod)withBody {
-    return ^(NSString *body) {
-        self.body = [body dataUsingEncoding:NSUTF8StringEncoding];
-        return self;
-    };
-}
 
 #pragma Initializers
 - (id) initDefaultResponse {
@@ -53,6 +30,9 @@
     return self;
 }
 
+- (void)setHeader:(NSString *)header value:(NSString *)value {
+    [self.mutableHeaders setValue:value forKey:header];
+}
 -(NSDictionary *)headers{
     return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];
 }
