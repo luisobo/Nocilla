@@ -189,8 +189,6 @@ describe(@"diffing two LSHTTPRequests", ^{
             });
             it(@"should have a description representing the diff", ^{
                 NSString *expected = @"- Method: GET\n+ Method: PUT\n- URL: http://www.google.com\n+ URL: http://www.luissolano.com\n";
-                NSLog(@"actual:\n%@", [diff description]);
-                NSLog(@"expected:\n%@", expected);
                 [[[diff description] should] equal:expected];
             });
         });
@@ -200,11 +198,32 @@ describe(@"diffing two LSHTTPRequests", ^{
             });
             it(@"should have a description representing the diff", ^{
                 NSString *expected = @"- Method: PUT\n+ Method: GET\n- URL: http://www.luissolano.com\n+ URL: http://www.google.com\n";
+                [[[diff description] should] equal:expected];
+            });
+
+        });
+    });
+    context(@"when the request differ in the Method, URL and headers", ^{
+        beforeEach(^{
+            oneRequest = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://www.google.es"];
+            [oneRequest setHeader:@"X-API-TOKEN" value:@"123456789"];
+            [oneRequest setHeader:@"Accept" value:@"application/json"];
+            [oneRequest setHeader:@"X-Custom-Header" value:@"Really??"];
+            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"DELETE" url:@"http://www.luissolano.com/ispellchecker/"];
+            [anotherRequest setHeader:@"Accept" value:@"application/json"];
+            [anotherRequest setHeader:@"X-API-TOKEN" value:@"abcedfghi"];
+            [anotherRequest setHeader:@"X-APP-ID" value:@"Nocilla"];
+        });
+        context(@"in one direction", ^{
+            beforeEach(^{
+                diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
+            });
+            it(@"should have a description representing the diff", ^{
+                NSString *expected = @"- Method: POST\n+ Method: DELETE\n- URL: http://www.google.es\n+ URL: http://www.luissolano.com/ispellchecker/\nHeaders:\n-\t\"X-API-TOKEN\": \"123456789\"\n-\t\"X-Custom-Header\": \"Really??\"\n+\t\"X-API-TOKEN\": \"abcedfghi\"\n+\t\"X-APP-ID\": \"Nocilla\"\n";
                 NSLog(@"actual:\n%@", [diff description]);
                 NSLog(@"expected:\n%@", expected);
                 [[[diff description] should] equal:expected];
             });
-
         });
     });
 });

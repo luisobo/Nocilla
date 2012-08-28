@@ -80,16 +80,21 @@
 - (void) appendHeadersDiff:(NSMutableString *)diff {
     [diff appendString:@"Headers:\n"];
     NSSet *headersInOneButNotInTheOther = [self.oneRequest.headers keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
-        return ![self.anotherRequest.headers objectForKey:key];
+        return ![self.anotherRequest.headers objectForKey:key] || ![obj isEqual:[self.anotherRequest.headers objectForKey:key]];
     }];
     NSSet *headersInTheOtherButNotInOne = [self.anotherRequest.headers keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
-        return ![self.oneRequest.headers objectForKey:key];
+        return ![self.oneRequest.headers objectForKey:key] || ![obj isEqual:[self.oneRequest.headers objectForKey:key]];
     }];
-    for (NSString *header in headersInOneButNotInTheOther) {
+    
+    NSArray *descriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"" ascending:YES]];
+    NSArray * sortedHeadersInOneButNotInTheOther = [headersInOneButNotInTheOther sortedArrayUsingDescriptors:descriptors];
+    NSArray * sortedHeadersInTheOtherButNotInOne = [headersInTheOtherButNotInOne sortedArrayUsingDescriptors:descriptors];
+    for (NSString *header in sortedHeadersInOneButNotInTheOther) {
         NSString *value = [self.oneRequest.headers objectForKey:header];
         [diff appendFormat:@"-\t\"%@\": \"%@\"\n", header, value];
+        
     }
-    for (NSString *header in headersInTheOtherButNotInOne) {
+    for (NSString *header in sortedHeadersInTheOtherButNotInOne) {
         NSString *value = [self.anotherRequest.headers objectForKey:header];
         [diff appendFormat:@"+\t\"%@\": \"%@\"\n", header, value];
     }
