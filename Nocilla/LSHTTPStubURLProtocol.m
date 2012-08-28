@@ -8,7 +8,7 @@
 
 #import "LSHTTPStubURLProtocol.h"
 #import "LSNocilla.h"
-#import "LSStubRequest+NSURLRequestMatcher.h"
+#import "NSURLRequest+LSHTTPRequest.h"
 
 @interface NSHTTPURLResponse(UndocumentedInitializer)
 - (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;
@@ -35,7 +35,7 @@
     LSStubResponse* stubbedResponse = nil;
     NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
     for(LSStubRequest *someStubbedRequest in requests) {
-        if ([someStubbedRequest matchesNSURLRequest:request]) {
+        if ([someStubbedRequest matchesRequest:request]) {
             stubbedRequest = someStubbedRequest;
             stubbedResponse = stubbedRequest.response;
             break;

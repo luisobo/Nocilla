@@ -18,21 +18,21 @@ afterEach(^{
 
 context(@"MKNetworkKit", ^{
     it(@"should be able to dowload google.com", ^{
-        [[LSNocilla sharedInstance] stop];
-        MKNetworkOperation *operation = [[MKNetworkOperation alloc]
-                                         initWithURLString:@"http://www.google.com"
-                                         params:[@{} mutableCopy]
-                                         httpMethod:@"GET"];
-
-        [operation start];
-        
-        do {
-            [NSThread sleepForTimeInterval:0.3];
-        } while(!operation.readonlyResponse.statusCode);
-        
-        NSLog(@"%@", operation.responseString);
-        NSLog(@"%d", operation.readonlyResponse.statusCode);
-        [[LSNocilla sharedInstance] start];
+//        [[LSNocilla sharedInstance] stop];
+//        MKNetworkOperation *operation = [[MKNetworkOperation alloc]
+//                                         initWithURLString:@"http://www.google.com"
+//                                         params:[@{} mutableCopy]
+//                                         httpMethod:@"GET"];
+//
+//        [operation start];
+//        
+//        do {
+//            [NSThread sleepForTimeInterval:0.3];
+//        } while(!operation.readonlyResponse.statusCode);
+//        
+//        NSLog(@"%@", operation.responseString);
+//        NSLog(@"%d", operation.readonlyResponse.statusCode);
+//        [[LSNocilla sharedInstance] start];
     });
 //    it(@"should stub the request", ^{
 //        stubRequest(@"POST", @"http://getshopkeep.com/say-hello").

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Nocilla.h"
+#import "LSHTTPResponse.h"
 
 @class LSStubResponse;
 
@@ -15,7 +16,7 @@ typedef LSStubResponse *(^ResponseWithBodyMethod)(NSString *);
 typedef LSStubResponse *(^ResponseWithHeaderMethod)(NSString *, NSString *);
 typedef LSStubResponse *(^ResponseWithHeadersMethod)(NSDictionary *);
 
-@interface LSStubResponse : NSObject
+@interface LSStubResponse : NSObject<LSHTTPResponse>
 - (ResponseWithHeaderMethod)withHeader;
 - (ResponseWithHeadersMethod)withHeaders;
 - (ResponseWithBodyMethod)withBody;
@@ -24,6 +25,6 @@ typedef LSStubResponse *(^ResponseWithHeadersMethod)(NSDictionary *);
 @property (nonatomic, strong, readonly) NSData *body;
 @property (nonatomic, strong, readonly) NSDictionary *headers;
 
--(id) initWithStatusCode:(NSInteger)statusCode;
--(id) initDefaultResponse;
+- (id)initWithStatusCode:(NSInteger)statusCode;
+- (id) initDefaultResponse;
 @end
