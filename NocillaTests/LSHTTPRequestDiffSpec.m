@@ -183,6 +183,29 @@ describe(@"diffing two LSHTTPRequests", ^{
             oneRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
             anotherRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"http://www.luissolano.com"];
         });
+        context(@"in one direction", ^{
+            beforeEach(^{
+                diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
+            });
+            it(@"should have a description representing the diff", ^{
+                NSString *expected = @"- Method: GET\n+ Method: PUT\n- URL: http://www.google.com\n+ URL: http://www.luissolano.com\n";
+                NSLog(@"actual:\n%@", [diff description]);
+                NSLog(@"expected:\n%@", expected);
+                [[[diff description] should] equal:expected];
+            });
+        });
+        context(@"in the other direction", ^{
+            beforeEach(^{
+                diff = [[LSHTTPRequestDiff alloc] initWithRequest:anotherRequest andRequest:oneRequest];
+            });
+            it(@"should have a description representing the diff", ^{
+                NSString *expected = @"- Method: PUT\n+ Method: GET\n- URL: http://www.luissolano.com\n+ URL: http://www.google.com\n";
+                NSLog(@"actual:\n%@", [diff description]);
+                NSLog(@"expected:\n%@", expected);
+                [[[diff description] should] equal:expected];
+            });
+
+        });
     });
 });
 SPEC_END
