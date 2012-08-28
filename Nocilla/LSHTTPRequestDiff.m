@@ -78,7 +78,7 @@
 }
 
 - (void) appendHeadersDiff:(NSMutableString *)diff {
-    [diff appendString:@"Headers:\n"];
+    [diff appendString:@"  Headers:\n"];
     NSSet *headersInOneButNotInTheOther = [self.oneRequest.headers keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
         return ![self.anotherRequest.headers objectForKey:key] || ![obj isEqual:[self.anotherRequest.headers objectForKey:key]];
     }];

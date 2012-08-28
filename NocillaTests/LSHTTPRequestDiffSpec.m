@@ -98,7 +98,7 @@ describe(@"diffing two LSHTTPRequests", ^{
                 diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
             });
             it(@"should have a description representing the diff", ^{
-                NSString *expected = @"Headers:\n-\t\"Content-Type\": \"application/json\"\n";
+                NSString *expected = @"  Headers:\n-\t\"Content-Type\": \"application/json\"\n";
                 [[[diff description] should] equal:expected];
             });
 
@@ -108,7 +108,7 @@ describe(@"diffing two LSHTTPRequests", ^{
                 diff = [[LSHTTPRequestDiff alloc] initWithRequest:anotherRequest andRequest:oneRequest];
             });
             it(@"should have a description representing the diff", ^{
-                NSString *expected = @"Headers:\n+\t\"Content-Type\": \"application/json\"\n";
+                NSString *expected = @"  Headers:\n+\t\"Content-Type\": \"application/json\"\n";
                 [[[diff description] should] equal:expected];
             });
 
@@ -132,7 +132,7 @@ describe(@"diffing two LSHTTPRequests", ^{
                 diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
             });
             it(@"should have a description representing the diff", ^{
-                NSString *expected = @"Headers:\n-\t\"Content-Type\": \"application/json\"\n+\t\"Accept\": \"text/plain\"\n";
+                NSString *expected = @"  Headers:\n-\t\"Content-Type\": \"application/json\"\n+\t\"Accept\": \"text/plain\"\n";
                 [[[diff description] should] equal:expected];
             });
         });
@@ -141,7 +141,7 @@ describe(@"diffing two LSHTTPRequests", ^{
                 diff = [[LSHTTPRequestDiff alloc] initWithRequest:anotherRequest andRequest:oneRequest];
             });
             it(@"should have a description representing the diff", ^{
-                NSString *expected = @"Headers:\n-\t\"Accept\": \"text/plain\"\n+\t\"Content-Type\": \"application/json\"\n";
+                NSString *expected = @"  Headers:\n-\t\"Accept\": \"text/plain\"\n+\t\"Content-Type\": \"application/json\"\n";
                 [[[diff description] should] equal:expected];
             });
 
@@ -219,9 +219,16 @@ describe(@"diffing two LSHTTPRequests", ^{
                 diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
             });
             it(@"should have a description representing the diff", ^{
-                NSString *expected = @"- Method: POST\n+ Method: DELETE\n- URL: http://www.google.es\n+ URL: http://www.luissolano.com/ispellchecker/\nHeaders:\n-\t\"X-API-TOKEN\": \"123456789\"\n-\t\"X-Custom-Header\": \"Really??\"\n+\t\"X-API-TOKEN\": \"abcedfghi\"\n+\t\"X-APP-ID\": \"Nocilla\"\n";
-                NSLog(@"actual:\n%@", [diff description]);
-                NSLog(@"expected:\n%@", expected);
+                NSString *expected = @"- Method: POST\n+ Method: DELETE\n- URL: http://www.google.es\n+ URL: http://www.luissolano.com/ispellchecker/\n  Headers:\n-\t\"X-API-TOKEN\": \"123456789\"\n-\t\"X-Custom-Header\": \"Really??\"\n+\t\"X-API-TOKEN\": \"abcedfghi\"\n+\t\"X-APP-ID\": \"Nocilla\"\n";
+                [[[diff description] should] equal:expected];
+            });
+        });
+        context(@"in the other direction", ^{
+            beforeEach(^{
+                diff = [[LSHTTPRequestDiff alloc] initWithRequest:anotherRequest andRequest:oneRequest];
+            });
+            it(@"should have a description representing the diff", ^{
+                NSString *expected = @"- Method: DELETE\n+ Method: POST\n- URL: http://www.luissolano.com/ispellchecker/\n+ URL: http://www.google.es\n  Headers:\n-\t\"X-API-TOKEN\": \"abcedfghi\"\n-\t\"X-APP-ID\": \"Nocilla\"\n+\t\"X-API-TOKEN\": \"123456789\"\n+\t\"X-Custom-Header\": \"Really??\"\n";
                 [[[diff description] should] equal:expected];
             });
         });
