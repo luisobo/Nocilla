@@ -1,15 +1,8 @@
-//
-//  LSHTTPStubURLProtocol.m
-//  Nocilla
-//
-//  Created by Luis Solano Bonet on 24/08/12.
-//  Copyright (c) 2012 Luis Solano Bonet. All rights reserved.
-//
-
 #import "LSHTTPStubURLProtocol.h"
 #import "LSNocilla.h"
 #import "NSURLRequest+LSHTTPRequest.h"
 #import "LSStubRequest.h"
+#import "NSURLRequest+DSL.h"
 
 @interface NSHTTPURLResponse(UndocumentedInitializer)
 - (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;
@@ -44,7 +37,7 @@
     }
     
     if (!stubbedRequest) {
-        [NSException raise:@"Unexpected request" format:@"An unexcepted HTTP request was fired"];
+        [NSException raise:@"Unexpected request" format:@"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [request toNocillaDSL]];
     }
     NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
                                                                  statusCode:stubbedResponse.statusCode

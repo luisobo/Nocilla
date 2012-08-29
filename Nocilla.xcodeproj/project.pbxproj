@@ -13,14 +13,18 @@
 		A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */; };
 		A02C7ADA15ED704F0061FCEE /* LSStubResponseDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */; };
 		A02C7ADB15ED704F0061FCEE /* LSStubResponseDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */; };
-		A02C7ADE15ED75480061FCEE /* LSStubRequest+DSLSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7ADD15ED75480061FCEE /* LSStubRequest+DSLSpec.m */; };
+		A02C7ADE15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7ADD15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m */; };
 		A02C7AEC15ED79120061FCEE /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A02C7AED15ED79170061FCEE /* LSHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAB15E30B0000730EE5 /* LSStubRequest.h */; };
 		A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAD15E30B0000730EE5 /* LSStubResponse.h */; };
 		A02C7AF115ED795A0061FCEE /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF015ED795A0061FCEE /* DSL.h */; };
-		A02C7AF415ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF215ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.h */; };
-		A02C7AF515ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AF315ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.m */; };
+		A02C7AF815EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF615EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h */; };
+		A02C7AF915EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */; };
+		A02C7AFE15EE62650061FCEE /* NSURLRequest+LSHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */; };
+		A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */; };
+		A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */; };
+		A02C7B0715EE64500061FCEE /* AFNetworkingStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */; };
 		A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */; };
 		A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */; };
 		A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */; };
@@ -43,7 +47,6 @@
 		A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */; };
 		A0EE630815EC217A00009A08 /* LSHTTPRequestDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */; };
 		A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */; };
-		A0EE631615ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */; };
 		D39CB7E03CA24559A66FFA31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5D6931A52E4D73994F1D0E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,12 +80,14 @@
 		A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestDSL.m; path = DSL/LSStubRequestDSL.m; sourceTree = "<group>"; };
 		A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubResponseDSL.h; path = DSL/LSStubResponseDSL.h; sourceTree = "<group>"; };
 		A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubResponseDSL.m; path = DSL/LSStubResponseDSL.m; sourceTree = "<group>"; };
-		A02C7ADD15ED75480061FCEE /* LSStubRequest+DSLSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LSStubRequest+DSLSpec.m"; path = "DSL/LSStubRequest+DSLSpec.m"; sourceTree = "<group>"; };
+		A02C7ADD15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDSLRepresentationSpec.m; path = DSL/LSHTTPRequestDSLRepresentationSpec.m; sourceTree = "<group>"; };
 		A02C7AF015ED795A0061FCEE /* DSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = DSL/DSL.h; sourceTree = "<group>"; };
-		A02C7AF215ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LSStubRequest+DSLAdditions.h"; path = "DSL/LSStubRequest+DSLAdditions.h"; sourceTree = "<group>"; };
-		A02C7AF315ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LSStubRequest+DSLAdditions.m"; path = "DSL/LSStubRequest+DSLAdditions.m"; sourceTree = "<group>"; };
-		A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPStubURLProtocol.h; sourceTree = "<group>"; };
-		A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPStubURLProtocol.m; sourceTree = "<group>"; };
+		A02C7AF615EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequestDSLRepresentation.h; path = DSL/LSHTTPRequestDSLRepresentation.h; sourceTree = "<group>"; };
+		A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDSLRepresentation.m; path = DSL/LSHTTPRequestDSLRepresentation.m; sourceTree = "<group>"; };
+		A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+DSL.h"; path = "Hooks/NSURLRequest/NSURLRequest+DSL.h"; sourceTree = "<group>"; };
+		A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+DSL.m"; path = "Hooks/NSURLRequest/NSURLRequest+DSL.m"; sourceTree = "<group>"; };
+		A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPStubURLProtocol.h; path = Hooks/NSURLRequest/LSHTTPStubURLProtocol.h; sourceTree = "<group>"; };
+		A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPStubURLProtocol.m; path = Hooks/NSURLRequest/LSHTTPStubURLProtocol.m; sourceTree = "<group>"; };
 		A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPClientHook.h; sourceTree = "<group>"; };
 		A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPClientHook.m; sourceTree = "<group>"; };
 		A0708DA815E7008200352085 /* LSNSURLHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSNSURLHook.h; path = Hooks/NSURLRequest/LSNSURLHook.h; sourceTree = "<group>"; };
@@ -108,8 +113,8 @@
 		A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPRequestDiff.m; sourceTree = "<group>"; };
 		A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSHTTPRequest.h; sourceTree = "<group>"; };
 		A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSHTTPResponse.h; sourceTree = "<group>"; };
-		A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+LSHTTPRequest.h"; path = "Hooks/NSURLRequest+LSHTTPRequest.h"; sourceTree = "<group>"; };
-		A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequest.m"; path = "Hooks/NSURLRequest+LSHTTPRequest.m"; sourceTree = "<group>"; };
+		A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+LSHTTPRequest.h"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.h"; sourceTree = "<group>"; };
+		A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequest.m"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.m"; sourceTree = "<group>"; };
 		A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPRequestDiffSpec.m; sourceTree = "<group>"; };
 		CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D6931A52E4D73994F1D0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,13 +148,13 @@
 		A02C7ACF15ED70170061FCEE /* DSL */ = {
 			isa = PBXGroup;
 			children = (
-				A02C7AF215ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.h */,
-				A02C7AF315ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.m */,
 				A02C7AF015ED795A0061FCEE /* DSL.h */,
 				A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */,
 				A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */,
 				A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */,
 				A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */,
+				A02C7AF615EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h */,
+				A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */,
 			);
 			name = DSL;
 			sourceTree = "<group>";
@@ -157,7 +162,7 @@
 		A02C7ADC15ED752A0061FCEE /* DSL */ = {
 			isa = PBXGroup;
 			children = (
-				A02C7ADD15ED75480061FCEE /* LSStubRequest+DSLSpec.m */,
+				A02C7ADD15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m */,
 			);
 			name = DSL;
 			sourceTree = "<group>";
@@ -179,6 +184,8 @@
 				A0708DA915E7008200352085 /* LSNSURLHook.m */,
 				A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */,
 				A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */,
+				A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */,
+				A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */,
 			);
 			name = NSURLRequest;
 			sourceTree = "<group>";
@@ -289,7 +296,8 @@
 				A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */,
 				A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */,
 				A02C7AF115ED795A0061FCEE /* DSL.h in Headers */,
-				A02C7AF415ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.h in Headers */,
+				A02C7AF815EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h in Headers */,
+				A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,10 +437,11 @@
 				A0708DA715E6FFB800352085 /* LSHTTPClientHook.m in Sources */,
 				A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */,
 				A0EE630815EC217A00009A08 /* LSHTTPRequestDiff.m in Sources */,
-				A0EE631615ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m in Sources */,
 				A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */,
 				A02C7ADB15ED704F0061FCEE /* LSStubResponseDSL.m in Sources */,
-				A02C7AF515ED7A2F0061FCEE /* LSStubRequest+DSLAdditions.m in Sources */,
+				A02C7AF915EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m in Sources */,
+				A02C7AFE15EE62650061FCEE /* NSURLRequest+LSHTTPRequest.m in Sources */,
+				A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +451,8 @@
 			files = (
 				A0708DBD15E70D9800352085 /* MKNetworkKitStubbingSpec.m in Sources */,
 				A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */,
-				A02C7ADE15ED75480061FCEE /* LSStubRequest+DSLSpec.m in Sources */,
+				A02C7ADE15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m in Sources */,
+				A02C7B0715EE64500061FCEE /* AFNetworkingStubbingSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
