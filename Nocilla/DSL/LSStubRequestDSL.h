@@ -1,9 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "LSStubRequest.h"
-#import "LSStubResponse.h"
 
 @class LSStubRequestDSL;
 @class LSStubResponseDSL;
+@class LSStubRequest;
 
 typedef LSStubRequestDSL *(^WithHeaderMethod)(NSString *, NSString *);
 typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);

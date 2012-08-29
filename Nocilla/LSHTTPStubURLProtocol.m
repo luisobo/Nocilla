@@ -9,6 +9,7 @@
 #import "LSHTTPStubURLProtocol.h"
 #import "LSNocilla.h"
 #import "NSURLRequest+LSHTTPRequest.h"
+#import "LSStubRequest.h"
 
 @interface NSHTTPURLResponse(UndocumentedInitializer)
 - (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;

@@ -1,5 +1,7 @@
 #import "LSStubRequestDSL.h"
 #import "LSStubResponseDSL.h"
+#import "LSStubRequest.h"
+#import "LSNocilla.h"
 
 @interface LSStubRequestDSL ()
 @property (nonatomic, strong) LSStubRequest *request;
