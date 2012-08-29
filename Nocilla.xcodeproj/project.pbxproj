@@ -88,18 +88,18 @@
 		A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+DSL.m"; path = "Hooks/NSURLRequest/NSURLRequest+DSL.m"; sourceTree = "<group>"; };
 		A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPStubURLProtocol.h; path = Hooks/NSURLRequest/LSHTTPStubURLProtocol.h; sourceTree = "<group>"; };
 		A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPStubURLProtocol.m; path = Hooks/NSURLRequest/LSHTTPStubURLProtocol.m; sourceTree = "<group>"; };
-		A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPClientHook.h; sourceTree = "<group>"; };
-		A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPClientHook.m; sourceTree = "<group>"; };
+		A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPClientHook.h; path = Hooks/LSHTTPClientHook.h; sourceTree = "<group>"; };
+		A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPClientHook.m; path = Hooks/LSHTTPClientHook.m; sourceTree = "<group>"; };
 		A0708DA815E7008200352085 /* LSNSURLHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSNSURLHook.h; path = Hooks/NSURLRequest/LSNSURLHook.h; sourceTree = "<group>"; };
 		A0708DA915E7008200352085 /* LSNSURLHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSNSURLHook.m; path = Hooks/NSURLRequest/LSNSURLHook.m; sourceTree = "<group>"; };
 		A0708DB315E70C6600352085 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkKitStubbingSpec.m; sourceTree = "<group>"; };
+		A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKNetworkKitStubbingSpec.m; path = Hooks/NSURLRequest/MKNetworkKitStubbingSpec.m; sourceTree = "<group>"; };
 		A074ABA915E30B0000730EE5 /* LSNocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNocilla.h; sourceTree = "<group>"; };
 		A074ABAA15E30B0000730EE5 /* LSNocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocilla.m; sourceTree = "<group>"; };
-		A074ABAB15E30B0000730EE5 /* LSStubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStubRequest.h; sourceTree = "<group>"; };
-		A074ABAC15E30B0000730EE5 /* LSStubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubRequest.m; sourceTree = "<group>"; };
-		A074ABAD15E30B0000730EE5 /* LSStubResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSStubResponse.h; sourceTree = "<group>"; };
-		A074ABAE15E30B0000730EE5 /* LSStubResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponse.m; sourceTree = "<group>"; };
+		A074ABAB15E30B0000730EE5 /* LSStubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubRequest.h; path = Stubs/LSStubRequest.h; sourceTree = "<group>"; };
+		A074ABAC15E30B0000730EE5 /* LSStubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequest.m; path = Stubs/LSStubRequest.m; sourceTree = "<group>"; };
+		A074ABAD15E30B0000730EE5 /* LSStubResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubResponse.h; path = Stubs/LSStubResponse.h; sourceTree = "<group>"; };
+		A074ABAE15E30B0000730EE5 /* LSStubResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubResponse.m; path = Stubs/LSStubResponse.m; sourceTree = "<group>"; };
 		A085B83815E30749007D33C1 /* libNocilla.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNocilla.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A085B83B15E30749007D33C1 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A085B83F15E30749007D33C1 /* Nocilla-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocilla-Prefix.pch"; sourceTree = "<group>"; };
@@ -108,14 +108,14 @@
 		A085B84A15E30749007D33C1 /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A085B85415E30749007D33C1 /* NocillaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NocillaTests-Info.plist"; sourceTree = "<group>"; };
 		A085B85615E30749007D33C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingStubbingSpec.m; sourceTree = "<group>"; };
-		A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSHTTPRequestDiff.h; sourceTree = "<group>"; };
-		A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPRequestDiff.m; sourceTree = "<group>"; };
-		A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSHTTPRequest.h; sourceTree = "<group>"; };
-		A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSHTTPResponse.h; sourceTree = "<group>"; };
+		A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFNetworkingStubbingSpec.m; path = Hooks/NSURLRequest/AFNetworkingStubbingSpec.m; sourceTree = "<group>"; };
+		A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequestDiff.h; path = Diff/LSHTTPRequestDiff.h; sourceTree = "<group>"; };
+		A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDiff.m; path = Diff/LSHTTPRequestDiff.m; sourceTree = "<group>"; };
+		A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequest.h; path = Model/LSHTTPRequest.h; sourceTree = "<group>"; };
+		A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSHTTPResponse.h; path = Model/LSHTTPResponse.h; sourceTree = "<group>"; };
 		A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+LSHTTPRequest.h"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.h"; sourceTree = "<group>"; };
 		A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequest.m"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.m"; sourceTree = "<group>"; };
-		A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSHTTPRequestDiffSpec.m; sourceTree = "<group>"; };
+		A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDiffSpec.m; path = Diff/LSHTTPRequestDiffSpec.m; sourceTree = "<group>"; };
 		CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5D6931A52E4D73994F1D0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -167,9 +167,65 @@
 			name = DSL;
 			sourceTree = "<group>";
 		};
+		A02C7B0815EE65020061FCEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */,
+				A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A02C7B0915EE655E0061FCEE /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				A074ABAB15E30B0000730EE5 /* LSStubRequest.h */,
+				A074ABAC15E30B0000730EE5 /* LSStubRequest.m */,
+				A074ABAD15E30B0000730EE5 /* LSStubResponse.h */,
+				A074ABAE15E30B0000730EE5 /* LSStubResponse.m */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
+		A02C7B0A15EE658A0061FCEE /* Diff */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */,
+				A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */,
+			);
+			name = Diff;
+			sourceTree = "<group>";
+		};
+		A02C7B0B15EE65E50061FCEE /* Hooks */ = {
+			isa = PBXGroup;
+			children = (
+				A02C7B0C15EE65EB0061FCEE /* NSURLRequest */,
+			);
+			name = Hooks;
+			sourceTree = "<group>";
+		};
+		A02C7B0C15EE65EB0061FCEE /* NSURLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */,
+				A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */,
+			);
+			name = NSURLRequest;
+			sourceTree = "<group>";
+		};
+		A02C7B0D15EE66250061FCEE /* Diff */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */,
+			);
+			name = Diff;
+			sourceTree = "<group>";
+		};
 		A0708DA215E6FF7200352085 /* Hooks */ = {
 			isa = PBXGroup;
 			children = (
+				A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */,
+				A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */,
 				A0708DA315E6FF7E00352085 /* NSURLRequest */,
 			);
 			name = Hooks;
@@ -226,22 +282,15 @@
 		A085B83D15E30749007D33C1 /* Nocilla */ = {
 			isa = PBXGroup;
 			children = (
+				A02C7B0815EE65020061FCEE /* Model */,
+				A02C7B0915EE655E0061FCEE /* Stubs */,
+				A02C7B0A15EE658A0061FCEE /* Diff */,
 				A02C7ACF15ED70170061FCEE /* DSL */,
-				A085B84015E30749007D33C1 /* Nocilla.h */,
 				A0708DA215E6FF7200352085 /* Hooks */,
-				A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */,
-				A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */,
+				A085B84015E30749007D33C1 /* Nocilla.h */,
 				A074ABA915E30B0000730EE5 /* LSNocilla.h */,
 				A074ABAA15E30B0000730EE5 /* LSNocilla.m */,
-				A074ABAB15E30B0000730EE5 /* LSStubRequest.h */,
-				A074ABAC15E30B0000730EE5 /* LSStubRequest.m */,
-				A074ABAD15E30B0000730EE5 /* LSStubResponse.h */,
-				A074ABAE15E30B0000730EE5 /* LSStubResponse.m */,
 				A085B83E15E30749007D33C1 /* Supporting Files */,
-				A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */,
-				A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */,
-				A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */,
-				A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */,
 			);
 			path = Nocilla;
 			sourceTree = "<group>";
@@ -257,11 +306,10 @@
 		A085B85215E30749007D33C1 /* NocillaTests */ = {
 			isa = PBXGroup;
 			children = (
+				A02C7B0D15EE66250061FCEE /* Diff */,
+				A02C7B0B15EE65E50061FCEE /* Hooks */,
 				A02C7ADC15ED752A0061FCEE /* DSL */,
-				A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */,
-				A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */,
 				A085B85315E30749007D33C1 /* Supporting Files */,
-				A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */,
 			);
 			path = NocillaTests;
 			sourceTree = "<group>";
