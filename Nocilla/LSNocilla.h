@@ -3,13 +3,14 @@
 
 @class LSStubRequest;
 
-extern NSString * const kLSUnexpectedRequest;
+extern NSString * const LSUnexpectedRequest;
 
 @interface LSNocilla : NSObject
-+(LSNocilla *) sharedInstance;
++ (LSNocilla *)sharedInstance;
+
 @property (nonatomic, strong, readonly) NSArray *stubbedRequests;
--(void) start;
--(void) stop;
--(void) addStubbedRequest:(LSStubRequest *)request;
--(void) clearStubs;
+- (void)start;
+- (void)stop;
+- (void)addStubbedRequest:(LSStubRequest *)request;
+- (void)clearStubs;
 @end

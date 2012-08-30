@@ -40,7 +40,7 @@
     };
 }
 
--(AndReturnMethod)andReturn {
+- (AndReturnMethod)andReturn {
     return ^(NSInteger statusCode) {
         self.request.response = [[LSStubResponse alloc] initWithStatusCode:statusCode];
         LSStubResponseDSL *responseDSL = [[LSStubResponseDSL alloc] initWithResponse:self.request.response];

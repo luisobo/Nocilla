@@ -10,11 +10,11 @@
 
 @implementation LSHTTPStubURLProtocol
 
-+(BOOL) canInitWithRequest:(NSURLRequest *)request {
++ (BOOL)canInitWithRequest:(NSURLRequest *)request {
     return [@[ @"http", @"https" ] containsObject:request.URL.scheme];
 }
 
-+(NSURLRequest *) canonicalRequestForRequest:(NSURLRequest *)request {
++ (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
 	return request;
 }
 + (BOOL)requestIsCacheEquivalent:(NSURLRequest *)a toRequest:(NSURLRequest *)b {
@@ -28,6 +28,7 @@
     LSStubRequest *stubbedRequest = nil;
     LSStubResponse* stubbedResponse = nil;
     NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
+    
     for(LSStubRequest *someStubbedRequest in requests) {
         if ([someStubbedRequest matchesRequest:request]) {
             stubbedRequest = someStubbedRequest;
@@ -37,8 +38,9 @@
     }
     
     if (!stubbedRequest) {
-        [NSException raise:@"Unexpected request" format:@"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [request toNocillaDSL]];
+        [NSException raise:LSUnexpectedRequest format:@"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [request toNocillaDSL]];
     }
+    
     NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
                                                                  statusCode:stubbedResponse.statusCode
                                                                headerFields:stubbedResponse.headers
@@ -49,7 +51,8 @@
     [client URLProtocol:self didLoadData:stubbedResponse.body];
     [client URLProtocolDidFinishLoading:self];
 }
--(void) stopLoading {
+
+- (void)stopLoading {
 }
 
 @end

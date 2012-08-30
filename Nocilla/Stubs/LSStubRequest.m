@@ -4,7 +4,13 @@
 @property (nonatomic, assign, readwrite) NSString *method;
 @property (nonatomic, strong, readwrite) NSURL *url;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *mutableHeaders;
+
+-(BOOL)matchesMethod:(id<LSHTTPRequest>)request;
+-(BOOL)matchesURL:(id<LSHTTPRequest>)request;
+-(BOOL)matchesHeaders:(id<LSHTTPRequest>)request;
+-(BOOL)matchesBody:(id<LSHTTPRequest>)request;
 @end
+
 @implementation LSStubRequest
 - (id)initWithMethod:(NSString *)method url:(NSString *)url {
     self = [super init];
@@ -16,15 +22,15 @@
     return self;
 }
 
-- (void) setHeader:(NSString *)header value:(NSString *)value {
+- (void)setHeader:(NSString *)header value:(NSString *)value {
     [self.mutableHeaders setValue:value forKey:header];
 }
 
-- (NSDictionary *) headers {
+- (NSDictionary *)headers {
     return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];;
 }
 
-- (NSString *) description {
+- (NSString *)description {
     return [NSString stringWithFormat:@"StubRequest:\nMethod: %@\nURL: %@\nHeaders: %@\nBody: %@\nResponse: %@",
             self.method,
             self.url,

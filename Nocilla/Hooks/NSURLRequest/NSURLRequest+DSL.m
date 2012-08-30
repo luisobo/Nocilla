@@ -3,7 +3,7 @@
 #import "NSURLRequest+LSHTTPRequest.h"
 
 @implementation NSURLRequest (DSL)
-- (NSString *) toNocillaDSL {
+- (NSString *)toNocillaDSL {
     return [[[LSHTTPRequestDSLRepresentation alloc] initWithRequest:self] description];
 }
 @end

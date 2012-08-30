@@ -14,7 +14,7 @@
 @property (nonatomic, strong) LSStubResponse *response;
 
 - (id)initWithMethod:(NSString *)method url:(NSString *)url;
-- (void) setHeader:(NSString *)header value:(NSString *)value;
+- (void)setHeader:(NSString *)header value:(NSString *)value;
 
 - (BOOL)matchesRequest:(id<LSHTTPRequest>)request;
 @end

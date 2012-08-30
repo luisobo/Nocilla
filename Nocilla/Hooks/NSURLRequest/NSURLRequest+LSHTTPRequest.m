@@ -2,7 +2,7 @@
 
 @implementation NSURLRequest (LSHTTPRequest)
 
-- (NSURL*) url {
+- (NSURL*)url {
     return self.URL;
 }
 

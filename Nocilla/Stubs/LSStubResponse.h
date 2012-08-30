@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "Nocilla.h"
 #import "LSHTTPResponse.h"
 
 @interface LSStubResponse : NSObject<LSHTTPResponse>

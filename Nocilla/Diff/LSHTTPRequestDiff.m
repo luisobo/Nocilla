@@ -1,6 +1,5 @@
 #import "LSHTTPRequestDiff.h"
 
-
 @interface LSHTTPRequestDiff ()
 @property (nonatomic, strong) id<LSHTTPRequest>oneRequest;
 @property (nonatomic, strong) id<LSHTTPRequest>anotherRequest;
@@ -15,6 +14,7 @@
 - (void)appendHeadersDiff:(NSMutableString *)diff;
 - (void)appendBodyDiff:(NSMutableString *)diff;
 @end
+
 @implementation LSHTTPRequestDiff
 - (id)initWithRequest:(id<LSHTTPRequest>)oneRequest andRequest:(id<LSHTTPRequest>)anotherRequest {
     self = [super init];
@@ -33,7 +33,6 @@
         return NO;
     }
     return YES;
-
 }
 
 - (NSString *)description {
@@ -70,9 +69,11 @@
     return (((self.oneRequest.body) && (![self.oneRequest.body isEqual:self.anotherRequest.body])) ||
             ((self.anotherRequest.body) && (![self.anotherRequest.body isEqual:self.oneRequest.body])));
 }
+
 - (void)appendMethodDiff:(NSMutableString *)diff {
     [diff appendFormat:@"- Method: %@\n+ Method: %@\n", self.oneRequest.method, self.anotherRequest.method];
 }
+
 - (void)appendUrlDiff:(NSMutableString *)diff {
     [diff appendFormat:@"- URL: %@\n+ URL: %@\n", [self.oneRequest.url absoluteString], [self.anotherRequest.url absoluteString]];
 }

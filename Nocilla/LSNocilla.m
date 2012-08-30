@@ -1,11 +1,3 @@
-//
-//  LSNocilla.m
-//  Nocilla
-//
-//  Created by Luis Solano Bonet on 30/07/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
 #import "LSNocilla.h"
 #import "LSNSURLHook.h"
 
@@ -19,13 +11,13 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 - (void)loadHooks;
 - (void)unloadHooks;
 - (void)loadNSURLConnectionHook;
-
 @end
+
 static LSNocilla *sharedInstace = nil;
+
 @implementation LSNocilla
 
-
-+(LSNocilla *) sharedInstance {
++ (LSNocilla *)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstace = [[self alloc] init];
@@ -33,7 +25,7 @@ static LSNocilla *sharedInstace = nil;
     return sharedInstace;
 }
 
--(id) init {
+- (id)init {
     self = [super init];
     if (self) {
         _mutableRequests = [NSMutableArray array];
@@ -68,7 +60,7 @@ static LSNocilla *sharedInstace = nil;
 }
 
 #pragma mark - Private
--(void) loadHooks {
+- (void)loadHooks {
     [self loadNSURLConnectionHook];
 }
 

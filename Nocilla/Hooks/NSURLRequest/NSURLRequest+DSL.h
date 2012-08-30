@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSURLRequest (DSL)
-- (NSString *) toNocillaDSL;
+- (NSString *)toNocillaDSL;
 @end

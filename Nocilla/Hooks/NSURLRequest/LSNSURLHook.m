@@ -3,11 +3,11 @@
 
 @implementation LSNSURLHook
 
--(void) load {
+- (void)load {
     [NSURLProtocol registerClass:[LSHTTPStubURLProtocol class]];
 }
 
--(void) unload {
+- (void)unload {
     [NSURLProtocol unregisterClass:[LSHTTPStubURLProtocol class]];
 }
 

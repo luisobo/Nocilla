@@ -4,11 +4,8 @@
 #import "HTTPServer.h"
 #import "LSTestingConnection.h"
 
-
 SPEC_BEGIN(AFNetworkingStubbingSpec)
 
-// networksetup -setwebproxy "Wi-Fi" 127.0.0.1 12345
-// networksetup -setwebproxystate "Wi-Fi" off
 beforeAll(^{
     [[LSNocilla sharedInstance] start];
 });
@@ -21,20 +18,20 @@ afterEach(^{
 
 context(@"AFNetworking", ^{
     it(@"should stub the request", ^{
-        stubRequest(@"POST", @"https://getshopkeep.com/say-hello").
+        stubRequest(@"POST", @"https://example.com/say-hello").
         withHeader(@"Content-Type", @"text/plain").
-        withHeader(@"Cacatuha!!!", @"sisisi").
-        withBody(@"caca").
+        withHeader(@"X-MY-AWESOME-HEADER", @"sisisi").
+        withBody(@"Adios!").
         andReturn(200).
         withHeader(@"Content-Type", @"text/plain").
         withBody(@"hola");
         
-        NSURL *url = [NSURL URLWithString:@"https://getshopkeep.com/say-hello"];
+        NSURL *url = [NSURL URLWithString:@"https://example.com/say-hello"];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [request setHTTPMethod:@"POST"];
         [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
-        [request setValue:@"sisisi" forHTTPHeaderField:@"Cacatuha!!!"];
-        [request setHTTPBody:[@"caca" dataUsingEncoding:NSASCIIStringEncoding]];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
+        [request setHTTPBody:[@"Adios!" dataUsingEncoding:NSASCIIStringEncoding]];
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
         [operation start];
         
@@ -62,8 +59,8 @@ context(@"AFNetworking", ^{
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [request setHTTPMethod:@"POST"];
         [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
-        [request setValue:@"sisisi" forHTTPHeaderField:@"Cacatuha!!!"];
-        [request setHTTPBody:[@"caca" dataUsingEncoding:NSASCIIStringEncoding]];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
+        [request setHTTPBody:[@"Adios!" dataUsingEncoding:NSASCIIStringEncoding]];
         AFHTTPRequestOperation *realOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
         [realOperation start];
 
@@ -81,8 +78,8 @@ context(@"AFNetworking", ^{
         [[LSNocilla sharedInstance] start];
         
         stubRequest(@"POST", @"http://localhost:12345/say-hello").
-        withHeaders(@{@"Content-Type" : @"text/plain", @"Cacatuha!!!" : @"sisisi"}).
-        withBody(@"caca").
+        withHeaders(@{@"Content-Type" : @"text/plain", @"X-MY-AWESOME-HEADER" : @"sisisi"}).
+        withBody(@"Adios!").
         andReturn(200).
         withHeaders([realResponse allHeaderFields]).
         withBody(@"hola");
@@ -92,8 +89,8 @@ context(@"AFNetworking", ^{
         NSMutableURLRequest *stubbedRequest = [NSMutableURLRequest requestWithURL:url];
         [stubbedRequest setHTTPMethod:@"POST"];
         [stubbedRequest setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
-        [stubbedRequest setValue:@"sisisi" forHTTPHeaderField:@"Cacatuha!!!"];
-        [stubbedRequest setHTTPBody:[@"caca" dataUsingEncoding:NSASCIIStringEncoding]];
+        [stubbedRequest setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
+        [stubbedRequest setHTTPBody:[@"Adios!" dataUsingEncoding:NSASCIIStringEncoding]];
         AFHTTPRequestOperation *stubbedOperation = [[AFHTTPRequestOperation alloc] initWithRequest:stubbedRequest];
         [stubbedOperation start];
         
@@ -115,19 +112,19 @@ context(@"AFNetworking", ^{
     });
     
     it(@"should stub an asynchronous request", ^{
-        stubRequest(@"POST", @"https://getshopkeep.com/say-hello").
-        withHeaders(@{ @"Cacatuha!!!": @"sisisi", @"Content-Type": @"text/plain" }).
-        withBody(@"caca").
+        stubRequest(@"POST", @"https://example.com/say-hello").
+        withHeaders(@{ @"X-MY-AWESOME-HEADER": @"sisisi", @"Content-Type": @"text/plain" }).
+        withBody(@"Adios!").
         andReturn(200).
         withHeader(@"Content-Type", @"text/plain").
         withBody(@"hola");
         
-        NSURL *url = [NSURL URLWithString:@"https://getshopkeep.com/say-hello"];
+        NSURL *url = [NSURL URLWithString:@"https://example.com/say-hello"];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [request setHTTPMethod:@"POST"];
         [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
-        [request setValue:@"sisisi" forHTTPHeaderField:@"Cacatuha!!!"];
-        [request setHTTPBody:[@"caca" dataUsingEncoding:NSASCIIStringEncoding]];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
+        [request setHTTPBody:[@"Adios!" dataUsingEncoding:NSASCIIStringEncoding]];
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
         [operation start];
         

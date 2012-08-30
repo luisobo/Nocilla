@@ -10,7 +10,7 @@
 @implementation LSStubResponse
 
 #pragma Initializers
-- (id) initDefaultResponse {
+- (id)initDefaultResponse {
     self = [super init];
     if (self) {
         self.statusCode = 200;
@@ -20,7 +20,7 @@
     return self;
 }
 
--(id) initWithStatusCode:(NSInteger)statusCode {
+-(id)initWithStatusCode:(NSInteger)statusCode {
     self = [super init];
     if (self) {
         self.statusCode = statusCode;
@@ -33,11 +33,11 @@
 - (void)setHeader:(NSString *)header value:(NSString *)value {
     [self.mutableHeaders setValue:value forKey:header];
 }
--(NSDictionary *)headers{
+- (NSDictionary *)headers {
     return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];
 }
 
-- (NSString *) description {
+- (NSString *)description {
     return [NSString stringWithFormat:@"StubRequest:\nStatus Code: %d\nHeaders: %@\nBody: %@",
             self.statusCode,
             self.mutableHeaders,
