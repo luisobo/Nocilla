@@ -8,6 +8,6 @@
 @property (nonatomic, strong, readonly) NSDictionary *headers;
 
 - (id)initWithStatusCode:(NSInteger)statusCode;
-- (id) initDefaultResponse;
+- (id)initDefaultResponse;
 - (void)setHeader:(NSString *)header value:(NSString *)value;
 @end
