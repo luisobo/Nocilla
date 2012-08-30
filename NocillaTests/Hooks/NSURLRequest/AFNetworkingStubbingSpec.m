@@ -2,26 +2,7 @@
 #import "AFNetworking.h"
 #import "Nocilla.h"
 #import "HTTPServer.h"
-#import "HTTPConnection.h"
-#import "HTTPDataResponse.h"
-
-@interface LSTestingConnection : HTTPConnection
-
-@end
-@implementation LSTestingConnection
-
--(BOOL) supportsMethod:(NSString *)method atPath:(NSString *)path {
-    return YES;
-}
-
-- (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path {
-    NSObject<HTTPResponse> *response = [[HTTPDataResponse alloc] initWithData:[@"hola" dataUsingEncoding:NSUTF8StringEncoding]];
-
-    return response;
-}
-
-
-@end
+#import "LSTestingConnection.h"
 
 
 SPEC_BEGIN(AFNetworkingStubbingSpec)
@@ -131,6 +112,30 @@ context(@"AFNetworking", ^{
         [[theValue(realResponse.statusCode) should] equal:theValue(stubbedResponse.statusCode)];
         [[realHeaders should] equal:stubbedHeaders];
         [[realBody should] equal:stubbedBody];
+    });
+    
+    it(@"should stub an asynchronous request", ^{
+        stubRequest(@"POST", @"https://getshopkeep.com/say-hello").
+        withHeaders(@{ @"Cacatuha!!!": @"sisisi", @"Content-Type": @"text/plain" }).
+        withBody(@"caca").
+        andReturn(200).
+        withHeader(@"Content-Type", @"text/plain").
+        withBody(@"hola");
+        
+        NSURL *url = [NSURL URLWithString:@"https://getshopkeep.com/say-hello"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"Cacatuha!!!"];
+        [request setHTTPBody:[@"caca" dataUsingEncoding:NSASCIIStringEncoding]];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation start];
+        
+        [[expectFutureValue(theValue(operation.response.statusCode)) shouldEventually] equal:theValue(200)];
+        [[operation.responseString should] equal:@"hola"];
+        
+        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] shouldEventually] equal:@"text/plain"];
+        [operation.error shouldBeNil];
     });
 });
 SPEC_END

@@ -17,48 +17,29 @@ afterEach(^{
 });
 
 context(@"MKNetworkKit", ^{
-    it(@"should be able to dowload google.com", ^{
-//        [[LSNocilla sharedInstance] stop];
-//        MKNetworkOperation *operation = [[MKNetworkOperation alloc]
-//                                         initWithURLString:@"http://www.google.com"
-//                                         params:[@{} mutableCopy]
-//                                         httpMethod:@"GET"];
-//
-//        [operation start];
-//        
-//        do {
-//            [NSThread sleepForTimeInterval:0.3];
-//        } while(!operation.readonlyResponse.statusCode);
-//        
-//        NSLog(@"%@", operation.responseString);
-//        NSLog(@"%d", operation.readonlyResponse.statusCode);
-//        [[LSNocilla sharedInstance] start];
+    it(@"should stub an asynchronous request", ^{
+        stubRequest(@"POST", @"http://getshopkeep.com/say-hello").
+        withHeaders(@{ @"Cacatuha!!!": @"sisisi", @"Content-Type": @"application/x-www-form-urlencoded; charset=utf-8,text/plain" }).
+        withBody(@"{\"text\":\"hola\"}").
+        andReturn(200).
+        withHeader(@"Content-Type", @"text/plain").
+        withBody(@"{\"text\":\"adios\"}");
+        
+        MKNetworkOperation *operation = [[MKNetworkOperation alloc]
+                                         initWithURLString:@"http://getshopkeep.com/say-hello"
+                                         params:[@{ @"text" : @"hola" } mutableCopy]
+                                         httpMethod:@"POST"];
+        [operation addHeaders: @{
+         @"Content-Type" : @"text/plain",
+         @"Cacatuha!!!" : @"sisisi" }];
+        
+        [operation setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
+        [operation start];
+
+        [[expectFutureValue(operation.responseString) shouldEventually] equal:@"{\"text\":\"adios\"}"];
+        [operation.error shouldBeNil];
+        [[theValue(operation.readonlyResponse.statusCode) should] equal:theValue(200)];
+        [[[operation.readonlyResponse.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
     });
-//    it(@"should stub the request", ^{
-//        stubRequest(@"POST", @"http://getshopkeep.com/say-hello").
-//        withHeader(@"Content-Type", @"text/plain").
-//        withHeader(@"Cacatuha!!!", @"sisisi").
-//        withBody(@"caca").
-//        andReturn(200).
-//        withHeader(@"Content-Type", @"text/plain").
-//        withBody(@"{\"text\":\"hola\"}");
-//        
-//        MKNetworkOperation *operation = [[MKNetworkOperation alloc]
-//                                         initWithURLString:@"http://getshopkeep.com/say-hello"
-//                                         params:[@{ @"text" : @"hola" } mutableCopy]
-//                                         httpMethod:@"POST"];
-//        [operation addHeaders: @{
-//         @"Content-Type" : @"text/plain",
-//         @"Cacatuha!!!" : @"sisisi" }];
-//        
-//        [operation setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
-//        [operation start];
-//
-//        [operation waitUntilFinished];
-//        [operation.error shouldBeNil];
-//        [[operation.responseString should] equal:@"hola"];
-//        [[theValue(operation.readonlyResponse.statusCode) should] equal:theValue(200)];
-//        [[[operation.readonlyResponse.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
-//    });
 });
 SPEC_END
