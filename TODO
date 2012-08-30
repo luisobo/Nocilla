@@ -1,0 +1,6 @@
+Unit tests for LSStubRequest#matchesRequest
+Better reporting upon unexpected request
+Add option to enable real HTTP requests
+Test with vanilla NSURLConnection
+Integration tests for MKNetworkKit (agains real HTTP and comparing)
+Unit tests the DSL
