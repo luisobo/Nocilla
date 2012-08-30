@@ -48,6 +48,16 @@ describe(@"description", ^{
             [[[dsl description] should] equal:expected];
         });
     });
+    describe(@"when a header contains a double quoute", ^{
+        beforeEach(^{
+            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            [request setHeader:@"X-MY-HEADER" value:@"quote\"quoute"];
+            dsl = [[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request];
+        });
+        it(@"should escape the result", ^{
+            [[[dsl description] should] equal:@"stubRequest(@\"POST\", @\"http://luissolano.com\").\nwithHeaders(@{ @\"X-MY-HEADER\": @\"quote\"quoute\" });"];
+        });
+    });
     describe(@"a request with headers and body", ^{
         beforeEach(^{
             LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
@@ -60,6 +70,17 @@ describe(@"description", ^{
         });
         it(@"should return the DSL representation", ^{
             NSString *expected = @"stubRequest(@\"POST\", @\"http://luissolano.com\").\nwithHeaders(@{ @\"Accept\": @\"text/plain\", @\"Content-Length\": @\"18\", @\"If-Match\": @\"a8fhw0dhasd03qn02\" }).\nwithBody(@\"The body of a request, yeah!\");";
+            [[[dsl description] should] equal:expected];
+        });
+    });
+    context(@"when the body contain double quotes", ^{
+        beforeEach(^{
+            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            [request setBody:[@"{\"text\":\"adios\"}" dataUsingEncoding:NSUTF8StringEncoding]];
+            dsl = [[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request];
+        });
+        it(@"should return the DSL representation", ^{
+            NSString *expected = @"stubRequest(@\"POST\", @\"http://luissolano.com\").\nwithBody(@\"{\\\"text\\\":\\\"adios\\\"}\");";
             [[[dsl description] should] equal:expected];
         });
     });

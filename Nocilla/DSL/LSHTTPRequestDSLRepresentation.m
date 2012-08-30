@@ -30,7 +30,9 @@
         [result appendString:@" })"];
     }
     if (self.request.body.length) {
-        [result appendFormat:@".\nwithBody(@\"%@\")", [[NSString alloc] initWithData:self.request.body encoding:NSUTF8StringEncoding]];
+        NSString *escapedBody = [[NSString alloc] initWithData:self.request.body encoding:NSUTF8StringEncoding];
+        escapedBody = [escapedBody stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+        [result appendFormat:@".\nwithBody(@\"%@\")", escapedBody];
     }
     return [NSString stringWithFormat:@"%@;", result];
 }
