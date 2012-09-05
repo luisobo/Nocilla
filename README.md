@@ -70,6 +70,7 @@ Using the `withHeaders` method makes sense with the new Objective-C literals, bu
 ```objc
 stubRequest(@"GET", @"https://api.example.com/dogs.json").
 withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abgf"});
+```
 
 #### Stubbing a request with a particular body
 
