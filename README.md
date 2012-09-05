@@ -15,8 +15,14 @@ This library was inspired by [WebMock](https://github.com/bblimke/webmock) and i
 * At this moment only works with request made with `NSURLConnection`, but it's possible to extend Nocilla to support more HTTP libraries. Nocilla has been tested with [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [MKNetworkKit](https://github.com/MugunthKumar/MKNetworkKit)
 
 ## Installation
+_WIP_
+
+* Nocilla will be a [CocoaPod](http://cocoapods.org/) soon.
+* You should be able to add Nocilla to you source tree. If you are using git, consider using a `git submodule`
 
 ## Usage
+_Yes, the following code is valid Objective-C, or at least, it should be_
+
 The following examples are describe using [Kiwi](https://github.com/allending/Kiwi)
 
 #### Common parts
@@ -36,7 +42,7 @@ afterEach(^{
 });
 
 it(@"should do something", ^{
-  ...
+  // Stub here!
 });
 SPEC_END
 </code></pre>
