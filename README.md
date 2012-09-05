@@ -103,12 +103,14 @@ withBody(@"{\"ok\":true}");
 ```
 
 #### All together
+```objc
 stubRequest(@"POST", @"https://api.example.com/dogs.json").
 withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abgf"}).
 withBody(@"{\"name\":\"foo\"}").
 andReturn(201).
 withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
+```
 
 ### Unexpected requests
 If some request is made but it wasn't stubbed, Nocilla won't let that request hit the real world. In that case your test should fail.
