@@ -109,9 +109,9 @@ withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
 
 ### Unexpected requests
-If some request is made but it wasn't stubbed,Nocilla won't let that request hit the real world. In that case your test should fail.
+If some request is made but it wasn't stubbed, Nocilla won't let that request hit the real world. In that case your test should fail.
 At this moment Nocilla will return a response with a 500, the header `X-Nocilla: Unexpected Request` and a body with a meaningful message about the error and how to solve it, including a snippet of code on how to stub the unexpected request.
-I'm not particularly happy with this behavior and it will change. Check [this issue](https://github.com/luisobo/Nocilla/issues/5) for more details.
+I'm not particularly happy with returning a 500 and this will change. Check [this issue](https://github.com/luisobo/Nocilla/issues/5) for more details.
 
 ## Other alternatives
 * [ILTesting](https://github.com/InfiniteLoopDK/ILTesting)
