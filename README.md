@@ -25,7 +25,7 @@ _Yes, the following code is valid Objective-C, or at least, it should be_
 
 The following examples are described using [Kiwi](https://github.com/allending/Kiwi)
 
-#### Common parts
+### Common parts
 Until Nocilla can hook directly into Kiwi, you will have to include the following snippet in the specs you want to use Nocilla:
 
 <pre><code>#import "Kiwi.h"
@@ -47,6 +47,7 @@ it(@"should do something", ^{
 SPEC_END
 </code></pre>
 
+### Stubbing requests
 #### Stubbing a simple request
 It will return the default response, which is a 200 and an empty body.
 
@@ -106,6 +107,11 @@ withBody(@"{\"name\":\"foo\"}").
 andReturn(201).
 withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
+
+### Unexpected requests
+If some request is made but it wasn't stubbed,Nocilla won't let that request hit the real world. In that case your test should fail.
+At this moment Nocilla will return a response with a 500, the header `X-Nocilla: Unexpected Request` and a body with a meaningful message about the error and how to solve it, including a snippet of code on how to stub the unexpected request.
+I'm not particularly happy with this behavior and it will change. Check [this issue](https://github.com/luisobo/Nocilla/issues/5) for more details.
 
 ## Other alternatives
 * [ILTesting](https://github.com/InfiniteLoopDK/ILTesting)
