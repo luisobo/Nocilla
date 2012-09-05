@@ -28,7 +28,8 @@ The following examples are described using [Kiwi](https://github.com/allending/K
 ### Common parts
 Until Nocilla can hook directly into Kiwi, you will have to include the following snippet in the specs you want to use Nocilla:
 
-<pre><code>#import "Kiwi.h"
+```objc
+#import "Kiwi.h"
 #import "Nocilla.h"
 SPEC_BEGIN(ExampleSpec)
 beforeAll(^{
@@ -45,7 +46,7 @@ it(@"should do something", ^{
   // Stub here!
 });
 SPEC_END
-</code></pre>
+```
 
 ### Stubbing requests
 #### Stubbing a simple request
