@@ -7,6 +7,7 @@ Stunning HTTP stubbing for iOS ans OS X. Testing HTTP requests has never been ea
 * Tested.
 * Fast.
 * Extendable to support more HTTP libraries.
+* Huge community, we overflowed the number of Stars and Forks in GitHub (meh, not really).
 
 ## Installation
 
