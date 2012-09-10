@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Nocilla/**/*.{h,m}'
 
-  # s.public_header_files = 'Nocilla/Nocilla.h'
+  # s.public_header_files = ['Nocilla/Nocilla.h', 'Nocilla/LSNocilla.h', 'Nocilla/DSL/DSL.h', 'LSStubRequestDSL.h', 'LSStubResponseDSL.h']
 
   s.requires_arc = true
 end
