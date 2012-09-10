@@ -28,6 +28,7 @@
 		A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */; };
 		A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */; };
 		A060B22315FE677B00BEAD54 /* AFNetworkingStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */; };
+		A060B22515FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A060B22415FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m */; };
 		A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */; };
 		A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */; };
 		A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */; };
@@ -91,6 +92,7 @@
 		A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDSLRepresentation.m; path = DSL/LSHTTPRequestDSLRepresentation.m; sourceTree = "<group>"; };
 		A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+DSL.h"; path = "Hooks/NSURLRequest/NSURLRequest+DSL.h"; sourceTree = "<group>"; };
 		A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+DSL.m"; path = "Hooks/NSURLRequest/NSURLRequest+DSL.m"; sourceTree = "<group>"; };
+		A060B22415FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPStubURLProtocolSpec.m; path = Hooks/NSURLRequest/LSHTTPStubURLProtocolSpec.m; sourceTree = "<group>"; };
 		A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPStubURLProtocol.h; path = Hooks/NSURLRequest/LSHTTPStubURLProtocol.h; sourceTree = "<group>"; };
 		A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPStubURLProtocol.m; path = Hooks/NSURLRequest/LSHTTPStubURLProtocol.m; sourceTree = "<group>"; };
 		A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPClientHook.h; path = Hooks/LSHTTPClientHook.h; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */,
 				A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */,
 				A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */,
+				A060B22415FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m */,
 			);
 			name = NSURLRequest;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */,
 				A0055F0215EFFA8B005D6C85 /* NSURLRequestHookSpec.m in Sources */,
 				A060B22315FE677B00BEAD54 /* AFNetworkingStubbingSpec.m in Sources */,
+				A060B22515FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
