@@ -10,7 +10,6 @@
 		41D450B99F6B46088DB143B3 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
 		A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
 		A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */; };
-		A0055F0015EF678C005D6C85 /* AFNetworkingStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */; };
 		A0055F0215EFFA8B005D6C85 /* NSURLRequestHookSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */; };
 		A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */; };
 		A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; };
@@ -28,6 +27,7 @@
 		A02C7AFE15EE62650061FCEE /* NSURLRequest+LSHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */; };
 		A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */; };
 		A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */; };
+		A060B22315FE677B00BEAD54 /* AFNetworkingStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */; };
 		A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */; };
 		A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */; };
 		A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */; };
@@ -517,8 +517,8 @@
 				A02C7ADE15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m in Sources */,
 				A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */,
 				A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */,
-				A0055F0015EF678C005D6C85 /* AFNetworkingStubbingSpec.m in Sources */,
 				A0055F0215EFFA8B005D6C85 /* NSURLRequestHookSpec.m in Sources */,
+				A060B22315FE677B00BEAD54 /* AFNetworkingStubbingSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

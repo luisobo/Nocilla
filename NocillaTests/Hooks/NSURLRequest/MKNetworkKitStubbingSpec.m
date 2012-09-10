@@ -17,7 +17,7 @@ afterEach(^{
 context(@"MKNetworkKit", ^{
     it(@"should stub an asynchronous request", ^{
         stubRequest(@"POST", @"http://example.com/say-hello").
-        withHeaders(@{ @"X-MY-AWESOME-HEADER": @"sisisi", @"Content-Type": @"application/x-www-form-urlencoded; charset=utf-8,text/plain" }).
+        withHeaders(@{ @"X-MY-AWESOME-HEADER": @"sisisi", @"Content-Type": @"application/json; charset=utf-8" }).
         withBody(@"{\"text\":\"hola\"}").
         andReturn(200).
         withHeader(@"Content-Type", @"text/plain").
@@ -33,8 +33,12 @@ context(@"MKNetworkKit", ^{
         
         [operation setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
         [operation start];
+        
+        
+        
 
         [[expectFutureValue(operation.responseString) shouldEventually] equal:@"{\"text\":\"adios\"}"];
+        
         [operation.error shouldBeNil];
         [[theValue(operation.readonlyResponse.statusCode) should] equal:theValue(200)];
         [[[operation.readonlyResponse.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
