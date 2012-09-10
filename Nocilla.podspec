@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/luisobo/Nocilla"
 
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { "Luis Solano" => "contanct@luissolano.com" }
+  s.author       = { "Luis Solano" => "contact@luissolano.com" }
 
   s.source       = { :git => "https://github.com/luisobo/Nocilla.git", :tag => "0.1" }
 
