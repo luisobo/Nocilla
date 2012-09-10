@@ -47,6 +47,7 @@
 		A0BB870115FE7C2E0090236F /* AFNetworkingStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */; };
 		A0BB870215FE7C320090236F /* NSURLRequestHookSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */; };
 		A0BB870315FE7C350090236F /* LSHTTPStubURLProtocolSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A060B22415FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m */; };
+		A0BB870615FE7D8F0090236F /* LSStubRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB870515FE7D8F0090236F /* LSStubRequestSpec.m */; };
 		A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */; };
 		A0EE630815EC217A00009A08 /* LSHTTPRequestDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */; };
 		A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */; };
@@ -116,6 +117,7 @@
 		A085B85415E30749007D33C1 /* NocillaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NocillaTests-Info.plist"; sourceTree = "<group>"; };
 		A085B85615E30749007D33C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFNetworkingStubbingSpec.m; path = Hooks/NSURLRequest/AFNetworkingStubbingSpec.m; sourceTree = "<group>"; };
+		A0BB870515FE7D8F0090236F /* LSStubRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestSpec.m; path = Stubs/LSStubRequestSpec.m; sourceTree = "<group>"; };
 		A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequestDiff.h; path = Diff/LSHTTPRequestDiff.h; sourceTree = "<group>"; };
 		A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDiff.m; path = Diff/LSHTTPRequestDiff.m; sourceTree = "<group>"; };
 		A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequest.h; path = Model/LSHTTPRequest.h; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		A085B85215E30749007D33C1 /* NocillaTests */ = {
 			isa = PBXGroup;
 			children = (
+				A0BB870415FE7D7E0090236F /* Stubs */,
 				A0055EE515EEAF73005D6C85 /* Support */,
 				A02C7B0D15EE66250061FCEE /* Diff */,
 				A02C7B0B15EE65E50061FCEE /* Hooks */,
@@ -340,6 +343,14 @@
 				A085B85515E30749007D33C1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0BB870415FE7D7E0090236F /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				A0BB870515FE7D8F0090236F /* LSStubRequestSpec.m */,
+			);
+			name = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +534,7 @@
 				A0BB870115FE7C2E0090236F /* AFNetworkingStubbingSpec.m in Sources */,
 				A0BB870215FE7C320090236F /* NSURLRequestHookSpec.m in Sources */,
 				A0BB870315FE7C350090236F /* LSHTTPStubURLProtocolSpec.m in Sources */,
+				A0BB870615FE7D8F0090236F /* LSStubRequestSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
