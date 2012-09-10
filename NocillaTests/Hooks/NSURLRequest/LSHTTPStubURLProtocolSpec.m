@@ -76,55 +76,83 @@ describe(@"+canInitWithRequest", ^{
 });
 
 describe(@"#startLoading", ^{
-    context(@"when the request match to an stubbed request", ^{
+    context(@"when the protocol receives a request", ^{
         __block NSString *stringUrl = nil;
         __block NSString *bodyString = nil;
         __block LSHTTPStubURLProtocol *protocol = nil;
         __block LSTestingNSURLProtocolClient *client = nil;
         beforeEach(^{
             stringUrl = @"http://api.example.com/dogs.xml";
-            bodyString = @"<error>Unauthorized</error>";
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:stringUrl]];
             
             client = [[LSTestingNSURLProtocolClient alloc] init];
-            
-            LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
-            LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithStatusCode:403];
-            [stubResponse setHeader:@"Content-Type" value:@"application/xml"];
-            bodyString = @"<error>Error</error>" ;
-            stubResponse.body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
-            stubRequest.response = stubResponse;
-            
-            [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
-            
-            protocol = [[LSHTTPStubURLProtocol alloc] initWithRequest:request cachedResponse:nil client:client];
-            
+                        
+            protocol = [[LSHTTPStubURLProtocol alloc] initWithRequest:request cachedResponse:nil client:client]; 
         });
-        
-        it(@"should pass to the client the correct response", ^{
-            [[client should] receive:@selector(URLProtocol:didReceiveResponse:cacheStoragePolicy:) withArguments:protocol, any(), theValue(NSURLCacheStorageNotAllowed)];
+        context(@"that matches an stubbed request", ^{
+            beforeEach(^{
+                LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
+                LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithStatusCode:403];
+                [stubResponse setHeader:@"Content-Type" value:@"application/xml"];
+                bodyString = @"<error>Error</error>" ;
+                stubResponse.body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+                stubRequest.response = stubResponse;
+                
+                [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+            });
             
-            [protocol startLoading];
+            it(@"should pass to the client the correct response", ^{
+                [[client should] receive:@selector(URLProtocol:didReceiveResponse:cacheStoragePolicy:) withArguments:protocol, any(), theValue(NSURLCacheStorageNotAllowed)];
+                
+                [protocol startLoading];
+                
+                [[client.response should] beKindOfClass:[NSHTTPURLResponse class]];
+                NSHTTPURLResponse *response = (NSHTTPURLResponse *)client.response;
+                [[response.URL should] equal:[NSURL URLWithString:stringUrl]];
+                [[theValue(response.statusCode) should] equal:theValue(403)];
+                [[response.allHeaderFields should] equal:@{ @"Content-Type": @"application/xml"}];
+            });
+            it(@"should pass the body to the client", ^{
+                
+                [[client should] receive:@selector(URLProtocol:didLoadData:) withArguments:protocol, [bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+                
+                [protocol startLoading];
+                
+            });
             
-            [[client.response should] beKindOfClass:[NSHTTPURLResponse class]];
-            NSHTTPURLResponse *response = (NSHTTPURLResponse *)client.response;
-            [[response.URL should] equal:[NSURL URLWithString:stringUrl]];
-            [[theValue(response.statusCode) should] equal:theValue(403)];
-            [[response.allHeaderFields should] equal:@{ @"Content-Type": @"application/xml"}];
+            it(@"should notify the client that it finished loading", ^{
+                [[client should] receive:@selector(URLProtocolDidFinishLoading:)];
+                
+                [protocol startLoading];
+                
+            });
         });
-        it(@"should pass the body to the client", ^{
+        context(@"that doesn't match any stubbed request", ^{
+            it(@"should pass to the client a 500", ^{
+                [[client should] receive:@selector(URLProtocol:didReceiveResponse:cacheStoragePolicy:) withArguments:protocol, any(), theValue(NSURLCacheStorageNotAllowed)];
+                
+                [protocol startLoading];
+                
+                [[client.response should] beKindOfClass:[NSHTTPURLResponse class]];
+                NSHTTPURLResponse *response = (NSHTTPURLResponse *)client.response;
+                [[response.URL should] equal:[NSURL URLWithString:stringUrl]];
+                [[theValue(response.statusCode) should] equal:theValue(500)];
+                [[response.allHeaderFields should] equal:@{ @"X-Nocilla": @"Unexpected Request"}];
+            });
+            it(@"should pass the body to the client with a meaninful message", ^{
+                NSString *expectedMessage = @"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\nstubRequest(@\"GET\", @\"http://api.example.com/dogs.xml\");\n";
+                [[client should] receive:@selector(URLProtocol:didLoadData:) withArguments:protocol, [expectedMessage dataUsingEncoding:NSUTF8StringEncoding]];
+                
+                [protocol startLoading];
+                
+            });
             
-            [[client should] receive:@selector(URLProtocol:didLoadData:) withArguments:protocol, [bodyString dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            [protocol startLoading];
-            
-        });
-        
-        it(@"should notify the client that it finished loading", ^{
-            [[client should] receive:@selector(URLProtocolDidFinishLoading:)];
-            
-            [protocol startLoading];
-            
+            it(@"should notify the client that it finished loading", ^{
+                [[client should] receive:@selector(URLProtocolDidFinishLoading:)];
+                
+                [protocol startLoading];
+                
+            });
         });
     });
 });
