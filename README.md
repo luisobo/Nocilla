@@ -1,5 +1,5 @@
 # Nocilla
-Stunning HTTP stubbing for iOS ans OS X. Testing HTTP requests has never been easier.
+Stunning HTTP stubbing for iOS and OS X. Testing HTTP requests has never been easier.
 
 This library was inspired by [WebMock](https://github.com/bblimke/webmock) and it's using [this approach](http://www.infinite-loop.dk/blog/2011/09/using-nsurlprotocol-for-injecting-test-data/) to stub the requests.
 
