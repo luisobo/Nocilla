@@ -18,9 +18,9 @@
 		A02C7ADE15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7ADD15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m */; };
 		A02C7AEC15ED79120061FCEE /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A02C7AED15ED79170061FCEE /* LSHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAB15E30B0000730EE5 /* LSStubRequest.h */; };
-		A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAD15E30B0000730EE5 /* LSStubResponse.h */; };
-		A02C7AF115ED795A0061FCEE /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF015ED795A0061FCEE /* DSL.h */; };
+		A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAB15E30B0000730EE5 /* LSStubRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAD15E30B0000730EE5 /* LSStubResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02C7AF115ED795A0061FCEE /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF015ED795A0061FCEE /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A02C7AF815EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF615EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h */; };
 		A02C7AF915EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */; };
 		A02C7AFE15EE62650061FCEE /* NSURLRequest+LSHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */; };
@@ -51,7 +51,6 @@
 		A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */; };
 		A0EE630815EC217A00009A08 /* LSHTTPRequestDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */; };
 		A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */; };
-		D39CB7E03CA24559A66FFA31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5D6931A52E4D73994F1D0E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,7 +134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A085B83C15E30749007D33C1 /* Foundation.framework in Frameworks */,
-				D39CB7E03CA24559A66FFA31 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +360,11 @@
 			files = (
 				A08D52C715E5A6A7003650F7 /* LSNocilla.h in Headers */,
 				A08D52C815E5A6A7003650F7 /* Nocilla.h in Headers */,
+				A02C7AF115ED795A0061FCEE /* DSL.h in Headers */,
 				A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */,
 				A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */,
+				A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */,
+				A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */,
 				A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */,
 				A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */,
 				A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */,
@@ -371,9 +372,6 @@
 				A02C7ADA15ED704F0061FCEE /* LSStubResponseDSL.h in Headers */,
 				A02C7AEC15ED79120061FCEE /* LSHTTPRequest.h in Headers */,
 				A02C7AED15ED79170061FCEE /* LSHTTPResponse.h in Headers */,
-				A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */,
-				A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */,
-				A02C7AF115ED795A0061FCEE /* DSL.h in Headers */,
 				A02C7AF815EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h in Headers */,
 				A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */,
 			);
@@ -389,7 +387,6 @@
 				A085B83415E30749007D33C1 /* Sources */,
 				A085B83515E30749007D33C1 /* Frameworks */,
 				A085B83615E30749007D33C1 /* CopyFiles */,
-				F8E0F8B8F41841D7B46EB186 /* Copy Pods Resources */,
 				A08D52C515E5A694003650F7 /* Headers */,
 			);
 			buildRules = (
@@ -487,20 +484,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-NocillaTests-resources.sh\"\n";
 		};
-		F8E0F8B8F41841D7B46EB186 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -578,7 +561,6 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -598,7 +580,6 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
