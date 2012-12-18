@@ -102,6 +102,14 @@ withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
 ```
 
+#### Returning raw responses recorded with `curl -is`
+`curl -is http://api.example.com/dogs.json > /tmp/example_curl_-is_output.txt`
+
+```objc
+stubRequest(@"GET", @"https://api.example.com/dogs.json").
+andReturnRawResponse([NSData dataWithContentsOfFile:"/tmp/example_curl_-is_output.txt"]);
+```
+
 #### All together
 ```objc
 stubRequest(@"POST", @"https://api.example.com/dogs.json").
