@@ -17,4 +17,12 @@ typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
 - (AndReturnMethod)andReturn;
 @end
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
 LSStubRequestDSL * stubRequest(NSString *method, NSString *url);
+    
+#ifdef __cplusplus
+}
+#endif
