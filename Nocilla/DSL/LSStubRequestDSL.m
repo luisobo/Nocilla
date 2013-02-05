@@ -47,6 +47,14 @@
         return responseDSL;
     };
 }
+
+- (AndReturnRawResponseMethod)andReturnRawResponse {
+    return ^(NSData *rawResponseData) {
+        self.request.response = [[LSStubResponse alloc] initWithRawResponse:rawResponseData];
+        LSStubResponseDSL *responseDSL = [[LSStubResponseDSL alloc] initWithResponse:self.request.response];
+        return responseDSL;
+    };
+}
 @end
 
 LSStubRequestDSL * stubRequest(NSString *method, NSString *url) {

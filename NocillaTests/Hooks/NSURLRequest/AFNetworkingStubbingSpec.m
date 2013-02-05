@@ -43,6 +43,29 @@ context(@"AFNetworking", ^{
         [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
     });
     
+    it(@"should stub the request with a raw reponse", ^{
+        stubRequest(@"POST", @"https://example.com/say-hello").
+        withHeader(@"Content-Type", @"text/plain").
+        withHeader(@"X-MY-AWESOME-HEADER", @"sisisi").
+        withBody(@"Adios!").
+        andReturnRawResponse([@"HTTP/1.1 200 OK\nContent-Type: text/plain\n\nhola" dataUsingEncoding:NSUTF8StringEncoding]);
+        
+        NSURL *url = [NSURL URLWithString:@"https://example.com/say-hello"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
+        [request setHTTPBody:[@"Adios!" dataUsingEncoding:NSASCIIStringEncoding]];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation start];
+        
+        [operation waitUntilFinished];
+        
+        [operation.error shouldBeNil];
+        [[operation.responseString should] equal:@"hola"];
+        [[theValue(operation.response.statusCode) should] equal:theValue(200)];
+        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
+    });
 
     it(@"should have the same result as a real HTTP request", ^{
         NSURL *url = [NSURL URLWithString:@"http://localhost:12345/say-hello"];        
