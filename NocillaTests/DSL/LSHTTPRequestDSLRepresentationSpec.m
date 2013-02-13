@@ -48,6 +48,16 @@ describe(@"description", ^{
             [[[dsl description] should] equal:expected];
         });
     });
+    describe(@"a request with authorization", ^{
+        beforeEach(^{
+            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            [request setAuthorizationHeaderWithUsername:@"username" password:@"password"];
+            dsl = [[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request];
+        });
+        it(@"should return the DSL representation", ^{
+            [[[dsl description] should] equal:@"stubRequest(@\"POST\", @\"http://luissolano.com\").\nwithHeaders(@{ @\"Authorization\": @\"Basic dXNlcm5hbWU6cGFzc3dvcmQ=\" });"];
+        });
+    });
     describe(@"when a header contains a double quoute", ^{
         beforeEach(^{
             LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];

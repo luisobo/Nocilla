@@ -15,6 +15,7 @@
 
 - (id)initWithMethod:(NSString *)method url:(NSString *)url;
 - (void)setHeader:(NSString *)header value:(NSString *)value;
+- (void)setAuthorizationHeaderWithUsername:(NSString *)username password:(NSString *)password;
 
 - (BOOL)matchesRequest:(id<LSHTTPRequest>)request;
 @end
