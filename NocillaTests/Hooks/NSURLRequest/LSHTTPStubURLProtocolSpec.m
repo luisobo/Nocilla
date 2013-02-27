@@ -128,30 +128,11 @@ describe(@"#startLoading", ^{
             });
         });
         context(@"that doesn't match any stubbed request", ^{
-            it(@"should pass to the client a 500", ^{
-                [[client should] receive:@selector(URLProtocol:didReceiveResponse:cacheStoragePolicy:) withArguments:protocol, any(), theValue(NSURLCacheStorageNotAllowed)];
-                
-                [protocol startLoading];
-                
-                [[client.response should] beKindOfClass:[NSHTTPURLResponse class]];
-                NSHTTPURLResponse *response = (NSHTTPURLResponse *)client.response;
-                [[response.URL should] equal:[NSURL URLWithString:stringUrl]];
-                [[theValue(response.statusCode) should] equal:theValue(500)];
-                [[response.allHeaderFields should] equal:@{ @"X-Nocilla": @"Unexpected Request"}];
-            });
-            it(@"should pass the body to the client with a meaninful message", ^{
+            it(@"should raise an exception with a meaningful message", ^{
                 NSString *expectedMessage = @"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\nstubRequest(@\"GET\", @\"http://api.example.com/dogs.xml\");\n";
-                [[client should] receive:@selector(URLProtocol:didLoadData:) withArguments:protocol, [expectedMessage dataUsingEncoding:NSUTF8StringEncoding]];
-                
-                [protocol startLoading];
-                
-            });
-            
-            it(@"should notify the client that it finished loading", ^{
-                [[client should] receive:@selector(URLProtocolDidFinishLoading:)];
-                
-                [protocol startLoading];
-                
+                [[theBlock(^{
+                    [protocol startLoading];
+                }) should] raiseWithName:@"NocillaUnexpectedRequest" reason:expectedMessage];
             });
         });
     });

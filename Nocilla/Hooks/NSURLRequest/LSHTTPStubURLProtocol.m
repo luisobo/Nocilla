@@ -46,8 +46,8 @@
                                                                 requestTime:0];
         body = stubbedResponse.body;
     } else {
-        urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL statusCode:500 headerFields:@{ @"X-Nocilla" : @"Unexpected Request" } requestTime:0];
-        body = [[NSString stringWithFormat:@"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [request toNocillaDSL]] dataUsingEncoding:NSUTF8StringEncoding];
+
+        [NSException raise:@"NocillaUnexpectedRequest" format:@"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [request toNocillaDSL]];
     }
     [client URLProtocol:self didReceiveResponse:urlResponse
      cacheStoragePolicy:NSURLCacheStorageNotAllowed];
