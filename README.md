@@ -15,6 +15,8 @@ This library was inspired by [WebMock](https://github.com/bblimke/webmock) and i
 * At this moment only works with requests made with `NSURLConnection`, but it's possible to extend Nocilla to support more HTTP libraries. Nocilla has been tested with [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [MKNetworkKit](https://github.com/MugunthKumar/MKNetworkKit)
 
 ## Installation
+Depends on `CFNetwork.framework`. Add it to your target at -> `Build Phases` -> `Link Binary With Libraries`.
+
 _WIP_ (please, read: You figure it out, and then you tell me)
 
 * Nocilla will be a [CocoaPod](http://cocoapods.org/) soon.
