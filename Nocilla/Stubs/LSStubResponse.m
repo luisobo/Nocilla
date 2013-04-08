@@ -59,7 +59,7 @@
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"StubRequest:\nStatus Code: %d\nHeaders: %@\nBody: %@",
-            self.statusCode,
+            (int)self.statusCode,
             self.mutableHeaders,
             self.body];
 }
