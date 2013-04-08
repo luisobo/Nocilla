@@ -58,8 +58,8 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"StubRequest:\nStatus Code: %d\nHeaders: %@\nBody: %@",
-            self.statusCode,
+    return [NSString stringWithFormat:@"StubRequest:\nStatus Code: %ld\nHeaders: %@\nBody: %@",
+            (long)self.statusCode,
             self.mutableHeaders,
             self.body];
 }
