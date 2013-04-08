@@ -17,4 +17,5 @@ Pod::Spec.new do |s|
   s.public_header_files = ['Nocilla/Nocilla.h', 'Nocilla/LSNocilla.h', 'Nocilla/DSL/DSL.h', 'Nocilla/DSL/LSStubRequestDSL.h', 'Nocilla/DSL/LSStubResponseDSL.h']
 
   s.requires_arc = true
+  s.ios.frameworks = 'CFNetwork'
 end
