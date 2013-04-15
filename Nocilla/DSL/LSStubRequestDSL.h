@@ -24,7 +24,7 @@ extern "C" {
 #endif
     
 LSStubRequestDSL * stubRequest(NSString *method, NSString *url);
-    
+LSStubRequestDSL * stubRegexRequest(NSString *method, NSString *urlPattern);
 #ifdef __cplusplus
 }
 #endif

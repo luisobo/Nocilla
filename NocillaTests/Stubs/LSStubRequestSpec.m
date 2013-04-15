@@ -34,7 +34,41 @@ describe(@"#matchesRequest:", ^{
             [[theValue([other matchesRequest:stubRequest]) should] beNo];
         });
     });
-    
+    context(@"when using regular expressions", ^{
+        context(@"when the left request has a pattern that matches the right request", ^{
+            __block LSStubRequest *left = nil;
+            __block LSStubRequest *right = nil;
+            beforeEach(^{
+                NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@".*/cats/whiskas.*" options:0 error:nil];
+                left = [[LSStubRequest alloc] initWithMethod:@"PUT" urlRegex:regex];
+                right = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+            });
+            describe(@"the left request", ^{
+                it (@"should match the right request", ^{
+                    [[theValue([left matchesRequest:right]) should] beYes];
+                });
+            });
+            describe(@"the right request", ^{
+                it (@"should not match the left request", ^{
+                    [[theValue([right matchesRequest:left]) should] beNo];
+                });
+            });
+        });
+        context(@"when the left request has a pattern that does not match the right request", ^{
+            __block LSStubRequest *left = nil;
+            __block LSStubRequest *right = nil;
+            beforeEach(^{
+                NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@".*/cats/whiskas.*" options:0 error:nil];
+                left = [[LSStubRequest alloc] initWithMethod:@"PUT" urlRegex:regex];
+                right = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/dogs/barky.json"];
+            });
+            it (@"should not match each other", ^{
+                [[theValue([right matchesRequest:left]) should] beNo];
+                [[theValue([left matchesRequest:right]) should] beNo];
+            });
+        });
+    });
+
     context(@"when the left request has a subset of header of the right request", ^{
         __block LSStubRequest *left = nil;
         __block LSStubRequest *right = nil;
