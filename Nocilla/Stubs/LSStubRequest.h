@@ -13,7 +13,12 @@
 
 @property (nonatomic, strong) LSStubResponse *response;
 
+@property(nonatomic, strong) NSRegularExpression *urlRegex;
+
 - (id)initWithMethod:(NSString *)method url:(NSString *)url;
+
+- (id)initWithMethod:(NSString *)method urlRegex:(NSRegularExpression *)urlRegex;
+
 - (void)setHeader:(NSString *)header value:(NSString *)value;
 
 - (BOOL)matchesRequest:(id<LSHTTPRequest>)request;

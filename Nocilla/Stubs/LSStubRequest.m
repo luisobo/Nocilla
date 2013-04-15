@@ -1,3 +1,4 @@
+#import <Foundation/Foundation.h>
 #import "LSStubRequest.h"
 
 @interface LSStubRequest ()
@@ -17,6 +18,16 @@
     if (self) {
         self.method = method;
         self.url = [NSURL URLWithString:url];
+        self.mutableHeaders = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
+- (id)initWithMethod:(NSString *)method urlRegex:(NSRegularExpression *)urlRegex {
+    self = [super init];
+    if (self) {
+        self.method = method;
+        self.urlRegex = urlRegex;
         self.mutableHeaders = [NSMutableDictionary dictionary];
     }
     return self;
@@ -44,12 +55,11 @@
         _response = [[LSStubResponse alloc] initDefaultResponse];
     }
     return _response;
-    
 }
 
 - (BOOL)matchesRequest:(id<LSHTTPRequest>)request {
     if ([self matchesMethod:request]
-        && [self matchesURL:request]
+        && ([self matchesURL:request] || [self matchesURLRegex:request])
         && [self matchesHeaders:request]
         && [self matchesBody:request]
         ) {
@@ -66,12 +76,24 @@
 }
 
 -(BOOL)matchesURL:(id<LSHTTPRequest>)request {
+    if (!self.url) {
+        return NO;
+    }
     NSString *a = [self.url absoluteString];
     NSString *b = [request.url absoluteString];
     if ([a isEqualToString:b]) {
         return YES;
     }
     return NO;
+}
+
+-(BOOL)matchesURLRegex:(id<LSHTTPRequest>)request {
+    if (!self.urlRegex) {
+        return NO;
+    }
+    NSString *b = [request.url absoluteString];
+    NSRange result = [self.urlRegex rangeOfFirstMatchInString:b options:0 range:NSMakeRange(0, b.length)];
+    return result.location != NSNotFound;
 }
 
 -(BOOL)matchesHeaders:(id<LSHTTPRequest>)request {

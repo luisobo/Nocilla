@@ -63,3 +63,16 @@ LSStubRequestDSL * stubRequest(NSString *method, NSString *url) {
     [[LSNocilla sharedInstance] addStubbedRequest:request];
     return dsl;
 }
+
+LSStubRequestDSL * stubRegexRequest(NSString *method, NSString *urlPattern) {
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:urlPattern options:0 error:&error];
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+        return nil;
+    }
+    LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method urlRegex:regex];
+    LSStubRequestDSL *dsl = [[LSStubRequestDSL alloc] initWithRequest:request];
+    [[LSNocilla sharedInstance] addStubbedRequest:request];
+    return dsl;
+}
