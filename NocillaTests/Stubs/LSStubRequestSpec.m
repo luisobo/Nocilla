@@ -1,6 +1,8 @@
 #import "Kiwi.h"
 #import "LSStubRequest.h"
 #import "LSTestRequest.h"
+#import "NSString+Regex.h"
+#import "LSRegexMatcher.h"
 
 SPEC_BEGIN(LSStubRequestSpec)
 
@@ -30,6 +32,29 @@ describe(@"#matchesRequest:", ^{
             LSTestRequest *other = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/dogs/barky.json"];
             
             [[theValue([stubRequest matchesRequest:other]) should] beNo];
+        });
+    });
+
+    context(@"when we use a regex matcher for the URL", ^{
+        __block LSStubRequest *stubRequest = nil;
+        __block LSTestRequest *other = nil;
+        beforeEach(^{
+            stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" urlMatcher:[[LSRegexMatcher alloc] initWithRegex:@"^http://foo.com".regex]];
+        });
+        context(@"the the actual URL matches that regex", ^{
+            it(@"matches", ^{
+                other = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"http://foo.com/something.json"];
+
+                [[theValue([stubRequest matchesRequest:other]) should] beYes];
+            });
+        });
+
+        context(@"the the actual URL matches that regex", ^{
+            it(@"matches", ^{
+                other = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"asdhttp://foo.com"];
+
+                [[theValue([stubRequest matchesRequest:other]) should] beNo];
+            });
         });
     });
     
