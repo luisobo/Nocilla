@@ -12,15 +12,15 @@
 		A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
 		A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */; };
 		A02889241728BEFD00288022 /* LSTestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889231728BEFD00288022 /* LSTestRequest.m */; };
-		A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892B1728C3FF00288022 /* NSString+Matcheable.h */; };
+		A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892B1728C3FF00288022 /* NSString+Matcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A028892E1728C3FF00288022 /* NSString+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A028892C1728C3FF00288022 /* NSString+Matcheable.m */; };
-		A02889311728C52100288022 /* LSMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892F1728C52000288022 /* LSMatcher.h */; };
+		A02889311728C52100288022 /* LSMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892F1728C52000288022 /* LSMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A02889321728C52100288022 /* LSMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889301728C52100288022 /* LSMatcher.m */; };
 		A02889351728C88E00288022 /* LSRegexMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889331728C88D00288022 /* LSRegexMatcher.h */; };
 		A02889361728C88E00288022 /* LSRegexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889341728C88D00288022 /* LSRegexMatcher.m */; };
-		A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */; };
+		A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A028893A1728C95600288022 /* NSRegularExpression+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */; };
-		A028893E1728CA5900288022 /* NSString+Regex.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Regex.h */; };
+		A028893E1728CA5900288022 /* NSString+Regex.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Regex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A028893F1728CA5900288022 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = A028893D1728CA5900288022 /* NSString+Regex.m */; };
 		A02889431728CD6000288022 /* LSRegexMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889421728CD6000288022 /* LSRegexMatcherSpec.m */; };
 		A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */; };
@@ -441,6 +441,10 @@
 				A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */,
 				A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */,
 				A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */,
+				A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */,
+				A02889311728C52100288022 /* LSMatcher.h in Headers */,
+				A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */,
+				A028893E1728CA5900288022 /* NSString+Regex.h in Headers */,
 				A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */,
 				A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */,
 				A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */,
@@ -451,11 +455,7 @@
 				A02C7AF815EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h in Headers */,
 				A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */,
 				A08EE2271728A2F4001830E6 /* LSStringMatcher.h in Headers */,
-				A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */,
-				A02889311728C52100288022 /* LSMatcher.h in Headers */,
 				A02889351728C88E00288022 /* LSRegexMatcher.h in Headers */,
-				A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */,
-				A028893E1728CA5900288022 /* NSString+Regex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
