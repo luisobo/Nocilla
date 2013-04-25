@@ -7,5 +7,4 @@
     return [[LSStringMatcher alloc] initWithString:self];
 }
 
-
 @end

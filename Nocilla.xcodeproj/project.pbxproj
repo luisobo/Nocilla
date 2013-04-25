@@ -21,6 +21,13 @@
 		A028892E1728C3FF00288022 /* NSString+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A028892C1728C3FF00288022 /* NSString+Matcheable.m */; };
 		A02889311728C52100288022 /* LSMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892F1728C52000288022 /* LSMatcher.h */; };
 		A02889321728C52100288022 /* LSMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889301728C52100288022 /* LSMatcher.m */; };
+		A02889351728C88E00288022 /* LSRegexMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889331728C88D00288022 /* LSRegexMatcher.h */; };
+		A02889361728C88E00288022 /* LSRegexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889341728C88D00288022 /* LSRegexMatcher.m */; };
+		A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */; };
+		A028893A1728C95600288022 /* NSRegularExpression+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */; };
+		A028893E1728CA5900288022 /* NSString+Regex.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Regex.h */; };
+		A028893F1728CA5900288022 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = A028893D1728CA5900288022 /* NSString+Regex.m */; };
+		A02889431728CD6000288022 /* LSRegexMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889421728CD6000288022 /* LSRegexMatcherSpec.m */; };
 		A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */; };
 		A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; };
 		A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */; };
@@ -109,6 +116,13 @@
 		A028892C1728C3FF00288022 /* NSString+Matcheable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Matcheable.m"; path = "Matchers/NSString+Matcheable.m"; sourceTree = "<group>"; };
 		A028892F1728C52000288022 /* LSMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMatcher.h; path = Matchers/LSMatcher.h; sourceTree = "<group>"; };
 		A02889301728C52100288022 /* LSMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSMatcher.m; path = Matchers/LSMatcher.m; sourceTree = "<group>"; };
+		A02889331728C88D00288022 /* LSRegexMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSRegexMatcher.h; path = Matchers/LSRegexMatcher.h; sourceTree = "<group>"; };
+		A02889341728C88D00288022 /* LSRegexMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSRegexMatcher.m; path = Matchers/LSRegexMatcher.m; sourceTree = "<group>"; };
+		A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+Matcheable.h"; path = "Matchers/NSRegularExpression+Matcheable.h"; sourceTree = "<group>"; };
+		A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+Matcheable.m"; path = "Matchers/NSRegularExpression+Matcheable.m"; sourceTree = "<group>"; };
+		A028893C1728CA5900288022 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Regex.h"; path = "Categories/NSString+Regex.h"; sourceTree = "<group>"; };
+		A028893D1728CA5900288022 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Regex.m"; path = "Categories/NSString+Regex.m"; sourceTree = "<group>"; };
+		A02889421728CD6000288022 /* LSRegexMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSRegexMatcherSpec.m; path = Matchers/LSRegexMatcherSpec.m; sourceTree = "<group>"; };
 		A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubRequestDSL.h; path = DSL/LSStubRequestDSL.h; sourceTree = "<group>"; };
 		A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestDSL.m; path = DSL/LSStubRequestDSL.m; sourceTree = "<group>"; };
 		A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubResponseDSL.h; path = DSL/LSStubResponseDSL.h; sourceTree = "<group>"; };
@@ -190,6 +204,15 @@
 				A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		A028893B1728CA4700288022 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A028893C1728CA5900288022 /* NSString+Regex.h */,
+				A028893D1728CA5900288022 /* NSString+Regex.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		A02C7ACF15ED70170061FCEE /* DSL */ = {
@@ -330,6 +353,7 @@
 		A085B83D15E30749007D33C1 /* Nocilla */ = {
 			isa = PBXGroup;
 			children = (
+				A028893B1728CA4700288022 /* Categories */,
 				A08EE21F1728A1E7001830E6 /* Matchers */,
 				A02C7B0815EE65020061FCEE /* Model */,
 				A02C7B0915EE655E0061FCEE /* Stubs */,
@@ -391,6 +415,10 @@
 				A028892C1728C3FF00288022 /* NSString+Matcheable.m */,
 				A028892F1728C52000288022 /* LSMatcher.h */,
 				A02889301728C52100288022 /* LSMatcher.m */,
+				A02889331728C88D00288022 /* LSRegexMatcher.h */,
+				A02889341728C88D00288022 /* LSRegexMatcher.m */,
+				A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */,
+				A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -400,6 +428,7 @@
 			children = (
 				A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */,
 				A028891C1728B18A00288022 /* LSURLMatcherSpec.m */,
+				A02889421728CD6000288022 /* LSRegexMatcherSpec.m */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -441,6 +470,9 @@
 				A02889291728C3D200288022 /* NSURL+Matcheable.h in Headers */,
 				A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */,
 				A02889311728C52100288022 /* LSMatcher.h in Headers */,
+				A02889351728C88E00288022 /* LSRegexMatcher.h in Headers */,
+				A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */,
+				A028893E1728CA5900288022 /* NSString+Regex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +607,9 @@
 				A028892A1728C3D200288022 /* NSURL+Matcheable.m in Sources */,
 				A028892E1728C3FF00288022 /* NSString+Matcheable.m in Sources */,
 				A02889321728C52100288022 /* LSMatcher.m in Sources */,
+				A02889361728C88E00288022 /* LSRegexMatcher.m in Sources */,
+				A028893A1728C95600288022 /* NSRegularExpression+Matcheable.m in Sources */,
+				A028893F1728CA5900288022 /* NSString+Regex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +629,7 @@
 				A08EE2291728A3A9001830E6 /* LSStringMatcherSpec.m in Sources */,
 				A028891D1728B18A00288022 /* LSURLMatcherSpec.m in Sources */,
 				A02889241728BEFD00288022 /* LSTestRequest.m in Sources */,
+				A02889431728CD6000288022 /* LSRegexMatcherSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

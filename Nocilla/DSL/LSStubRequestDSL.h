@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "NSString+Matcheable.h"
 #import "NSURL+Matcheable.h"
+#import "NSString+Matcheable.h"
+#import "NSRegularExpression+Matcheable.h"
 
 @class LSStubRequestDSL;
 @class LSStubResponseDSL;

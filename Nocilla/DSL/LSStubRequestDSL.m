@@ -59,9 +59,6 @@
 @end
 
 LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {
-    if ([url isKindOfClass:[NSString class]]) {
-        url = [NSURL URLWithString:(NSString *)url];
-    }
     LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method urlMatcher:url.matcher];
     LSStubRequestDSL *dsl = [[LSStubRequestDSL alloc] initWithRequest:request];
     [[LSNocilla sharedInstance] addStubbedRequest:request];
