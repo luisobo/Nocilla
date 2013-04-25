@@ -1,8 +1,9 @@
 #import "LSStubRequest.h"
+#import "LSURLMatcher.h"
 
 @interface LSStubRequest ()
 @property (nonatomic, assign, readwrite) NSString *method;
-@property (nonatomic, strong, readwrite) NSURL *url;
+@property (nonatomic, strong, readwrite) LSURLMatcher *urlMatcher;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *mutableHeaders;
 
 -(BOOL)matchesMethod:(id<LSHTTPRequest>)request;
@@ -12,11 +13,16 @@
 @end
 
 @implementation LSStubRequest
-- (id)initWithMethod:(NSString *)method url:(NSString *)url {
+
+- (instancetype)initWithMethod:(NSString *)method url:(NSString *)url {
+    return [self initWithMethod:method urlMatcher:[[LSURLMatcher alloc] initWithURL:[NSURL URLWithString:url]]];
+}
+
+- (instancetype)initWithMethod:(NSString *)method urlMatcher:(LSURLMatcher *)urlMatcher; {
     self = [super init];
     if (self) {
         self.method = method;
-        self.url = [NSURL URLWithString:url];
+        self.urlMatcher = urlMatcher;
         self.mutableHeaders = [NSMutableDictionary dictionary];
     }
     return self;
@@ -33,7 +39,7 @@
 - (NSString *)description {
     return [NSString stringWithFormat:@"StubRequest:\nMethod: %@\nURL: %@\nHeaders: %@\nBody: %@\nResponse: %@",
             self.method,
-            self.url,
+            self.urlMatcher,
             self.headers,
             self.body,
             self.response];
@@ -66,12 +72,7 @@
 }
 
 -(BOOL)matchesURL:(id<LSHTTPRequest>)request {
-    NSString *a = [self.url absoluteString];
-    NSString *b = [request.url absoluteString];
-    if ([a isEqualToString:b]) {
-        return YES;
-    }
-    return NO;
+    return [self.urlMatcher matches:request.url];
 }
 
 -(BOOL)matchesHeaders:(id<LSHTTPRequest>)request {

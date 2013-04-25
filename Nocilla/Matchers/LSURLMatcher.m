@@ -18,4 +18,7 @@
     return [self.url isEqual:url];
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<LSURLMatcher URL:\"%@\">", [self.url absoluteString]];
+}
 @end

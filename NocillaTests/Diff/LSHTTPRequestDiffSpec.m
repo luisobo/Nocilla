@@ -1,18 +1,18 @@
 #import "Kiwi.h"
 #import "LSHTTPRequest.h"
 #import "LSHTTPRequestDiff.h"
-#import "LSStubRequest.h"
+#import "LSTestRequest.h"
 
 SPEC_BEGIN(LSHTTPRequestDiffSpec)
 describe(@"diffing two LSHTTPRequests", ^{
-    __block LSStubRequest *oneRequest = nil;
-    __block LSStubRequest *anotherRequest = nil;
+    __block LSTestRequest *oneRequest = nil;
+    __block LSTestRequest *anotherRequest = nil;
     __block LSHTTPRequestDiff *diff = nil;
     context(@"when both represent the same request", ^{
         beforeEach(^{
             NSString *urlString = @"http://www.google.com";
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:urlString];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:urlString];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:urlString];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:urlString];
             diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
         });
         
@@ -26,8 +26,8 @@ describe(@"diffing two LSHTTPRequests", ^{
     context(@"when the request differ in the method", ^{
         beforeEach(^{
             NSString *urlString = @"http://www.google.com";
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:urlString];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"POST" url:urlString];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:urlString];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"POST" url:urlString];
         });
         it(@"should not be empty", ^{
             diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
@@ -57,8 +57,8 @@ describe(@"diffing two LSHTTPRequests", ^{
     
     context(@"when the requests differ in the URL", ^{
         beforeEach(^{
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.luissolano.com"];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.luissolano.com"];
         });
         it(@"should not be empty", ^{
             diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
@@ -85,9 +85,9 @@ describe(@"diffing two LSHTTPRequests", ^{
     });
     context(@"when the request differ in one header", ^{
         beforeEach(^{
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
             [oneRequest setHeader:@"Content-Type" value:@"application/json"];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
         });
         it(@"should not be empty", ^{
             diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
@@ -118,9 +118,9 @@ describe(@"diffing two LSHTTPRequests", ^{
     
     context(@"when the request differ in one header each", ^{
         beforeEach(^{
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
             [oneRequest setHeader:@"Content-Type" value:@"application/json"];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
             [anotherRequest setHeader:@"Accept" value:@"text/plain"];
         });
         it(@"should not be empty", ^{
@@ -149,9 +149,9 @@ describe(@"diffing two LSHTTPRequests", ^{
     });
     context(@"when the requests differ in the body", ^{
         beforeEach(^{
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
             oneRequest.body = [@"this is a body" dataUsingEncoding:NSUTF8StringEncoding];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
         });
         it(@"should not be empty", ^{
             diff = [[LSHTTPRequestDiff alloc] initWithRequest:oneRequest andRequest:anotherRequest];
@@ -180,8 +180,8 @@ describe(@"diffing two LSHTTPRequests", ^{
     });
     context(@"when the requests differ in the Method and the URL", ^{
         beforeEach(^{
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"http://www.luissolano.com"];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"http://www.luissolano.com"];
         });
         context(@"in one direction", ^{
             beforeEach(^{
@@ -205,11 +205,11 @@ describe(@"diffing two LSHTTPRequests", ^{
     });
     context(@"when the request differ in the Method, URL and headers", ^{
         beforeEach(^{
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://www.google.es"];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"POST" url:@"http://www.google.es"];
             [oneRequest setHeader:@"X-API-TOKEN" value:@"123456789"];
             [oneRequest setHeader:@"Accept" value:@"application/json"];
             [oneRequest setHeader:@"X-Custom-Header" value:@"Really??"];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"DELETE" url:@"http://www.luissolano.com/ispellchecker/"];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"DELETE" url:@"http://www.luissolano.com/ispellchecker/"];
             [anotherRequest setHeader:@"Accept" value:@"application/json"];
             [anotherRequest setHeader:@"X-API-TOKEN" value:@"abcedfghi"];
             [anotherRequest setHeader:@"X-APP-ID" value:@"Nocilla"];
@@ -235,12 +235,12 @@ describe(@"diffing two LSHTTPRequests", ^{
     });
     context(@"when the requests differ in everything", ^{
         beforeEach(^{
-            oneRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://www.google.it"];
+            oneRequest = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"https://www.google.it"];
             [oneRequest setHeader:@"X-API-TOKEN" value:@"123456789"];
             [oneRequest setHeader:@"Accept" value:@"application/json"];
             [oneRequest setHeader:@"X-Custom-Header" value:@"Really??"];
             [oneRequest setBody:[@"This is a body" dataUsingEncoding:NSUTF8StringEncoding]];
-            anotherRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.luissolano.com"];
+            anotherRequest = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.luissolano.com"];
             [anotherRequest setHeader:@"X-API-TOKEN" value:@"123456789"];
             [anotherRequest setHeader:@"X-APP-ID" value:@"Nocilla"];
             [anotherRequest setBody:[@"This is THE body" dataUsingEncoding:NSUTF8StringEncoding]];
