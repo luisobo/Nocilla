@@ -11,6 +11,9 @@
 		41D450B99F6B46088DB143B3 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
 		A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
 		A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */; };
+		A028891D1728B18A00288022 /* LSURLMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A028891C1728B18A00288022 /* LSURLMatcherSpec.m */; };
+		A02889201728B1FC00288022 /* LSURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028891E1728B1FC00288022 /* LSURLMatcher.h */; };
+		A02889211728B1FC00288022 /* LSURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A028891F1728B1FC00288022 /* LSURLMatcher.m */; };
 		A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */; };
 		A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; };
 		A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */; };
@@ -87,6 +90,9 @@
 		A0055EE615EEAF8C005D6C85 /* LSTestingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSTestingConnection.h; path = Support/LSTestingConnection.h; sourceTree = "<group>"; };
 		A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSTestingConnection.m; path = Support/LSTestingConnection.m; sourceTree = "<group>"; };
 		A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSURLRequestHookSpec.m; path = Hooks/NSURLRequest/NSURLRequestHookSpec.m; sourceTree = "<group>"; };
+		A028891C1728B18A00288022 /* LSURLMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSURLMatcherSpec.m; path = Matchers/LSURLMatcherSpec.m; sourceTree = "<group>"; };
+		A028891E1728B1FC00288022 /* LSURLMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSURLMatcher.h; path = Matchers/LSURLMatcher.h; sourceTree = "<group>"; };
+		A028891F1728B1FC00288022 /* LSURLMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSURLMatcher.m; path = Matchers/LSURLMatcher.m; sourceTree = "<group>"; };
 		A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubRequestDSL.h; path = DSL/LSStubRequestDSL.h; sourceTree = "<group>"; };
 		A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestDSL.m; path = DSL/LSStubRequestDSL.m; sourceTree = "<group>"; };
 		A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubResponseDSL.h; path = DSL/LSStubResponseDSL.h; sourceTree = "<group>"; };
@@ -358,6 +364,8 @@
 			children = (
 				A08EE2251728A2F4001830E6 /* LSStringMatcher.h */,
 				A08EE2261728A2F4001830E6 /* LSStringMatcher.m */,
+				A028891E1728B1FC00288022 /* LSURLMatcher.h */,
+				A028891F1728B1FC00288022 /* LSURLMatcher.m */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -366,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */,
+				A028891C1728B18A00288022 /* LSURLMatcherSpec.m */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -403,6 +412,7 @@
 				A02C7AF815EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h in Headers */,
 				A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */,
 				A08EE2271728A2F4001830E6 /* LSStringMatcher.h in Headers */,
+				A02889201728B1FC00288022 /* LSURLMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +543,7 @@
 				A02C7AFE15EE62650061FCEE /* NSURLRequest+LSHTTPRequest.m in Sources */,
 				A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */,
 				A08EE2281728A2F4001830E6 /* LSStringMatcher.m in Sources */,
+				A02889211728B1FC00288022 /* LSURLMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +561,7 @@
 				A0BB870615FE7D8F0090236F /* LSStubRequestSpec.m in Sources */,
 				0FA3E7FE1680775B001DB582 /* LSStubResponseSpec.m in Sources */,
 				A08EE2291728A3A9001830E6 /* LSStringMatcherSpec.m in Sources */,
+				A028891D1728B18A00288022 /* LSURLMatcherSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
