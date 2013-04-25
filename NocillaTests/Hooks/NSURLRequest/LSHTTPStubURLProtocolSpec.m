@@ -102,8 +102,6 @@ describe(@"#startLoading", ^{
             });
             
             it(@"should pass to the client the correct response", ^{
-                [[client should] receive:@selector(URLProtocol:didReceiveResponse:cacheStoragePolicy:) withArguments:protocol, any(), theValue(NSURLCacheStorageNotAllowed)];
-                
                 [protocol startLoading];
                 
                 [[client.response should] beKindOfClass:[NSHTTPURLResponse class]];

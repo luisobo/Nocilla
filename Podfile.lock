@@ -1,29 +1,33 @@
-
 PODS:
-- AFNetworking (1.0RC1)
-- CocoaAsyncSocket (0.0.1)
-- CocoaHTTPServer (2.2.1):
-  - CocoaAsyncSocket (~> 0.0.1)
-  - CocoaLumberjack (~> 1.3.0)
-- CocoaLumberjack (1.3.3)
-- Kiwi (2.0.5)
-- MKNetworkKit (0.87):
-  - Reachability (~> 3.1.0)
-- Reachability (3.1.0)
+  - AFNetworking (1.0RC1)
+  - CocoaAsyncSocket (0.0.1)
+  - CocoaHTTPServer (2.2.1):
+    - CocoaAsyncSocket (~> 0.0.1)
+    - CocoaLumberjack (~> 1.3.0)
+  - CocoaLumberjack (1.3.3)
+  - Kiwi (2.0.6)
+  - MKNetworkKit (0.87):
+    - Reachability (~> 3.1.0)
+  - Reachability (3.1.0)
 
 DEPENDENCIES:
-- AFNetworking (= 1.0RC1)
-- CocoaHTTPServer (~> 2.2.1)
-- Kiwi (~> 2.0.0)
-- MKNetworkKit (~> 0.87)
+  - AFNetworking (= 1.0RC1)
+  - CocoaHTTPServer (~> 2.2.1)
+  - Kiwi (from `git://github.com/allending/Kiwi.git`, commit `c4354439fcc70114584212ab0c9d2a3c6523f96c`)
+  - MKNetworkKit (~> 0.87)
+
+EXTERNAL SOURCES:
+  Kiwi:
+    :commit: c4354439fcc70114584212ab0c9d2a3c6523f96c
+    :git: git://github.com/allending/Kiwi.git
 
 SPEC CHECKSUMS:
   AFNetworking: b21c1252d437fd322e7db1caa93b163d76a362cb
-  CocoaAsyncSocket: 70f5de3c1ba13526c23df75fc98a0ea3049aa19c
+  CocoaAsyncSocket: 73c96a4225998adad0c94142010f65e5d12077de
   CocoaHTTPServer: 188251009cdf2fb9f422e6979621b8942733cb22
   CocoaLumberjack: 5b2c6e153a8b251dc4b5cea52138e5c2665e2eca
-  Kiwi: 89ade77eb49c889178cb2779e02514a7b9b9449e
-  MKNetworkKit: 3d581af82df1a59e38efef8afef08437cef0df69
-  Reachability: 1c8584c5f26fa776695efef95caaa50402c94cfb
+  Kiwi: 56082a80f942de4d10423d8d8a599ab30cf50228
+  MKNetworkKit: 79a362de7fdcae82b714c45e0003c52b3b6e53c8
+  Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
 
-COCOAPODS: 0.16.4
+COCOAPODS: 0.17.2
