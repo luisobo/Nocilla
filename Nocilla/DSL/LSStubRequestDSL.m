@@ -2,6 +2,7 @@
 #import "LSStubResponseDSL.h"
 #import "LSStubRequest.h"
 #import "LSNocilla.h"
+#import "LSURLMatcher.h"
 
 @interface LSStubRequestDSL ()
 @property (nonatomic, strong) LSStubRequest *request;
@@ -57,8 +58,11 @@
 }
 @end
 
-LSStubRequestDSL * stubRequest(NSString *method, NSString *url) {
-    LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method url:url];
+LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {
+    if ([url isKindOfClass:[NSString class]]) {
+        url = [NSURL URLWithString:(NSString *)url];
+    }
+    LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method urlMatcher:url.matcher];
     LSStubRequestDSL *dsl = [[LSStubRequestDSL alloc] initWithRequest:request];
     [[LSNocilla sharedInstance] addStubbedRequest:request];
     return dsl;

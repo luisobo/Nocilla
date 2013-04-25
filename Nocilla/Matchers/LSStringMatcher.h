@@ -1,9 +1,8 @@
 #import <Foundation/Foundation.h>
+#import "LSMatcher.h"
 
-@interface LSStringMatcher : NSObject
+@interface LSStringMatcher : LSMatcher
 
 - (instancetype)initWithString:(NSString *)string;
-
-- (BOOL)matches:(NSString *)string;
 
 @end

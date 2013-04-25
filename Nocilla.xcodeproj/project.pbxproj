@@ -15,6 +15,12 @@
 		A02889201728B1FC00288022 /* LSURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028891E1728B1FC00288022 /* LSURLMatcher.h */; };
 		A02889211728B1FC00288022 /* LSURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A028891F1728B1FC00288022 /* LSURLMatcher.m */; };
 		A02889241728BEFD00288022 /* LSTestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889231728BEFD00288022 /* LSTestRequest.m */; };
+		A02889291728C3D200288022 /* NSURL+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889271728C3D200288022 /* NSURL+Matcheable.h */; };
+		A028892A1728C3D200288022 /* NSURL+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889281728C3D200288022 /* NSURL+Matcheable.m */; };
+		A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892B1728C3FF00288022 /* NSString+Matcheable.h */; };
+		A028892E1728C3FF00288022 /* NSString+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A028892C1728C3FF00288022 /* NSString+Matcheable.m */; };
+		A02889311728C52100288022 /* LSMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892F1728C52000288022 /* LSMatcher.h */; };
+		A02889321728C52100288022 /* LSMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889301728C52100288022 /* LSMatcher.m */; };
 		A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */; };
 		A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; };
 		A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */; };
@@ -96,6 +102,13 @@
 		A028891F1728B1FC00288022 /* LSURLMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSURLMatcher.m; path = Matchers/LSURLMatcher.m; sourceTree = "<group>"; };
 		A02889221728BEFD00288022 /* LSTestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTestRequest.h; sourceTree = "<group>"; };
 		A02889231728BEFD00288022 /* LSTestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTestRequest.m; sourceTree = "<group>"; };
+		A02889251728C36B00288022 /* LSMatcheable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSMatcheable.h; path = Matchers/LSMatcheable.h; sourceTree = "<group>"; };
+		A02889271728C3D200288022 /* NSURL+Matcheable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+Matcheable.h"; path = "Matchers/NSURL+Matcheable.h"; sourceTree = "<group>"; };
+		A02889281728C3D200288022 /* NSURL+Matcheable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Matcheable.m"; path = "Matchers/NSURL+Matcheable.m"; sourceTree = "<group>"; };
+		A028892B1728C3FF00288022 /* NSString+Matcheable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Matcheable.h"; path = "Matchers/NSString+Matcheable.h"; sourceTree = "<group>"; };
+		A028892C1728C3FF00288022 /* NSString+Matcheable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Matcheable.m"; path = "Matchers/NSString+Matcheable.m"; sourceTree = "<group>"; };
+		A028892F1728C52000288022 /* LSMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMatcher.h; path = Matchers/LSMatcher.h; sourceTree = "<group>"; };
+		A02889301728C52100288022 /* LSMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSMatcher.m; path = Matchers/LSMatcher.m; sourceTree = "<group>"; };
 		A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubRequestDSL.h; path = DSL/LSStubRequestDSL.h; sourceTree = "<group>"; };
 		A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestDSL.m; path = DSL/LSStubRequestDSL.m; sourceTree = "<group>"; };
 		A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubResponseDSL.h; path = DSL/LSStubResponseDSL.h; sourceTree = "<group>"; };
@@ -371,6 +384,13 @@
 				A08EE2261728A2F4001830E6 /* LSStringMatcher.m */,
 				A028891E1728B1FC00288022 /* LSURLMatcher.h */,
 				A028891F1728B1FC00288022 /* LSURLMatcher.m */,
+				A02889251728C36B00288022 /* LSMatcheable.h */,
+				A02889271728C3D200288022 /* NSURL+Matcheable.h */,
+				A02889281728C3D200288022 /* NSURL+Matcheable.m */,
+				A028892B1728C3FF00288022 /* NSString+Matcheable.h */,
+				A028892C1728C3FF00288022 /* NSString+Matcheable.m */,
+				A028892F1728C52000288022 /* LSMatcher.h */,
+				A02889301728C52100288022 /* LSMatcher.m */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -418,6 +438,9 @@
 				A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */,
 				A08EE2271728A2F4001830E6 /* LSStringMatcher.h in Headers */,
 				A02889201728B1FC00288022 /* LSURLMatcher.h in Headers */,
+				A02889291728C3D200288022 /* NSURL+Matcheable.h in Headers */,
+				A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */,
+				A02889311728C52100288022 /* LSMatcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +572,9 @@
 				A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */,
 				A08EE2281728A2F4001830E6 /* LSStringMatcher.m in Sources */,
 				A02889211728B1FC00288022 /* LSURLMatcher.m in Sources */,
+				A028892A1728C3D200288022 /* NSURL+Matcheable.m in Sources */,
+				A028892E1728C3FF00288022 /* NSString+Matcheable.m in Sources */,
+				A02889321728C52100288022 /* LSMatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

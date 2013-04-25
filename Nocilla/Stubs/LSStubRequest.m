@@ -1,9 +1,10 @@
 #import "LSStubRequest.h"
-#import "LSURLMatcher.h"
+#import "LSMatcher.h"
+#import "NSURL+Matcheable.h"
 
 @interface LSStubRequest ()
 @property (nonatomic, assign, readwrite) NSString *method;
-@property (nonatomic, strong, readwrite) LSURLMatcher *urlMatcher;
+@property (nonatomic, strong, readwrite) LSMatcher *urlMatcher;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *mutableHeaders;
 
 -(BOOL)matchesMethod:(id<LSHTTPRequest>)request;
@@ -15,10 +16,10 @@
 @implementation LSStubRequest
 
 - (instancetype)initWithMethod:(NSString *)method url:(NSString *)url {
-    return [self initWithMethod:method urlMatcher:[[LSURLMatcher alloc] initWithURL:[NSURL URLWithString:url]]];
+    return [self initWithMethod:method urlMatcher:[[NSURL URLWithString:url] matcher]];
 }
 
-- (instancetype)initWithMethod:(NSString *)method urlMatcher:(LSURLMatcher *)urlMatcher; {
+- (instancetype)initWithMethod:(NSString *)method urlMatcher:(LSMatcher *)urlMatcher; {
     self = [super init];
     if (self) {
         self.method = method;
@@ -72,7 +73,7 @@
 }
 
 -(BOOL)matchesURL:(id<LSHTTPRequest>)request {
-    return [self.urlMatcher matches:request.url];
+    return [self.urlMatcher matches:[request.url absoluteString]];
 }
 
 -(BOOL)matchesHeaders:(id<LSHTTPRequest>)request {

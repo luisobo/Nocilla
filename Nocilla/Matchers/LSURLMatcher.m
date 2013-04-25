@@ -14,8 +14,8 @@
     return self;
 }
 
-- (BOOL)matches:(NSURL *)url {
-    return [self.url isEqual:url];
+- (BOOL)matches:(NSString *)string;{
+    return [self.url isEqual:[NSURL URLWithString:string]];
 }
 
 - (NSString *)description {

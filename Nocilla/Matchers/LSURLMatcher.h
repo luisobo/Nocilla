@@ -1,9 +1,8 @@
 #import <Foundation/Foundation.h>
+#import "LSMatcher.h"
 
-@interface LSURLMatcher : NSObject
+@interface LSURLMatcher : LSMatcher
 
 - (instancetype)initWithURL:(NSURL *)url;
-
-- (BOOL)matches:(NSURL *)url;
 
 @end

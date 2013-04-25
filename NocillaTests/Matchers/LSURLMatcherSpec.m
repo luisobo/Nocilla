@@ -10,13 +10,13 @@ beforeEach(^{
 
 context(@"when both urls are equal", ^{
     it(@"matches", ^{
-        [[theValue([matcher matches:[NSURL URLWithString:@"http://www.github.com/luisobo/Nocilla"]]) should] beYes];
+        [[theValue([matcher matches:@"http://www.github.com/luisobo/Nocilla"]) should] beYes];
     });
 });
 
 context(@"when both strings are different", ^{
     it(@"does not match", ^{
-        [[theValue([matcher matches:[NSURL URLWithString:@"http://www.github.com/luisobo/StateMachine"]]) should] beNo];
+        [[theValue([matcher matches:@"http://www.github.com/luisobo/StateMachine"]) should] beNo];
     });
 });
 
