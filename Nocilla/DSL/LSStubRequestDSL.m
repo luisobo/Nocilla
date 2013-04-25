@@ -2,7 +2,6 @@
 #import "LSStubResponseDSL.h"
 #import "LSStubRequest.h"
 #import "LSNocilla.h"
-#import "LSURLMatcher.h"
 
 @interface LSStubRequestDSL ()
 @property (nonatomic, strong) LSStubRequest *request;
