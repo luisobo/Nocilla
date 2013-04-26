@@ -6,10 +6,10 @@ This library was inspired by [WebMock](https://github.com/bblimke/webmock) and i
 ## Features
 * Stub HTTP and HTTPS requests in your unit tests.
 * Awesome DSL that will improve the readability and maintainability of your tests.
+* NEW! Match requests with regular expressions.
 * Tested.
 * Fast.
 * Extendable to support more HTTP libraries.
-* Huge community, we overflowed the number of Stars and Forks in GitHub (meh, not really).
 
 ## Limitations
 * At this moment only works with requests made with `NSURLConnection`, but it's possible to extend Nocilla to support more HTTP libraries. Nocilla has been tested with [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [MKNetworkKit](https://github.com/MugunthKumar/MKNetworkKit)
