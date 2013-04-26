@@ -1,4 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "NSString+Matcheable.h"
+#import "NSString+Matcheable.h"
+#import "NSRegularExpression+Matcheable.h"
 
 @class LSStubRequestDSL;
 @class LSStubResponseDSL;
@@ -23,7 +26,7 @@ typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData
 extern "C" {
 #endif
     
-LSStubRequestDSL * stubRequest(NSString *method, NSString *url);
+LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url);
     
 #ifdef __cplusplus
 }

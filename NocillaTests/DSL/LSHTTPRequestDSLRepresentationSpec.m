@@ -1,5 +1,5 @@
 #import "Kiwi.h"
-#import "LSStubRequest.h"
+#import "LSTestRequest.h"
 #import "LSHTTPRequestDSLRepresentation.h"
 
 SPEC_BEGIN(LSHTTPRequestDSLRepresentationSpec)
@@ -7,7 +7,7 @@ describe(@"description", ^{
     __block LSHTTPRequestDSLRepresentation *dsl = nil;
     describe(@"a request with a GET method and url", ^{
         beforeEach(^{
-            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
+            LSTestRequest *request = [[LSTestRequest alloc] initWithMethod:@"GET" url:@"http://www.google.com"];
             dsl = [[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request];
         });
         it(@"should return the DSL representation", ^{
@@ -16,7 +16,7 @@ describe(@"description", ^{
     });
     describe(@"a request with a POST method and a url", ^{
         beforeEach(^{
-            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            LSTestRequest *request = [[LSTestRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
             dsl = [[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request];
 
         });
@@ -26,7 +26,7 @@ describe(@"description", ^{
     });
     describe(@"a request with one header", ^{
         beforeEach(^{
-            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            LSTestRequest *request = [[LSTestRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
             [request setHeader:@"Accept" value:@"text/plain"];
             dsl = [[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request];
         });
@@ -36,7 +36,7 @@ describe(@"description", ^{
     });
     describe(@"a request with 3 headers", ^{
         beforeEach(^{
-            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            LSTestRequest *request = [[LSTestRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
             [request setHeader:@"Accept" value:@"text/plain"];
             [request setHeader:@"Content-Length" value:@"18"];
             [request setHeader:@"If-Match" value:@"a8fhw0dhasd03qn02"];
@@ -50,7 +50,7 @@ describe(@"description", ^{
     });
     describe(@"when a header contains a double quoute", ^{
         beforeEach(^{
-            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            LSTestRequest *request = [[LSTestRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
             [request setHeader:@"X-MY-HEADER" value:@"quote\"quoute"];
             dsl = [[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request];
         });
@@ -60,7 +60,7 @@ describe(@"description", ^{
     });
     describe(@"a request with headers and body", ^{
         beforeEach(^{
-            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            LSTestRequest *request = [[LSTestRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
             [request setHeader:@"Accept" value:@"text/plain"];
             [request setHeader:@"Content-Length" value:@"18"];
             [request setHeader:@"If-Match" value:@"a8fhw0dhasd03qn02"];
@@ -75,7 +75,7 @@ describe(@"description", ^{
     });
     context(@"when the body contain double quotes", ^{
         beforeEach(^{
-            LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
+            LSTestRequest *request = [[LSTestRequest alloc] initWithMethod:@"POST" url:@"http://luissolano.com"];
             [request setBody:[@"{\"text\":\"adios\"}" dataUsingEncoding:NSUTF8StringEncoding]];
             dsl = [[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request];
         });

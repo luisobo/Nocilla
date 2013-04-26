@@ -57,8 +57,8 @@
 }
 @end
 
-LSStubRequestDSL * stubRequest(NSString *method, NSString *url) {
-    LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method url:url];
+LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {
+    LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method urlMatcher:url.matcher];
     LSStubRequestDSL *dsl = [[LSStubRequestDSL alloc] initWithRequest:request];
     [[LSNocilla sharedInstance] addStubbedRequest:request];
     return dsl;
