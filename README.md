@@ -14,10 +14,13 @@ This library was inspired by [WebMock](https://github.com/bblimke/webmock) and i
 ## Limitations
 * At this moment only works with requests made with `NSURLConnection`, but it's possible to extend Nocilla to support more HTTP libraries. Nocilla has been tested with [AFNetworking](https://github.com/AFNetworking/AFNetworking) and [MKNetworkKit](https://github.com/MugunthKumar/MKNetworkKit)
 
-## Installation
-_WIP_ (please, read: You figure it out, and then you tell me)
+### As a [CocoaPod](http://cocoapods.org/)
+Just add this to your Podfile
+```ruby
+pod 'Nocilla'
+```
 
-* Nocilla will be a [CocoaPod](http://cocoapods.org/) soon.
+### Other approaches
 * You should be able to add Nocilla to you source tree. If you are using git, consider using a `git submodule`
 
 ## Usage
@@ -55,6 +58,12 @@ It will return the default response, which is a 200 and an empty body.
 ```objc
 stubRequest(@"GET", @"http://www.google.com");
 ```
+
+#### NEW! Stubbing requests with regular expressions
+```objc
+stubRequest(@"GET", @"^http://(.*?)\.example\.com/v1/dogs\.json".regex);
+```
+
 
 #### Stubbing a request with a particular header
 

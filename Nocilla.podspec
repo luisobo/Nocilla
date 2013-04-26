@@ -14,11 +14,11 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Nocilla/**/*.{h,m}'
 
-  s.public_header_files = ['Nocilla/Nocilla.h', 
-    'Nocilla/LSNocilla.h', 
-    'Nocilla/DSL/DSL.h', 
-    'Nocilla/DSL/LSStubRequestDSL.h', 
-    'Nocilla/DSL/LSStubResponseDSL.h', 
+  s.public_header_files = ['Nocilla/Nocilla.h',
+    'Nocilla/LSNocilla.h',
+    'Nocilla/DSL/DSL.h',
+    'Nocilla/DSL/LSStubRequestDSL.h',
+    'Nocilla/DSL/LSStubResponseDSL.h',
     'Nocilla/Matchers/*.h',
     'Nocilla/Categories/NSString+Regex.h']
 
