@@ -55,6 +55,14 @@
         return responseDSL;
     };
 }
+
+- (WithDelay)withDelay {
+    return ^(NSTimeInterval delay) {
+        self.request.delay = delay;
+        return self;
+    };
+}
+
 @end
 
 LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {

@@ -157,5 +157,33 @@ context(@"AFNetworking", ^{
         [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] shouldEventually] equal:@"text/plain"];
         [operation.error shouldBeNil];
     });
+    it(@"should pause for delay", ^{
+        stubRequest(@"POST", @"https://example.com/say-hello").
+        withHeader(@"Content-Type", @"text/plain").
+        withHeader(@"X-MY-AWESOME-HEADER", @"sisisi").
+        withDelay(1).
+        withBody(@"Adios!").
+        andReturnRawResponse([@"HTTP/1.1 200 OK\nContent-Type: text/plain\n\nhola" dataUsingEncoding:NSUTF8StringEncoding]);
+        
+        NSURL *url = [NSURL URLWithString:@"https://example.com/say-hello"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
+        [request setHTTPBody:[@"Adios!" dataUsingEncoding:NSASCIIStringEncoding]];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation start];
+        
+        NSDate *start = [NSDate date];
+        [operation waitUntilFinished];
+        
+        
+      
+        [[theValue([[NSDate date] timeIntervalSinceDate:start]) should] beGreaterThan:theValue(1)];
+        [operation.error shouldBeNil];
+        [[operation.responseString should] equal:@"hola"];
+        [[theValue(operation.response.statusCode) should] equal:theValue(200)];
+        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
+    });
 });
 SPEC_END
