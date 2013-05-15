@@ -18,7 +18,7 @@ typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData
 - (id)initWithRequest:(LSStubRequest *)request;
 - (WithHeaderMethod)withHeader;
 - (WithHeadersMethod)withHeaders;
-- (WithDelay)withDelay;
+- (WithDelay)withResponseTime;
 - (AndBodyMethod)withBody;
 - (AndReturnMethod)andReturn;
 - (AndReturnRawResponseMethod)andReturnRawResponse;

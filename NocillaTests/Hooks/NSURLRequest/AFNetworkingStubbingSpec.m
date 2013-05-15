@@ -161,7 +161,7 @@ context(@"AFNetworking", ^{
         stubRequest(@"POST", @"https://example.com/say-hello").
         withHeader(@"Content-Type", @"text/plain").
         withHeader(@"X-MY-AWESOME-HEADER", @"sisisi").
-        withDelay(1).
+        withResponseTime(1).
         withBody(@"Adios!").
         andReturnRawResponse([@"HTTP/1.1 200 OK\nContent-Type: text/plain\n\nhola" dataUsingEncoding:NSUTF8StringEncoding]);
         

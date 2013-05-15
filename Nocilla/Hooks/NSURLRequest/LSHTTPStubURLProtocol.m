@@ -40,8 +40,8 @@
     NSHTTPURLResponse* urlResponse = nil;
     NSData *body = nil;
     if (stubbedRequest) {
-        if(stubbedRequest.delay > 0) {
-            [NSThread sleepForTimeInterval:stubbedRequest.delay];
+        if(stubbedRequest.responseTime > 0) {
+            [NSThread sleepForTimeInterval:stubbedRequest.responseTime];
         }
         urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
                                                                  statusCode:stubbedResponse.statusCode

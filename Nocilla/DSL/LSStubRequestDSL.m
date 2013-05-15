@@ -56,9 +56,9 @@
     };
 }
 
-- (WithDelay)withDelay {
-    return ^(NSTimeInterval delay) {
-        self.request.delay = delay;
+- (WithDelay)withResponseTime {
+    return ^(NSTimeInterval responseTime) {
+        self.request.responseTime = responseTime;
         return self;
     };
 }
