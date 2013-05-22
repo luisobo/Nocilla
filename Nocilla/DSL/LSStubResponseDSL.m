@@ -36,4 +36,12 @@
         return self;
     };
 }
+
+- (ResponseWithDataMethod)withData {
+    return ^(NSData *data) {
+        self.response.body = data;
+        return self;
+    };
+}
+
 @end
