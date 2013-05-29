@@ -4,6 +4,7 @@
 @class LSStubResponseDSL;
 
 typedef LSStubResponseDSL *(^ResponseWithBodyMethod)(NSString *);
+typedef LSStubResponseDSL *(^ResponseWithJSONMethod)(NSDictionary *);
 typedef LSStubResponseDSL *(^ResponseWithHeaderMethod)(NSString *, NSString *);
 typedef LSStubResponseDSL *(^ResponseWithHeadersMethod)(NSDictionary *);
 
@@ -12,4 +13,5 @@ typedef LSStubResponseDSL *(^ResponseWithHeadersMethod)(NSDictionary *);
 - (ResponseWithHeaderMethod)withHeader;
 - (ResponseWithHeadersMethod)withHeaders;
 - (ResponseWithBodyMethod)withBody;
+- (ResponseWithJSONMethod)withJSON;
 @end
