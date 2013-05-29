@@ -89,6 +89,15 @@ withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abg
 withBody(@"{\"name\":\"foo\"}");
 ```
 
+#### Stubbing a request with the JSON helper
+
+```objc
+stubRequest(@"POST", @"https://api.example.com/dogs.json").
+withJSON(@{@"name" : @"foo"});
+```
+Note that the `withJSON` helper sets a response header with:
+`[self.response setHeader:@"Content-Type" value:@"application/json"];`
+
 #### Returning a specific status code
 ```objc
 stubRequest(@"GET", @"http://www.google.com").andReturn(404);
