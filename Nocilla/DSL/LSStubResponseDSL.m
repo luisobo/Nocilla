@@ -36,4 +36,21 @@
         return self;
     };
 }
+
+- (ResponseWithJSONMethod)withJSON {
+    return ^(NSDictionary *json) {
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:json
+                                                               options:NSJSONWritingPrettyPrinted
+                                                                 error:&error];
+
+        if (error) {
+            [[NSException exceptionWithName:@"JSON Fixture Error" reason:@"Failed to make fixture JSON" userInfo:error.userInfo] raise];
+        }
+
+        [self.response setHeader:@"Content-Type" value:@"application/json"];
+        self.response.body = jsonData;
+        return self;
+    };
+}
 @end
