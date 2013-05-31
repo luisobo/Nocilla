@@ -47,7 +47,7 @@
         body = stubbedResponse.body;
     } else {
 
-        [NSException raise:@"NocillaUnexpectedRequest" format:@"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [request toNocillaDSL]];
+        [NSException raise:@"NocillaUnexpectedRequest" format:@"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [request toNocillaDSL]];
     }
     [client URLProtocol:self didReceiveResponse:urlResponse
      cacheStoragePolicy:NSURLCacheStorageNotAllowed];
