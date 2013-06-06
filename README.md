@@ -128,6 +128,7 @@ withBody(@"{\"name\":\"foo\"}").
 andReturn(201).
 withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
+```
 
 #### NEW! Making a request fail
 This will call the failure handler (callback, delegate... whatever your HTTP client uses) with the specified error.
