@@ -141,7 +141,6 @@ describe(@"#startLoading", ^{
                     [[client should] receive:@selector(URLProtocol:didFailWithError:) withArguments:protocol, error];
 
                     [protocol startLoading];
-
                 });
             });
         });
