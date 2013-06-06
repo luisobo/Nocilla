@@ -12,7 +12,7 @@
 @property (nonatomic, strong, readonly) LSMatcher *urlMatcher;
 @property (nonatomic, strong, readonly) NSDictionary *headers;
 @property (nonatomic, strong, readwrite) NSData *body;
-
+@property (nonatomic, readwrite) NSTimeInterval responseTime;
 @property (nonatomic, strong) LSStubResponse *response;
 
 - (instancetype)initWithMethod:(NSString *)method url:(NSString *)url;
@@ -21,4 +21,5 @@
 - (void)setHeader:(NSString *)header value:(NSString *)value;
 
 - (BOOL)matchesRequest:(id<LSHTTPRequest>)request;
+
 @end

@@ -40,6 +40,9 @@
     NSHTTPURLResponse* urlResponse = nil;
     NSData *body = nil;
     if (stubbedRequest) {
+        if(stubbedRequest.responseTime > 0) {
+            [NSThread sleepForTimeInterval:stubbedRequest.responseTime];
+        }
         urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
                                                                  statusCode:stubbedResponse.statusCode
                                                                headerFields:stubbedResponse.headers

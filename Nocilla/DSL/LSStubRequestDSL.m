@@ -55,6 +55,14 @@
         return responseDSL;
     };
 }
+
+- (WithDelay)withResponseTime {
+    return ^(NSTimeInterval responseTime) {
+        self.request.responseTime = responseTime;
+        return self;
+    };
+}
+
 @end
 
 LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {
