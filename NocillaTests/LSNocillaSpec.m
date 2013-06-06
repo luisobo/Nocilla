@@ -5,13 +5,6 @@
 
 SPEC_BEGIN(LSNocillaSpec)
 
-/*
- url;
- method;
- headers;
- body;
- */
-
 describe(@"-responseForRequest:", ^{
     context(@"when the specified request matches a previously stubbed request", ^{
         it(@"returns the associated response", ^{
