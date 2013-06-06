@@ -27,16 +27,20 @@
 
     LSStubResponse* stubbedResponse = [[LSNocilla sharedInstance] responseForRequest:request];
 
-    NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
-                                              statusCode:stubbedResponse.statusCode
-                                            headerFields:stubbedResponse.headers
-                                             requestTime:0];
-    NSData *body = stubbedResponse.body;
+    if (stubbedResponse.shouldFail) {
+        [client URLProtocol:self didFailWithError:stubbedResponse.error];
+    } else {
+        NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
+                                                  statusCode:stubbedResponse.statusCode
+                                                headerFields:stubbedResponse.headers
+                                                 requestTime:0];
+        NSData *body = stubbedResponse.body;
 
-    [client URLProtocol:self didReceiveResponse:urlResponse
-     cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-    [client URLProtocol:self didLoadData:body];
-    [client URLProtocolDidFinishLoading:self];
+        [client URLProtocol:self didReceiveResponse:urlResponse
+         cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+        [client URLProtocol:self didLoadData:body];
+        [client URLProtocolDidFinishLoading:self];
+    }
 }
 
 - (void)stopLoading {
