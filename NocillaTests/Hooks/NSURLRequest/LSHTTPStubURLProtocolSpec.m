@@ -90,39 +90,59 @@ describe(@"#startLoading", ^{
             protocol = [[LSHTTPStubURLProtocol alloc] initWithRequest:request cachedResponse:nil client:client]; 
         });
         context(@"that matches an stubbed request", ^{
-            beforeEach(^{
-                LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
-                LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithStatusCode:403];
-                [stubResponse setHeader:@"Content-Type" value:@"application/xml"];
-                bodyString = @"<error>Error</error>" ;
-                stubResponse.body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
-                stubRequest.response = stubResponse;
-                
-                [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+            context(@"and the response should succeed", ^{
+                beforeEach(^{
+                    LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
+                    LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithStatusCode:403];
+                    [stubResponse setHeader:@"Content-Type" value:@"application/xml"];
+                    bodyString = @"<error>Error</error>" ;
+                    stubResponse.body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+                    stubRequest.response = stubResponse;
+
+                    [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+                });
+
+                it(@"should pass to the client the correct response", ^{
+                    [protocol startLoading];
+
+                    [[client.response should] beKindOfClass:[NSHTTPURLResponse class]];
+                    NSHTTPURLResponse *response = (NSHTTPURLResponse *)client.response;
+                    [[response.URL should] equal:[NSURL URLWithString:stringUrl]];
+                    [[theValue(response.statusCode) should] equal:theValue(403)];
+                    [[response.allHeaderFields should] equal:@{ @"Content-Type": @"application/xml"}];
+                });
+                it(@"should pass the body to the client", ^{
+
+                    [[client should] receive:@selector(URLProtocol:didLoadData:) withArguments:protocol, [bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+
+                    [protocol startLoading];
+
+                });
+
+                it(@"should notify the client that it finished loading", ^{
+                    [[client should] receive:@selector(URLProtocolDidFinishLoading:)];
+
+                    [protocol startLoading];
+                });
             });
-            
-            it(@"should pass to the client the correct response", ^{
-                [protocol startLoading];
-                
-                [[client.response should] beKindOfClass:[NSHTTPURLResponse class]];
-                NSHTTPURLResponse *response = (NSHTTPURLResponse *)client.response;
-                [[response.URL should] equal:[NSURL URLWithString:stringUrl]];
-                [[theValue(response.statusCode) should] equal:theValue(403)];
-                [[response.allHeaderFields should] equal:@{ @"Content-Type": @"application/xml"}];
-            });
-            it(@"should pass the body to the client", ^{
-                
-                [[client should] receive:@selector(URLProtocol:didLoadData:) withArguments:protocol, [bodyString dataUsingEncoding:NSUTF8StringEncoding]];
-                
-                [protocol startLoading];
-                
-            });
-            
-            it(@"should notify the client that it finished loading", ^{
-                [[client should] receive:@selector(URLProtocolDidFinishLoading:)];
-                
-                [protocol startLoading];
-                
+
+            context(@"and the response should fail", ^{
+                __block NSError *error;
+                beforeEach(^{
+                    LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
+                    error = [NSError mock];
+                    LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithError:error];
+                    stubRequest.response = stubResponse;
+
+                    [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+                });
+
+                it(@"should notify the client that it failed", ^{
+                    [[client should] receive:@selector(URLProtocol:didFailWithError:) withArguments:protocol, error];
+
+                    [protocol startLoading];
+
+                });
             });
         });
         context(@"that doesn't match any stubbed request", ^{
