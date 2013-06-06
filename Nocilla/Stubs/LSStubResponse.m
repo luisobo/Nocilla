@@ -5,6 +5,8 @@
 @property (nonatomic, strong) NSMutableDictionary *mutableHeaders;
 @property (nonatomic, assign) UInt64 offset;
 @property (nonatomic, assign, getter = isDone) BOOL done;
+@property (nonatomic, assign) BOOL shouldFail;
+@property (nonatomic, strong) NSError *error;
 @end
 
 @implementation LSStubResponse
@@ -13,6 +15,8 @@
 - (id)initDefaultResponse {
     self = [super init];
     if (self) {
+        self.shouldFail = NO;
+
         self.statusCode = 200;
         self.mutableHeaders = [NSMutableDictionary dictionary];
         self.body = [@"" dataUsingEncoding:NSUTF8StringEncoding];
@@ -20,9 +24,20 @@
     return self;
 }
 
+
+- (id)initWithError:(NSError *)error {
+    self = [super init];
+    if (self) {
+        self.shouldFail = YES;
+        self.error = error;
+    }
+    return self;
+}
+
 -(id)initWithStatusCode:(NSInteger)statusCode {
     self = [super init];
     if (self) {
+        self.shouldFail = NO;
         self.statusCode = statusCode;
         self.mutableHeaders = [NSMutableDictionary dictionary];
         self.body = [@"" dataUsingEncoding:NSUTF8StringEncoding];

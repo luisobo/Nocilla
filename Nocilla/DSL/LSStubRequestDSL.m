@@ -55,6 +55,13 @@
         return responseDSL;
     };
 }
+
+- (AndFailWithErrorMethod)andFailWithError {
+    return ^(NSError *error) {
+        self.request.response = [[LSStubResponse alloc] initWithError:error];
+    };
+}
+
 @end
 
 LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {

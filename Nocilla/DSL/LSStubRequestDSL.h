@@ -12,6 +12,7 @@ typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);
 typedef LSStubRequestDSL *(^AndBodyMethod)(NSString *);
 typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
 typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData);
+typedef void (^AndFailWithErrorMethod)(NSError *error);
 
 @interface LSStubRequestDSL : NSObject
 - (id)initWithRequest:(LSStubRequest *)request;
@@ -20,6 +21,7 @@ typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData
 - (AndBodyMethod)withBody;
 - (AndReturnMethod)andReturn;
 - (AndReturnRawResponseMethod)andReturnRawResponse;
+- (AndFailWithErrorMethod)andFailWithError;
 @end
 
 #ifdef __cplusplus
