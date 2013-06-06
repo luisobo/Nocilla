@@ -24,31 +24,15 @@
 - (void)startLoading {
     NSURLRequest* request = [self request];
 	id<NSURLProtocolClient> client = [self client];
-    
-    LSStubRequest *stubbedRequest = nil;
-    LSStubResponse* stubbedResponse = nil;
-    NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
-    
-    for(LSStubRequest *someStubbedRequest in requests) {
-        if ([someStubbedRequest matchesRequest:request]) {
-            stubbedRequest = someStubbedRequest;
-            stubbedResponse = stubbedRequest.response;
-            break;
-        }
-    }
-    
-    NSHTTPURLResponse* urlResponse = nil;
-    NSData *body = nil;
-    if (stubbedRequest) {
-        urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
-                                                                 statusCode:stubbedResponse.statusCode
-                                                               headerFields:stubbedResponse.headers
-                                                                requestTime:0];
-        body = stubbedResponse.body;
-    } else {
 
-        [NSException raise:@"NocillaUnexpectedRequest" format:@"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [request toNocillaDSL]];
-    }
+    LSStubResponse* stubbedResponse = [[LSNocilla sharedInstance] responseForRequest:request];
+
+    NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
+                                              statusCode:stubbedResponse.statusCode
+                                            headerFields:stubbedResponse.headers
+                                             requestTime:0];
+    NSData *body = stubbedResponse.body;
+
     [client URLProtocol:self didReceiveResponse:urlResponse
      cacheStoragePolicy:NSURLCacheStorageNotAllowed];
     [client URLProtocol:self didLoadData:body];
