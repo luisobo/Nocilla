@@ -157,5 +157,33 @@ context(@"AFNetworking", ^{
         [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] shouldEventually] equal:@"text/plain"];
         [operation.error shouldBeNil];
     });
+
+    it(@"should stub a request with authorization", ^{
+        stubRequest(@"POST", @"https://example.com/say-hello").
+        withHeader(@"Content-Type", @"text/plain").
+        withHeader(@"X-MY-AWESOME-HEADER", @"sisisi").
+        withBody(@"Adios!").
+        withAuthorization(@"username", @"password").
+        andReturn(200).
+        withHeader(@"Content-Type", @"text/plain").
+        withBody(@"hola");
+
+        NSURL *url = [NSURL URLWithString:@"https://example.com/say-hello"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
+        [request setHTTPBody:[@"Adios!" dataUsingEncoding:NSASCIIStringEncoding]];
+        [request setValue:@"Basic dXNlcm5hbWU6cGFzc3dvcmQ=" forHTTPHeaderField:@"Authorization"];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation start];
+
+        [operation waitUntilFinished];
+
+        [operation.error shouldBeNil];
+        [[operation.responseString should] equal:@"hola"];
+        [[theValue(operation.response.statusCode) should] equal:theValue(200)];
+        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
+    });
 });
 SPEC_END

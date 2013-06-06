@@ -19,6 +19,7 @@
 - (instancetype)initWithMethod:(NSString *)method urlMatcher:(LSMatcher *)urlMatcher;
 
 - (void)setHeader:(NSString *)header value:(NSString *)value;
+- (void)setAuthorizationHeaderWithUsername:(NSString *)username password:(NSString *)password;
 
 - (BOOL)matchesRequest:(id<LSHTTPRequest>)request;
 @end

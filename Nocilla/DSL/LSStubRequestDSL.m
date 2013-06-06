@@ -33,6 +33,13 @@
     };
 }
 
+- (WithAuthorizationHeaderMethod)withAuthorization {
+    return ^(NSString * username, NSString * password) {
+        [self.request setAuthorizationHeaderWithUsername:username password:password];
+        return self;
+    };
+}
+
 - (AndBodyMethod)withBody {
     return ^(NSString *body) {
         self.request.body = [body dataUsingEncoding:NSUTF8StringEncoding];
