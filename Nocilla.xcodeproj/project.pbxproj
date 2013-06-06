@@ -11,6 +11,7 @@
 		41D450B99F6B46088DB143B3 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
 		A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
 		A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */; };
+		A01CEBED1760081F00637CE7 /* LSNocillaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBEC1760081F00637CE7 /* LSNocillaSpec.m */; };
 		A02889241728BEFD00288022 /* LSTestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889231728BEFD00288022 /* LSTestRequest.m */; };
 		A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892B1728C3FF00288022 /* NSString+Matcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A028892E1728C3FF00288022 /* NSString+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A028892C1728C3FF00288022 /* NSString+Matcheable.m */; };
@@ -100,6 +101,7 @@
 		A0055EE615EEAF8C005D6C85 /* LSTestingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSTestingConnection.h; path = Support/LSTestingConnection.h; sourceTree = "<group>"; };
 		A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSTestingConnection.m; path = Support/LSTestingConnection.m; sourceTree = "<group>"; };
 		A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSURLRequestHookSpec.m; path = Hooks/NSURLRequest/NSURLRequestHookSpec.m; sourceTree = "<group>"; };
+		A01CEBEC1760081F00637CE7 /* LSNocillaSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocillaSpec.m; sourceTree = "<group>"; };
 		A02889221728BEFD00288022 /* LSTestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTestRequest.h; sourceTree = "<group>"; };
 		A02889231728BEFD00288022 /* LSTestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTestRequest.m; sourceTree = "<group>"; };
 		A02889251728C36B00288022 /* LSMatcheable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSMatcheable.h; path = Matchers/LSMatcheable.h; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				A085B85315E30749007D33C1 /* Supporting Files */,
 				A02889221728BEFD00288022 /* LSTestRequest.h */,
 				A02889231728BEFD00288022 /* LSTestRequest.m */,
+				A01CEBEC1760081F00637CE7 /* LSNocillaSpec.m */,
 			);
 			path = NocillaTests;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				A08EE2291728A3A9001830E6 /* LSStringMatcherSpec.m in Sources */,
 				A02889241728BEFD00288022 /* LSTestRequest.m in Sources */,
 				A02889431728CD6000288022 /* LSRegexMatcherSpec.m in Sources */,
+				A01CEBED1760081F00637CE7 /* LSNocillaSpec.m in Sources */,
 				AA0A44061758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
