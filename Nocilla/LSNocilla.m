@@ -2,6 +2,7 @@
 #import "LSNSURLHook.h"
 #import "LSStubRequest.h"
 #import "LSHTTPRequestDSLRepresentation.h"
+#import "LSASIHTTPRequestHook.h"
 
 NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
@@ -12,7 +13,6 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
 - (void)loadHooks;
 - (void)unloadHooks;
-- (void)loadNSURLConnectionHook;
 @end
 
 static LSNocilla *sharedInstace = nil;
@@ -76,7 +76,8 @@ static LSNocilla *sharedInstace = nil;
 
 #pragma mark - Private
 - (void)loadHooks {
-    [self loadNSURLConnectionHook];
+    [self loadHook:[[LSNSURLHook alloc] init]];
+    [self loadHook:[[LSASIHTTPRequestHook alloc] init]];
 }
 
 - (void)unloadHooks {
@@ -85,8 +86,7 @@ static LSNocilla *sharedInstace = nil;
     }
 }
 
-- (void)loadNSURLConnectionHook {
-    LSHTTPClientHook *hook = [[LSNSURLHook alloc] init];
+- (void)loadHook:(LSHTTPClientHook *)hook {
     [self.hooks addObject:hook];
     [hook load];
 }
