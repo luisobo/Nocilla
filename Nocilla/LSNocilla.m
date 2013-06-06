@@ -1,5 +1,7 @@
 #import "LSNocilla.h"
 #import "LSNSURLHook.h"
+#import "LSStubRequest.h"
+#import "LSHTTPRequestDSLRepresentation.h"
 
 NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
@@ -57,6 +59,19 @@ static LSNocilla *sharedInstace = nil;
 
 - (void)clearStubs {
     [self.mutableRequests removeAllObjects];
+}
+
+- (LSStubResponse *)responseForRequest:(id<LSHTTPRequest>)actualRequest {
+    NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
+
+    for(LSStubRequest *someStubbedRequest in requests) {
+        if ([someStubbedRequest matchesRequest:actualRequest]) {
+            return someStubbedRequest.response;
+        }
+    }
+    [NSException raise:@"NocillaUnexpectedRequest" format:@"An unexcepted HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [[[LSHTTPRequestDSLRepresentation alloc] initWithRequest:actualRequest] description]];
+
+    return nil;
 }
 
 #pragma mark - Private

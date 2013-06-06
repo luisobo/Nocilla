@@ -1,7 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "Nocilla.h"
+#import "LSHTTPRequest.h"
 
 @class LSStubRequest;
+@class LSStubResponse;
 
 extern NSString * const LSUnexpectedRequest;
 
@@ -13,4 +15,6 @@ extern NSString * const LSUnexpectedRequest;
 - (void)stop;
 - (void)addStubbedRequest:(LSStubRequest *)request;
 - (void)clearStubs;
+
+- (LSStubResponse *)responseForRequest:(id<LSHTTPRequest>)request;
 @end
