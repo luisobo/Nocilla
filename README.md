@@ -117,7 +117,7 @@ withBody(@"{\"ok\":true}");
 
 ```objc
 stubRequest(@"GET", @"https://api.example.com/dogs.json").
-andReturnRawResponse([NSData dataWithContentsOfFile:"/tmp/example_curl_-is_output.txt"]);
+andReturnRawResponse([NSData dataWithContentsOfFile:@"/tmp/example_curl_-is_output.txt"]);
 ```
 
 #### All together
