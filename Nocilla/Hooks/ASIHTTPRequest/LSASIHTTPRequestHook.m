@@ -6,22 +6,22 @@
 @implementation LSASIHTTPRequestHook
 
 - (void)load {
-    NSError *error = nil;
-    BOOL success = [ASIHTTPRequest jr_swizzleMethod:@selector(initWithURL:)
-                                         withMethod:@selector(stub_initWithURL:)
-                                              error:&error];
-    if (!success) {
-        [NSException raise:@"WAAAH" format:@"BOOO"];
-    }
+    [self swizzleASIHTTPRequestInit];
 }
 
 - (void)unload {
+    [self swizzleASIHTTPRequestInit];
+}
+
+#pragma mark - Internal Methods
+
+- (void)swizzleASIHTTPRequestInit {
     NSError *error = nil;
     BOOL success = [ASIHTTPRequest jr_swizzleMethod:@selector(initWithURL:)
                                          withMethod:@selector(stub_initWithURL:)
                                               error:&error];
     if (!success) {
-        [NSException raise:@"WAAAH" format:@"BOOO"];
+        [NSException raise:NSInternalInconsistencyException format:@"Couldn't load ASIHTTPRequest hook"];
     }
 }
 
