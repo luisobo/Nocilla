@@ -74,7 +74,7 @@ it(@"fails a request", ^{
     [[theValue(request.isFinished) should] beYes];
 });
 
-it(@"stubs a POST request", ^{
+it(@"stubs a ASIFormDataRequest", ^{
     stubRequest(@"POST", @"http://api.example.com/v1/cats").
     withHeaders(@{@"Authorization":@"Basic 667788"}).
     withBody(@"name=calcetines&color=black").
@@ -96,8 +96,5 @@ it(@"stubs a POST request", ^{
     [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
     [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
 });
-
-
-
 
 SPEC_END
