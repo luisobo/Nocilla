@@ -1,7 +1,8 @@
 #import "ASIHTTPRequest.h"
 
 @interface ASIHTTPRequest (Stub)
-
-- (id)stub_initWithURL:(NSURL *)newURL;
-
+- (int)stub_responseStatusCode;
+- (NSData *)stub_responseData;
+- (NSDictionary *)stub_responseHeaders;
+- (void)stub_startRequest;
 @end

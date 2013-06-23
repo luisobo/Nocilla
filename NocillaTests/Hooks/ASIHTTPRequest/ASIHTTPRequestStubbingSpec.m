@@ -64,6 +64,7 @@ it(@"stubs a form request", ^{
     withBody(@"miau");
 
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://api.example.com/v1/cats"]];
+    [request setRequestMethod:@"POST"];
     [request addRequestHeader:@"Authorization" value:@"Basic 667788"];
     [request addPostValue:@"calcetines" forKey:@"name"];
     [request addPostValue:@"black" forKey:@"color"];

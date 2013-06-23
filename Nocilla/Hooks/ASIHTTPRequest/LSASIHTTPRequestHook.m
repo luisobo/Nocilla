@@ -6,19 +6,27 @@
 @implementation LSASIHTTPRequestHook
 
 - (void)load {
-    [self swizzleASIHTTPRequestInit];
+    [self swizzleASIHTTPRequest];
 }
 
 - (void)unload {
-    [self swizzleASIHTTPRequestInit];
+    [self swizzleASIHTTPRequest];
 }
 
 #pragma mark - Internal Methods
 
-- (void)swizzleASIHTTPRequestInit {
+- (void)swizzleASIHTTPRequest {
+    [self swizzleASIHTTPSelector:@selector(responseStatusCode) withSelector:@selector(stub_responseStatusCode)];
+    [self swizzleASIHTTPSelector:@selector(responseData) withSelector:@selector(stub_responseData)];
+    [self swizzleASIHTTPSelector:@selector(responseHeaders) withSelector:@selector(stub_responseHeaders)];
+    [self swizzleASIHTTPSelector:@selector(startRequest) withSelector:@selector(stub_startRequest)];
+}
+
+- (void)swizzleASIHTTPSelector:(SEL)original withSelector:(SEL)stub {
     NSError *error = nil;
-    BOOL success = [ASIHTTPRequest jr_swizzleMethod:@selector(initWithURL:)
-                                         withMethod:@selector(stub_initWithURL:)
+    
+    BOOL success = [ASIHTTPRequest jr_swizzleMethod:original
+                                         withMethod:stub
                                               error:&error];
     if (!success) {
         [NSException raise:NSInternalInconsistencyException format:@"Couldn't load ASIHTTPRequest hook"];
