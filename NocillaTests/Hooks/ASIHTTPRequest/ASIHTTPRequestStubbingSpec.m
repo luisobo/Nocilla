@@ -74,6 +74,22 @@ it(@"fails a request", ^{
     [[theValue(request.isFinished) should] beYes];
 });
 
+it(@"stubs an HTTPS request", ^{
+    stubRequest(@"GET", @"https://example.com/things").
+    andReturn(201).
+    withHeaders(@{@"Header 1":@"Foo", @"Header 2":@"Bar"}).
+    withBody(@"Holaa!");
+
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"https://example.com/things"]];
+
+    [request startAsynchronous];
+
+    [[expectFutureValue(theValue(request.responseStatusCode)) shouldEventually] equal:theValue(201)];
+    [[request.responseString should] equal:@"Holaa!"];
+    [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
+    [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
+});
+
 it(@"stubs a ASIFormDataRequest", ^{
     stubRequest(@"POST", @"http://api.example.com/v1/cats").
     withHeaders(@{@"Authorization":@"Basic 667788"}).
