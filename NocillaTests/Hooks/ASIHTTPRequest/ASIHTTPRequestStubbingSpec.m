@@ -55,13 +55,12 @@ it(@"stubs a POST request", ^{
     [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
 });
 
-it(@"stubs a form request", ^{
+it(@"fails a request", ^{
+    NSError *error = [NSError nullMock];
     stubRequest(@"POST", @"http://api.example.com/v1/cats").
     withHeaders(@{@"Authorization":@"Basic 667788"}).
     withBody(@"name=calcetines&color=black").
-    andReturn(202).
-    withHeaders(@{@"X-LOLCAT":@"I CAN HAZ LOLCATS"}).
-    withBody(@"miau");
+    andFailWithError(error);
 
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://api.example.com/v1/cats"]];
     [request setRequestMethod:@"POST"];
@@ -71,12 +70,34 @@ it(@"stubs a form request", ^{
 
     [request startAsynchronous];
 
-    [[expectFutureValue(theValue(request.responseStatusCode)) shouldEventually] equal:theValue(202)];
-    [[request.responseString should] equal:@"miau"];
-    [[request.responseData should] equal:[@"miau" dataUsingEncoding:NSUTF8StringEncoding]];
-    [[request.responseHeaders should] equal:@{@"X-LOLCAT":@"I CAN HAZ LOLCATS"}];
-   
+    [[expectFutureValue(request.error) shouldEventually] beIdenticalTo:error];
+    [[theValue(request.isFinished) should] beYes];
 });
+
+it(@"stubs a POST request", ^{
+    stubRequest(@"POST", @"http://api.example.com/v1/cats").
+    withHeaders(@{@"Authorization":@"Basic 667788"}).
+    withBody(@"name=calcetines&color=black").
+    andReturn(201).
+    withHeaders(@{@"Header 1":@"Foo", @"Header 2":@"Bar"}).
+    withBody(@"Holaa!");
+
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://api.example.com/v1/cats"]];
+    [request setRequestMethod:@"POST"];
+    [request addRequestHeader:@"Authorization" value:@"Basic 667788"];
+    [request addPostValue:@"calcetines" forKey:@"name"];
+    [request addPostValue:@"black" forKey:@"color"];
+    
+
+    [request startAsynchronous];
+
+    [[expectFutureValue(theValue(request.responseStatusCode)) shouldEventually] equal:theValue(201)];
+    [[request.responseString should] equal:@"Holaa!"];
+    [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
+    [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
+});
+
+
 
 
 SPEC_END
