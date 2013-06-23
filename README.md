@@ -7,6 +7,7 @@ This library was inspired by [WebMock](https://github.com/bblimke/webmock) and i
 * Stub HTTP and HTTPS requests in your unit tests.
 * Awesome DSL that will improve the readability and maintainability of your tests.
 * NEW! Match requests with regular expressions.
+* NEW! Stub requests with errors.
 * Tested.
 * Fast.
 * Extendable to support more HTTP libraries.
@@ -127,6 +128,16 @@ withBody(@"{\"name\":\"foo\"}").
 andReturn(201).
 withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
+```
+
+#### NEW! Making a request fail
+This will call the failure handler (callback, delegate... whatever your HTTP client uses) with the specified error.
+
+```objc
+stubRequest(@"POST", @"https://api.example.com/dogs.json").
+withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abgf"}).
+withBody(@"{\"name\":\"foo\"}").
+andFailWithError([NSError errorWithDomain:@"foo" code:123 userInfo:nil]);
 ```
 
 ### Unexpected requests

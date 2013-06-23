@@ -1,5 +1,4 @@
 #import "ASIHTTPRequest+Stub.h"
-#import "ASIHTTPRequestStub.h"
 #import "LSStubResponse.h"
 #import "LSNocilla.h"
 #import "LSASIHTTPRequestAdapter.h"

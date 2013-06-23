@@ -14,8 +14,6 @@
 		A01CEBDE175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBDD175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m */; };
 		A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE0176000CB00637CE7 /* LSASIHTTPRequestHook.h */; };
 		A01CEBE3176000CB00637CE7 /* LSASIHTTPRequestHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBE1176000CB00637CE7 /* LSASIHTTPRequestHook.m */; };
-		A01CEBE6176006A000637CE7 /* ASIHTTPRequestStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE4176006A000637CE7 /* ASIHTTPRequestStub.h */; };
-		A01CEBE7176006A000637CE7 /* ASIHTTPRequestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBE5176006A000637CE7 /* ASIHTTPRequestStub.m */; };
 		A01CEBEA176006CB00637CE7 /* ASIHTTPRequest+Stub.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE8176006CB00637CE7 /* ASIHTTPRequest+Stub.h */; };
 		A01CEBEB176006CB00637CE7 /* ASIHTTPRequest+Stub.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBE9176006CB00637CE7 /* ASIHTTPRequest+Stub.m */; };
 		A01CEBED1760081F00637CE7 /* LSNocillaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBEC1760081F00637CE7 /* LSNocillaSpec.m */; };
@@ -78,8 +76,8 @@
 		A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */; };
 		A0EE630815EC217A00009A08 /* LSHTTPRequestDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */; };
 		A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */; };
-		B4D004CFE1844D3896C50729 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7621264AB6B45CE84724138 /* libPods.a */; };
 		AA0A44061758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0A44051758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m */; };
+		B4D004CFE1844D3896C50729 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7621264AB6B45CE84724138 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,8 +112,6 @@
 		A01CEBDD175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequestStubbingSpec.m; path = Hooks/ASIHTTPRequest/ASIHTTPRequestStubbingSpec.m; sourceTree = "<group>"; };
 		A01CEBE0176000CB00637CE7 /* LSASIHTTPRequestHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSASIHTTPRequestHook.h; path = Hooks/ASIHTTPRequest/LSASIHTTPRequestHook.h; sourceTree = "<group>"; };
 		A01CEBE1176000CB00637CE7 /* LSASIHTTPRequestHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSASIHTTPRequestHook.m; path = Hooks/ASIHTTPRequest/LSASIHTTPRequestHook.m; sourceTree = "<group>"; };
-		A01CEBE4176006A000637CE7 /* ASIHTTPRequestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestStub.h; path = Hooks/ASIHTTPRequest/ASIHTTPRequestStub.h; sourceTree = "<group>"; };
-		A01CEBE5176006A000637CE7 /* ASIHTTPRequestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequestStub.m; path = Hooks/ASIHTTPRequest/ASIHTTPRequestStub.m; sourceTree = "<group>"; };
 		A01CEBE8176006CB00637CE7 /* ASIHTTPRequest+Stub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ASIHTTPRequest+Stub.h"; path = "Hooks/ASIHTTPRequest/ASIHTTPRequest+Stub.h"; sourceTree = "<group>"; };
 		A01CEBE9176006CB00637CE7 /* ASIHTTPRequest+Stub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ASIHTTPRequest+Stub.m"; path = "Hooks/ASIHTTPRequest/ASIHTTPRequest+Stub.m"; sourceTree = "<group>"; };
 		A01CEBEC1760081F00637CE7 /* LSNocillaSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocillaSpec.m; sourceTree = "<group>"; };
@@ -235,8 +231,6 @@
 			children = (
 				A01CEBE0176000CB00637CE7 /* LSASIHTTPRequestHook.h */,
 				A01CEBE1176000CB00637CE7 /* LSASIHTTPRequestHook.m */,
-				A01CEBE4176006A000637CE7 /* ASIHTTPRequestStub.h */,
-				A01CEBE5176006A000637CE7 /* ASIHTTPRequestStub.m */,
 				A01CEBE8176006CB00637CE7 /* ASIHTTPRequest+Stub.h */,
 				A01CEBE9176006CB00637CE7 /* ASIHTTPRequest+Stub.m */,
 				A01CEBEE1760145C00637CE7 /* LSASIHTTPRequestAdapter.h */,
@@ -512,7 +506,6 @@
 				A08EE2271728A2F4001830E6 /* LSStringMatcher.h in Headers */,
 				A02889351728C88E00288022 /* LSRegexMatcher.h in Headers */,
 				A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */,
-				A01CEBE6176006A000637CE7 /* ASIHTTPRequestStub.h in Headers */,
 				A01CEBEA176006CB00637CE7 /* ASIHTTPRequest+Stub.h in Headers */,
 				A01CEBF01760145C00637CE7 /* LSASIHTTPRequestAdapter.h in Headers */,
 			);
@@ -681,7 +674,6 @@
 				A028893A1728C95600288022 /* NSRegularExpression+Matcheable.m in Sources */,
 				A028893F1728CA5900288022 /* NSString+Regex.m in Sources */,
 				A01CEBE3176000CB00637CE7 /* LSASIHTTPRequestHook.m in Sources */,
-				A01CEBE7176006A000637CE7 /* ASIHTTPRequestStub.m in Sources */,
 				A01CEBEB176006CB00637CE7 /* ASIHTTPRequest+Stub.m in Sources */,
 				A01CEBF11760145C00637CE7 /* LSASIHTTPRequestAdapter.m in Sources */,
 			);
