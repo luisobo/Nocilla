@@ -1,6 +1,7 @@
 #import "Kiwi.h"
 #import "Nocilla.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
 SPEC_BEGIN(ASIHTTPRequestStubbingSpec)
 
@@ -52,6 +53,28 @@ it(@"stubs a POST request", ^{
     [[request.responseString should] equal:@"Holaa!"];
     [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
     [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
+});
+
+it(@"stubs a form request", ^{
+    stubRequest(@"POST", @"http://api.example.com/v1/cats").
+    withHeaders(@{@"Authorization":@"Basic 667788"}).
+    withBody(@"name=calcetines&color=black").
+    andReturn(202).
+    withHeaders(@{@"X-LOLCAT":@"I CAN HAZ LOLCATS"}).
+    withBody(@"miau");
+
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"http://api.example.com/v1/cats"]];
+    [request addRequestHeader:@"Authorization" value:@"Basic 667788"];
+    [request addPostValue:@"calcetines" forKey:@"name"];
+    [request addPostValue:@"black" forKey:@"color"];
+
+    [request startAsynchronous];
+
+    [[expectFutureValue(theValue(request.responseStatusCode)) shouldEventually] equal:theValue(202)];
+    [[request.responseString should] equal:@"miau"];
+    [[request.responseData should] equal:[@"miau" dataUsingEncoding:NSUTF8StringEncoding]];
+    [[request.responseHeaders should] equal:@{@"X-LOLCAT":@"I CAN HAZ LOLCATS"}];
+   
 });
 
 
