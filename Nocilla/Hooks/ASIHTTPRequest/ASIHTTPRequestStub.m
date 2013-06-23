@@ -3,11 +3,6 @@
 #import "LSStubResponse.h"
 #import "LSASIHTTPRequestAdapter.h"
 
-@interface ASIHTTPRequestStub (Private)
-- (void)reportFailure;
-- (void)reportFinished;
-@end
-
 @interface ASIHTTPRequestStub ()
 @property (nonatomic, strong) LSStubResponse *stubResponse;
 @end
@@ -29,9 +24,7 @@
 - (void)main {
     self.stubResponse = [[LSNocilla sharedInstance] responseForRequest:[[LSASIHTTPRequestAdapter alloc] initWithASIHTTPRequest:self]];
 
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self reportFinished];
-    });
+    [self requestFinished];
 }
 
 @end
