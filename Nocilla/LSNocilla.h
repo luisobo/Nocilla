@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "Nocilla.h"
-#import "LSHTTPRequest.h"
 
 @class LSStubRequest;
 @class LSStubResponse;
+@protocol LSHTTPRequest;
 
 extern NSString * const LSUnexpectedRequest;
 
