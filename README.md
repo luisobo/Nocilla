@@ -90,6 +90,14 @@ withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abg
 withBody(@"{\"name\":\"foo\"}");
 ```
 
+You can also use `NSData` for the request body:
+
+```objc
+stubRequest(@"POST", @"https://api.example.com/dogs.json").
+withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abgf"}).
+withBody([@"foo" dataUsingEncoding:NSUTF8StringEncoding]);
+```
+
 #### Returning a specific status code
 ```objc
 stubRequest(@"GET", @"http://www.google.com").andReturn(404);
@@ -110,6 +118,15 @@ stubRequest(@"GET", @"https://api.example.com/dogs.json").
 andReturn(201).
 withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
+```
+
+You can also use `NSData` for the response body:
+
+```objc
+stubRequest(@"GET", @"https://api.example.com/dogs.json").
+andReturn(201).
+withHeaders(@{@"Content-Type": @"application/json"}).
+withBody([@"bar" dataUsingEncoding:NSUTF8StringEncoding]);
 ```
 
 #### Returning raw responses recorded with `curl -is`
