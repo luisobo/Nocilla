@@ -1,5 +1,6 @@
 #import "LSStubResponseDSL.h"
 #import "LSStubResponse.h"
+#import "LSHTTPBody.h"
 
 @interface LSStubResponseDSL ()
 @property (nonatomic, strong) LSStubResponse *response;
@@ -31,8 +32,8 @@
 }
 
 - (ResponseWithBodyMethod)withBody {
-    return ^(NSString *body) {
-        self.response.body = [body dataUsingEncoding:NSUTF8StringEncoding];
+    return ^(id<LSHTTPBody> body) {
+        self.response.body = [body data];
         return self;
     };
 }

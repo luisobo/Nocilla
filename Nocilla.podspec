@@ -20,7 +20,8 @@ Pod::Spec.new do |s|
     'Nocilla/DSL/LSStubRequestDSL.h',
     'Nocilla/DSL/LSStubResponseDSL.h',
     'Nocilla/Matchers/*.h',
-    'Nocilla/Categories/NSString+Regex.h']
+    'Nocilla/Categories/NSString+Nocilla.h',
+    'Nocilla/Categories/NSData+Nocilla.h']
 
   s.requires_arc = true
   s.frameworks = 'CFNetwork'

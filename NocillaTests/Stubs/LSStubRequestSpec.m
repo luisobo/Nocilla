@@ -1,7 +1,7 @@
 #import "Kiwi.h"
 #import "LSStubRequest.h"
 #import "LSTestRequest.h"
-#import "NSString+Regex.h"
+#import "NSString+Nocilla.h"
 #import "LSRegexMatcher.h"
 
 SPEC_BEGIN(LSStubRequestSpec)
