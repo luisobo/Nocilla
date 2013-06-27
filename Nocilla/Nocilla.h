@@ -2,4 +2,5 @@
 
 #import "LSNocilla.h"
 #import "DSL.h"
-#import "NSString+Regex.h"
+#import "NSString+Nocilla.h"
+#import "NSData+Nocilla.h"

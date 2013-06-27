@@ -1,6 +1,6 @@
-#import "NSString+Regex.h"
+#import "NSString+Nocilla.h"
 
-@implementation NSString (Regex)
+@implementation NSString (Nocilla)
 
 - (NSRegularExpression *)regex {
     NSError *error = nil;
@@ -9,6 +9,10 @@
         [NSException raise:NSInvalidArgumentException format:@"Invalid regex pattern: %@\nError: %@", self, error];
     }
     return regex;
+}
+
+- (NSData *)data {
+    return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end

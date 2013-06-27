@@ -198,5 +198,33 @@ context(@"AFNetworking", ^{
                                                                       @"NSErrorFailingURLStringKey":@"https://example.com/say-hello"
                                                                       }]];
     });
+
+    it(@"stubs the request with data", ^{
+        NSData *requestData = [@"data123" dataUsingEncoding:NSUTF8StringEncoding];
+        stubRequest(@"POST", @"https://example.com/say-hello").
+        withHeader(@"Content-Type", @"text/plain").
+        withHeader(@"X-MY-AWESOME-HEADER", @"sisisi").
+        withBody(requestData).
+        andReturn(200).
+        withHeader(@"Content-Type", @"text/plain").
+        withBody([@"eeeeooo" dataUsingEncoding:NSUTF8StringEncoding]);
+
+        NSURL *url = [NSURL URLWithString:@"https://example.com/say-hello"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
+        [request setHTTPBody:requestData];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation start];
+
+        [operation waitUntilFinished];
+
+        [operation.error shouldBeNil];
+        [[operation.responseString should] equal:@"eeeeooo"];
+        [[theValue(operation.response.statusCode) should] equal:theValue(200)];
+        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
+
+    });
 });
 SPEC_END

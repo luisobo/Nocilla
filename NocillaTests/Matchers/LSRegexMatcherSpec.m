@@ -1,6 +1,6 @@
 #import "Kiwi.h"
 #import "LSRegexMatcher.h"
-#import "NSString+Regex.h"
+#import "NSString+Nocilla.h"
 
 SPEC_BEGIN(LSRegexMatcherSpec)
 
