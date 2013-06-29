@@ -22,7 +22,7 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
+            buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "NO">
@@ -32,6 +32,20 @@
                BuildableName = "libPods-NocillaTests.a"
                BlueprintName = "Pods-NocillaTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A085B84815E30749007D33C1"
+               BuildableName = "NocillaTests.octest"
+               BlueprintName = "NocillaTests"
+               ReferencedContainer = "container:Nocilla.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
