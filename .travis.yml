@@ -1,0 +1,9 @@
+---
+  language: objective-c
+
+  before_script:
+    - chmod +x travis/before_script.sh
+    - chmod +x travis/script.sh
+    - travis/before_script.sh
+  script:
+    - travis/script.sh

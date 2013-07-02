@@ -3,7 +3,9 @@
 @class LSStubResponse;
 @class LSStubResponseDSL;
 
-typedef LSStubResponseDSL *(^ResponseWithBodyMethod)(NSString *);
+@protocol LSHTTPBody;
+
+typedef LSStubResponseDSL *(^ResponseWithBodyMethod)(id<LSHTTPBody>);
 typedef LSStubResponseDSL *(^ResponseWithHeaderMethod)(NSString *, NSString *);
 typedef LSStubResponseDSL *(^ResponseWithHeadersMethod)(NSDictionary *);
 

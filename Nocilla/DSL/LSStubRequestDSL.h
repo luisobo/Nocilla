@@ -7,9 +7,11 @@
 @class LSStubResponseDSL;
 @class LSStubRequest;
 
+@protocol LSHTTPBody;
+
 typedef LSStubRequestDSL *(^WithHeaderMethod)(NSString *, NSString *);
 typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);
-typedef LSStubRequestDSL *(^AndBodyMethod)(NSString *);
+typedef LSStubRequestDSL *(^AndBodyMethod)(id<LSHTTPBody>);
 typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
 typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData);
 typedef void (^AndFailWithErrorMethod)(NSError *error);

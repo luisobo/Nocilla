@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "LSHTTPBody.h"
 
-@interface NSString (Regex)
+@interface NSString (Nocilla) <LSHTTPBody>
 
 - (NSRegularExpression *)regex;
 

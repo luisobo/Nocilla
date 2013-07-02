@@ -28,8 +28,8 @@
 		A02889361728C88E00288022 /* LSRegexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889341728C88D00288022 /* LSRegexMatcher.m */; };
 		A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A028893A1728C95600288022 /* NSRegularExpression+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */; };
-		A028893E1728CA5900288022 /* NSString+Regex.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Regex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A028893F1728CA5900288022 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = A028893D1728CA5900288022 /* NSString+Regex.m */; };
+		A028893E1728CA5900288022 /* NSString+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A028893F1728CA5900288022 /* NSString+Nocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A028893D1728CA5900288022 /* NSString+Nocilla.m */; };
 		A02889431728CD6000288022 /* LSRegexMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889421728CD6000288022 /* LSRegexMatcherSpec.m */; };
 		A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */; };
 		A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; };
@@ -68,6 +68,8 @@
 		A08EE2271728A2F4001830E6 /* LSStringMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A08EE2251728A2F4001830E6 /* LSStringMatcher.h */; };
 		A08EE2281728A2F4001830E6 /* LSStringMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A08EE2261728A2F4001830E6 /* LSStringMatcher.m */; };
 		A08EE2291728A3A9001830E6 /* LSStringMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */; };
+		A092C5AC177BBCC400B5C5F9 /* NSData+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */; };
+		A092C5AD177BBCC400B5C5F9 /* NSData+Nocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A092C5AB177BBCC400B5C5F9 /* NSData+Nocilla.m */; };
 		A0BB870115FE7C2E0090236F /* AFNetworkingStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */; };
 		A0BB870215FE7C320090236F /* NSURLRequestHookSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */; };
 		A0BB870315FE7C350090236F /* LSHTTPStubURLProtocolSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A060B22415FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m */; };
@@ -128,8 +130,8 @@
 		A02889341728C88D00288022 /* LSRegexMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSRegexMatcher.m; path = Matchers/LSRegexMatcher.m; sourceTree = "<group>"; };
 		A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+Matcheable.h"; path = "Matchers/NSRegularExpression+Matcheable.h"; sourceTree = "<group>"; };
 		A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+Matcheable.m"; path = "Matchers/NSRegularExpression+Matcheable.m"; sourceTree = "<group>"; };
-		A028893C1728CA5900288022 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Regex.h"; path = "Categories/NSString+Regex.h"; sourceTree = "<group>"; };
-		A028893D1728CA5900288022 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Regex.m"; path = "Categories/NSString+Regex.m"; sourceTree = "<group>"; };
+		A028893C1728CA5900288022 /* NSString+Nocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Nocilla.h"; path = "Categories/NSString+Nocilla.h"; sourceTree = "<group>"; };
+		A028893D1728CA5900288022 /* NSString+Nocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Nocilla.m"; path = "Categories/NSString+Nocilla.m"; sourceTree = "<group>"; };
 		A02889421728CD6000288022 /* LSRegexMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSRegexMatcherSpec.m; path = Matchers/LSRegexMatcherSpec.m; sourceTree = "<group>"; };
 		A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubRequestDSL.h; path = DSL/LSStubRequestDSL.h; sourceTree = "<group>"; };
 		A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestDSL.m; path = DSL/LSStubRequestDSL.m; sourceTree = "<group>"; };
@@ -168,6 +170,9 @@
 		A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStringMatcherSpec.m; path = Matchers/LSStringMatcherSpec.m; sourceTree = "<group>"; };
 		A08EE2251728A2F4001830E6 /* LSStringMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStringMatcher.h; path = Matchers/LSStringMatcher.h; sourceTree = "<group>"; };
 		A08EE2261728A2F4001830E6 /* LSStringMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStringMatcher.m; path = Matchers/LSStringMatcher.m; sourceTree = "<group>"; };
+		A092C5A9177BB0A000B5C5F9 /* LSHTTPBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSHTTPBody.h; path = Model/LSHTTPBody.h; sourceTree = "<group>"; };
+		A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Nocilla.h"; path = "Categories/NSData+Nocilla.h"; sourceTree = "<group>"; };
+		A092C5AB177BBCC400B5C5F9 /* NSData+Nocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Nocilla.m"; path = "Categories/NSData+Nocilla.m"; sourceTree = "<group>"; };
 		A0BB870515FE7D8F0090236F /* LSStubRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestSpec.m; path = Stubs/LSStubRequestSpec.m; sourceTree = "<group>"; };
 		A0BBF5C916DD9BDD00D660D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequestDiff.h; path = Diff/LSHTTPRequestDiff.h; sourceTree = "<group>"; };
@@ -242,8 +247,10 @@
 		A028893B1728CA4700288022 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				A028893C1728CA5900288022 /* NSString+Regex.h */,
-				A028893D1728CA5900288022 /* NSString+Regex.m */,
+				A028893C1728CA5900288022 /* NSString+Nocilla.h */,
+				A028893D1728CA5900288022 /* NSString+Nocilla.m */,
+				A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */,
+				A092C5AB177BBCC400B5C5F9 /* NSData+Nocilla.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -275,6 +282,7 @@
 			children = (
 				A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */,
 				A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */,
+				A092C5A9177BB0A000B5C5F9 /* LSHTTPBody.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -493,7 +501,7 @@
 				A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */,
 				A02889311728C52100288022 /* LSMatcher.h in Headers */,
 				A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */,
-				A028893E1728CA5900288022 /* NSString+Regex.h in Headers */,
+				A028893E1728CA5900288022 /* NSString+Nocilla.h in Headers */,
 				A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */,
 				A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */,
 				A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */,
@@ -508,6 +516,7 @@
 				A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */,
 				A01CEBEA176006CB00637CE7 /* ASIHTTPRequest+Stub.h in Headers */,
 				A01CEBF01760145C00637CE7 /* LSASIHTTPRequestAdapter.h in Headers */,
+				A092C5AC177BBCC400B5C5F9 /* NSData+Nocilla.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,10 +681,11 @@
 				A02889321728C52100288022 /* LSMatcher.m in Sources */,
 				A02889361728C88E00288022 /* LSRegexMatcher.m in Sources */,
 				A028893A1728C95600288022 /* NSRegularExpression+Matcheable.m in Sources */,
-				A028893F1728CA5900288022 /* NSString+Regex.m in Sources */,
 				A01CEBE3176000CB00637CE7 /* LSASIHTTPRequestHook.m in Sources */,
 				A01CEBEB176006CB00637CE7 /* ASIHTTPRequest+Stub.m in Sources */,
 				A01CEBF11760145C00637CE7 /* LSASIHTTPRequestAdapter.m in Sources */,
+				A028893F1728CA5900288022 /* NSString+Nocilla.m in Sources */,
+				A092C5AD177BBCC400B5C5F9 /* NSData+Nocilla.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

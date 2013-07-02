@@ -34,8 +34,8 @@
 }
 
 - (AndBodyMethod)withBody {
-    return ^(NSString *body) {
-        self.request.body = [body dataUsingEncoding:NSUTF8StringEncoding];
+    return ^(id<LSHTTPBody> body) {
+        self.request.body = [body data];
         return self;
     };
 }

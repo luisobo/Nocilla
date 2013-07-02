@@ -1,4 +1,4 @@
-# Nocilla
+# Nocilla [![](https://api.travis-ci.org/luisobo/Nocilla.png)](https://travis-ci.org/luisobo/Nocilla)
 Stunning HTTP stubbing for iOS and OS X. Testing HTTP requests has never been easier.
 
 This library was inspired by [WebMock](https://github.com/bblimke/webmock) and it's using [this approach](http://www.infinite-loop.dk/blog/2011/09/using-nsurlprotocol-for-injecting-test-data/) to stub the requests.
@@ -90,6 +90,14 @@ withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abg
 withBody(@"{\"name\":\"foo\"}");
 ```
 
+You can also use `NSData` for the request body:
+
+```objc
+stubRequest(@"POST", @"https://api.example.com/dogs.json").
+withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abgf"}).
+withBody([@"foo" dataUsingEncoding:NSUTF8StringEncoding]);
+```
+
 #### Returning a specific status code
 ```objc
 stubRequest(@"GET", @"http://www.google.com").andReturn(404);
@@ -112,12 +120,21 @@ withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
 ```
 
+You can also use `NSData` for the response body:
+
+```objc
+stubRequest(@"GET", @"https://api.example.com/dogs.json").
+andReturn(201).
+withHeaders(@{@"Content-Type": @"application/json"}).
+withBody([@"bar" dataUsingEncoding:NSUTF8StringEncoding]);
+```
+
 #### Returning raw responses recorded with `curl -is`
 `curl -is http://api.example.com/dogs.json > /tmp/example_curl_-is_output.txt`
 
 ```objc
 stubRequest(@"GET", @"https://api.example.com/dogs.json").
-andReturnRawResponse([NSData dataWithContentsOfFile:"/tmp/example_curl_-is_output.txt"]);
+andReturnRawResponse([NSData dataWithContentsOfFile:@"/tmp/example_curl_-is_output.txt"]);
 ```
 
 #### All together
