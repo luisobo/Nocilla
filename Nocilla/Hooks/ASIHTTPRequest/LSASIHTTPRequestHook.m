@@ -1,7 +1,7 @@
 #import "LSASIHTTPRequestHook.h"
-#import "JRSwizzle.h"
 #import "ASIHTTPRequest.h"
 #import "ASIHTTPRequest+Stub.h"
+#import <objc/runtime.h>
 
 @implementation LSASIHTTPRequestHook
 
@@ -23,14 +23,10 @@
 }
 
 - (void)swizzleASIHTTPSelector:(SEL)original withSelector:(SEL)stub {
-    NSError *error = nil;
-    
-    BOOL success = [ASIHTTPRequest jr_swizzleMethod:original
-                                         withMethod:stub
-                                              error:&error];
-    if (!success) {
-        [NSException raise:NSInternalInconsistencyException format:@"Couldn't load ASIHTTPRequest hook"];
-    }
+    method_exchangeImplementations(
+                                   class_getInstanceMethod([ASIHTTPRequest class], original),
+                                   class_getInstanceMethod([ASIHTTPRequest class], stub));
+
 }
 
 @end

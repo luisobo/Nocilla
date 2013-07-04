@@ -1,7 +1,5 @@
 platform :ios
 
-pod 'JRSwizzle', '~> 1.0'
-
 target :NocillaTests, :exclusive => true do
    pod 'MKNetworkKit', '~> 0.87'
    pod 'AFNetworking', '= 1.0RC1'
