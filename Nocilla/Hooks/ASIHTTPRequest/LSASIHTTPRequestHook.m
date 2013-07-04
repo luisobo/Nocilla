@@ -23,10 +23,16 @@
 }
 
 - (void)swizzleASIHTTPSelector:(SEL)original withSelector:(SEL)stub {
-    method_exchangeImplementations(
-                                   class_getInstanceMethod([ASIHTTPRequest class], original),
-                                   class_getInstanceMethod([ASIHTTPRequest class], stub));
+    Method originalMethod = class_getInstanceMethod([ASIHTTPRequest class], original);
+    Method stubMethod = class_getInstanceMethod([ASIHTTPRequest class], stub);
+    if (!originalMethod || !stubMethod) {
+        [self fail];
+    }
+    method_exchangeImplementations(originalMethod, stubMethod);
+}
 
+- (void)fail {
+    [NSException raise:NSInternalInconsistencyException format:@"Couldn't load ASIHTTPRequest hook."];
 }
 
 @end
