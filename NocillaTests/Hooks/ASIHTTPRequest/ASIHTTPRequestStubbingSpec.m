@@ -2,19 +2,18 @@
 #import "Nocilla.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "LSASIHTTPRequestHook.h"
 
 SPEC_BEGIN(ASIHTTPRequestStubbingSpec)
 
-beforeAll(^{
+beforeEach(^{
+    [[LSNocilla sharedInstance] registerHook:[[LSASIHTTPRequestHook alloc] init]];
     [[LSNocilla sharedInstance] start];
 });
 
 afterEach(^{
-    [[LSNocilla sharedInstance] clearStubs];
-});
-
-afterAll(^{
     [[LSNocilla sharedInstance] stop];
+    [[LSNocilla sharedInstance] clearStubs];
 });
 
 it(@"stubs a GET request", ^{
