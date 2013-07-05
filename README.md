@@ -14,7 +14,11 @@ This library was inspired by [WebMock](https://github.com/bblimke/webmock) and i
 
 ### EXPERIMENTAL: Support for ASIHTTPRequest
 At this moment Nocilla supports stubbing request made with ASIHTTPRequest. This feature is experimental for the moment and more testing in the wild needs to be done. It has been tested with the classes `ASIHTTPRequest` and `ASIFormDataRequest`. It has _not_ been tested for `ASIWebPageRequest`, `ASICloudFilesRequest` or `ASIS3Request`.
-If you want to enable it, register the hook before starting Nocilla, like this:
+If you want to enable it, point to the podspec in this repo and register the hook before starting Nocilla, like this:
+
+```ruby
+pod 'Nocilla', :podspec => 'https://raw.github.com/luisobo/Nocilla/master/Nocilla.podspec'
+```
 
 ```objc
 [[LSNocilla sharedInstance] registerHook:[[LSASIHTTPRequestHook alloc] init]];
