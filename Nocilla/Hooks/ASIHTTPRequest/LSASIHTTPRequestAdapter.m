@@ -1,5 +1,13 @@
 #import "LSASIHTTPRequestAdapter.h"
-#import "ASIHTTPRequest.h"
+
+@interface ASIHTTPRequest
+
+@property (nonatomic, strong, readonly) NSURL *url;
+@property (nonatomic, strong, readonly) NSString *requestMethod;
+@property (nonatomic, strong, readonly) NSDictionary *requestHeaders;
+@property (nonatomic, strong, readonly) NSData *postBody;
+
+@end
 
 @interface LSASIHTTPRequestAdapter ()
 @property (nonatomic, strong) ASIHTTPRequest *request;

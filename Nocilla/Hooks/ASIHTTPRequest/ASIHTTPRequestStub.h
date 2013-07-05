@@ -1,6 +1,4 @@
-#import "ASIHTTPRequest.h"
-
-@interface ASIHTTPRequest (Stub)
+@interface ASIHTTPRequestStub : NSObject
 - (int)stub_responseStatusCode;
 - (NSData *)stub_responseData;
 - (NSDictionary *)stub_responseHeaders;

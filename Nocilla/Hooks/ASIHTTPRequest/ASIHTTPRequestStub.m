@@ -1,16 +1,21 @@
-#import "ASIHTTPRequest+Stub.h"
+#import "ASIHTTPRequestStub.h"
 #import "LSStubResponse.h"
 #import "LSNocilla.h"
 #import "LSASIHTTPRequestAdapter.h"
 #import <objc/runtime.h>
 
-@interface ASIHTTPRequest (Stub_Private)
+@interface ASIHTTPRequestStub ()
 @property (nonatomic, strong) LSStubResponse *stubResponse;
+@end
+
+@interface ASIHTTPRequestStub (Private)
+- (void)failWithError:(NSError *)error;
+- (void)requestFinished;
 @end
 
 static void const * ASIHTTPRequestStubResponseKey = &ASIHTTPRequestStubResponseKey;
 
-@implementation ASIHTTPRequest (Stub)
+@implementation ASIHTTPRequestStub
 
 - (void)setStubResponse:(LSStubResponse *)stubResponse {
     objc_setAssociatedObject(self, ASIHTTPRequestStubResponseKey, stubResponse, OBJC_ASSOCIATION_RETAIN);
@@ -33,7 +38,7 @@ static void const * ASIHTTPRequestStubResponseKey = &ASIHTTPRequestStubResponseK
 }
 
 - (void)stub_startRequest {
-    self.stubResponse = [[LSNocilla sharedInstance] responseForRequest:[[LSASIHTTPRequestAdapter alloc] initWithASIHTTPRequest:self]];
+    self.stubResponse = [[LSNocilla sharedInstance] responseForRequest:[[LSASIHTTPRequestAdapter alloc] initWithASIHTTPRequest:(id)self]];
 
     if (self.stubResponse.shouldFail) {
         [self failWithError:self.stubResponse.error];
