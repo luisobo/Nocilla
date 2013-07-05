@@ -2,6 +2,7 @@
 #import "LSNSURLHook.h"
 #import "LSStubRequest.h"
 #import "LSHTTPRequestDSLRepresentation.h"
+#import "LSASIHTTPRequestHook.h"
 
 NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
@@ -12,7 +13,6 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
 - (void)loadHooks;
 - (void)unloadHooks;
-- (void)loadNSURLConnectionHook;
 @end
 
 static LSNocilla *sharedInstace = nil;
@@ -32,6 +32,7 @@ static LSNocilla *sharedInstace = nil;
     if (self) {
         _mutableRequests = [NSMutableArray array];
         _hooks = [NSMutableArray array];
+        [self registerHook:[[LSNSURLHook alloc] init]];        
     }
     return self;
 }
@@ -74,21 +75,31 @@ static LSNocilla *sharedInstace = nil;
     return nil;
 }
 
+- (void)registerHook:(LSHTTPClientHook *)hook {
+    if (![self hookWasRegistered:hook]) {
+        [[self hooks] addObject:hook];
+    }
+}
+
+- (BOOL)hookWasRegistered:(LSHTTPClientHook *)aHook {
+    for (LSHTTPClientHook *hook in self.hooks) {
+        if ([hook isMemberOfClass: [aHook class]]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 #pragma mark - Private
 - (void)loadHooks {
-    [self loadNSURLConnectionHook];
+    for (LSHTTPClientHook *hook in self.hooks) {
+        [hook load];
+    }
 }
 
 - (void)unloadHooks {
     for (LSHTTPClientHook *hook in self.hooks) {
         [hook unload];
     }
-}
-
-- (void)loadNSURLConnectionHook {
-    LSHTTPClientHook *hook = [[LSNSURLHook alloc] init];
-    [self.hooks addObject:hook];
-    [hook load];
 }
 
 @end

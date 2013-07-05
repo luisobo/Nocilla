@@ -6,13 +6,11 @@
 
 SPEC_BEGIN(AFNetworkingStubbingSpec)
 
-beforeAll(^{
+beforeEach(^{
     [[LSNocilla sharedInstance] start];
 });
-afterAll(^{
-    [[LSNocilla sharedInstance] stop];
-});
 afterEach(^{
+    [[LSNocilla sharedInstance] stop];
     [[LSNocilla sharedInstance] clearStubs];
 });
 
