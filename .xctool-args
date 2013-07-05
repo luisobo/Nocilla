@@ -1,0 +1,4 @@
+[
+  "-workspace", "Nocilla.xcworkspace",
+  "-scheme", "Nocilla",
+]
