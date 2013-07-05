@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
     'Nocilla/Model/LSHTTPBody.h',
     'Nocilla/Categories/NSString+Nocilla.h',
     'Nocilla/Categories/NSData+Nocilla.h',
+    'Nocilla/Hooks/LSHTTPClientHook.h,'
     'Nocilla/Hooks/ASIHTTPRequest/LSASIHTTPRequestHook.h']
 
   s.requires_arc = true
