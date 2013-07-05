@@ -12,7 +12,7 @@
 		A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
 		A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */; };
 		A01CEBDE175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBDD175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m */; };
-		A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE0176000CB00637CE7 /* LSASIHTTPRequestHook.h */; };
+		A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE0176000CB00637CE7 /* LSASIHTTPRequestHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A01CEBE3176000CB00637CE7 /* LSASIHTTPRequestHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBE1176000CB00637CE7 /* LSASIHTTPRequestHook.m */; };
 		A01CEBEA176006CB00637CE7 /* ASIHTTPRequestStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE8176006CB00637CE7 /* ASIHTTPRequestStub.h */; };
 		A01CEBEB176006CB00637CE7 /* ASIHTTPRequestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBE9176006CB00637CE7 /* ASIHTTPRequestStub.m */; };
@@ -49,7 +49,7 @@
 		A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */; };
 		A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */; };
 		A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */; };
-		A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */; };
+		A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0708DA715E6FFB800352085 /* LSHTTPClientHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */; };
 		A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA815E7008200352085 /* LSNSURLHook.h */; };
 		A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA915E7008200352085 /* LSNSURLHook.m */; };
@@ -491,14 +491,15 @@
 				A08D52C815E5A6A7003650F7 /* Nocilla.h in Headers */,
 				A02C7AF115ED795A0061FCEE /* DSL.h in Headers */,
 				A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */,
-				A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */,
 				A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */,
 				A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */,
 				A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */,
 				A02889311728C52100288022 /* LSMatcher.h in Headers */,
 				A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */,
 				A028893E1728CA5900288022 /* NSString+Nocilla.h in Headers */,
+				A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */,
 				A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */,
+				A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */,
 				A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */,
 				A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */,
 				A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */,
@@ -509,7 +510,6 @@
 				A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */,
 				A08EE2271728A2F4001830E6 /* LSStringMatcher.h in Headers */,
 				A02889351728C88E00288022 /* LSRegexMatcher.h in Headers */,
-				A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */,
 				A01CEBEA176006CB00637CE7 /* ASIHTTPRequestStub.h in Headers */,
 				A01CEBF01760145C00637CE7 /* LSASIHTTPRequestAdapter.h in Headers */,
 				A092C5AC177BBCC400B5C5F9 /* NSData+Nocilla.h in Headers */,
