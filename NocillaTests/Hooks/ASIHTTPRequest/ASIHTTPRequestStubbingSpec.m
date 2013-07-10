@@ -26,6 +26,8 @@ it(@"stubs a GET request", ^{
 
     [request startAsynchronous];
 
+    [request waitUntilFinished];
+
     [[expectFutureValue(theValue(request.responseStatusCode)) shouldEventually] equal:theValue(201)];
     [[request.responseString should] equal:@"Holaa!"];
     [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -49,6 +51,8 @@ it(@"stubs a POST request", ^{
 
     [request startAsynchronous];
 
+    [request waitUntilFinished];
+
     [[expectFutureValue(theValue(request.responseStatusCode)) shouldEventually] equal:theValue(201)];
     [[request.responseString should] equal:@"Holaa!"];
     [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
@@ -71,6 +75,8 @@ it(@"fails a request", ^{
 
     [request startAsynchronous];
 
+    [request waitUntilFinished];
+
     [[expectFutureValue(request.error) shouldEventually] beIdenticalTo:error];
     [[theValue(request.isFinished) should] beYes];
 });
@@ -84,6 +90,8 @@ it(@"stubs an HTTPS request", ^{
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"https://example.com/things"]];
 
     [request startAsynchronous];
+
+    [request waitUntilFinished];
 
     [[expectFutureValue(theValue(request.responseStatusCode)) shouldEventually] equal:theValue(201)];
     [[request.responseString should] equal:@"Holaa!"];
@@ -108,6 +116,8 @@ it(@"stubs a ASIFormDataRequest", ^{
     
 
     [request startAsynchronous];
+
+    [request waitUntilFinished];
 
     [[expectFutureValue(theValue(request.responseStatusCode)) shouldEventually] equal:theValue(201)];
     [[request.responseString should] equal:@"Holaa!"];
