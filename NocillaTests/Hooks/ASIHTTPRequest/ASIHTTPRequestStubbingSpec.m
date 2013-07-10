@@ -30,6 +30,7 @@ it(@"stubs a GET request", ^{
     [[request.responseString should] equal:@"Holaa!"];
     [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
     [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
+    [[theValue(request.isFinished) should] beYes];
 
 });
 
@@ -52,6 +53,7 @@ it(@"stubs a POST request", ^{
     [[request.responseString should] equal:@"Holaa!"];
     [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
     [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
+    [[theValue(request.isFinished) should] beYes];
 });
 
 it(@"fails a request", ^{
@@ -87,6 +89,7 @@ it(@"stubs an HTTPS request", ^{
     [[request.responseString should] equal:@"Holaa!"];
     [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
     [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
+    [[theValue(request.isFinished) should] beYes];
 });
 
 it(@"stubs a ASIFormDataRequest", ^{
@@ -110,6 +113,7 @@ it(@"stubs a ASIFormDataRequest", ^{
     [[request.responseString should] equal:@"Holaa!"];
     [[request.responseData should] equal:[@"Holaa!" dataUsingEncoding:NSUTF8StringEncoding]];
     [[request.responseHeaders should] equal:@{@"Header 1":@"Foo", @"Header 2":@"Bar"}];
+    [[theValue(request.isFinished) should] beYes];
 });
 
 SPEC_END

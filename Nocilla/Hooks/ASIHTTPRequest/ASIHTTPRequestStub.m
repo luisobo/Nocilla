@@ -11,6 +11,7 @@
 @interface ASIHTTPRequestStub (Private)
 - (void)failWithError:(NSError *)error;
 - (void)requestFinished;
+- (void)markAsFinished;
 @end
 
 static void const * ASIHTTPRequestStubResponseKey = &ASIHTTPRequestStubResponseKey;
@@ -45,6 +46,7 @@ static void const * ASIHTTPRequestStubResponseKey = &ASIHTTPRequestStubResponseK
     } else {
         [self requestFinished];
     }
+    [self markAsFinished];
 }
 
 @end
