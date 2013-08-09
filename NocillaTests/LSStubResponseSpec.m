@@ -26,6 +26,16 @@ describe(@"#initWithRawResponse:", ^{
             [[stubResponse.body should] equal:[@"{\"success\":true}" dataUsingEncoding:NSUTF8StringEncoding]];
         });
     });
+
+    context(@"when the responseCode is a 3xx redirect", ^{
+        it(@"should provide an suitable redirect request", ^{
+            LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithStatusCode:301];
+            [stubResponse setHeader:@"Location" value:@"redirect.html"];
+
+            NSURLRequest *redirectRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"redirect.html"]];
+            [[stubResponse.redirectRequest should] equal:redirectRequest];
+        });
+    });
 });
 
 SPEC_END

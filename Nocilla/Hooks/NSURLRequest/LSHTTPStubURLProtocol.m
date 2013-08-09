@@ -36,10 +36,17 @@
                                                  requestTime:0];
         NSData *body = stubbedResponse.body;
 
-        [client URLProtocol:self didReceiveResponse:urlResponse
-         cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-        [client URLProtocol:self didLoadData:body];
-        [client URLProtocolDidFinishLoading:self];
+        if (stubbedResponse.statusCode < 300 || stubbedResponse.statusCode > 399 ) {
+            [client URLProtocol:self didReceiveResponse:urlResponse
+             cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+            [client URLProtocol:self didLoadData:body];
+            [client URLProtocolDidFinishLoading:self];
+        }
+        else {
+            [client URLProtocol:self
+         wasRedirectedToRequest:stubbedResponse.redirectRequest
+               redirectResponse:urlResponse];
+        }
     }
 }
 
