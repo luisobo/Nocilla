@@ -15,29 +15,29 @@
 
 @implementation LSTestingNSURLProtocolClient
 - (void)URLProtocol:(NSURLProtocol *)protocol wasRedirectedToRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse {
-    
+
 }
 - (void)URLProtocol:(NSURLProtocol *)protocol cachedResponseIsValid:(NSCachedURLResponse *)cachedResponse {
-    
+
 }
 - (void)URLProtocol:(NSURLProtocol *)protocol didReceiveResponse:(NSURLResponse *)response cacheStoragePolicy:(NSURLCacheStoragePolicy)policy {
     self.response = response;
 }
 - (void)URLProtocol:(NSURLProtocol *)protocol didLoadData:(NSData *)data {
     self.body = data;
-    
+
 }
 - (void)URLProtocolDidFinishLoading:(NSURLProtocol *)protocol {
-    
+
 }
 - (void)URLProtocol:(NSURLProtocol *)protocol didFailWithError:(NSError *)error {
-    
+
 }
 - (void)URLProtocol:(NSURLProtocol *)protocol didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-    
+
 }
 - (void)URLProtocol:(NSURLProtocol *)protocol didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-    
+
 }
 
 
@@ -48,28 +48,28 @@ describe(@"+canInitWithRequest", ^{
     context(@"when it is a HTTP request", ^{
         it(@"should return YES", ^{
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.example.com/dogs.json"]];
-            
+
             BOOL result = [LSHTTPStubURLProtocol canInitWithRequest:request];
-            
+
             [[theValue(result) should] beYes];
         });
     });
     context(@"when it is a HTTP request", ^{
         it(@"should return YES", ^{
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.example.com/cats.xml"]];
-            
+
             BOOL result = [LSHTTPStubURLProtocol canInitWithRequest:request];
-            
+
             [[theValue(result) should] beYes];
         });
     });
-    
+
     context(@"when it is an FTP request", ^{
         it(@"should return NO", ^{
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"ftp://ftp.example.com/"]];
-            
+
             BOOL result = [LSHTTPStubURLProtocol canInitWithRequest:request];
-            
+
             [[theValue(result) should] beNo];
         });
     });
@@ -84,10 +84,10 @@ describe(@"#startLoading", ^{
         beforeEach(^{
             stringUrl = @"http://api.example.com/dogs.xml";
             NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:stringUrl]];
-            
+
             client = [[LSTestingNSURLProtocolClient alloc] init];
-                        
-            protocol = [[LSHTTPStubURLProtocol alloc] initWithRequest:request cachedResponse:nil client:client]; 
+
+            protocol = [[LSHTTPStubURLProtocol alloc] initWithRequest:request cachedResponse:nil client:client];
         });
         context(@"that matches an stubbed request", ^{
             context(@"and the response should succeed", ^{
@@ -139,6 +139,31 @@ describe(@"#startLoading", ^{
 
                 it(@"should notify the client that it failed", ^{
                     [[client should] receive:@selector(URLProtocol:didFailWithError:) withArguments:protocol, error];
+
+                    [protocol startLoading];
+                });
+            });
+
+            context(@"and the response should perform an redirect", ^{
+                __block NSURLRequest *redirectRequest;
+                __block LSStubRequest *stubRequest;
+
+                beforeEach(^{
+                    redirectRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"location.html"]];
+                    stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
+
+                    LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithStatusCode:301];
+                    stubRequest.response = stubResponse;
+                    [stubResponse setHeader:@"Location" value:@"redirect.html"];
+
+                    [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+                    [[LSNocilla sharedInstance] stub:@selector(responseForRequest:) andReturn:stubResponse];
+                    [stubResponse stub:@selector(redirectRequest) andReturn:redirectRequest];
+                });
+
+                it(@"should build the redirect with the provided location header", ^{
+//                    [[client should] receive:@selector(URLProtocol:wasRedirectedToRequest:redirectResponse:) withArguments:protocol, redirectRequest, stubRequest.response];
+                    [[client should] receive:@selector(URLProtocol:wasRedirectedToRequest:redirectResponse:)];
 
                     [protocol startLoading];
                 });

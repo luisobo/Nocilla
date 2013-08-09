@@ -68,8 +68,17 @@
 - (void)setHeader:(NSString *)header value:(NSString *)value {
     [self.mutableHeaders setValue:value forKey:header];
 }
+
 - (NSDictionary *)headers {
     return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];
+}
+
+- (NSURLRequest *)redirectRequest {
+    if ( _statusCode > 299 && _statusCode < 400 && [_mutableHeaders objectForKey:@"Location"] != nil ) {
+        return [NSURLRequest requestWithURL:[NSURL URLWithString:[_mutableHeaders objectForKey:@"Location"]]];
+    }
+
+    return nil;
 }
 
 - (NSString *)description {

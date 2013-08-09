@@ -19,7 +19,7 @@ PODS:
   - Kiwi (2.0.6)
   - MKNetworkKit (0.87):
     - Reachability (~> 3.1.0)
-  - Reachability (3.1.0)
+  - Reachability (3.1.1)
 
 DEPENDENCIES:
   - AFNetworking (= 1.0RC1)
@@ -41,6 +41,6 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 5b2c6e153a8b251dc4b5cea52138e5c2665e2eca
   Kiwi: 56082a80f942de4d10423d8d8a599ab30cf50228
   MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
-  Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
+  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
 
-COCOAPODS: 0.22.1
+COCOAPODS: 0.22.3

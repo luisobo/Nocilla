@@ -15,4 +15,6 @@
 - (id)initWithRawResponse:(NSData *)rawResponseData;
 - (id)initDefaultResponse;
 - (void)setHeader:(NSString *)header value:(NSString *)value;
+
+- (NSURLRequest *)redirectRequest;
 @end
