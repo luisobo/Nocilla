@@ -6,6 +6,7 @@
 @protocol LSHTTPBody;
 
 typedef LSStubResponseDSL *(^ResponseWithBodyMethod)(id<LSHTTPBody>);
+typedef LSStubResponseDSL *(^ResponseWithBodyFileMethod)(NSString *);
 typedef LSStubResponseDSL *(^ResponseWithHeaderMethod)(NSString *, NSString *);
 typedef LSStubResponseDSL *(^ResponseWithHeadersMethod)(NSDictionary *);
 
@@ -14,4 +15,5 @@ typedef LSStubResponseDSL *(^ResponseWithHeadersMethod)(NSDictionary *);
 - (ResponseWithHeaderMethod)withHeader;
 - (ResponseWithHeadersMethod)withHeaders;
 - (ResponseWithBodyMethod)withBody;
+- (ResponseWithBodyFileMethod)withBodyFile;
 @end
