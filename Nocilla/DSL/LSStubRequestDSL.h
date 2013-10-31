@@ -22,6 +22,7 @@ typedef void (^AndFailWithErrorMethod)(NSError *error);
 - (WithHeaderMethod)withHeader;
 - (WithHeadersMethod)withHeaders;
 - (AndBodyMethod)withBody;
+- (AndBodyWhereMethod)withBodyWhere;
 - (AndReturnMethod)andReturn;
 - (AndReturnRawResponseMethod)andReturnRawResponse;
 - (AndFailWithErrorMethod)andFailWithError;
