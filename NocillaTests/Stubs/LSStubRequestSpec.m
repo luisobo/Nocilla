@@ -157,7 +157,7 @@ describe(@"#matchesRequest:", ^{
             [stubRequest setBody:[@"Hola, this is a body" dataUsingEncoding:NSUTF8StringEncoding]];
             [actualRequest setBody:[@"Adios, this is a body as well" dataUsingEncoding:NSUTF8StringEncoding]];
         });
-        it(@"should match", ^{
+        it(@"should not match", ^{
             [[theValue([stubRequest matchesRequest:actualRequest]) should] beNo];
         });
     });
