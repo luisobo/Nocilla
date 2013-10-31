@@ -35,7 +35,7 @@
 
 - (AndBodyMethod)withBody {
     return ^(id<LSHTTPBody> body) {
-        self.request.body = [body data];
+        [self.request setBody:[body data]];
         return self;
     };
 }
