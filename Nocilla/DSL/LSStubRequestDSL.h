@@ -11,6 +11,7 @@
 
 typedef LSStubRequestDSL *(^WithHeaderMethod)(NSString *, NSString *);
 typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);
+typedef LSStubRequestDSL *(^AndBodyWhereMethod)(BOOL(^)(NSData *));
 typedef LSStubRequestDSL *(^AndBodyMethod)(id<LSHTTPBody>);
 typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
 typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData);

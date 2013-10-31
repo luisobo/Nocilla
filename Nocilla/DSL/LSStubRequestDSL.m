@@ -33,6 +33,13 @@
     };
 }
 
+- (AndBodyWhereMethod)withBodyWhere {
+    return ^(BOOL(^matchesBody)(NSData *)) {
+        self.request.matchesBody = matchesBody;
+        return self;
+    };
+}
+
 - (AndBodyMethod)withBody {
     return ^(id<LSHTTPBody> body) {
         [self.request setBody:[body data]];
