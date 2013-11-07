@@ -47,7 +47,7 @@
             self.method,
             self.urlMatcher,
             self.headers,
-            self.matchesBody ? @"(matches block)" : @"(any)",
+            self.matchesBody ? @"(matched by block)" : @"(any)",
             self.response];
 }
 
