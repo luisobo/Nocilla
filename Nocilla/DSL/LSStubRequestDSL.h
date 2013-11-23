@@ -31,6 +31,7 @@ extern "C" {
 #endif
     
 LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url);
+void unstubRequest(LSStubRequestDSL *dsl);
     
 #ifdef __cplusplus
 }
