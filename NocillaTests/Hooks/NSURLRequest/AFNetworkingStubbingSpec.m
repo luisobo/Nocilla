@@ -226,38 +226,37 @@ context(@"AFNetworking", ^{
     });
     
     it(@"stubs the request with multipart request", ^{
+        __block BOOL done = NO;
+        __block AFHTTPRequestOperation *capturedOperation;
+        __block id capturedResponseObject;
+
         NSData *requestData = [@"data123" dataUsingEncoding:NSUTF8StringEncoding];
         stubRequest(@"POST", @"https://example.com/say-hello").
         andReturn(200).
-        withHeader(@"Content-Type", @"text/plain").
-        withBody([@"eeeeooo" dataUsingEncoding:NSUTF8StringEncoding]);
+        withHeader(@"Content-Type", @"application/json").
+        withBody(@"{\"foo\":\"bar\"}");
         
         NSURL *url = [NSURL URLWithString:@"https://example.com"];
-        AFHTTPClient * client = [[AFHTTPClient alloc] initWithBaseURL:url];
+        AFHTTPRequestOperationManager * client = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
         NSInputStream * stream = [[NSInputStream alloc] initWithData:requestData];
-        NSMutableURLRequest *request = [client multipartFormRequestWithMethod:@"POST" path:@"say-hello" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithInputStream:stream name:@"name" fileName:@"filename" length:10 mimeType:@"application/octet-stream"];
-        }];
-        [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
-        [request setValue:@"sisisi" forHTTPHeaderField:@"X-MY-AWESOME-HEADER"];
 
-        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-        [operation start];
-        
-        // Timeout 10 seconds
-        // Polling time 0.1 seconds
-        NSDate * timeoutDate = [NSDate dateWithTimeIntervalSinceNow:10];
-        while (![operation isFinished] && [[NSDate date] laterDate:timeoutDate] == timeoutDate) {
-            [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
-        }
-        
-        [operation.error shouldBeNil];
-        [[operation.responseString should] equal:@"eeeeooo"];
-        [[theValue(operation.response.statusCode) should] equal:theValue(200)];
-        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
-        
-        [operation cancel];
-        
+        [client POST:@"say-hello" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithInputStream:stream name:@"name" fileName:@"filename" length:10 mimeType:@"application/octet-stream"];
+        } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            capturedOperation = operation;
+            capturedResponseObject = responseObject;
+            done = YES;
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            done = YES;
+        }];
+
+        [[expectFutureValue(theValue(done)) shouldEventually] beYes];
+
+        [capturedOperation.error shouldBeNil];
+        [[capturedOperation.responseString should] equal:@"{\"foo\":\"bar\"}"];
+        [[theValue(capturedOperation.response.statusCode) should] equal:theValue(200)];
+        [[[capturedOperation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"application/json"];
+        [[capturedResponseObject should] equal:@{@"foo": @"bar"}];
     });
 });
 SPEC_END
