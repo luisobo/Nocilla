@@ -17,12 +17,12 @@
 #pragma mark - Internal Methods
 
 - (void)swizzleASIHTTPRequest {
-    [self swizzleASIHTTPSelector:@selector(responseStatusCode) withSelector:@selector(stub_responseStatusCode)];
-    [self swizzleASIHTTPSelector:@selector(responseData) withSelector:@selector(stub_responseData)];
-    [self swizzleASIHTTPSelector:@selector(responseHeaders) withSelector:@selector(stub_responseHeaders)];
-    [self swizzleASIHTTPSelector:@selector(startRequest) withSelector:@selector(stub_startRequest)];
-    [self addMethodToASIHTTPRequest:@selector(stubResponse)];
-    [self addMethodToASIHTTPRequest:@selector(setStubResponse:)];
+    [self swizzleASIHTTPSelector:NSSelectorFromString(@"responseStatusCode") withSelector:@selector(stub_responseStatusCode)];
+    [self swizzleASIHTTPSelector:NSSelectorFromString(@"responseData") withSelector:@selector(stub_responseData)];
+    [self swizzleASIHTTPSelector:NSSelectorFromString(@"responseHeaders") withSelector:@selector(stub_responseHeaders)];
+    [self swizzleASIHTTPSelector:NSSelectorFromString(@"startRequest") withSelector:@selector(stub_startRequest)];
+    [self addMethodToASIHTTPRequest:NSSelectorFromString(@"stubResponse")];
+    [self addMethodToASIHTTPRequest:NSSelectorFromString(@"setStubResponse:")];
 }
 
 - (void)swizzleASIHTTPSelector:(SEL)original withSelector:(SEL)stub {
