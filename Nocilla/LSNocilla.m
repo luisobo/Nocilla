@@ -3,6 +3,7 @@
 #import "LSStubRequest.h"
 #import "LSHTTPRequestDSLRepresentation.h"
 #import "LSASIHTTPRequestHook.h"
+#import "LSNSURLSessionHook.h"
 
 NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
@@ -32,7 +33,8 @@ static LSNocilla *sharedInstace = nil;
     if (self) {
         _mutableRequests = [NSMutableArray array];
         _hooks = [NSMutableArray array];
-        [self registerHook:[[LSNSURLHook alloc] init]];        
+        [self registerHook:[[LSNSURLHook alloc] init]];
+        [self registerHook:[[LSNSURLSessionHook alloc] init]];
     }
     return self;
 }
