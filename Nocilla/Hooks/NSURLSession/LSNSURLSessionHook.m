@@ -13,14 +13,14 @@
 @implementation LSNSURLSessionHook
 
 - (void)load {
-    [self swizzleSelector:@selector(protocolClasses) formClass:[NSURLSessionConfiguration class] toClass:[self class]];
+    [self swizzleSelector:@selector(protocolClasses) fromClass:NSClassFromString(@"__NSCFURLSessionConfiguration") toClass:[self class]];
 }
 
 - (void)unload {
-    [self swizzleSelector:@selector(protocolClasses) formClass:[NSURLSessionConfiguration class] toClass:[self class]];
+    [self swizzleSelector:@selector(protocolClasses) fromClass:NSClassFromString(@"__NSCFURLSessionConfiguration") toClass:[self class]];
 }
 
-- (void)swizzleSelector:(SEL)selector formClass:(Class)original toClass:(Class)stub {
+- (void)swizzleSelector:(SEL)selector fromClass:(Class)original toClass:(Class)stub {
 
     Method originalMethod = class_getInstanceMethod(original, selector);
     Method stubMethod = class_getInstanceMethod(stub, selector);
