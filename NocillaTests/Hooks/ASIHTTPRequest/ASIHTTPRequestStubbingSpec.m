@@ -7,7 +7,6 @@
 SPEC_BEGIN(ASIHTTPRequestStubbingSpec)
 
 beforeEach(^{
-    [[LSNocilla sharedInstance] registerHook:[[LSASIHTTPRequestHook alloc] init]];
     [[LSNocilla sharedInstance] start];
 });
 
