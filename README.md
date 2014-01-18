@@ -5,16 +5,13 @@ This library was inspired by [WebMock](https://github.com/bblimke/webmock) and i
 
 ## Features
 * Stub HTTP and HTTPS requests in your unit tests.
+* Supports NSURLConnection, NSURLSession and ASIHTTPRequest.
 * Awesome DSL that will improve the readability and maintainability of your tests.
-* NEW! Match requests with regular expressions.
-* NEW! Stub requests with errors.
+* Match requests with regular expressions.
+* Stub requests with errors.
 * Tested.
 * Fast.
 * Extendable to support more HTTP libraries.
-
-### EXPERIMENTAL: Support for ASIHTTPRequest
-At this moment Nocilla supports stubbing request made with ASIHTTPRequest. This feature is experimental for the moment and more testing in the wild needs to be done. It has been tested with the classes `ASIHTTPRequest` and `ASIFormDataRequest`. It has _not_ been tested for `ASIWebPageRequest`, `ASICloudFilesRequest` or `ASIS3Request`.
-If you want to enable it, point to the podspec in this repo and register the hook before starting Nocilla, like this:
 
 ```ruby
 pod 'Nocilla', :podspec => 'https://raw.github.com/luisobo/Nocilla/master/Nocilla.podspec'
@@ -71,7 +68,7 @@ It will return the default response, which is a 200 and an empty body.
 stubRequest(@"GET", @"http://www.google.com");
 ```
 
-#### NEW! Stubbing requests with regular expressions
+#### Stubbing requests with regular expressions
 ```objc
 stubRequest(@"GET", @"^http://(.*?)\.example\.com/v1/dogs\.json".regex);
 ```
@@ -86,7 +83,7 @@ withHeader(@"Accept", @"application/json");
 
 #### Stubbing a request with multiple headers
 
-Using the `withHeaders` method makes sense with the new Objective-C literals, but it accepts an NSDictionary.
+Using the `withHeaders` method makes sense with the Objective-C literals, but it accepts an NSDictionary.
 
 ```objc
 stubRequest(@"GET", @"https://api.example.com/dogs.json").
@@ -158,7 +155,7 @@ withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
 ```
 
-#### NEW! Making a request fail
+#### Making a request fail
 This will call the failure handler (callback, delegate... whatever your HTTP client uses) with the specified error.
 
 ```objc
@@ -170,8 +167,7 @@ andFailWithError([NSError errorWithDomain:@"foo" code:123 userInfo:nil]);
 
 ### Unexpected requests
 If some request is made but it wasn't stubbed, Nocilla won't let that request hit the real world. In that case your test should fail.
-At this moment Nocilla will return a response with a 500, the header `X-Nocilla: Unexpected Request` and a body with a meaningful message about the error and how to solve it, including a snippet of code on how to stub the unexpected request.
-I'm not particularly happy with returning a 500 and this will change. Check [this issue](https://github.com/luisobo/Nocilla/issues/5) for more details.
+At this moment Nocilla will raise an exception with a meaningful message about the error and how to solve it, including a snippet of code on how to stub the unexpected request.
 
 ## Other alternatives
 * [ILTesting](https://github.com/InfiniteLoopDK/ILTesting)
