@@ -27,10 +27,7 @@
     if (!originalMethod || !stubMethod) {
         [NSException raise:NSInternalInconsistencyException format:@"Couldn't load NSURLSession hook."];
     }
-    IMP result = method_setImplementation(originalMethod, method_getImplementation(stubMethod));
-//    method_exchangeImplementations(originalMethod, stubMethod);
-
-    method_setImplementation(stubMethod, result);
+    method_exchangeImplementations(originalMethod, stubMethod);
 }
 
 - (NSArray *)protocolClasses {
