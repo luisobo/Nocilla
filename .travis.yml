@@ -1,4 +1,6 @@
 ---
+  before_install: gem install cocoapods
+
   language: objective-c
   xcode_workspace: Nocilla.xcworkspace
   xcode_scheme: Nocilla
