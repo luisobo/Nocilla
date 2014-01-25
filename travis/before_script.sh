@@ -2,5 +2,5 @@
 set -e
 
 brew update
-brew update xctool
+brew upgrade xctool
 xctool --version
