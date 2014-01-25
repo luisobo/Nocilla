@@ -4,6 +4,8 @@
   language: objective-c
   xcode_workspace: Nocilla.xcworkspace
   xcode_scheme: Nocilla
-  xcode_sdk:
-    - iphonesimulator6.1
-    - iphonesimulator7.0
+  matrix:
+    - xcode_sdk: iphonesimulator6.1
+      xcode_test_sdk: iphonesimulator6.1
+    - xcode_sdk: iphonesimulator7.0
+      xcode_test_sdk: iphonesimulator7.0
