@@ -11,6 +11,7 @@
 #import "LSHTTPStubURLProtocol.h"
 
 SPEC_BEGIN(NSURLSessionStubbingSpec)
+if (NSClassFromString(@"NSURLSession") == nil) return;
 
 beforeEach(^{
     [[LSNocilla sharedInstance] start];
