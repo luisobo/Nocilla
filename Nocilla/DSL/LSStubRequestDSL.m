@@ -56,6 +56,14 @@
     };
 }
 
+- (AndDoResponseMethod)andDo {
+    return ^(LSBlockResponse block) {
+        self.request.response = [[LSStubResponse alloc] initWithBlock:block];
+        LSStubResponseDSL *responseDSL = [[LSStubResponseDSL alloc] initWithResponse:self.request.response];
+        return responseDSL;
+    };
+}
+
 - (AndFailWithErrorMethod)andFailWithError {
     return ^(NSError *error) {
         self.request.response = [[LSStubResponse alloc] initWithError:error];

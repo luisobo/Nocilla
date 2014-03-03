@@ -1,3 +1,4 @@
+#import "LSHTTPBody.h"
 #import "LSHTTPStubURLProtocol.h"
 #import "LSNocilla.h"
 #import "NSURLRequest+LSHTTPRequest.h"
@@ -30,15 +31,27 @@
     if (stubbedResponse.shouldFail) {
         [client URLProtocol:self didFailWithError:stubbedResponse.error];
     } else {
-        NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
-                                                  statusCode:stubbedResponse.statusCode
-                                                headerFields:stubbedResponse.headers
-                                                 requestTime:0];
-        NSData *body = stubbedResponse.body;
+        NSHTTPURLResponse* urlResponse;
+        id<LSHTTPBody> body = nil;
+        if (stubbedResponse.blockResponse) {
+            NSDictionary *headers = stubbedResponse.headers;
+            NSInteger status = stubbedResponse.statusCode;
+            stubbedResponse.blockResponse(&headers, &status, &body);
+            urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
+                                                      statusCode:status
+                                                    headerFields:headers
+                                                     requestTime:0];
+        } else {
+            urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
+                                                      statusCode:stubbedResponse.statusCode
+                                                    headerFields:stubbedResponse.headers
+                                                     requestTime:0];
+            body = stubbedResponse.body;
+        }
 
         [client URLProtocol:self didReceiveResponse:urlResponse
          cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-        [client URLProtocol:self didLoadData:body];
+        [client URLProtocol:self didLoadData:body.data];
         [client URLProtocolDidFinishLoading:self];
     }
 }
