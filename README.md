@@ -70,7 +70,7 @@ stubRequest(@"GET", @"http://www.google.com");
 
 #### Stubbing requests with regular expressions
 ```objc
-stubRequest(@"GET", @"^http://(.*?)\.example\.com/v1/dogs\.json".regex);
+stubRequest(@"GET", @"^http://(.*?)\\.example\\.com/v1/dogs\\.json".regex);
 ```
 
 
