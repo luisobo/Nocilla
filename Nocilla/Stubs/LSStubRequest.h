@@ -12,6 +12,8 @@
 @property (nonatomic, strong, readonly) LSMatcher *urlMatcher;
 @property (nonatomic, strong, readonly) NSDictionary *headers;
 @property (nonatomic, strong, readwrite) NSData *body;
+@property (nonatomic, strong) NSNumber *expectedCallCount;
+@property (nonatomic) NSInteger actualCallCount;
 
 @property (nonatomic, strong) LSStubResponse *response;
 

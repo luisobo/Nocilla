@@ -33,6 +33,13 @@
     };
 }
 
+- (WithCallCountMethod)withCallCount {
+	return ^(NSInteger times) {
+		[self.request setExpectedCallCount:@(times)];
+		return self;
+	};
+}
+
 - (AndBodyMethod)withBody {
     return ^(id<LSHTTPBody> body) {
         self.request.body = [body data];

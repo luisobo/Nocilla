@@ -25,6 +25,7 @@
     NSURLRequest* request = [self request];
 	id<NSURLProtocolClient> client = [self client];
 
+	[[LSNocilla sharedInstance] countRequest:request];
     LSStubResponse* stubbedResponse = [[LSNocilla sharedInstance] responseForRequest:request];
 
     if (stubbedResponse.shouldFail) {

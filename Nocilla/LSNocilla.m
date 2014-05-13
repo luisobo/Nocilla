@@ -68,6 +68,25 @@ static LSNocilla *sharedInstace = nil;
     [self.mutableRequests removeAllObjects];
 }
 
+- (void)verifyCallCount {
+	NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
+
+	for(LSStubRequest *someStubbedRequest in requests) {
+		if (someStubbedRequest.expectedCallCount != nil) {
+
+			NSInteger actualCount = someStubbedRequest.actualCallCount;
+			NSInteger expectedCount = someStubbedRequest.expectedCallCount.integerValue;
+
+			if (actualCount < expectedCount) {
+				[NSException raise:@"NocillaMissingRequest" format:@"The request should be fired %d times but was fired %d times.\n", expectedCount, actualCount];
+			} else if(actualCount > expectedCount) {
+				[NSException raise:@"NocillaUnexpectedRequest" format:@"An unexpected HTTP request was fired.\n\nYou already stubbed this request but it was called %d times instead of expected %d times.\n", actualCount, expectedCount];
+			}
+		}
+	}
+}
+
+
 - (LSStubResponse *)responseForRequest:(id<LSHTTPRequest>)actualRequest {
     NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
 
@@ -81,12 +100,22 @@ static LSNocilla *sharedInstace = nil;
     return nil;
 }
 
+- (void)countRequest:(id<LSHTTPRequest>)actualRequest {
+	NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
+
+	for(LSStubRequest *someStubbedRequest in requests) {
+		if ([someStubbedRequest matchesRequest:actualRequest]) {
+			someStubbedRequest.actualCallCount++;
+			return;
+		}
+	}
+}
+
 - (void)registerHook:(LSHTTPClientHook *)hook {
     if (![self hookWasRegistered:hook]) {
         [[self hooks] addObject:hook];
     }
 }
-
 - (BOOL)hookWasRegistered:(LSHTTPClientHook *)aHook {
     for (LSHTTPClientHook *hook in self.hooks) {
         if ([hook isMemberOfClass: [aHook class]]) {
@@ -96,6 +125,7 @@ static LSNocilla *sharedInstace = nil;
     return NO;
 }
 #pragma mark - Private
+
 - (void)loadHooks {
     for (LSHTTPClientHook *hook in self.hooks) {
         [hook load];
@@ -107,5 +137,4 @@ static LSNocilla *sharedInstace = nil;
         [hook unload];
     }
 }
-
 @end

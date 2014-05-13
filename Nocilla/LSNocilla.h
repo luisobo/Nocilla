@@ -16,8 +16,10 @@ extern NSString * const LSUnexpectedRequest;
 - (void)stop;
 - (void)addStubbedRequest:(LSStubRequest *)request;
 - (void)clearStubs;
+- (void)verifyCallCount;
 
 - (void)registerHook:(LSHTTPClientHook *)hook;
 
 - (LSStubResponse *)responseForRequest:(id<LSHTTPRequest>)request;
+- (void)countRequest:(id<LSHTTPRequest>)request;
 @end
