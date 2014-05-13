@@ -166,10 +166,10 @@ andFailWithError([NSError errorWithDomain:@"foo" code:123 userInfo:nil]);
 ```
 
 ### Expecting requests
-To verify that a certain request was fired 1 time:
+To verify that a certain request was fired exactly once:
 
 ```objc
-stubRequest(@"GET", @"https://api.example.com/dogs.json").withExpectedCallCount(1)
+stubRequest(@"GET", @"https://api.example.com/dogs.json").withExpectedCallCount(1);
 ...
 // execute the code that should fire the request
 ...
@@ -177,7 +177,7 @@ stubRequest(@"GET", @"https://api.example.com/dogs.json").withExpectedCallCount(
 
 ```
 
-Of course you can combine this with any .withHeaders(), withBody() or andReturn() statements.
+Of course you can combine this with any withHeaders(), withBody() or andReturn() statements.
 
 
 ### Unexpected requests

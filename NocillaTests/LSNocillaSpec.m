@@ -3,6 +3,11 @@
 #import "LSStubRequest.h"
 #import "LSStubResponse.h"
 
+@interface LSNocilla ()
+@property (nonatomic) BOOL testmode;
+@end
+
+
 SPEC_BEGIN(LSNocillaSpec)
 
 describe(@"-responseForRequest:", ^{
@@ -47,9 +52,11 @@ describe(@"-responseForRequest:", ^{
 			actualRequest = [KWMock nullMockForProtocol:@protocol(LSHTTPRequest)];
 			[actualRequest stub:@selector(url) andReturn:[NSURL URLWithString:@"http://www.google.com"]];
 			[actualRequest stub:@selector(method) andReturn:@"GET"];
+			[[LSNocilla sharedInstance] setTestmode:YES];
 		});
 
 		afterEach(^{
+			[[LSNocilla sharedInstance] setTestmode:NO];
 			[[LSNocilla sharedInstance] clearStubs];
 		});
 

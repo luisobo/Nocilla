@@ -13,6 +13,8 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 @property (nonatomic, strong) NSMutableArray *hooks;
 @property (nonatomic, assign, getter = isStarted) BOOL started;
 
+@property (nonatomic) BOOL testmode;
+
 - (void)loadHooks;
 - (void)unloadHooks;
 @end
@@ -77,11 +79,25 @@ static LSNocilla *sharedInstace = nil;
 			NSInteger actualCount = someStubbedRequest.actualCallCount;
 			NSInteger expectedCount = someStubbedRequest.expectedCallCount.integerValue;
 
+			// the exceptions need to be fired on an other thread than the main thread
+			// cause otherwise they might be caught by other frameworks and won't get logged!
+			NSException *exception;
 			if (actualCount < expectedCount) {
-				[NSException raise:@"NocillaMissingRequest" format:@"The request should be fired %d times but was fired %d times.\n", expectedCount, actualCount];
+				NSString *msg = [NSString stringWithFormat:@"The request should be fired %d times but was fired %d times.\n", expectedCount,
+														   actualCount]                                                                      ;
+				exception = [NSException exceptionWithName:@"NocillaMissingRequest" reason:msg userInfo:nil];
 			} else if(actualCount > expectedCount) {
-				[NSException raise:@"NocillaUnexpectedRequest" format:@"An unexpected HTTP request was fired.\n\nYou already stubbed this request but it was called %d times instead of expected %d times.\n", actualCount, expectedCount];
+				NSString *msg = [NSString stringWithFormat:@"An unexpected HTTP request was fired.\n\nYou already stubbed this request but it was called %d times instead of expected %d times.\n", actualCount, expectedCount]                                                                      ;
+				exception = [NSException exceptionWithName:@"NocillaUnexpectedRequest" reason:msg userInfo:nil];
 			}
+			// we need to raise the exception on the main thread when testing
+			// otherwise the tests will crash cause we cannot catch and assert the exception...
+			if (self.testmode) {
+				[exception raise];
+			} else {
+				[exception performSelectorInBackground:@selector(raise) withObject:nil];
+			}
+
 		}
 	}
 }
