@@ -165,6 +165,21 @@ withBody(@"{\"name\":\"foo\"}").
 andFailWithError([NSError errorWithDomain:@"foo" code:123 userInfo:nil]);
 ```
 
+### Expecting requests
+To verify that a certain request was fired 1 time:
+
+```objc
+stubRequest(@"GET", @"https://api.example.com/dogs.json").withExpectedCallCount(1)
+...
+// execute the code that should fire the request
+...
+[[LSNocilla sharedInstance] verifyCallCount];
+
+```
+
+Of course you can combine this with any .withHeaders(), withBody() or andReturn() statements.
+
+
 ### Unexpected requests
 If some request is made but it wasn't stubbed, Nocilla won't let that request hit the real world. In that case your test should fail.
 At this moment Nocilla will raise an exception with a meaningful message about the error and how to solve it, including a snippet of code on how to stub the unexpected request.

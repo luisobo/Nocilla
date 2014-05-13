@@ -33,7 +33,7 @@
     };
 }
 
-- (WithCallCountMethod)withCallCount {
+- (WithExpectedCallCountMethod)withExpectedCallCount {
 	return ^(NSInteger times) {
 		[self.request setExpectedCallCount:@(times)];
 		return self;
