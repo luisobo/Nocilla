@@ -81,21 +81,18 @@ static LSNocilla *sharedInstace = nil;
 
 			// the exceptions need to be fired on an other thread than the main thread
 			// cause otherwise they might be caught by other frameworks and won't get logged!
-			NSException *exception;
 			if (actualCount < expectedCount) {
-				NSString *msg = [NSString stringWithFormat:@"The request should be fired %d times but was fired %d times.\n", expectedCount,
-														   actualCount]                                                                      ;
-				exception = [NSException exceptionWithName:@"NocillaMissingRequest" reason:msg userInfo:nil];
-			} else if(actualCount > expectedCount) {
-				NSString *msg = [NSString stringWithFormat:@"An unexpected HTTP request was fired.\n\nYou already stubbed this request but it was called %d times instead of expected %d times.\n", actualCount, expectedCount]                                                                      ;
-				exception = [NSException exceptionWithName:@"NocillaUnexpectedRequest" reason:msg userInfo:nil];
-			}
-			// we need to raise the exception on the main thread when testing
-			// otherwise the tests will crash cause we cannot catch and assert the exception...
-			if (self.testmode) {
-				[exception raise];
-			} else {
-				[exception performSelectorInBackground:@selector(raise) withObject:nil];
+				NSString *msg = [NSString stringWithFormat:@"The request to \"%@\" should be fired %d times but was fired %d times.\n",
+								someStubbedRequest.urlMatcher.description, expectedCount, actualCount];
+				NSException *exception = [NSException exceptionWithName:@"NocillaMissingRequest" reason:msg userInfo:nil];
+
+				// we need to raise the exception on the main thread when testing
+				// otherwise the tests will crash cause we cannot catch and assert the exception...
+				if (self.testmode) {
+					[exception raise];
+				} else {
+					[exception performSelectorInBackground:@selector(raise) withObject:nil];
+				}
 			}
 
 		}
@@ -122,6 +119,19 @@ static LSNocilla *sharedInstace = nil;
 	for(LSStubRequest *someStubbedRequest in requests) {
 		if ([someStubbedRequest matchesRequest:actualRequest]) {
 			someStubbedRequest.actualCallCount++;
+
+			// check if the request was already sent to often
+			if (someStubbedRequest.expectedCallCount != nil) {
+				NSInteger actualCount = someStubbedRequest.actualCallCount;
+				NSInteger expectedCount = someStubbedRequest.expectedCallCount.integerValue;
+				if(actualCount > expectedCount) {
+					NSString *msg = [NSString stringWithFormat:@"An unexpected HTTP request to \"%@\" was fired.\n"
+																	   "You already stubbed this request but it should be fired %d times but was fired %d times.\n",
+															   someStubbedRequest.urlMatcher.description, expectedCount, actualCount];
+					[NSException raise:@"NocillaUnexpectedRequest" format:msg];
+				}
+			}
+
 			return;
 		}
 	}

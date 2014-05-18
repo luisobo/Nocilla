@@ -169,12 +169,23 @@ andFailWithError([NSError errorWithDomain:@"foo" code:123 userInfo:nil]);
 To verify that a certain request was fired exactly once:
 
 ```objc
-stubRequest(@"GET", @"https://api.example.com/dogs.json").withExpectedCallCount(1);
+expectRequest(@"GET", @"https://api.example.com/dogs.json", 1);
 ...
 // execute the code that should fire the request
 ...
 [[LSNocilla sharedInstance] verifyCallCount];
 
+```
+
+Instead of:
+
+```objc
+expectRequest(@"GET", @"https://api.example.com/dogs.json", 1);
+```
+
+you can also use:
+```objc
+stubRequest(@"GET", @"https://api.example.com/dogs.json").withExpectedCallCount(1);
 ```
 
 Of course you can combine this with any withHeaders(), withBody() or andReturn() statements.

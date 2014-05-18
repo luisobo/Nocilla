@@ -77,3 +77,7 @@ LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {
     [[LSNocilla sharedInstance] addStubbedRequest:request];
     return dsl;
 }
+
+LSStubRequestDSL * expectRequest(NSString *method, id<LSMatcheable> url, NSInteger expectedCallCount) {
+    return stubRequest(method, url).withExpectedCallCount(expectedCallCount);
+}
