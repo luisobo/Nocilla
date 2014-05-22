@@ -33,7 +33,8 @@ extern "C" {
 #endif
     
 LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url);
-    
+LSStubRequestDSL * expectRequest(NSString *method, id<LSMatcheable> url, NSInteger expectedCallCount);
+
 #ifdef __cplusplus
 }
 #endif
