@@ -13,8 +13,6 @@ NSString * const LSUnexpectedRequest = @"Unexpected Request";
 @property (nonatomic, strong) NSMutableArray *hooks;
 @property (nonatomic, assign, getter = isStarted) BOOL started;
 
-@property (nonatomic) BOOL testmode;
-
 - (void)loadHooks;
 - (void)unloadHooks;
 @end
@@ -79,20 +77,11 @@ static LSNocilla *sharedInstace = nil;
 			NSInteger actualCount = someStubbedRequest.actualCallCount;
 			NSInteger expectedCount = someStubbedRequest.expectedCallCount.integerValue;
 
-			// the exceptions need to be fired on an other thread than the main thread
-			// cause otherwise they might be caught by other frameworks and won't get logged!
 			if (actualCount < expectedCount) {
 				NSString *msg = [NSString stringWithFormat:@"The request to \"%@\" should be fired %d times but was fired %d times.\n",
 								someStubbedRequest.urlMatcher.description, expectedCount, actualCount];
 				NSException *exception = [NSException exceptionWithName:@"NocillaMissingRequest" reason:msg userInfo:nil];
-
-				// we need to raise the exception on the main thread when testing
-				// otherwise the tests will crash cause we cannot catch and assert the exception...
-				if (self.testmode) {
-					[exception raise];
-				} else {
-					[exception performSelectorInBackground:@selector(raise) withObject:nil];
-				}
+				[exception raise];
 			}
 
 		}
