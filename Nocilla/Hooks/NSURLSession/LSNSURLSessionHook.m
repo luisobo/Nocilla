@@ -13,19 +13,11 @@
 @implementation LSNSURLSessionHook
 
 - (void)load {
-#ifdef __IPHONE_8_0
-    [self swizzleSelector:@selector(protocolClasses) fromClass:[NSURLSessionConfiguration class] toClass:[self class]];
-#else
-    [self swizzleSelector:@selector(protocolClasses) fromClass:NSClassFromString(@"__NSCFURLSessionConfiguration") toClass:[self class]];
-#endif
+    [self swizzleSelector:@selector(protocolClasses) fromClass:NSClassFromString(@"__NSCFURLSessionConfiguration") ?: [NSURLSessionConfiguration class] toClass:[self class]];
 }
 
 - (void)unload {
-#ifdef __IPHONE_8_0
-    [self swizzleSelector:@selector(protocolClasses) fromClass:[NSURLSessionConfiguration class] toClass:[self class]];
-#else
-    [self swizzleSelector:@selector(protocolClasses) fromClass:NSClassFromString(@"__NSCFURLSessionConfiguration") toClass:[self class]];
-#endif
+    [self swizzleSelector:@selector(protocolClasses) fromClass:NSClassFromString(@"__NSCFURLSessionConfiguration") ?: [NSURLSessionConfiguration class] toClass:[self class]];
 }
 
 - (void)swizzleSelector:(SEL)selector fromClass:(Class)original toClass:(Class)stub {
