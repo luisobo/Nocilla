@@ -1,5 +1,22 @@
 PODS:
-  - AFNetworking (1.0RC1)
+  - AFNetworking (2.0.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.0.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.0.3):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.0.3)
+  - AFNetworking/Security (2.0.3)
+  - AFNetworking/Serialization (2.0.3)
+  - AFNetworking/UIKit (2.0.3):
+    - AFNetworking/NSURLConnection
   - ASIHTTPRequest (1.8.1):
     - ASIHTTPRequest/ASIWebPageRequest
     - ASIHTTPRequest/CloudFiles
@@ -19,10 +36,10 @@ PODS:
   - Kiwi (2.0.6)
   - MKNetworkKit (0.87):
     - Reachability (~> 3.1.0)
-  - Reachability (3.1.0)
+  - Reachability (3.1.1)
 
 DEPENDENCIES:
-  - AFNetworking (= 1.0RC1)
+  - AFNetworking (~> 2.0.3)
   - ASIHTTPRequest (>= 1.8.1)
   - CocoaHTTPServer (~> 2.2.1)
   - Kiwi (from `git://github.com/allending/Kiwi.git`, commit `c4354439fcc70114584212ab0c9d2a3c6523f96c`)
@@ -34,13 +51,13 @@ EXTERNAL SOURCES:
     :git: git://github.com/allending/Kiwi.git
 
 SPEC CHECKSUMS:
-  AFNetworking: b21c1252d437fd322e7db1caa93b163d76a362cb
-  ASIHTTPRequest: a411b8d0f006ed8fc24248be6a0c4ad2abc9b101
+  AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  ASIHTTPRequest: 162783e0cd71bdd3ff1ceed0cd5fa9505e0116a8
   CocoaAsyncSocket: 73c96a4225998adad0c94142010f65e5d12077de
   CocoaHTTPServer: 188251009cdf2fb9f422e6979621b8942733cb22
-  CocoaLumberjack: 5b2c6e153a8b251dc4b5cea52138e5c2665e2eca
+  CocoaLumberjack: 2df43c294ae86572909fde74551a25ffe8c768cb
   Kiwi: 56082a80f942de4d10423d8d8a599ab30cf50228
   MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
-  Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
+  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
 
-COCOAPODS: 0.22.1
+COCOAPODS: 0.28.0

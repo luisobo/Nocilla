@@ -31,6 +31,8 @@
                 [data appendData:readData];
             } else if (bytesRead < 0) {
                 [NSException raise:@"NocillaStreamReadError" format:@"An error occurred while reading HTTPBodyStream (%d)", bytesRead];
+            } else if (bytesRead == 0) {
+                break;
             }
         }
         free(buffer);
