@@ -20,14 +20,16 @@ PODS:
   - ASIHTTPRequest (1.8.1):
     - ASIHTTPRequest/ASIWebPageRequest
     - ASIHTTPRequest/CloudFiles
+    - ASIHTTPRequest/Core
     - ASIHTTPRequest/S3
-    - Reachability
   - ASIHTTPRequest/ASIWebPageRequest (1.8.1):
-    - Reachability
+    - ASIHTTPRequest/Core
   - ASIHTTPRequest/CloudFiles (1.8.1):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.1):
     - Reachability
   - ASIHTTPRequest/S3 (1.8.1):
-    - Reachability
+    - ASIHTTPRequest/Core
   - CocoaAsyncSocket (0.0.1)
   - CocoaHTTPServer (2.2.1):
     - CocoaAsyncSocket (~> 0.0.1)
@@ -51,13 +53,13 @@ EXTERNAL SOURCES:
     :git: git://github.com/allending/Kiwi.git
 
 SPEC CHECKSUMS:
-  AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
-  ASIHTTPRequest: 162783e0cd71bdd3ff1ceed0cd5fa9505e0116a8
-  CocoaAsyncSocket: 73c96a4225998adad0c94142010f65e5d12077de
-  CocoaHTTPServer: 188251009cdf2fb9f422e6979621b8942733cb22
-  CocoaLumberjack: 2df43c294ae86572909fde74551a25ffe8c768cb
+  AFNetworking: a4d0e9a64de9242986620dafd1b3cee3b413ac5c
+  ASIHTTPRequest: 5db8ea03385e6bb6eca5285db1fe7f5da75d82ba
+  CocoaAsyncSocket: 0b50442a741216b2fff60a7e6f84f6d71c18ee8a
+  CocoaHTTPServer: e457237d0404b8db97db285a322fb701f4a68afc
+  CocoaLumberjack: 5ce79baa27135c8ae98994308d3ac112be1521bb
   Kiwi: 56082a80f942de4d10423d8d8a599ab30cf50228
-  MKNetworkKit: f174100f92473012138b6b1c3040266af8d43a14
-  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
+  MKNetworkKit: 83e6296a8d42e98a71880424a889773654846d74
+  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.33.1
