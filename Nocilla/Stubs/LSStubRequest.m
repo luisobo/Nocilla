@@ -91,8 +91,21 @@
     if (!selfBody || [selfBody isEqualToData:reqBody]) {
         return YES;
     }
+
+    BOOL (^isJSON)(NSString *) = ^BOOL(NSString *contentType) {
+        return [contentType rangeOfString:@"application/json"].location != NSNotFound;
+    };
+
+    if (selfBody != nil && isJSON(self.headers[@"Content-Type"]) &&
+        reqBody != nil && isJSON(request.headers[@"Content-Type"])) {
+        id json = [NSJSONSerialization JSONObjectWithData:selfBody options:0 error:NULL];
+        id other = [NSJSONSerialization JSONObjectWithData:reqBody options:0 error:NULL];
+
+        if (json != nil && [json isEqual:other]) {
+            return YES;
+        }
+    }
+
     return NO;
 }
 @end
-
-

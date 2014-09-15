@@ -161,7 +161,25 @@ describe(@"#matchesRequest:", ^{
             [[theValue([stubRequest matchesRequest:actualRequest]) should] beNo];
         });
     });
-    
+
+    context(@"when both requests encode equivalent JSON", ^{
+        __block LSStubRequest *stubRequest = nil;
+        __block LSTestRequest *actualRequest = nil;
+        beforeEach(^{
+            stubRequest = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"https://api.example.com/cats"];
+            actualRequest = [[LSTestRequest alloc] initWithMethod:@"POST" url:@"https://api.example.com/cats"];
+
+            [stubRequest setHeader:@"Content-Type" value:@"application/json"];
+            [actualRequest setHeader:@"Content-Type" value:@"application/json"];
+
+            [stubRequest setBody:[@"{ \"name\": \"Mame-chan\", \"fluffiness\": 9001 }" dataUsingEncoding:NSUTF8StringEncoding]];
+            [actualRequest setBody:[@"{ \"fluffiness\": 9001, \"name\": \"Mame-chan\" }" dataUsingEncoding:NSUTF8StringEncoding]];
+        });
+        it(@"should match", ^{
+            [[theValue([stubRequest matchesRequest:actualRequest]) should] beYes];
+        });
+    });
+
     context(@"when the stubRequest request has a nil body", ^{
         __block LSStubRequest *stubRequest = nil;
         __block LSTestRequest *actualRequest = nil;
