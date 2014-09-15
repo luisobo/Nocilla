@@ -40,6 +40,21 @@
     };
 }
 
+- (AndJSONMethod)withJSON {
+    return ^(id body) {
+        NSCParameterAssert(body != nil);
+
+        NSError *error;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:body options:0 error:&error];
+
+        NSCAssert(data != nil, @"JSON serialization failed with %@", error.localizedDescription);
+
+        return self
+            .withHeaders(@{ @"Content-Type": @"application/json; charset=utf-8" })
+            .withBody(data);
+    };
+}
+
 - (AndReturnMethod)andReturn {
     return ^(NSInteger statusCode) {
         self.request.response = [[LSStubResponse alloc] initWithStatusCode:statusCode];
