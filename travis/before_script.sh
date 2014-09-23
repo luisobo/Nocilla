@@ -2,5 +2,5 @@
 set -e
 
 brew update
-brew upgrade xctool
+if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 xctool --version
