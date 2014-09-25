@@ -50,6 +50,8 @@
             NSURL *newURL = [NSURL URLWithString:[stubbedResponse.headers objectForKey:@"Location"] relativeToURL:request.URL];
             NSMutableURLRequest *redirectRequest = [NSMutableURLRequest requestWithURL:newURL];
             
+            [redirectRequest setAllHTTPHeaderFields:[NSHTTPCookie requestHeaderFieldsWithCookies:[cookieStorage cookiesForURL:newURL]]];
+            
             [client URLProtocol:self
          wasRedirectedToRequest:redirectRequest
                redirectResponse:urlResponse];
