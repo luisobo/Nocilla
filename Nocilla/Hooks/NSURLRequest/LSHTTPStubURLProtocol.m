@@ -35,11 +35,23 @@
                                                 headerFields:stubbedResponse.headers
                                                  requestTime:0];
         NSData *body = stubbedResponse.body;
+		
+        if (stubbedResponse.statusCode < 300 || stubbedResponse.statusCode > 399 ) {
+            [client URLProtocol:self didReceiveResponse:urlResponse
+             cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+            [client URLProtocol:self didLoadData:body];
+            [client URLProtocolDidFinishLoading:self];
+		}
+		else {
+			NSURLRequest *redirectRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[stubbedResponse.headers objectForKey:@"Location"] relativeToURL:request.URL]];
+			[client URLProtocol:self
+		 wasRedirectedToRequest:redirectRequest
+			   redirectResponse:urlResponse];
 
-        [client URLProtocol:self didReceiveResponse:urlResponse
-         cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-        [client URLProtocol:self didLoadData:body];
-        [client URLProtocolDidFinishLoading:self];
+			// According to: https://developer.apple.com/library/ios/samplecode/CustomHTTPProtocol/Listings/CustomHTTPProtocol_Core_Code_CustomHTTPProtocol_m.html
+			// needs to abort the original request
+			[client URLProtocol:self didFailWithError:[NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:nil]];
+        }
     }
 }
 
