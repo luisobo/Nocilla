@@ -128,6 +128,14 @@ withHeaders(@{@"Content-Type": @"application/json"}).
 withBody(@"{\"ok\":true}");
 ```
 
+#### Returning a specific status code and body from a file inside of test bundle
+```objc
+stubRequest(@"GET", @"https://api.example.com/dogs.json").
+andReturn(201).
+withHeaders(@{@"Content-Type": @"application/json"}).
+withBodyFile(@"content.json");
+```
+
 You can also use `NSData` for the response body:
 
 ```objc
