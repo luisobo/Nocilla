@@ -10,7 +10,6 @@
 -(BOOL)matchesMethod:(id<LSHTTPRequest>)request;
 -(BOOL)matchesURL:(id<LSHTTPRequest>)request;
 -(BOOL)matchesHeaders:(id<LSHTTPRequest>)request;
--(BOOL)matchesBody:(id<LSHTTPRequest>)request;
 @end
 
 @implementation LSStubRequest
@@ -33,6 +32,12 @@
     [self.mutableHeaders setValue:value forKey:header];
 }
 
+- (void)setBody:(NSData *)body {
+    self.matchesBody = ^BOOL(NSData *data) {
+        return [data isEqual:body];
+    };
+}
+
 - (NSDictionary *)headers {
     return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];;
 }
@@ -42,7 +47,7 @@
             self.method,
             self.urlMatcher,
             self.headers,
-            self.body,
+            self.matchesBody ? @"(matched by block)" : @"(any)",
             self.response];
 }
 
@@ -86,12 +91,7 @@
 }
 
 -(BOOL)matchesBody:(id<LSHTTPRequest>)request {
-    NSData *selfBody = self.body;
-    NSData *reqBody = request.body;
-    if (!selfBody || [selfBody isEqualToData:reqBody]) {
-        return YES;
-    }
-    return NO;
+    return !self.matchesBody || self.matchesBody(request.body);
 }
 @end
 

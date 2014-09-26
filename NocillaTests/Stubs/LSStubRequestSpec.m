@@ -157,7 +157,7 @@ describe(@"#matchesRequest:", ^{
             [stubRequest setBody:[@"Hola, this is a body" dataUsingEncoding:NSUTF8StringEncoding]];
             [actualRequest setBody:[@"Adios, this is a body as well" dataUsingEncoding:NSUTF8StringEncoding]];
         });
-        it(@"should match", ^{
+        it(@"should not match", ^{
             [[theValue([stubRequest matchesRequest:actualRequest]) should] beNo];
         });
     });
@@ -181,6 +181,39 @@ describe(@"#matchesRequest:", ^{
         describe(@"the stubRequest request", ^{
             it(@"should match the actualRequest request", ^{
                 [[theValue([stubRequest matchesRequest:actualRequest]) should] beYes];
+            });
+        });
+    });
+    
+    context(@"when the stubRequest has a matchesBody block", ^{
+        __block LSStubRequest *stubRequest = nil;
+        __block LSTestRequest *actualRequest = nil;
+        beforeEach(^{
+            stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+            actualRequest = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+            
+            [stubRequest setHeader:@"Content-Type" value:@"application/json"];
+            [stubRequest setHeader:@"X-API-TOKEN" value:@"123abc"];
+            
+            [actualRequest setHeader:@"Content-Type" value:@"application/json"];
+            [actualRequest setHeader:@"X-API-TOKEN" value:@"123abc"];
+            
+            [stubRequest setMatchesBody:^BOOL(NSData *body) {
+                NSString *bodyString = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
+                return [[bodyString lowercaseString] isEqualToString:@"hola"];
+            }];
+            
+            [actualRequest setBody:[@"Adios, this is a body as well" dataUsingEncoding:NSUTF8StringEncoding]];
+        });
+        describe(@"the stubRequest request", ^{
+            it(@"should match a request for which the block returns YES", ^{
+                [actualRequest setBody:[@"Hola" dataUsingEncoding:NSUTF8StringEncoding]];
+                [[theValue([stubRequest matchesRequest:actualRequest]) should] beYes];
+            });
+            
+            it(@"should not match a request for which the block returns NO", ^{
+                [actualRequest setBody:[@"Adios" dataUsingEncoding:NSUTF8StringEncoding]];
+                [[theValue([stubRequest matchesRequest:actualRequest]) should] beNo];
             });
         });
     });
