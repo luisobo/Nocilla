@@ -101,9 +101,7 @@
         id json = [NSJSONSerialization JSONObjectWithData:selfBody options:0 error:NULL];
         id other = [NSJSONSerialization JSONObjectWithData:reqBody options:0 error:NULL];
 
-        if (json != nil && [json isEqual:other]) {
-            return YES;
-        }
+        return [json isEqual:other];
     }
 
     return NO;
