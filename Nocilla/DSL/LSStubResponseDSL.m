@@ -1,6 +1,7 @@
 #import "LSStubResponseDSL.h"
 #import "LSStubResponse.h"
 #import "LSHTTPBody.h"
+#import "LSNocilla.h"
 
 @interface LSStubResponseDSL ()
 @property (nonatomic, strong) LSStubResponse *response;
@@ -37,4 +38,20 @@
         return self;
     };
 }
+
+- (ResponseWithJSONMethod)withJSON {
+    return ^(id body) {
+        NSCParameterAssert(body != nil);
+
+        NSError *error;
+        NSData *data = [NSJSONSerialization dataWithJSONObject:body options:0 error:&error];
+
+        NSCAssert(data != nil, @"JSON serialization failed with %@", error.localizedDescription);
+
+        return self
+            .withHeaders(@{ @"Content-Type": @"application/json; charset=utf-8" })
+            .withBody(data);
+    };
+}
+
 @end

@@ -12,6 +12,7 @@
 typedef LSStubRequestDSL *(^WithHeaderMethod)(NSString *, NSString *);
 typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);
 typedef LSStubRequestDSL *(^AndBodyMethod)(id<LSHTTPBody>);
+typedef LSStubRequestDSL *(^AndJSONMethod)(id);
 typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
 typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData);
 typedef void (^AndFailWithErrorMethod)(NSError *error);
@@ -21,6 +22,7 @@ typedef void (^AndFailWithErrorMethod)(NSError *error);
 - (WithHeaderMethod)withHeader;
 - (WithHeadersMethod)withHeaders;
 - (AndBodyMethod)withBody;
+- (AndJSONMethod)withJSON;
 - (AndReturnMethod)andReturn;
 - (AndReturnRawResponseMethod)andReturnRawResponse;
 - (AndFailWithErrorMethod)andFailWithError;

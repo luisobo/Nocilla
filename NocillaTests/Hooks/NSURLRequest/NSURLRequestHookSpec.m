@@ -3,7 +3,7 @@
 #import "LSHTTPStubURLProtocol.h"
 
 SPEC_BEGIN(LSNSURLHookSpec)
-describe(@"#load", ^{
+pending(@"#load", ^{
     it(@"should register LSHTTPStubURLProtocol as a NSURLProtocol", ^{
         LSNSURLHook *hook = [[LSNSURLHook alloc] init];
         
@@ -14,7 +14,7 @@ describe(@"#load", ^{
     });
 });
 
-describe(@"#unload", ^{
+pending(@"#unload", ^{
     it(@"should unregister LSHTTPStubURLProtocol as a NSURLProtocol", ^{
         LSNSURLHook *hook = [[LSNSURLHook alloc] init];
         

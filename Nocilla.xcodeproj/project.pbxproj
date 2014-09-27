@@ -62,7 +62,6 @@
 		A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAE15E30B0000730EE5 /* LSStubResponse.m */; };
 		A085B83C15E30749007D33C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83B15E30749007D33C1 /* Foundation.framework */; };
 		A085B84115E30749007D33C1 /* Nocilla.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; };
-		A085B84B15E30749007D33C1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B84A15E30749007D33C1 /* SenTestingKit.framework */; };
 		A085B84E15E30749007D33C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83B15E30749007D33C1 /* Foundation.framework */; };
 		A085B85115E30749007D33C1 /* libNocilla.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83815E30749007D33C1 /* libNocilla.a */; };
 		A085B85715E30749007D33C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A085B85515E30749007D33C1 /* InfoPlist.strings */; };
@@ -109,7 +108,7 @@
 
 /* Begin PBXFileReference section */
 		0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponseSpec.m; sourceTree = "<group>"; };
-		3CB9A3DF4AB94FEA9A99A67B /* Pods-NocillaTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.xcconfig"; path = "Pods/Pods-NocillaTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		8479B2C32C438FF7A0D40983 /* Pods-NocillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.release.xcconfig"; path = "Pods/Pods-NocillaTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0055EE615EEAF8C005D6C85 /* LSTestingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSTestingConnection.h; path = Support/LSTestingConnection.h; sourceTree = "<group>"; };
 		A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSTestingConnection.m; path = Support/LSTestingConnection.m; sourceTree = "<group>"; };
 		A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSURLRequestHookSpec.m; path = Hooks/NSURLRequest/NSURLRequestHookSpec.m; sourceTree = "<group>"; };
@@ -167,8 +166,7 @@
 		A085B83B15E30749007D33C1 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A085B83F15E30749007D33C1 /* Nocilla-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocilla-Prefix.pch"; sourceTree = "<group>"; };
 		A085B84015E30749007D33C1 /* Nocilla.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nocilla.h; sourceTree = "<group>"; };
-		A085B84915E30749007D33C1 /* NocillaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NocillaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A085B84A15E30749007D33C1 /* SenTestingKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A085B84915E30749007D33C1 /* NocillaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NocillaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A085B85415E30749007D33C1 /* NocillaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NocillaTests-Info.plist"; sourceTree = "<group>"; };
 		A085B85615E30749007D33C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFNetworkingStubbingSpec.m; path = Hooks/NSURLRequest/AFNetworkingStubbingSpec.m; sourceTree = "<group>"; };
@@ -189,6 +187,7 @@
 		A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDiffSpec.m; path = Diff/LSHTTPRequestDiffSpec.m; sourceTree = "<group>"; };
 		AA0A44051758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequestSpec.m"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequestSpec.m"; sourceTree = "<group>"; };
 		CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E406DEF4CAFD2723BAFB28D1 /* Pods-NocillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.debug.xcconfig"; path = "Pods/Pods-NocillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F7621264AB6B45CE84724138 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -207,7 +206,6 @@
 			files = (
 				A0BBF5CA16DD9BDD00D660D2 /* CoreGraphics.framework in Frameworks */,
 				A0708DB415E70C6600352085 /* UIKit.framework in Frameworks */,
-				A085B84B15E30749007D33C1 /* SenTestingKit.framework in Frameworks */,
 				A085B84E15E30749007D33C1 /* Foundation.framework in Frameworks */,
 				A085B85115E30749007D33C1 /* libNocilla.a in Frameworks */,
 				5B41631392BA47B7B7494C73 /* libPods-NocillaTests.a in Frameworks */,
@@ -391,7 +389,8 @@
 				A085B85215E30749007D33C1 /* NocillaTests */,
 				A085B83A15E30749007D33C1 /* Frameworks */,
 				A085B83915E30749007D33C1 /* Products */,
-				3CB9A3DF4AB94FEA9A99A67B /* Pods-NocillaTests.xcconfig */,
+				E406DEF4CAFD2723BAFB28D1 /* Pods-NocillaTests.debug.xcconfig */,
+				8479B2C32C438FF7A0D40983 /* Pods-NocillaTests.release.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -399,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				A085B83815E30749007D33C1 /* libNocilla.a */,
-				A085B84915E30749007D33C1 /* NocillaTests.octest */,
+				A085B84915E30749007D33C1 /* NocillaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -410,7 +409,6 @@
 				A0BBF5C916DD9BDD00D660D2 /* CoreGraphics.framework */,
 				A0708DB315E70C6600352085 /* UIKit.framework */,
 				A085B83B15E30749007D33C1 /* Foundation.framework */,
-				A085B84A15E30749007D33C1 /* SenTestingKit.framework */,
 				CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */,
 				F7621264AB6B45CE84724138 /* libPods.a */,
 			);
@@ -581,8 +579,8 @@
 			);
 			name = NocillaTests;
 			productName = NocillaTests;
-			productReference = A085B84915E30749007D33C1 /* NocillaTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = A085B84915E30749007D33C1 /* NocillaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -590,6 +588,7 @@
 		A085B82F15E30749007D33C1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Luis Solano Bonet";
 			};
@@ -819,25 +818,23 @@
 		};
 		A085B86115E30749007D33C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CB9A3DF4AB94FEA9A99A67B /* Pods-NocillaTests.xcconfig */;
+			baseConfigurationReference = E406DEF4CAFD2723BAFB28D1 /* Pods-NocillaTests.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nocilla/Nocilla-Prefix.pch";
 				INFOPLIST_FILE = "NocillaTests/NocillaTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
 		A085B86215E30749007D33C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CB9A3DF4AB94FEA9A99A67B /* Pods-NocillaTests.xcconfig */;
+			baseConfigurationReference = 8479B2C32C438FF7A0D40983 /* Pods-NocillaTests.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nocilla/Nocilla-Prefix.pch";
 				INFOPLIST_FILE = "NocillaTests/NocillaTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
