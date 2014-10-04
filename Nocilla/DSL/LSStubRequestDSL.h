@@ -2,7 +2,7 @@
 #import "NSString+Matcheable.h"
 #import "NSString+Matcheable.h"
 #import "NSRegularExpression+Matcheable.h"
-#import "LSStubResponse.h"
+#import "LSBlockResponse.h"
 
 @class LSStubRequestDSL;
 @class LSStubResponseDSL;

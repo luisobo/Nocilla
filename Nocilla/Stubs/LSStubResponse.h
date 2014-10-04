@@ -1,9 +1,8 @@
 #import <Foundation/Foundation.h>
+#import "LSBlockResponse.h"
 #import "LSHTTPResponse.h"
 
 @protocol LSHTTPBody;
-
-typedef void (^LSBlockResponse)(NSDictionary * __autoreleasing *headers, NSInteger *status, id<LSHTTPBody> __autoreleasing *body);
 
 @interface LSStubResponse : NSObject<LSHTTPResponse>
 

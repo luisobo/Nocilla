@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03B83B5219DF866C00DC04E4 /* LSBlockResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 03B83B5119DF866C00DC04E4 /* LSBlockResponse.h */; };
 		0FA3E7FE1680775B001DB582 /* LSStubResponseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */; };
 		5B41631392BA47B7B7494C73 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
 		A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
@@ -108,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03B83B5119DF866C00DC04E4 /* LSBlockResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSBlockResponse.h; path = DSL/LSBlockResponse.h; sourceTree = "<group>"; };
 		0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponseSpec.m; sourceTree = "<group>"; };
 		3CB9A3DF4AB94FEA9A99A67B /* Pods-NocillaTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.xcconfig"; path = "Pods/Pods-NocillaTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A0055EE615EEAF8C005D6C85 /* LSTestingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSTestingConnection.h; path = Support/LSTestingConnection.h; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				A02C7AF015ED795A0061FCEE /* DSL.h */,
+				03B83B5119DF866C00DC04E4 /* LSBlockResponse.h */,
 				A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */,
 				A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */,
 				A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */,
@@ -516,6 +519,7 @@
 				A08D52C815E5A6A7003650F7 /* Nocilla.h in Headers */,
 				A02C7AF115ED795A0061FCEE /* DSL.h in Headers */,
 				A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */,
+				03B83B5219DF866C00DC04E4 /* LSBlockResponse.h in Headers */,
 				A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */,
 				A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */,
 				A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */,
