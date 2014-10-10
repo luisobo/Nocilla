@@ -35,7 +35,7 @@ pod 'Nocilla'
 ## Usage
 _Yes, the following code is valid Objective-C, or at least, it should be_
 
-The following examples are described using [Kiwi](https://github.com/allending/Kiwi)
+The following examples are described using [Kiwi](https://github.com/kiwi-bdd/Kiwi)
 
 ### Common parts
 Until Nocilla can hook directly into Kiwi, you will have to include the following snippet in the specs you want to use Nocilla:
