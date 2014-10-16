@@ -32,6 +32,7 @@ static LSNocilla *sharedInstace = nil;
 - (id)init {
     self = [super init];
     if (self) {
+        _catchAllRequests = YES;
         _mutableRequests = [NSMutableArray array];
         _hooks = [NSMutableArray array];
         [self registerHook:[[LSNSURLHook alloc] init]];
@@ -70,14 +71,12 @@ static LSNocilla *sharedInstace = nil;
 
 - (LSStubResponse *)responseForRequest:(id<LSHTTPRequest>)actualRequest {
     NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
-
+    
     for(LSStubRequest *someStubbedRequest in requests) {
         if ([someStubbedRequest matchesRequest:actualRequest]) {
             return someStubbedRequest.response;
         }
     }
-    [NSException raise:@"NocillaUnexpectedRequest" format:@"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [[[LSHTTPRequestDSLRepresentation alloc] initWithRequest:actualRequest] description]];
-
     return nil;
 }
 
