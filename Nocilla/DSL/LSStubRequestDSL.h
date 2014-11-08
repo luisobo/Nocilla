@@ -18,12 +18,14 @@ typedef void (^AndFailWithErrorMethod)(NSError *error);
 
 @interface LSStubRequestDSL : NSObject
 - (id)initWithRequest:(LSStubRequest *)request;
-- (WithHeaderMethod)withHeader;
-- (WithHeadersMethod)withHeaders;
-- (AndBodyMethod)withBody;
-- (AndReturnMethod)andReturn;
-- (AndReturnRawResponseMethod)andReturnRawResponse;
-- (AndFailWithErrorMethod)andFailWithError;
+
+@property (nonatomic, strong, readonly) WithHeaderMethod withHeader;
+@property (nonatomic, strong, readonly) WithHeadersMethod withHeaders;
+@property (nonatomic, strong, readonly) AndBodyMethod withBody;
+@property (nonatomic, strong, readonly) AndReturnMethod andReturn;
+@property (nonatomic, strong, readonly) AndReturnRawResponseMethod andReturnRawResponse;
+@property (nonatomic, strong, readonly) AndFailWithErrorMethod andFailWithError;
+
 @end
 
 #ifdef __cplusplus
