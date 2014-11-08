@@ -1,4 +1,5 @@
-# Nocilla [![](https://api.travis-ci.org/luisobo/Nocilla.png?branch=master)](https://travis-ci.org/luisobo/Nocilla)
+# Nocilla [![](https://api.travis-ci.org/luisobo/Nocilla.png?branch=master)](https://travis-ci.org/luisobo/Nocilla)[![Version](https://img.shields.io/cocoapods/v/Nocilla.svg?style=flat)](http://cocoadocs.org/docsets/Nocilla)[![License](https://img.shields.io/cocoapods/l/Nocilla.svg?style=flat)](http://cocoadocs.org/docsets/Nocilla)[![Platform](https://img.shields.io/cocoapods/p/Nocilla.svg?style=flat)](http://cocoadocs.org/docsets/Nocilla)
+
 Stunning HTTP stubbing for iOS and OS X. Testing HTTP requests has never been easier.
 
 This library was inspired by [WebMock](https://github.com/bblimke/webmock) and it's using [this approach](http://www.infinite-loop.dk/blog/2011/09/using-nsurlprotocol-for-injecting-test-data/) to stub the requests.
