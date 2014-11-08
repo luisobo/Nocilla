@@ -6,10 +6,8 @@ SPEC_BEGIN(LSNSURLHookSpec)
 describe(@"#load", ^{
     it(@"should register LSHTTPStubURLProtocol as a NSURLProtocol", ^{
         LSNSURLHook *hook = [[LSNSURLHook alloc] init];
-        
-        [[NSURLProtocol class] stub:@selector(registerClass:)];
-        [[[NSURLProtocol should] receive] registerClass:[LSHTTPStubURLProtocol class]];
-        
+        [[NSURLProtocol should] receive:@selector(registerClass:) withArguments:[LSHTTPStubURLProtocol class]];
+
         [hook load];
     });
 });
@@ -17,9 +15,8 @@ describe(@"#load", ^{
 describe(@"#unload", ^{
     it(@"should unregister LSHTTPStubURLProtocol as a NSURLProtocol", ^{
         LSNSURLHook *hook = [[LSNSURLHook alloc] init];
-        
-        [[NSURLProtocol class] stub:@selector(unregisterClass:)];
-        [[[NSURLProtocol should] receive] unregisterClass:[LSHTTPStubURLProtocol class]];
+
+        [[NSURLProtocol should] receive:@selector(unregisterClass:) withArguments:[LSHTTPStubURLProtocol class]];
         
         [hook unload];
     });

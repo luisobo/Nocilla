@@ -1,2850 +1,868 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0FA3E7FD1680775B001DB582</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>LSStubResponseSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0FA3E7FE1680775B001DB582</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0FA3E7FD1680775B001DB582</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>301673065B73A4E081418B4F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-NocillaTests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>414F89A81D6BD988C531EE91</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-NocillaTests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5B41631392BA47B7B7494C73</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CADACB517CAB41DD8263C667</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9D4C7BC8F2DF4EA496967380</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A0055EE415EEAE08005D6C85</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0708DBC15E70D9800352085</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0055EE515EEAF73005D6C85</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0055EE615EEAF8C005D6C85</string>
-				<string>A0055EE715EEAF8C005D6C85</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0055EE615EEAF8C005D6C85</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSTestingConnection.h</string>
-			<key>path</key>
-			<string>Support/LSTestingConnection.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0055EE715EEAF8C005D6C85</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSTestingConnection.m</string>
-			<key>path</key>
-			<string>Support/LSTestingConnection.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0055EE815EEAF8C005D6C85</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0055EE715EEAF8C005D6C85</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0055F0115EFFA8B005D6C85</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSURLRequestHookSpec.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/NSURLRequestHookSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBDC175FFE0300637CE7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01CEBDD175FFE3200637CE7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ASIHTTPRequest</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBDD175FFE3200637CE7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>ASIHTTPRequestStubbingSpec.m</string>
-			<key>path</key>
-			<string>Hooks/ASIHTTPRequest/ASIHTTPRequestStubbingSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBDE175FFE3200637CE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01CEBDD175FFE3200637CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01CEBDF1760009300637CE7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01CEBE0176000CB00637CE7</string>
-				<string>A01CEBE1176000CB00637CE7</string>
-				<string>A01CEBE8176006CB00637CE7</string>
-				<string>A01CEBE9176006CB00637CE7</string>
-				<string>A01CEBEE1760145C00637CE7</string>
-				<string>A01CEBEF1760145C00637CE7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ASIHTTPRequest</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBE0176000CB00637CE7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSASIHTTPRequestHook.h</string>
-			<key>path</key>
-			<string>Hooks/ASIHTTPRequest/LSASIHTTPRequestHook.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBE1176000CB00637CE7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSASIHTTPRequestHook.m</string>
-			<key>path</key>
-			<string>Hooks/ASIHTTPRequest/LSASIHTTPRequestHook.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBE2176000CB00637CE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01CEBE0176000CB00637CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A01CEBE3176000CB00637CE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01CEBE1176000CB00637CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01CEBE8176006CB00637CE7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>ASIHTTPRequestStub.h</string>
-			<key>path</key>
-			<string>Hooks/ASIHTTPRequest/ASIHTTPRequestStub.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBE9176006CB00637CE7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>ASIHTTPRequestStub.m</string>
-			<key>path</key>
-			<string>Hooks/ASIHTTPRequest/ASIHTTPRequestStub.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBEA176006CB00637CE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01CEBE8176006CB00637CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01CEBEB176006CB00637CE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01CEBE9176006CB00637CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01CEBEC1760081F00637CE7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>LSNocillaSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBED1760081F00637CE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01CEBEC1760081F00637CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01CEBEE1760145C00637CE7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSASIHTTPRequestAdapter.h</string>
-			<key>path</key>
-			<string>Hooks/ASIHTTPRequest/LSASIHTTPRequestAdapter.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBEF1760145C00637CE7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSASIHTTPRequestAdapter.m</string>
-			<key>path</key>
-			<string>Hooks/ASIHTTPRequest/LSASIHTTPRequestAdapter.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A01CEBF01760145C00637CE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01CEBEE1760145C00637CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A01CEBF11760145C00637CE7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A01CEBEF1760145C00637CE7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02889221728BEFD00288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>LSTestRequest.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889231728BEFD00288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>LSTestRequest.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889241728BEFD00288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02889231728BEFD00288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02889251728C36B00288022</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSMatcheable.h</string>
-			<key>path</key>
-			<string>Matchers/LSMatcheable.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A028892B1728C3FF00288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSString+Matcheable.h</string>
-			<key>path</key>
-			<string>Matchers/NSString+Matcheable.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A028892C1728C3FF00288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSString+Matcheable.m</string>
-			<key>path</key>
-			<string>Matchers/NSString+Matcheable.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A028892D1728C3FF00288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A028892B1728C3FF00288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A028892E1728C3FF00288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A028892C1728C3FF00288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A028892F1728C52000288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSMatcher.h</string>
-			<key>path</key>
-			<string>Matchers/LSMatcher.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889301728C52100288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSMatcher.m</string>
-			<key>path</key>
-			<string>Matchers/LSMatcher.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889311728C52100288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A028892F1728C52000288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A02889321728C52100288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02889301728C52100288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02889331728C88D00288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSRegexMatcher.h</string>
-			<key>path</key>
-			<string>Matchers/LSRegexMatcher.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889341728C88D00288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSRegexMatcher.m</string>
-			<key>path</key>
-			<string>Matchers/LSRegexMatcher.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889351728C88E00288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02889331728C88D00288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02889361728C88E00288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02889341728C88D00288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02889371728C95600288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSRegularExpression+Matcheable.h</string>
-			<key>path</key>
-			<string>Matchers/NSRegularExpression+Matcheable.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889381728C95600288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSRegularExpression+Matcheable.m</string>
-			<key>path</key>
-			<string>Matchers/NSRegularExpression+Matcheable.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889391728C95600288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02889371728C95600288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A028893A1728C95600288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02889381728C95600288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A028893B1728CA4700288022</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A028893C1728CA5900288022</string>
-				<string>A028893D1728CA5900288022</string>
-				<string>A092C5AA177BBCC400B5C5F9</string>
-				<string>A092C5AB177BBCC400B5C5F9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Categories</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A028893C1728CA5900288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSString+Nocilla.h</string>
-			<key>path</key>
-			<string>Categories/NSString+Nocilla.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A028893D1728CA5900288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSString+Nocilla.m</string>
-			<key>path</key>
-			<string>Categories/NSString+Nocilla.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A028893E1728CA5900288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A028893C1728CA5900288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A028893F1728CA5900288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A028893D1728CA5900288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02889421728CD6000288022</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSRegexMatcherSpec.m</string>
-			<key>path</key>
-			<string>Matchers/LSRegexMatcherSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02889431728CD6000288022</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02889421728CD6000288022</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7ACA15ECDD780061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0EE631715ECDAF300009A08</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7ACF15ED70170061FCEE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A02C7AF015ED795A0061FCEE</string>
-				<string>A02C7AD015ED702B0061FCEE</string>
-				<string>A02C7AD115ED702B0061FCEE</string>
-				<string>A02C7AD815ED704F0061FCEE</string>
-				<string>A02C7AD915ED704F0061FCEE</string>
-				<string>A02C7AF615EE5CF80061FCEE</string>
-				<string>A02C7AF715EE5CF80061FCEE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>DSL</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7AD015ED702B0061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSStubRequestDSL.h</string>
-			<key>path</key>
-			<string>DSL/LSStubRequestDSL.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7AD115ED702B0061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSStubRequestDSL.m</string>
-			<key>path</key>
-			<string>DSL/LSStubRequestDSL.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7AD215ED702B0061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7AD015ED702B0061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7AD315ED702B0061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7AD115ED702B0061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7AD815ED704F0061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSStubResponseDSL.h</string>
-			<key>path</key>
-			<string>DSL/LSStubResponseDSL.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7AD915ED704F0061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSStubResponseDSL.m</string>
-			<key>path</key>
-			<string>DSL/LSStubResponseDSL.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7ADA15ED704F0061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7AD815ED704F0061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7ADB15ED704F0061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7AD915ED704F0061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7ADC15ED752A0061FCEE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A02C7ADD15ED75480061FCEE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>DSL</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7ADD15ED75480061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSHTTPRequestDSLRepresentationSpec.m</string>
-			<key>path</key>
-			<string>DSL/LSHTTPRequestDSLRepresentationSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7ADE15ED75480061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7ADD15ED75480061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7AEC15ED79120061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0EE630915ECCCBD00009A08</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A02C7AED15ED79170061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0EE630A15ECCD2F00009A08</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A02C7AEE15ED791E0061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A074ABAB15E30B0000730EE5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A02C7AEF15ED79230061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A074ABAD15E30B0000730EE5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A02C7AF015ED795A0061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DSL.h</string>
-			<key>path</key>
-			<string>DSL/DSL.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7AF115ED795A0061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7AF015ED795A0061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A02C7AF615EE5CF80061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSHTTPRequestDSLRepresentation.h</string>
-			<key>path</key>
-			<string>DSL/LSHTTPRequestDSLRepresentation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7AF715EE5CF80061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSHTTPRequestDSLRepresentation.m</string>
-			<key>path</key>
-			<string>DSL/LSHTTPRequestDSLRepresentation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7AF815EE5CF80061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7AF615EE5CF80061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7AF915EE5CF80061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7AF715EE5CF80061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7AFE15EE62650061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0EE631415ECD8B900009A08</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7B0315EE63530061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSURLRequest+DSL.h</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/NSURLRequest+DSL.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7B0415EE63540061FCEE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSURLRequest+DSL.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/NSURLRequest+DSL.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7B0515EE63540061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7B0315EE63530061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7B0615EE63540061FCEE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A02C7B0415EE63540061FCEE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A02C7B0815EE65020061FCEE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0EE630915ECCCBD00009A08</string>
-				<string>A0EE630A15ECCD2F00009A08</string>
-				<string>A092C5A9177BB0A000B5C5F9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7B0915EE655E0061FCEE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A074ABAB15E30B0000730EE5</string>
-				<string>A074ABAC15E30B0000730EE5</string>
-				<string>A074ABAD15E30B0000730EE5</string>
-				<string>A074ABAE15E30B0000730EE5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Stubs</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7B0A15EE658A0061FCEE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0EE630515EC217A00009A08</string>
-				<string>A0EE630615EC217A00009A08</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Diff</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7B0B15EE65E50061FCEE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A01CEBDC175FFE0300637CE7</string>
-				<string>A02C7B0C15EE65EB0061FCEE</string>
-				<string>A04D23C3187E3BA800EF6CB2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Hooks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7B0C15EE65EB0061FCEE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A085B85915E30749007D33C1</string>
-				<string>A0708DBC15E70D9800352085</string>
-				<string>A0055F0115EFFA8B005D6C85</string>
-				<string>A060B22415FE680900BEAD54</string>
-				<string>AA0A44051758E27100D2F909</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>NSURLRequest</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A02C7B0D15EE66250061FCEE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0EE631715ECDAF300009A08</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Diff</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A04D23C3187E3BA800EF6CB2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A04D23C4187E3BF200EF6CB2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>NSURLSession</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A04D23C4187E3BF200EF6CB2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSURLSessionStubbingSpec.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLSession/NSURLSessionStubbingSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A04D23C5187E3BF200EF6CB2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A04D23C4187E3BF200EF6CB2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A04D23C6187E4B9500EF6CB2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A04D23C7187E4BC900EF6CB2</string>
-				<string>A04D23C8187E4BC900EF6CB2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>NSURLSession</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A04D23C7187E4BC900EF6CB2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSNSURLSessionHook.h</string>
-			<key>path</key>
-			<string>Hooks/NSURLSession/LSNSURLSessionHook.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A04D23C8187E4BC900EF6CB2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSNSURLSessionHook.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLSession/LSNSURLSessionHook.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A04D23C9187E4BC900EF6CB2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A04D23C7187E4BC900EF6CB2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A04D23CA187E4BC900EF6CB2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A04D23C8187E4BC900EF6CB2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A060B22415FE680900BEAD54</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSHTTPStubURLProtocolSpec.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/LSHTTPStubURLProtocolSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708D8F15E6EC9F00352085</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSHTTPStubURLProtocol.h</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/LSHTTPStubURLProtocol.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708D9015E6EC9F00352085</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSHTTPStubURLProtocol.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/LSHTTPStubURLProtocol.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708D9115E6EC9F00352085</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0708D8F15E6EC9F00352085</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0708D9415E6FC4100352085</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0708D9015E6EC9F00352085</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0708DA215E6FF7200352085</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A04D23C6187E4B9500EF6CB2</string>
-				<string>A01CEBDF1760009300637CE7</string>
-				<string>A0708DA415E6FFB800352085</string>
-				<string>A0708DA515E6FFB800352085</string>
-				<string>A0708DA315E6FF7E00352085</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Hooks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708DA315E6FF7E00352085</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0708D8F15E6EC9F00352085</string>
-				<string>A0708D9015E6EC9F00352085</string>
-				<string>A0708DA815E7008200352085</string>
-				<string>A0708DA915E7008200352085</string>
-				<string>A0EE631315ECD8B900009A08</string>
-				<string>A0EE631415ECD8B900009A08</string>
-				<string>A02C7B0315EE63530061FCEE</string>
-				<string>A02C7B0415EE63540061FCEE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>NSURLRequest</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708DA415E6FFB800352085</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSHTTPClientHook.h</string>
-			<key>path</key>
-			<string>Hooks/LSHTTPClientHook.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708DA515E6FFB800352085</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSHTTPClientHook.m</string>
-			<key>path</key>
-			<string>Hooks/LSHTTPClientHook.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708DA615E6FFB800352085</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0708DA415E6FFB800352085</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A0708DA715E6FFB800352085</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0708DA515E6FFB800352085</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0708DA815E7008200352085</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSNSURLHook.h</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/LSNSURLHook.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708DA915E7008200352085</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSNSURLHook.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/LSNSURLHook.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0708DAA15E7008200352085</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0708DA815E7008200352085</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0708DAB15E7008200352085</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0708DA915E7008200352085</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0708DB315E70C6600352085</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>A0708DB415E70C6600352085</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0708DB315E70C6600352085</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0708DBC15E70D9800352085</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>MKNetworkKitStubbingSpec.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/MKNetworkKitStubbingSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A074ABA915E30B0000730EE5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>LSNocilla.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A074ABAA15E30B0000730EE5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>LSNocilla.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A074ABAB15E30B0000730EE5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSStubRequest.h</string>
-			<key>path</key>
-			<string>Stubs/LSStubRequest.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A074ABAC15E30B0000730EE5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSStubRequest.m</string>
-			<key>path</key>
-			<string>Stubs/LSStubRequest.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A074ABAD15E30B0000730EE5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSStubResponse.h</string>
-			<key>path</key>
-			<string>Stubs/LSStubResponse.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A074ABAE15E30B0000730EE5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSStubResponse.m</string>
-			<key>path</key>
-			<string>Stubs/LSStubResponse.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A074ABB115E30B0000730EE5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A074ABAA15E30B0000730EE5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A074ABB315E30B0000730EE5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A074ABAC15E30B0000730EE5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A074ABB515E30B0000730EE5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A074ABAE15E30B0000730EE5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A085B82D15E30749007D33C1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A085B83D15E30749007D33C1</string>
-				<string>A085B85215E30749007D33C1</string>
-				<string>A085B83A15E30749007D33C1</string>
-				<string>A085B83915E30749007D33C1</string>
-				<string>EA12116AA2722E6C154AC4C4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B82F15E30749007D33C1</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0500</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Luis Solano Bonet</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>A085B83215E30749007D33C1</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>A085B82D15E30749007D33C1</string>
-			<key>productRefGroup</key>
-			<string>A085B83915E30749007D33C1</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>A085B83715E30749007D33C1</string>
-				<string>A085B84815E30749007D33C1</string>
-			</array>
-		</dict>
-		<key>A085B83215E30749007D33C1</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A085B85B15E30749007D33C1</string>
-				<string>A085B85C15E30749007D33C1</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A085B83415E30749007D33C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A074ABB115E30B0000730EE5</string>
-				<string>A074ABB315E30B0000730EE5</string>
-				<string>A04D23CA187E4BC900EF6CB2</string>
-				<string>A074ABB515E30B0000730EE5</string>
-				<string>A0708D9415E6FC4100352085</string>
-				<string>A0708DA715E6FFB800352085</string>
-				<string>A0708DAB15E7008200352085</string>
-				<string>A0EE630815EC217A00009A08</string>
-				<string>A02C7AD315ED702B0061FCEE</string>
-				<string>A02C7ADB15ED704F0061FCEE</string>
-				<string>A02C7AF915EE5CF80061FCEE</string>
-				<string>A02C7AFE15EE62650061FCEE</string>
-				<string>A02C7B0615EE63540061FCEE</string>
-				<string>A08EE2281728A2F4001830E6</string>
-				<string>A028892E1728C3FF00288022</string>
-				<string>A02889321728C52100288022</string>
-				<string>A02889361728C88E00288022</string>
-				<string>A028893A1728C95600288022</string>
-				<string>A01CEBE3176000CB00637CE7</string>
-				<string>A01CEBEB176006CB00637CE7</string>
-				<string>A01CEBF11760145C00637CE7</string>
-				<string>A028893F1728CA5900288022</string>
-				<string>A092C5AD177BBCC400B5C5F9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A085B83515E30749007D33C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A085B83C15E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A085B83615E30749007D33C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>include/${PRODUCT_NAME}</string>
-			<key>dstSubfolderSpec</key>
-			<string>16</string>
-			<key>files</key>
-			<array>
-				<string>A085B84115E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A085B83715E30749007D33C1</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>A085B85D15E30749007D33C1</string>
-			<key>buildPhases</key>
-			<array>
-				<string>A085B83415E30749007D33C1</string>
-				<string>A085B83515E30749007D33C1</string>
-				<string>A085B83615E30749007D33C1</string>
-				<string>A08D52C515E5A694003650F7</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Nocilla</string>
-			<key>productName</key>
-			<string>Nocilla</string>
-			<key>productReference</key>
-			<string>A085B83815E30749007D33C1</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>A085B83815E30749007D33C1</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libNocilla.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>A085B83915E30749007D33C1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A085B83815E30749007D33C1</string>
-				<string>A085B84915E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B83A15E30749007D33C1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0BBF5C916DD9BDD00D660D2</string>
-				<string>A0708DB315E70C6600352085</string>
-				<string>A085B83B15E30749007D33C1</string>
-				<string>A085B84A15E30749007D33C1</string>
-				<string>CADACB517CAB41DD8263C667</string>
-				<string>F7621264AB6B45CE84724138</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B83B15E30749007D33C1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>A085B83C15E30749007D33C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A085B83B15E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A085B83D15E30749007D33C1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A028893B1728CA4700288022</string>
-				<string>A08EE21F1728A1E7001830E6</string>
-				<string>A02C7B0815EE65020061FCEE</string>
-				<string>A02C7B0915EE655E0061FCEE</string>
-				<string>A02C7B0A15EE658A0061FCEE</string>
-				<string>A02C7ACF15ED70170061FCEE</string>
-				<string>A0708DA215E6FF7200352085</string>
-				<string>A085B84015E30749007D33C1</string>
-				<string>A074ABA915E30B0000730EE5</string>
-				<string>A074ABAA15E30B0000730EE5</string>
-				<string>A085B83E15E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Nocilla</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B83E15E30749007D33C1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A085B83F15E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B83F15E30749007D33C1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Nocilla-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B84015E30749007D33C1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Nocilla.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B84115E30749007D33C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A085B84015E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A085B84415E30749007D33C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A02C7ACA15ECDD780061FCEE</string>
-				<string>A02C7ADE15ED75480061FCEE</string>
-				<string>A0055EE415EEAE08005D6C85</string>
-				<string>A0055EE815EEAF8C005D6C85</string>
-				<string>A0BB870115FE7C2E0090236F</string>
-				<string>A0BB870215FE7C320090236F</string>
-				<string>A04D23C5187E3BF200EF6CB2</string>
-				<string>A0BB870315FE7C350090236F</string>
-				<string>A0BB870615FE7D8F0090236F</string>
-				<string>0FA3E7FE1680775B001DB582</string>
-				<string>A08EE2291728A3A9001830E6</string>
-				<string>A02889241728BEFD00288022</string>
-				<string>A02889431728CD6000288022</string>
-				<string>A01CEBED1760081F00637CE7</string>
-				<string>A01CEBDE175FFE3200637CE7</string>
-				<string>AA0A44061758E27100D2F909</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A085B84515E30749007D33C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A0BBF5CA16DD9BDD00D660D2</string>
-				<string>A0708DB415E70C6600352085</string>
-				<string>A085B84B15E30749007D33C1</string>
-				<string>A085B84E15E30749007D33C1</string>
-				<string>A085B85115E30749007D33C1</string>
-				<string>5B41631392BA47B7B7494C73</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A085B84615E30749007D33C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A085B85715E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A085B84715E30749007D33C1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string># Run the unit tests in this test bundle.
-"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
-</string>
-		</dict>
-		<key>A085B84815E30749007D33C1</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>A085B86015E30749007D33C1</string>
-			<key>buildPhases</key>
-			<array>
-				<string>9D4C7BC8F2DF4EA496967380</string>
-				<string>A085B84415E30749007D33C1</string>
-				<string>A085B84515E30749007D33C1</string>
-				<string>A085B84615E30749007D33C1</string>
-				<string>A085B84715E30749007D33C1</string>
-				<string>C1CB41255F6241919E9FA64B</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>A085B85015E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>NocillaTests</string>
-			<key>productName</key>
-			<string>NocillaTests</string>
-			<key>productReference</key>
-			<string>A085B84915E30749007D33C1</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>A085B84915E30749007D33C1</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>NocillaTests.octest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>A085B84A15E30749007D33C1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>A085B84B15E30749007D33C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A085B84A15E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A085B84E15E30749007D33C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A085B83B15E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A085B84F15E30749007D33C1</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>A085B82F15E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>A085B83715E30749007D33C1</string>
-			<key>remoteInfo</key>
-			<string>Nocilla</string>
-		</dict>
-		<key>A085B85015E30749007D33C1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>A085B83715E30749007D33C1</string>
-			<key>targetProxy</key>
-			<string>A085B84F15E30749007D33C1</string>
-		</dict>
-		<key>A085B85115E30749007D33C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A085B83815E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A085B85215E30749007D33C1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A08EE2201728A1FC001830E6</string>
-				<string>A0BB870415FE7D7E0090236F</string>
-				<string>A0055EE515EEAF73005D6C85</string>
-				<string>A02C7B0D15EE66250061FCEE</string>
-				<string>A02C7B0B15EE65E50061FCEE</string>
-				<string>A02C7ADC15ED752A0061FCEE</string>
-				<string>A085B85315E30749007D33C1</string>
-				<string>A02889221728BEFD00288022</string>
-				<string>A02889231728BEFD00288022</string>
-				<string>A01CEBEC1760081F00637CE7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>NocillaTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B85315E30749007D33C1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A085B85415E30749007D33C1</string>
-				<string>A085B85515E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B85415E30749007D33C1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>NocillaTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B85515E30749007D33C1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A085B85615E30749007D33C1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B85615E30749007D33C1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B85715E30749007D33C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A085B85515E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A085B85915E30749007D33C1</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFNetworkingStubbingSpec.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/AFNetworkingStubbingSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A085B85B15E30749007D33C1</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_TREAT_WARNINGS_AS_ERRORS</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>A085B85C15E30749007D33C1</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_TREAT_WARNINGS_AS_ERRORS</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A085B85D15E30749007D33C1</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A085B85E15E30749007D33C1</string>
-				<string>A085B85F15E30749007D33C1</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A085B85E15E30749007D33C1</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>DSTROOT</key>
-				<string>/tmp/Nocilla.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Nocilla/Nocilla-Prefix.pch</string>
-				<key>GCC_TREAT_WARNINGS_AS_ERRORS</key>
-				<string>NO</string>
-				<key>GCC_WARN_PEDANTIC</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>PublicHeaders</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>A085B85F15E30749007D33C1</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>DSTROOT</key>
-				<string>/tmp/Nocilla.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Nocilla/Nocilla-Prefix.pch</string>
-				<key>GCC_TREAT_WARNINGS_AS_ERRORS</key>
-				<string>NO</string>
-				<key>GCC_WARN_PEDANTIC</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string>PublicHeaders</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A085B86015E30749007D33C1</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A085B86115E30749007D33C1</string>
-				<string>A085B86215E30749007D33C1</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>A085B86115E30749007D33C1</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>414F89A81D6BD988C531EE91</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Nocilla/Nocilla-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>NocillaTests/NocillaTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>A085B86215E30749007D33C1</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>301673065B73A4E081418B4F</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Nocilla/Nocilla-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>NocillaTests/NocillaTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A08D52C515E5A694003650F7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A08D52C715E5A6A7003650F7</string>
-				<string>A08D52C815E5A6A7003650F7</string>
-				<string>A02C7AF115ED795A0061FCEE</string>
-				<string>A0708D9115E6EC9F00352085</string>
-				<string>A02C7AEE15ED791E0061FCEE</string>
-				<string>A02C7AEF15ED79230061FCEE</string>
-				<string>A028892D1728C3FF00288022</string>
-				<string>A02889311728C52100288022</string>
-				<string>A02889391728C95600288022</string>
-				<string>A028893E1728CA5900288022</string>
-				<string>A04D23C9187E4BC900EF6CB2</string>
-				<string>A0708DA615E6FFB800352085</string>
-				<string>A0708DAA15E7008200352085</string>
-				<string>A01CEBE2176000CB00637CE7</string>
-				<string>A0EE630715EC217A00009A08</string>
-				<string>A0EE631515ECD8B900009A08</string>
-				<string>A02C7AD215ED702B0061FCEE</string>
-				<string>A02C7ADA15ED704F0061FCEE</string>
-				<string>A02C7AEC15ED79120061FCEE</string>
-				<string>A02C7AED15ED79170061FCEE</string>
-				<string>A02C7AF815EE5CF80061FCEE</string>
-				<string>A02C7B0515EE63540061FCEE</string>
-				<string>A08EE2271728A2F4001830E6</string>
-				<string>A02889351728C88E00288022</string>
-				<string>A01CEBEA176006CB00637CE7</string>
-				<string>A01CEBF01760145C00637CE7</string>
-				<string>A092C5AC177BBCC400B5C5F9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>A08D52C715E5A6A7003650F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A074ABA915E30B0000730EE5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A08D52C815E5A6A7003650F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A085B84015E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A08EE21F1728A1E7001830E6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A08EE2251728A2F4001830E6</string>
-				<string>A08EE2261728A2F4001830E6</string>
-				<string>A02889251728C36B00288022</string>
-				<string>A028892B1728C3FF00288022</string>
-				<string>A028892C1728C3FF00288022</string>
-				<string>A028892F1728C52000288022</string>
-				<string>A02889301728C52100288022</string>
-				<string>A02889331728C88D00288022</string>
-				<string>A02889341728C88D00288022</string>
-				<string>A02889371728C95600288022</string>
-				<string>A02889381728C95600288022</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Matchers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A08EE2201728A1FC001830E6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A08EE2231728A241001830E6</string>
-				<string>A02889421728CD6000288022</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Matchers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A08EE2231728A241001830E6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSStringMatcherSpec.m</string>
-			<key>path</key>
-			<string>Matchers/LSStringMatcherSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A08EE2251728A2F4001830E6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSStringMatcher.h</string>
-			<key>path</key>
-			<string>Matchers/LSStringMatcher.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A08EE2261728A2F4001830E6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSStringMatcher.m</string>
-			<key>path</key>
-			<string>Matchers/LSStringMatcher.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A08EE2271728A2F4001830E6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A08EE2251728A2F4001830E6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A08EE2281728A2F4001830E6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A08EE2261728A2F4001830E6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A08EE2291728A3A9001830E6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A08EE2231728A241001830E6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A092C5A9177BB0A000B5C5F9</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSHTTPBody.h</string>
-			<key>path</key>
-			<string>Model/LSHTTPBody.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A092C5AA177BBCC400B5C5F9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSData+Nocilla.h</string>
-			<key>path</key>
-			<string>Categories/NSData+Nocilla.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A092C5AB177BBCC400B5C5F9</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSData+Nocilla.m</string>
-			<key>path</key>
-			<string>Categories/NSData+Nocilla.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A092C5AC177BBCC400B5C5F9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A092C5AA177BBCC400B5C5F9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A092C5AD177BBCC400B5C5F9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A092C5AB177BBCC400B5C5F9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0BB870115FE7C2E0090236F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A085B85915E30749007D33C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0BB870215FE7C320090236F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0055F0115EFFA8B005D6C85</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0BB870315FE7C350090236F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A060B22415FE680900BEAD54</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0BB870415FE7D7E0090236F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0BB870515FE7D8F0090236F</string>
-				<string>0FA3E7FD1680775B001DB582</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Stubs</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0BB870515FE7D8F0090236F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSStubRequestSpec.m</string>
-			<key>path</key>
-			<string>Stubs/LSStubRequestSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0BB870615FE7D8F0090236F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0BB870515FE7D8F0090236F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0BBF5C916DD9BDD00D660D2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>A0BBF5CA16DD9BDD00D660D2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0BBF5C916DD9BDD00D660D2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0EE630515EC217A00009A08</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSHTTPRequestDiff.h</string>
-			<key>path</key>
-			<string>Diff/LSHTTPRequestDiff.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0EE630615EC217A00009A08</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSHTTPRequestDiff.m</string>
-			<key>path</key>
-			<string>Diff/LSHTTPRequestDiff.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0EE630715EC217A00009A08</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0EE630515EC217A00009A08</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0EE630815EC217A00009A08</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0EE630615EC217A00009A08</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0EE630915ECCCBD00009A08</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSHTTPRequest.h</string>
-			<key>path</key>
-			<string>Model/LSHTTPRequest.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0EE630A15ECCD2F00009A08</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>LSHTTPResponse.h</string>
-			<key>path</key>
-			<string>Model/LSHTTPResponse.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0EE631315ECD8B900009A08</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSURLRequest+LSHTTPRequest.h</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0EE631415ECD8B900009A08</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSURLRequest+LSHTTPRequest.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A0EE631515ECD8B900009A08</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A0EE631315ECD8B900009A08</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A0EE631715ECDAF300009A08</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>LSHTTPRequestDiffSpec.m</string>
-			<key>path</key>
-			<string>Diff/LSHTTPRequestDiffSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AA0A44051758E27100D2F909</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSURLRequest+LSHTTPRequestSpec.m</string>
-			<key>path</key>
-			<string>Hooks/NSURLRequest/NSURLRequest+LSHTTPRequestSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AA0A44061758E27100D2F909</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AA0A44051758E27100D2F909</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>C1CB41255F6241919E9FA64B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>CADACB517CAB41DD8263C667</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-NocillaTests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>EA12116AA2722E6C154AC4C4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>414F89A81D6BD988C531EE91</string>
-				<string>301673065B73A4E081418B4F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F7621264AB6B45CE84724138</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>A085B82F15E30749007D33C1</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FA3E7FE1680775B001DB582 /* LSStubResponseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */; };
+		5B41631392BA47B7B7494C73 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
+		A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
+		A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */; };
+		A01CEBDE175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBDD175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m */; };
+		A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE0176000CB00637CE7 /* LSASIHTTPRequestHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A01CEBE3176000CB00637CE7 /* LSASIHTTPRequestHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBE1176000CB00637CE7 /* LSASIHTTPRequestHook.m */; };
+		A01CEBEA176006CB00637CE7 /* ASIHTTPRequestStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBE8176006CB00637CE7 /* ASIHTTPRequestStub.h */; };
+		A01CEBEB176006CB00637CE7 /* ASIHTTPRequestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBE9176006CB00637CE7 /* ASIHTTPRequestStub.m */; };
+		A01CEBED1760081F00637CE7 /* LSNocillaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBEC1760081F00637CE7 /* LSNocillaSpec.m */; };
+		A01CEBF01760145C00637CE7 /* LSASIHTTPRequestAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = A01CEBEE1760145C00637CE7 /* LSASIHTTPRequestAdapter.h */; };
+		A01CEBF11760145C00637CE7 /* LSASIHTTPRequestAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBEF1760145C00637CE7 /* LSASIHTTPRequestAdapter.m */; };
+		A02889241728BEFD00288022 /* LSTestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889231728BEFD00288022 /* LSTestRequest.m */; };
+		A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892B1728C3FF00288022 /* NSString+Matcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A028892E1728C3FF00288022 /* NSString+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A028892C1728C3FF00288022 /* NSString+Matcheable.m */; };
+		A02889311728C52100288022 /* LSMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892F1728C52000288022 /* LSMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02889321728C52100288022 /* LSMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889301728C52100288022 /* LSMatcher.m */; };
+		A02889351728C88E00288022 /* LSRegexMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889331728C88D00288022 /* LSRegexMatcher.h */; };
+		A02889361728C88E00288022 /* LSRegexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889341728C88D00288022 /* LSRegexMatcher.m */; };
+		A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A028893A1728C95600288022 /* NSRegularExpression+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */; };
+		A028893E1728CA5900288022 /* NSString+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A028893F1728CA5900288022 /* NSString+Nocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A028893D1728CA5900288022 /* NSString+Nocilla.m */; };
+		A02889431728CD6000288022 /* LSRegexMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889421728CD6000288022 /* LSRegexMatcherSpec.m */; };
+		A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */; };
+		A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; };
+		A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */; };
+		A02C7ADA15ED704F0061FCEE /* LSStubResponseDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */; };
+		A02C7ADB15ED704F0061FCEE /* LSStubResponseDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */; };
+		A02C7ADE15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7ADD15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m */; };
+		A02C7AEC15ED79120061FCEE /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02C7AED15ED79170061FCEE /* LSHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAB15E30B0000730EE5 /* LSStubRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAD15E30B0000730EE5 /* LSStubResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02C7AF115ED795A0061FCEE /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF015ED795A0061FCEE /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A02C7AF815EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF615EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h */; };
+		A02C7AF915EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */; };
+		A02C7AFE15EE62650061FCEE /* NSURLRequest+LSHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */; };
+		A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */; };
+		A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */; };
+		A04D23C5187E3BF200EF6CB2 /* NSURLSessionStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A04D23C4187E3BF200EF6CB2 /* NSURLSessionStubbingSpec.m */; };
+		A04D23C9187E4BC900EF6CB2 /* LSNSURLSessionHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A04D23C7187E4BC900EF6CB2 /* LSNSURLSessionHook.h */; };
+		A04D23CA187E4BC900EF6CB2 /* LSNSURLSessionHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A04D23C8187E4BC900EF6CB2 /* LSNSURLSessionHook.m */; };
+		A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */; };
+		A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */; };
+		A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0708DA715E6FFB800352085 /* LSHTTPClientHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */; };
+		A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */ = {isa = PBXBuildFile; fileRef = A0708DA815E7008200352085 /* LSNSURLHook.h */; };
+		A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DA915E7008200352085 /* LSNSURLHook.m */; };
+		A0708DB415E70C6600352085 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0708DB315E70C6600352085 /* UIKit.framework */; };
+		A074ABB115E30B0000730EE5 /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAA15E30B0000730EE5 /* LSNocilla.m */; };
+		A074ABB315E30B0000730EE5 /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAC15E30B0000730EE5 /* LSStubRequest.m */; };
+		A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAE15E30B0000730EE5 /* LSStubResponse.m */; };
+		A085B83C15E30749007D33C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83B15E30749007D33C1 /* Foundation.framework */; };
+		A085B84115E30749007D33C1 /* Nocilla.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; };
+		A085B84E15E30749007D33C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83B15E30749007D33C1 /* Foundation.framework */; };
+		A085B85115E30749007D33C1 /* libNocilla.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A085B83815E30749007D33C1 /* libNocilla.a */; };
+		A085B85715E30749007D33C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A085B85515E30749007D33C1 /* InfoPlist.strings */; };
+		A08D52C715E5A6A7003650F7 /* LSNocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABA915E30B0000730EE5 /* LSNocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A08D52C815E5A6A7003650F7 /* Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A08EE2271728A2F4001830E6 /* LSStringMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A08EE2251728A2F4001830E6 /* LSStringMatcher.h */; };
+		A08EE2281728A2F4001830E6 /* LSStringMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A08EE2261728A2F4001830E6 /* LSStringMatcher.m */; };
+		A08EE2291728A3A9001830E6 /* LSStringMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */; };
+		A092C5AC177BBCC400B5C5F9 /* NSData+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */; };
+		A092C5AD177BBCC400B5C5F9 /* NSData+Nocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A092C5AB177BBCC400B5C5F9 /* NSData+Nocilla.m */; };
+		A0BB870115FE7C2E0090236F /* AFNetworkingStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */; };
+		A0BB870215FE7C320090236F /* NSURLRequestHookSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */; };
+		A0BB870315FE7C350090236F /* LSHTTPStubURLProtocolSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A060B22415FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m */; };
+		A0BB870615FE7D8F0090236F /* LSStubRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB870515FE7D8F0090236F /* LSStubRequestSpec.m */; };
+		A0BBF5CA16DD9BDD00D660D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BBF5C916DD9BDD00D660D2 /* CoreGraphics.framework */; };
+		A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */; };
+		A0EE630815EC217A00009A08 /* LSHTTPRequestDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */; };
+		A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */; };
+		AA0A44061758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0A44051758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A085B84F15E30749007D33C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A085B82F15E30749007D33C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A085B83715E30749007D33C1;
+			remoteInfo = Nocilla;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A085B83615E30749007D33C1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				A085B84115E30749007D33C1 /* Nocilla.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponseSpec.m; sourceTree = "<group>"; };
+		301673065B73A4E081418B4F /* Pods-NocillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.release.xcconfig"; sourceTree = "<group>"; };
+		414F89A81D6BD988C531EE91 /* Pods-NocillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0055EE615EEAF8C005D6C85 /* LSTestingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSTestingConnection.h; path = Support/LSTestingConnection.h; sourceTree = "<group>"; };
+		A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSTestingConnection.m; path = Support/LSTestingConnection.m; sourceTree = "<group>"; };
+		A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSURLRequestHookSpec.m; path = Hooks/NSURLRequest/NSURLRequestHookSpec.m; sourceTree = "<group>"; };
+		A01CEBDD175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequestStubbingSpec.m; path = Hooks/ASIHTTPRequest/ASIHTTPRequestStubbingSpec.m; sourceTree = "<group>"; };
+		A01CEBE0176000CB00637CE7 /* LSASIHTTPRequestHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSASIHTTPRequestHook.h; path = Hooks/ASIHTTPRequest/LSASIHTTPRequestHook.h; sourceTree = "<group>"; };
+		A01CEBE1176000CB00637CE7 /* LSASIHTTPRequestHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSASIHTTPRequestHook.m; path = Hooks/ASIHTTPRequest/LSASIHTTPRequestHook.m; sourceTree = "<group>"; };
+		A01CEBE8176006CB00637CE7 /* ASIHTTPRequestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestStub.h; path = Hooks/ASIHTTPRequest/ASIHTTPRequestStub.h; sourceTree = "<group>"; };
+		A01CEBE9176006CB00637CE7 /* ASIHTTPRequestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequestStub.m; path = Hooks/ASIHTTPRequest/ASIHTTPRequestStub.m; sourceTree = "<group>"; };
+		A01CEBEC1760081F00637CE7 /* LSNocillaSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocillaSpec.m; sourceTree = "<group>"; };
+		A01CEBEE1760145C00637CE7 /* LSASIHTTPRequestAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSASIHTTPRequestAdapter.h; path = Hooks/ASIHTTPRequest/LSASIHTTPRequestAdapter.h; sourceTree = "<group>"; };
+		A01CEBEF1760145C00637CE7 /* LSASIHTTPRequestAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSASIHTTPRequestAdapter.m; path = Hooks/ASIHTTPRequest/LSASIHTTPRequestAdapter.m; sourceTree = "<group>"; };
+		A02889221728BEFD00288022 /* LSTestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTestRequest.h; sourceTree = "<group>"; };
+		A02889231728BEFD00288022 /* LSTestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTestRequest.m; sourceTree = "<group>"; };
+		A02889251728C36B00288022 /* LSMatcheable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSMatcheable.h; path = Matchers/LSMatcheable.h; sourceTree = "<group>"; };
+		A028892B1728C3FF00288022 /* NSString+Matcheable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Matcheable.h"; path = "Matchers/NSString+Matcheable.h"; sourceTree = "<group>"; };
+		A028892C1728C3FF00288022 /* NSString+Matcheable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Matcheable.m"; path = "Matchers/NSString+Matcheable.m"; sourceTree = "<group>"; };
+		A028892F1728C52000288022 /* LSMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMatcher.h; path = Matchers/LSMatcher.h; sourceTree = "<group>"; };
+		A02889301728C52100288022 /* LSMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSMatcher.m; path = Matchers/LSMatcher.m; sourceTree = "<group>"; };
+		A02889331728C88D00288022 /* LSRegexMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSRegexMatcher.h; path = Matchers/LSRegexMatcher.h; sourceTree = "<group>"; };
+		A02889341728C88D00288022 /* LSRegexMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSRegexMatcher.m; path = Matchers/LSRegexMatcher.m; sourceTree = "<group>"; };
+		A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+Matcheable.h"; path = "Matchers/NSRegularExpression+Matcheable.h"; sourceTree = "<group>"; };
+		A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+Matcheable.m"; path = "Matchers/NSRegularExpression+Matcheable.m"; sourceTree = "<group>"; };
+		A028893C1728CA5900288022 /* NSString+Nocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Nocilla.h"; path = "Categories/NSString+Nocilla.h"; sourceTree = "<group>"; };
+		A028893D1728CA5900288022 /* NSString+Nocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Nocilla.m"; path = "Categories/NSString+Nocilla.m"; sourceTree = "<group>"; };
+		A02889421728CD6000288022 /* LSRegexMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSRegexMatcherSpec.m; path = Matchers/LSRegexMatcherSpec.m; sourceTree = "<group>"; };
+		A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubRequestDSL.h; path = DSL/LSStubRequestDSL.h; sourceTree = "<group>"; };
+		A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestDSL.m; path = DSL/LSStubRequestDSL.m; sourceTree = "<group>"; };
+		A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubResponseDSL.h; path = DSL/LSStubResponseDSL.h; sourceTree = "<group>"; };
+		A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubResponseDSL.m; path = DSL/LSStubResponseDSL.m; sourceTree = "<group>"; };
+		A02C7ADD15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDSLRepresentationSpec.m; path = DSL/LSHTTPRequestDSLRepresentationSpec.m; sourceTree = "<group>"; };
+		A02C7AF015ED795A0061FCEE /* DSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = DSL/DSL.h; sourceTree = "<group>"; };
+		A02C7AF615EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequestDSLRepresentation.h; path = DSL/LSHTTPRequestDSLRepresentation.h; sourceTree = "<group>"; };
+		A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDSLRepresentation.m; path = DSL/LSHTTPRequestDSLRepresentation.m; sourceTree = "<group>"; };
+		A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+DSL.h"; path = "Hooks/NSURLRequest/NSURLRequest+DSL.h"; sourceTree = "<group>"; };
+		A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+DSL.m"; path = "Hooks/NSURLRequest/NSURLRequest+DSL.m"; sourceTree = "<group>"; };
+		A04D23C4187E3BF200EF6CB2 /* NSURLSessionStubbingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSURLSessionStubbingSpec.m; path = Hooks/NSURLSession/NSURLSessionStubbingSpec.m; sourceTree = "<group>"; };
+		A04D23C7187E4BC900EF6CB2 /* LSNSURLSessionHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSNSURLSessionHook.h; path = Hooks/NSURLSession/LSNSURLSessionHook.h; sourceTree = "<group>"; };
+		A04D23C8187E4BC900EF6CB2 /* LSNSURLSessionHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSNSURLSessionHook.m; path = Hooks/NSURLSession/LSNSURLSessionHook.m; sourceTree = "<group>"; };
+		A060B22415FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPStubURLProtocolSpec.m; path = Hooks/NSURLRequest/LSHTTPStubURLProtocolSpec.m; sourceTree = "<group>"; };
+		A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPStubURLProtocol.h; path = Hooks/NSURLRequest/LSHTTPStubURLProtocol.h; sourceTree = "<group>"; };
+		A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPStubURLProtocol.m; path = Hooks/NSURLRequest/LSHTTPStubURLProtocol.m; sourceTree = "<group>"; };
+		A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPClientHook.h; path = Hooks/LSHTTPClientHook.h; sourceTree = "<group>"; };
+		A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPClientHook.m; path = Hooks/LSHTTPClientHook.m; sourceTree = "<group>"; };
+		A0708DA815E7008200352085 /* LSNSURLHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSNSURLHook.h; path = Hooks/NSURLRequest/LSNSURLHook.h; sourceTree = "<group>"; };
+		A0708DA915E7008200352085 /* LSNSURLHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSNSURLHook.m; path = Hooks/NSURLRequest/LSNSURLHook.m; sourceTree = "<group>"; };
+		A0708DB315E70C6600352085 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKNetworkKitStubbingSpec.m; path = Hooks/NSURLRequest/MKNetworkKitStubbingSpec.m; sourceTree = "<group>"; };
+		A074ABA915E30B0000730EE5 /* LSNocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNocilla.h; sourceTree = "<group>"; };
+		A074ABAA15E30B0000730EE5 /* LSNocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNocilla.m; sourceTree = "<group>"; };
+		A074ABAB15E30B0000730EE5 /* LSStubRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubRequest.h; path = Stubs/LSStubRequest.h; sourceTree = "<group>"; };
+		A074ABAC15E30B0000730EE5 /* LSStubRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequest.m; path = Stubs/LSStubRequest.m; sourceTree = "<group>"; };
+		A074ABAD15E30B0000730EE5 /* LSStubResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStubResponse.h; path = Stubs/LSStubResponse.h; sourceTree = "<group>"; };
+		A074ABAE15E30B0000730EE5 /* LSStubResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubResponse.m; path = Stubs/LSStubResponse.m; sourceTree = "<group>"; };
+		A085B83815E30749007D33C1 /* libNocilla.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNocilla.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A085B83B15E30749007D33C1 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A085B83F15E30749007D33C1 /* Nocilla-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocilla-Prefix.pch"; sourceTree = "<group>"; };
+		A085B84015E30749007D33C1 /* Nocilla.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nocilla.h; sourceTree = "<group>"; };
+		A085B84915E30749007D33C1 /* NocillaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NocillaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A085B85415E30749007D33C1 /* NocillaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NocillaTests-Info.plist"; sourceTree = "<group>"; };
+		A085B85615E30749007D33C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFNetworkingStubbingSpec.m; path = Hooks/NSURLRequest/AFNetworkingStubbingSpec.m; sourceTree = "<group>"; };
+		A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStringMatcherSpec.m; path = Matchers/LSStringMatcherSpec.m; sourceTree = "<group>"; };
+		A08EE2251728A2F4001830E6 /* LSStringMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSStringMatcher.h; path = Matchers/LSStringMatcher.h; sourceTree = "<group>"; };
+		A08EE2261728A2F4001830E6 /* LSStringMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStringMatcher.m; path = Matchers/LSStringMatcher.m; sourceTree = "<group>"; };
+		A092C5A9177BB0A000B5C5F9 /* LSHTTPBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSHTTPBody.h; path = Model/LSHTTPBody.h; sourceTree = "<group>"; };
+		A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Nocilla.h"; path = "Categories/NSData+Nocilla.h"; sourceTree = "<group>"; };
+		A092C5AB177BBCC400B5C5F9 /* NSData+Nocilla.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Nocilla.m"; path = "Categories/NSData+Nocilla.m"; sourceTree = "<group>"; };
+		A0BB870515FE7D8F0090236F /* LSStubRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSStubRequestSpec.m; path = Stubs/LSStubRequestSpec.m; sourceTree = "<group>"; };
+		A0BBF5C916DD9BDD00D660D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequestDiff.h; path = Diff/LSHTTPRequestDiff.h; sourceTree = "<group>"; };
+		A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDiff.m; path = Diff/LSHTTPRequestDiff.m; sourceTree = "<group>"; };
+		A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSHTTPRequest.h; path = Model/LSHTTPRequest.h; sourceTree = "<group>"; };
+		A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LSHTTPResponse.h; path = Model/LSHTTPResponse.h; sourceTree = "<group>"; };
+		A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+LSHTTPRequest.h"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.h"; sourceTree = "<group>"; };
+		A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequest.m"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.m"; sourceTree = "<group>"; };
+		A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDiffSpec.m; path = Diff/LSHTTPRequestDiffSpec.m; sourceTree = "<group>"; };
+		AA0A44051758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequestSpec.m"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequestSpec.m"; sourceTree = "<group>"; };
+		CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7621264AB6B45CE84724138 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A085B83515E30749007D33C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A085B83C15E30749007D33C1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A085B84515E30749007D33C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0BBF5CA16DD9BDD00D660D2 /* CoreGraphics.framework in Frameworks */,
+				A0708DB415E70C6600352085 /* UIKit.framework in Frameworks */,
+				A085B84E15E30749007D33C1 /* Foundation.framework in Frameworks */,
+				A085B85115E30749007D33C1 /* libNocilla.a in Frameworks */,
+				5B41631392BA47B7B7494C73 /* libPods-NocillaTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0055EE515EEAF73005D6C85 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A0055EE615EEAF8C005D6C85 /* LSTestingConnection.h */,
+				A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		A01CEBDC175FFE0300637CE7 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A01CEBDD175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m */,
+			);
+			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		A01CEBDF1760009300637CE7 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A01CEBE0176000CB00637CE7 /* LSASIHTTPRequestHook.h */,
+				A01CEBE1176000CB00637CE7 /* LSASIHTTPRequestHook.m */,
+				A01CEBE8176006CB00637CE7 /* ASIHTTPRequestStub.h */,
+				A01CEBE9176006CB00637CE7 /* ASIHTTPRequestStub.m */,
+				A01CEBEE1760145C00637CE7 /* LSASIHTTPRequestAdapter.h */,
+				A01CEBEF1760145C00637CE7 /* LSASIHTTPRequestAdapter.m */,
+			);
+			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		A028893B1728CA4700288022 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A028893C1728CA5900288022 /* NSString+Nocilla.h */,
+				A028893D1728CA5900288022 /* NSString+Nocilla.m */,
+				A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */,
+				A092C5AB177BBCC400B5C5F9 /* NSData+Nocilla.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		A02C7ACF15ED70170061FCEE /* DSL */ = {
+			isa = PBXGroup;
+			children = (
+				A02C7AF015ED795A0061FCEE /* DSL.h */,
+				A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */,
+				A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */,
+				A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */,
+				A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */,
+				A02C7AF615EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h */,
+				A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */,
+			);
+			name = DSL;
+			sourceTree = "<group>";
+		};
+		A02C7ADC15ED752A0061FCEE /* DSL */ = {
+			isa = PBXGroup;
+			children = (
+				A02C7ADD15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m */,
+			);
+			name = DSL;
+			sourceTree = "<group>";
+		};
+		A02C7B0815EE65020061FCEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */,
+				A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */,
+				A092C5A9177BB0A000B5C5F9 /* LSHTTPBody.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A02C7B0915EE655E0061FCEE /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				A074ABAB15E30B0000730EE5 /* LSStubRequest.h */,
+				A074ABAC15E30B0000730EE5 /* LSStubRequest.m */,
+				A074ABAD15E30B0000730EE5 /* LSStubResponse.h */,
+				A074ABAE15E30B0000730EE5 /* LSStubResponse.m */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
+		A02C7B0A15EE658A0061FCEE /* Diff */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */,
+				A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */,
+			);
+			name = Diff;
+			sourceTree = "<group>";
+		};
+		A02C7B0B15EE65E50061FCEE /* Hooks */ = {
+			isa = PBXGroup;
+			children = (
+				A01CEBDC175FFE0300637CE7 /* ASIHTTPRequest */,
+				A02C7B0C15EE65EB0061FCEE /* NSURLRequest */,
+				A04D23C3187E3BA800EF6CB2 /* NSURLSession */,
+			);
+			name = Hooks;
+			sourceTree = "<group>";
+		};
+		A02C7B0C15EE65EB0061FCEE /* NSURLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */,
+				A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */,
+				A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */,
+				A060B22415FE680900BEAD54 /* LSHTTPStubURLProtocolSpec.m */,
+				AA0A44051758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m */,
+			);
+			name = NSURLRequest;
+			sourceTree = "<group>";
+		};
+		A02C7B0D15EE66250061FCEE /* Diff */ = {
+			isa = PBXGroup;
+			children = (
+				A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */,
+			);
+			name = Diff;
+			sourceTree = "<group>";
+		};
+		A04D23C3187E3BA800EF6CB2 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				A04D23C4187E3BF200EF6CB2 /* NSURLSessionStubbingSpec.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		A04D23C6187E4B9500EF6CB2 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				A04D23C7187E4BC900EF6CB2 /* LSNSURLSessionHook.h */,
+				A04D23C8187E4BC900EF6CB2 /* LSNSURLSessionHook.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		A0708DA215E6FF7200352085 /* Hooks */ = {
+			isa = PBXGroup;
+			children = (
+				A04D23C6187E4B9500EF6CB2 /* NSURLSession */,
+				A01CEBDF1760009300637CE7 /* ASIHTTPRequest */,
+				A0708DA415E6FFB800352085 /* LSHTTPClientHook.h */,
+				A0708DA515E6FFB800352085 /* LSHTTPClientHook.m */,
+				A0708DA315E6FF7E00352085 /* NSURLRequest */,
+			);
+			name = Hooks;
+			sourceTree = "<group>";
+		};
+		A0708DA315E6FF7E00352085 /* NSURLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A0708D8F15E6EC9F00352085 /* LSHTTPStubURLProtocol.h */,
+				A0708D9015E6EC9F00352085 /* LSHTTPStubURLProtocol.m */,
+				A0708DA815E7008200352085 /* LSNSURLHook.h */,
+				A0708DA915E7008200352085 /* LSNSURLHook.m */,
+				A0EE631315ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h */,
+				A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */,
+				A02C7B0315EE63530061FCEE /* NSURLRequest+DSL.h */,
+				A02C7B0415EE63540061FCEE /* NSURLRequest+DSL.m */,
+			);
+			name = NSURLRequest;
+			sourceTree = "<group>";
+		};
+		A085B82D15E30749007D33C1 = {
+			isa = PBXGroup;
+			children = (
+				A085B83D15E30749007D33C1 /* Nocilla */,
+				A085B85215E30749007D33C1 /* NocillaTests */,
+				A085B83A15E30749007D33C1 /* Frameworks */,
+				A085B83915E30749007D33C1 /* Products */,
+				EA12116AA2722E6C154AC4C4 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		A085B83915E30749007D33C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A085B83815E30749007D33C1 /* libNocilla.a */,
+				A085B84915E30749007D33C1 /* NocillaTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A085B83A15E30749007D33C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0BBF5C916DD9BDD00D660D2 /* CoreGraphics.framework */,
+				A0708DB315E70C6600352085 /* UIKit.framework */,
+				A085B83B15E30749007D33C1 /* Foundation.framework */,
+				CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */,
+				F7621264AB6B45CE84724138 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A085B83D15E30749007D33C1 /* Nocilla */ = {
+			isa = PBXGroup;
+			children = (
+				A028893B1728CA4700288022 /* Categories */,
+				A08EE21F1728A1E7001830E6 /* Matchers */,
+				A02C7B0815EE65020061FCEE /* Model */,
+				A02C7B0915EE655E0061FCEE /* Stubs */,
+				A02C7B0A15EE658A0061FCEE /* Diff */,
+				A02C7ACF15ED70170061FCEE /* DSL */,
+				A0708DA215E6FF7200352085 /* Hooks */,
+				A085B84015E30749007D33C1 /* Nocilla.h */,
+				A074ABA915E30B0000730EE5 /* LSNocilla.h */,
+				A074ABAA15E30B0000730EE5 /* LSNocilla.m */,
+				A085B83E15E30749007D33C1 /* Supporting Files */,
+			);
+			path = Nocilla;
+			sourceTree = "<group>";
+		};
+		A085B83E15E30749007D33C1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A085B83F15E30749007D33C1 /* Nocilla-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A085B85215E30749007D33C1 /* NocillaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A08EE2201728A1FC001830E6 /* Matchers */,
+				A0BB870415FE7D7E0090236F /* Stubs */,
+				A0055EE515EEAF73005D6C85 /* Support */,
+				A02C7B0D15EE66250061FCEE /* Diff */,
+				A02C7B0B15EE65E50061FCEE /* Hooks */,
+				A02C7ADC15ED752A0061FCEE /* DSL */,
+				A085B85315E30749007D33C1 /* Supporting Files */,
+				A02889221728BEFD00288022 /* LSTestRequest.h */,
+				A02889231728BEFD00288022 /* LSTestRequest.m */,
+				A01CEBEC1760081F00637CE7 /* LSNocillaSpec.m */,
+			);
+			path = NocillaTests;
+			sourceTree = "<group>";
+		};
+		A085B85315E30749007D33C1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A085B85415E30749007D33C1 /* NocillaTests-Info.plist */,
+				A085B85515E30749007D33C1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A08EE21F1728A1E7001830E6 /* Matchers */ = {
+			isa = PBXGroup;
+			children = (
+				A08EE2251728A2F4001830E6 /* LSStringMatcher.h */,
+				A08EE2261728A2F4001830E6 /* LSStringMatcher.m */,
+				A02889251728C36B00288022 /* LSMatcheable.h */,
+				A028892B1728C3FF00288022 /* NSString+Matcheable.h */,
+				A028892C1728C3FF00288022 /* NSString+Matcheable.m */,
+				A028892F1728C52000288022 /* LSMatcher.h */,
+				A02889301728C52100288022 /* LSMatcher.m */,
+				A02889331728C88D00288022 /* LSRegexMatcher.h */,
+				A02889341728C88D00288022 /* LSRegexMatcher.m */,
+				A02889371728C95600288022 /* NSRegularExpression+Matcheable.h */,
+				A02889381728C95600288022 /* NSRegularExpression+Matcheable.m */,
+			);
+			name = Matchers;
+			sourceTree = "<group>";
+		};
+		A08EE2201728A1FC001830E6 /* Matchers */ = {
+			isa = PBXGroup;
+			children = (
+				A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */,
+				A02889421728CD6000288022 /* LSRegexMatcherSpec.m */,
+			);
+			name = Matchers;
+			sourceTree = "<group>";
+		};
+		A0BB870415FE7D7E0090236F /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				A0BB870515FE7D8F0090236F /* LSStubRequestSpec.m */,
+				0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
+		EA12116AA2722E6C154AC4C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				414F89A81D6BD988C531EE91 /* Pods-NocillaTests.debug.xcconfig */,
+				301673065B73A4E081418B4F /* Pods-NocillaTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A08D52C515E5A694003650F7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A08D52C715E5A6A7003650F7 /* LSNocilla.h in Headers */,
+				A08D52C815E5A6A7003650F7 /* Nocilla.h in Headers */,
+				A02C7AF115ED795A0061FCEE /* DSL.h in Headers */,
+				A0708D9115E6EC9F00352085 /* LSHTTPStubURLProtocol.h in Headers */,
+				A02C7AEE15ED791E0061FCEE /* LSStubRequest.h in Headers */,
+				A02C7AEF15ED79230061FCEE /* LSStubResponse.h in Headers */,
+				A028892D1728C3FF00288022 /* NSString+Matcheable.h in Headers */,
+				A02889311728C52100288022 /* LSMatcher.h in Headers */,
+				A02889391728C95600288022 /* NSRegularExpression+Matcheable.h in Headers */,
+				A028893E1728CA5900288022 /* NSString+Nocilla.h in Headers */,
+				A04D23C9187E4BC900EF6CB2 /* LSNSURLSessionHook.h in Headers */,
+				A0708DA615E6FFB800352085 /* LSHTTPClientHook.h in Headers */,
+				A0708DAA15E7008200352085 /* LSNSURLHook.h in Headers */,
+				A01CEBE2176000CB00637CE7 /* LSASIHTTPRequestHook.h in Headers */,
+				A0EE630715EC217A00009A08 /* LSHTTPRequestDiff.h in Headers */,
+				A0EE631515ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.h in Headers */,
+				A02C7AD215ED702B0061FCEE /* LSStubRequestDSL.h in Headers */,
+				A02C7ADA15ED704F0061FCEE /* LSStubResponseDSL.h in Headers */,
+				A02C7AEC15ED79120061FCEE /* LSHTTPRequest.h in Headers */,
+				A02C7AED15ED79170061FCEE /* LSHTTPResponse.h in Headers */,
+				A02C7AF815EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h in Headers */,
+				A02C7B0515EE63540061FCEE /* NSURLRequest+DSL.h in Headers */,
+				A08EE2271728A2F4001830E6 /* LSStringMatcher.h in Headers */,
+				A02889351728C88E00288022 /* LSRegexMatcher.h in Headers */,
+				A01CEBEA176006CB00637CE7 /* ASIHTTPRequestStub.h in Headers */,
+				A01CEBF01760145C00637CE7 /* LSASIHTTPRequestAdapter.h in Headers */,
+				A092C5AC177BBCC400B5C5F9 /* NSData+Nocilla.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A085B83715E30749007D33C1 /* Nocilla */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A085B85D15E30749007D33C1 /* Build configuration list for PBXNativeTarget "Nocilla" */;
+			buildPhases = (
+				A085B83415E30749007D33C1 /* Sources */,
+				A085B83515E30749007D33C1 /* Frameworks */,
+				A085B83615E30749007D33C1 /* CopyFiles */,
+				A08D52C515E5A694003650F7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nocilla;
+			productName = Nocilla;
+			productReference = A085B83815E30749007D33C1 /* libNocilla.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A085B84815E30749007D33C1 /* NocillaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A085B86015E30749007D33C1 /* Build configuration list for PBXNativeTarget "NocillaTests" */;
+			buildPhases = (
+				9D4C7BC8F2DF4EA496967380 /* Check Pods Manifest.lock */,
+				A085B84415E30749007D33C1 /* Sources */,
+				A085B84515E30749007D33C1 /* Frameworks */,
+				A085B84615E30749007D33C1 /* Resources */,
+				C1CB41255F6241919E9FA64B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A085B85015E30749007D33C1 /* PBXTargetDependency */,
+			);
+			name = NocillaTests;
+			productName = NocillaTests;
+			productReference = A085B84915E30749007D33C1 /* NocillaTests.octest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A085B82F15E30749007D33C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastTestingUpgradeCheck = 0600;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Luis Solano Bonet";
+			};
+			buildConfigurationList = A085B83215E30749007D33C1 /* Build configuration list for PBXProject "Nocilla" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A085B82D15E30749007D33C1;
+			productRefGroup = A085B83915E30749007D33C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A085B83715E30749007D33C1 /* Nocilla */,
+				A085B84815E30749007D33C1 /* NocillaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A085B84615E30749007D33C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A085B85715E30749007D33C1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D4C7BC8F2DF4EA496967380 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1CB41255F6241919E9FA64B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A085B83415E30749007D33C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A074ABB115E30B0000730EE5 /* LSNocilla.m in Sources */,
+				A074ABB315E30B0000730EE5 /* LSStubRequest.m in Sources */,
+				A04D23CA187E4BC900EF6CB2 /* LSNSURLSessionHook.m in Sources */,
+				A074ABB515E30B0000730EE5 /* LSStubResponse.m in Sources */,
+				A0708D9415E6FC4100352085 /* LSHTTPStubURLProtocol.m in Sources */,
+				A0708DA715E6FFB800352085 /* LSHTTPClientHook.m in Sources */,
+				A0708DAB15E7008200352085 /* LSNSURLHook.m in Sources */,
+				A0EE630815EC217A00009A08 /* LSHTTPRequestDiff.m in Sources */,
+				A02C7AD315ED702B0061FCEE /* LSStubRequestDSL.m in Sources */,
+				A02C7ADB15ED704F0061FCEE /* LSStubResponseDSL.m in Sources */,
+				A02C7AF915EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m in Sources */,
+				A02C7AFE15EE62650061FCEE /* NSURLRequest+LSHTTPRequest.m in Sources */,
+				A02C7B0615EE63540061FCEE /* NSURLRequest+DSL.m in Sources */,
+				A08EE2281728A2F4001830E6 /* LSStringMatcher.m in Sources */,
+				A028892E1728C3FF00288022 /* NSString+Matcheable.m in Sources */,
+				A02889321728C52100288022 /* LSMatcher.m in Sources */,
+				A02889361728C88E00288022 /* LSRegexMatcher.m in Sources */,
+				A028893A1728C95600288022 /* NSRegularExpression+Matcheable.m in Sources */,
+				A01CEBE3176000CB00637CE7 /* LSASIHTTPRequestHook.m in Sources */,
+				A01CEBEB176006CB00637CE7 /* ASIHTTPRequestStub.m in Sources */,
+				A01CEBF11760145C00637CE7 /* LSASIHTTPRequestAdapter.m in Sources */,
+				A028893F1728CA5900288022 /* NSString+Nocilla.m in Sources */,
+				A092C5AD177BBCC400B5C5F9 /* NSData+Nocilla.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A085B84415E30749007D33C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */,
+				A02C7ADE15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m in Sources */,
+				A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */,
+				A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */,
+				A0BB870115FE7C2E0090236F /* AFNetworkingStubbingSpec.m in Sources */,
+				A0BB870215FE7C320090236F /* NSURLRequestHookSpec.m in Sources */,
+				A04D23C5187E3BF200EF6CB2 /* NSURLSessionStubbingSpec.m in Sources */,
+				A0BB870315FE7C350090236F /* LSHTTPStubURLProtocolSpec.m in Sources */,
+				A0BB870615FE7D8F0090236F /* LSStubRequestSpec.m in Sources */,
+				0FA3E7FE1680775B001DB582 /* LSStubResponseSpec.m in Sources */,
+				A08EE2291728A3A9001830E6 /* LSStringMatcherSpec.m in Sources */,
+				A02889241728BEFD00288022 /* LSTestRequest.m in Sources */,
+				A02889431728CD6000288022 /* LSRegexMatcherSpec.m in Sources */,
+				A01CEBED1760081F00637CE7 /* LSNocillaSpec.m in Sources */,
+				A01CEBDE175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m in Sources */,
+				AA0A44061758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A085B85015E30749007D33C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A085B83715E30749007D33C1 /* Nocilla */;
+			targetProxy = A085B84F15E30749007D33C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A085B85515E30749007D33C1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A085B85615E30749007D33C1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A085B85B15E30749007D33C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A085B85C15E30749007D33C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A085B85E15E30749007D33C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Nocilla.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nocilla/Nocilla-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_PEDANTIC = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = PublicHeaders;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A085B85F15E30749007D33C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Nocilla.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nocilla/Nocilla-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_PEDANTIC = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = PublicHeaders;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A085B86115E30749007D33C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 414F89A81D6BD988C531EE91 /* Pods-NocillaTests.debug.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nocilla/Nocilla-Prefix.pch";
+				INFOPLIST_FILE = "NocillaTests/NocillaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A085B86215E30749007D33C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 301673065B73A4E081418B4F /* Pods-NocillaTests.release.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Nocilla/Nocilla-Prefix.pch";
+				INFOPLIST_FILE = "NocillaTests/NocillaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A085B83215E30749007D33C1 /* Build configuration list for PBXProject "Nocilla" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A085B85B15E30749007D33C1 /* Debug */,
+				A085B85C15E30749007D33C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A085B85D15E30749007D33C1 /* Build configuration list for PBXNativeTarget "Nocilla" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A085B85E15E30749007D33C1 /* Debug */,
+				A085B85F15E30749007D33C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A085B86015E30749007D33C1 /* Build configuration list for PBXNativeTarget "NocillaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A085B86115E30749007D33C1 /* Debug */,
+				A085B86215E30749007D33C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A085B82F15E30749007D33C1 /* Project object */;
+}
