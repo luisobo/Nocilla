@@ -11,7 +11,7 @@
 @property (nonatomic, assign, readonly) NSString *method;
 @property (nonatomic, strong, readonly) LSMatcher *urlMatcher;
 @property (nonatomic, strong, readonly) NSDictionary *headers;
-@property (nonatomic, strong, readwrite) NSData *body;
+@property (nonatomic, strong, readwrite) LSMatcher *body;
 
 @property (nonatomic, strong) LSStubResponse *response;
 

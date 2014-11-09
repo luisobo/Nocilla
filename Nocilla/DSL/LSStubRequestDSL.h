@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "NSString+Matcheable.h"
-#import "NSString+Matcheable.h"
 #import "NSRegularExpression+Matcheable.h"
+#import "NSData+Matcheable.h"
 
 @class LSStubRequestDSL;
 @class LSStubResponseDSL;
@@ -11,7 +11,7 @@
 
 typedef LSStubRequestDSL *(^WithHeaderMethod)(NSString *, NSString *);
 typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);
-typedef LSStubRequestDSL *(^AndBodyMethod)(id<LSHTTPBody>);
+typedef LSStubRequestDSL *(^AndBodyMethod)(id<LSMatcheable>);
 typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
 typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData);
 typedef void (^AndFailWithErrorMethod)(NSError *error);
