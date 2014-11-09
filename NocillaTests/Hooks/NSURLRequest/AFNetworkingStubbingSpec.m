@@ -258,5 +258,28 @@ context(@"AFNetworking", ^{
         [[[capturedOperation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"application/json"];
         [[capturedResponseObject should] equal:@{@"foo": @"bar"}];
     });
+
+    it(@"should properly handle redirects", ^{
+        stubRequest(@"GET", @"https://example.com/hello").
+        andReturn(301).
+        withHeader(@"Location", @"https://example.com/hola");
+
+        stubRequest(@"GET", @"https://example.com/hola").
+        andReturn(200).
+        withHeader(@"Content-Type", @"text/plain").
+        withBody(@"hola");
+
+        NSURL *url = [NSURL URLWithString:@"https://example.com/hello"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation start];
+
+        [operation waitUntilFinished];
+
+        [operation.error shouldBeNil];
+        [[operation.responseString should] equal:@"hola"];
+        [[theValue(operation.response.statusCode) should] equal:theValue(200)];
+        [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
+    });
 });
 SPEC_END

@@ -34,12 +34,19 @@
                                                   statusCode:stubbedResponse.statusCode
                                                 headerFields:stubbedResponse.headers
                                                  requestTime:0];
-        NSData *body = stubbedResponse.body;
 
-        [client URLProtocol:self didReceiveResponse:urlResponse
-         cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-        [client URLProtocol:self didLoadData:body];
-        [client URLProtocolDidFinishLoading:self];
+        if (stubbedResponse.statusCode < 300 || stubbedResponse.statusCode > 399) {
+            NSData *body = stubbedResponse.body;
+
+            [client URLProtocol:self didReceiveResponse:urlResponse
+             cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+            [client URLProtocol:self didLoadData:body];
+            [client URLProtocolDidFinishLoading:self];
+        } else {
+            [client URLProtocol:self
+             wasRedirectedToRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:stubbedResponse.headers[@"Location"]]]
+             redirectResponse:urlResponse];
+        }
     }
 }
 
