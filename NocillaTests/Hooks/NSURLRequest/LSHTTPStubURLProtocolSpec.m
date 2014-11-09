@@ -144,6 +144,31 @@ describe(@"#startLoading", ^{
                 });
             });
         });
+
+        context(@"and the response should perform an redirect", ^{
+            __block NSURLRequest *redirectRequest;
+            __block LSStubRequest *stubRequest;
+
+            beforeEach(^{
+                redirectRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.example.com/location.html"]];
+                stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
+
+                LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithStatusCode:301];
+                stubRequest.response = stubResponse;
+                [stubResponse setHeader:@"Location" value:@"redirect.html"];
+
+                [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+                [[LSNocilla sharedInstance] stub:@selector(responseForRequest:) andReturn:stubResponse];
+            });
+
+            it(@"should build the redirect with the provided location header", ^{
+//                    [[client should] receive:@selector(URLProtocol:wasRedirectedToRequest:redirectResponse:) withArguments:protocol, redirectRequest, stubRequest.response];
+                [[client should] receive:@selector(URLProtocol:wasRedirectedToRequest:redirectResponse:)];
+
+                [protocol startLoading];
+            });
+        });
+
         context(@"that doesn't match any stubbed request", ^{
             it(@"should raise an exception with a meaningful message", ^{
                 NSString *expectedMessage = @"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\nstubRequest(@\"GET\", @\"http://api.example.com/dogs.xml\");\n";
