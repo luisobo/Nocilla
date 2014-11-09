@@ -8,7 +8,7 @@
 @class LSStubResponse;
 
 @interface LSStubRequest : NSObject
-@property (nonatomic, assign, readonly) NSString *method;
+@property (nonatomic, strong, readonly) NSString *method;
 @property (nonatomic, strong, readonly) LSMatcher *urlMatcher;
 @property (nonatomic, strong, readonly) NSDictionary *headers;
 @property (nonatomic, strong, readwrite) NSData *body;
