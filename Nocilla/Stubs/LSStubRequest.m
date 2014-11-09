@@ -3,7 +3,7 @@
 #import "NSString+Matcheable.h"
 
 @interface LSStubRequest ()
-@property (nonatomic, assign, readwrite) NSString *method;
+@property (nonatomic, strong, readwrite) NSString *method;
 @property (nonatomic, strong, readwrite) LSMatcher *urlMatcher;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *mutableHeaders;
 
