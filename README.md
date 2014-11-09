@@ -107,6 +107,14 @@ withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abg
 withBody([@"foo" dataUsingEncoding:NSUTF8StringEncoding]);
 ```
 
+It even works with regular expressions!
+
+```objc
+stubRequest(@"POST", @"https://api.example.com/dogs.json").
+withHeaders(@{@"Accept": @"application/json", @"X-CUSTOM-HEADER": @"abcf2fbc6abgf"}).
+withBody(@"^The body start with this".regex);
+```
+
 #### Returning a specific status code
 ```objc
 stubRequest(@"GET", @"http://www.google.com").andReturn(404);
