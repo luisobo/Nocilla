@@ -43,9 +43,22 @@
             [client URLProtocol:self didLoadData:body];
             [client URLProtocolDidFinishLoading:self];
         } else {
+            NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+                      [cookieStorage setCookies:[NSHTTPCookie cookiesWithResponseHeaderFields:stubbedResponse.headers forURL:request.url]
+                                     forURL:request.URL mainDocumentURL:request.URL];
+
+            NSURL *newURL = [NSURL URLWithString:[stubbedResponse.headers objectForKey:@"Location"] relativeToURL:request.URL];
+            NSMutableURLRequest *redirectRequest = [NSMutableURLRequest requestWithURL:newURL];
+
+            [redirectRequest setAllHTTPHeaderFields:[NSHTTPCookie requestHeaderFieldsWithCookies:[cookieStorage cookiesForURL:newURL]]];
+
             [client URLProtocol:self
-             wasRedirectedToRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:stubbedResponse.headers[@"Location"]]]
-             redirectResponse:urlResponse];
+         wasRedirectedToRequest:redirectRequest
+               redirectResponse:urlResponse];
+            // According to: https://developer.apple.com/library/ios/samplecode/CustomHTTPProtocol/Listings/CustomHTTPProtocol_Core_Code_CustomHTTPProtocol_m.html
+            // needs to abort the original request
+            [client URLProtocol:self didFailWithError:[NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:nil]];
+
         }
     }
 }
