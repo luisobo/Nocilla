@@ -12,6 +12,8 @@ extern NSString * const LSUnexpectedRequest;
 + (LSNocilla *)sharedInstance;
 
 @property (nonatomic, strong, readonly) NSArray *stubbedRequests;
+@property (nonatomic, assign, readonly, getter = isStarted) BOOL started;
+
 - (void)start;
 - (void)stop;
 - (void)addStubbedRequest:(LSStubRequest *)request;
