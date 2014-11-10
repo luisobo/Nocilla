@@ -35,7 +35,8 @@
                                                 headerFields:stubbedResponse.headers
                                                  requestTime:0];
 
-        if (stubbedResponse.statusCode < 300 || stubbedResponse.statusCode > 399) {
+        if (stubbedResponse.statusCode < 300 || stubbedResponse.statusCode > 399
+            || stubbedResponse.statusCode == 304 || stubbedResponse.statusCode == 305 ) {
             NSData *body = stubbedResponse.body;
 
             [client URLProtocol:self didReceiveResponse:urlResponse
