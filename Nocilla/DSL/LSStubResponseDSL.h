@@ -11,7 +11,9 @@ typedef LSStubResponseDSL *(^ResponseWithHeadersMethod)(NSDictionary *);
 
 @interface LSStubResponseDSL : NSObject
 - (id)initWithResponse:(LSStubResponse *)response;
-- (ResponseWithHeaderMethod)withHeader;
-- (ResponseWithHeadersMethod)withHeaders;
-- (ResponseWithBodyMethod)withBody;
+
+@property (nonatomic, strong, readonly) ResponseWithHeaderMethod withHeader;
+@property (nonatomic, strong, readonly) ResponseWithHeadersMethod withHeaders;
+@property (nonatomic, strong, readonly) ResponseWithBodyMethod withBody;
+
 @end

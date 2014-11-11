@@ -3,6 +3,7 @@
 #import "LSTestRequest.h"
 #import "NSString+Nocilla.h"
 #import "LSRegexMatcher.h"
+#import "LSDataMatcher.h"
 
 SPEC_BEGIN(LSStubRequestSpec)
 
@@ -131,8 +132,32 @@ describe(@"#matchesRequest:", ^{
             
             [actualRequest setHeader:@"Content-Type" value:@"application/json"];
             [actualRequest setHeader:@"X-API-TOKEN" value:@"123abc"];
-            
-            [stubRequest setBody:[@"Hola, this is a body" dataUsingEncoding:NSUTF8StringEncoding]];
+
+            LSDataMatcher *bodyMatcher = [[LSDataMatcher alloc] initWithData:[@"Hola, this is a body" dataUsingEncoding:NSUTF8StringEncoding]];
+            [stubRequest setBody:bodyMatcher];
+            [actualRequest setBody:[@"Hola, this is a body" dataUsingEncoding:NSUTF8StringEncoding]];
+        });
+        it(@"should match", ^{
+            [[theValue([stubRequest matchesRequest:actualRequest]) should] beYes];
+        });
+    });
+
+    context(@"when using a matching regex to match the body", ^{
+        __block LSStubRequest *stubRequest = nil;
+        __block LSTestRequest *actualRequest = nil;
+        beforeEach(^{
+            stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+
+            actualRequest = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+
+            [stubRequest setHeader:@"Content-Type" value:@"application/json"];
+            [stubRequest setHeader:@"X-API-TOKEN" value:@"123abc"];
+
+            [actualRequest setHeader:@"Content-Type" value:@"application/json"];
+            [actualRequest setHeader:@"X-API-TOKEN" value:@"123abc"];
+
+            LSRegexMatcher *bodyMatcher = [[LSRegexMatcher alloc] initWithRegex:[NSRegularExpression regularExpressionWithPattern:@"^Hola" options:0 error:nil]];
+            [stubRequest setBody:bodyMatcher];
             [actualRequest setBody:[@"Hola, this is a body" dataUsingEncoding:NSUTF8StringEncoding]];
         });
         it(@"should match", ^{
@@ -153,8 +178,32 @@ describe(@"#matchesRequest:", ^{
             
             [actualRequest setHeader:@"Content-Type" value:@"application/json"];
             [actualRequest setHeader:@"X-API-TOKEN" value:@"123abc"];
-            
-            [stubRequest setBody:[@"Hola, this is a body" dataUsingEncoding:NSUTF8StringEncoding]];
+
+            LSDataMatcher *bodyMatcher = [[LSDataMatcher alloc] initWithData:[@"Hola, this is a body" dataUsingEncoding:NSUTF8StringEncoding]];
+            [stubRequest setBody:bodyMatcher];
+            [actualRequest setBody:[@"Adios, this is a body as well" dataUsingEncoding:NSUTF8StringEncoding]];
+        });
+        it(@"should match", ^{
+            [[theValue([stubRequest matchesRequest:actualRequest]) should] beNo];
+        });
+    });
+
+    context(@"when using a regex that does no match to match the body", ^{
+        __block LSStubRequest *stubRequest = nil;
+        __block LSTestRequest *actualRequest = nil;
+        beforeEach(^{
+            stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+
+            actualRequest = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+
+            [stubRequest setHeader:@"Content-Type" value:@"application/json"];
+            [stubRequest setHeader:@"X-API-TOKEN" value:@"123abc"];
+
+            [actualRequest setHeader:@"Content-Type" value:@"application/json"];
+            [actualRequest setHeader:@"X-API-TOKEN" value:@"123abc"];
+
+            LSRegexMatcher *bodyMatcher = [[LSRegexMatcher alloc] initWithRegex:[NSRegularExpression regularExpressionWithPattern:@"^Hola" options:0 error:nil]];
+            [stubRequest setBody:bodyMatcher];
             [actualRequest setBody:[@"Adios, this is a body as well" dataUsingEncoding:NSUTF8StringEncoding]];
         });
         it(@"should match", ^{
