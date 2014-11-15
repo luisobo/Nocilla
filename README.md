@@ -169,6 +169,15 @@ andFailWithError([NSError errorWithDomain:@"foo" code:123 userInfo:nil]);
 If some request is made but it wasn't stubbed, Nocilla won't let that request hit the real world. In that case your test should fail.
 At this moment Nocilla will raise an exception with a meaningful message about the error and how to solve it, including a snippet of code on how to stub the unexpected request.
 
+## Who uses Nocilla.
+
+### Submit a PR to add your company here!
+
+- [Groupon](http://www.groupon.com)
+- [Pixable](http://www.pixable.com)
+- [Jackthreads](https://www.jackthreads.com)
+- [ShopKeep](http://www.shopkeep.com)
+
 ## Other alternatives
 * [ILTesting](https://github.com/InfiniteLoopDK/ILTesting)
 * [OHHTTPStubs](https://github.com/AliSoftware/OHHTTPStubs)
