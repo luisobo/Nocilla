@@ -14,15 +14,6 @@ This library was inspired by [WebMock](https://github.com/bblimke/webmock) and i
 * Fast.
 * Extendable to support more HTTP libraries.
 
-```ruby
-pod 'Nocilla', :podspec => 'https://raw.github.com/luisobo/Nocilla/master/Nocilla.podspec'
-```
-
-```objc
-[[LSNocilla sharedInstance] registerHook:[[LSASIHTTPRequestHook alloc] init]];
-[[LSNocilla sharedInstance] start];
-```
-
 ## Installation
 ### As a [CocoaPod](http://cocoapods.org/)
 Just add this to your Podfile
