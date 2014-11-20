@@ -12,4 +12,6 @@
 
 @interface LSNSURLSessionHook : LSHTTPClientHook
 
+@property(weak, nonatomic) LSNocilla *nocilla;
+
 @end

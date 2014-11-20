@@ -1,6 +1,8 @@
 #import "LSNocilla.h"
 #import "LSNSURLHook.h"
 #import "LSStubRequest.h"
+#import "LSStubRequestDSL.h"
+#import "LSStubResponseDSL.h"
 #import "LSHTTPRequestDSLRepresentation.h"
 #import "LSASIHTTPRequestHook.h"
 #import "LSNSURLSessionHook.h"
@@ -69,7 +71,7 @@ static LSNocilla *sharedInstace = nil;
 }
 
 - (LSStubResponse *)responseForRequest:(id<LSHTTPRequest>)actualRequest {
-    NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
+    NSArray* requests = self.stubbedRequests;
 
     for(LSStubRequest *someStubbedRequest in requests) {
         if ([someStubbedRequest matchesRequest:actualRequest]) {
@@ -95,6 +97,17 @@ static LSNocilla *sharedInstace = nil;
     }
     return NO;
 }
+
+- ( LSStubRequestDSL *(^)(NSString *method, id<LSMatcheable> url))stubRequest
+{
+    return ^(NSString *method, id<LSMatcheable> url){
+        LSStubRequest *request = [[LSStubRequest alloc] initWithMethod:method urlMatcher:url.matcher];
+        LSStubRequestDSL *dsl = [[LSStubRequestDSL alloc] initWithRequest:request];
+        [self addStubbedRequest:request];
+        return dsl;
+    };
+}
+
 #pragma mark - Private
 - (void)loadHooks {
     for (LSHTTPClientHook *hook in self.hooks) {

@@ -10,6 +10,8 @@
 
 @implementation LSHTTPStubURLProtocol
 
+static __weak LSNocilla *staticNocila;
+
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
     return [@[ @"http", @"https" ] containsObject:request.URL.scheme];
 }
@@ -17,15 +19,21 @@
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
 	return request;
 }
+
 + (BOOL)requestIsCacheEquivalent:(NSURLRequest *)a toRequest:(NSURLRequest *)b {
     return NO;
+}
+
++ (void)registerNocilla:(LSNocilla *)nocilla
+{
+    staticNocila = nocilla;
 }
 
 - (void)startLoading {
     NSURLRequest* request = [self request];
 	id<NSURLProtocolClient> client = [self client];
 
-    LSStubResponse* stubbedResponse = [[LSNocilla sharedInstance] responseForRequest:request];
+    LSStubResponse* stubbedResponse = [staticNocila responseForRequest:request];
 
     if (stubbedResponse.shouldFail) {
         [client URLProtocol:self didFailWithError:stubbedResponse.error];

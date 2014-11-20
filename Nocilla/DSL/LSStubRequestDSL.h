@@ -6,6 +6,7 @@
 @class LSStubRequestDSL;
 @class LSStubResponseDSL;
 @class LSStubRequest;
+@class LSNocilla;
 
 @protocol LSHTTPBody;
 

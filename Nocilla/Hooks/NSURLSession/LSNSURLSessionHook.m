@@ -10,7 +10,31 @@
 #import "LSHTTPStubURLProtocol.h"
 #import <objc/runtime.h>
 
+@interface LSNSURLSessionHook ()
+@property(strong, nonatomic) Class urlProtocolClass;
+@end
+
 @implementation LSNSURLSessionHook
+
+- (Class)urlProtocolClass
+{
+    if (!_urlProtocolClass) {
+        Class baseClass = [LSHTTPStubURLProtocol class];
+        NSString * className = NSStringFromClass(baseClass);
+        
+        NSString * subclassName = [NSString stringWithFormat:@"%@%d", className, arc4random()];
+        Class subclass = NSClassFromString(subclassName);
+        
+        if (subclass == nil) {
+            subclass = objc_allocateClassPair(baseClass, [subclassName UTF8String], 0);
+            if (subclass != nil) {
+                objc_registerClassPair(subclass);
+                _urlProtocolClass = subclass;
+            }
+        }
+    }
+    return _urlProtocolClass;
+}
 
 - (void)load {
     Class cls = NSClassFromString(@"__NSCFURLSessionConfiguration") ?: NSClassFromString(@"NSURLSessionConfiguration");
@@ -33,8 +57,9 @@
 }
 
 - (NSArray *)protocolClasses {
-    return @[[LSHTTPStubURLProtocol class]];
+    Class stubUrlProtocolClass = self.urlProtocolClass;
+    [stubUrlProtocolClass registerNocilla:self.nocilla];
+    return @[stubUrlProtocolClass];
 }
-
 
 @end
