@@ -3,6 +3,7 @@
 #import "NSURLRequest+LSHTTPRequest.h"
 #import "LSStubRequest.h"
 #import "NSURLRequest+DSL.h"
+#import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
 @interface NSHTTPURLResponse(UndocumentedInitializer)
@@ -11,7 +12,15 @@
 
 @implementation LSHTTPStubURLProtocol
 
-static __weak LSNocilla *staticNocila;
+static NSMapTable *nocillaWeakMapTable;
+
++ (void)load
+{
+    if (!nocillaWeakMapTable) {
+        nocillaWeakMapTable = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsCopyIn
+                                                    valueOptions:NSPointerFunctionsWeakMemory];
+    }
+}
 
 + (Class)randomSubclass
 {
@@ -44,14 +53,20 @@ static __weak LSNocilla *staticNocila;
 
 + (void)registerNocilla:(LSNocilla *)nocilla
 {
-    staticNocila = nocilla;
+    NSString *className = NSStringFromClass([self class]);
+    [nocillaWeakMapTable setObject:nocilla forKey:className];
+}
+
++ (LSNocilla *)nocilla
+{
+    return [nocillaWeakMapTable objectForKey:(NSStringFromClass([self class]))];
 }
 
 - (void)startLoading {
     NSURLRequest* request = [self request];
 	id<NSURLProtocolClient> client = [self client];
 
-    LSStubResponse* stubbedResponse = [staticNocila responseForRequest:request];
+    LSStubResponse* stubbedResponse = [[[self class] nocilla] responseForRequest:request];
 
     if (stubbedResponse.shouldFail) {
         [client URLProtocol:self didFailWithError:stubbedResponse.error];
