@@ -12,6 +12,6 @@
 
 @interface LSNSURLSessionHook : LSHTTPClientHook
 
-@property(weak, nonatomic) LSNocilla *nocilla;
+@property(strong, nonatomic) Class urlProtocolClass;
 
 @end

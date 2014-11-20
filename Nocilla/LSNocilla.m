@@ -7,6 +7,7 @@
 #import "LSASIHTTPRequestHook.h"
 #import "LSNSURLSessionHook.h"
 #import "LSASIHTTPRequestHook.h"
+#import "LSHTTPStubURLProtocol.h"
 
 NSString * const LSUnexpectedRequest = @"Unexpected Request";
 
@@ -36,10 +37,17 @@ static LSNocilla *sharedInstace = nil;
     if (self) {
         _mutableRequests = [NSMutableArray array];
         _hooks = [NSMutableArray array];
-        [self registerHook:[[LSNSURLHook alloc] init]];
+
+        Class stubUrlProtocolClass = [LSHTTPStubURLProtocol randomSubclass];
+        [stubUrlProtocolClass registerNocilla:self];
+        
+        LSNSURLHook *urlHook = [[LSNSURLHook alloc] init];
+        urlHook.urlProtocolClass = stubUrlProtocolClass;
+        
+        [self registerHook:urlHook];
         if (NSClassFromString(@"NSURLSession") != nil) {
             LSNSURLSessionHook *sessionHook = [[LSNSURLSessionHook alloc] init];
-            sessionHook.nocilla = self;
+            sessionHook.urlProtocolClass = stubUrlProtocolClass;
             [self registerHook:sessionHook];
         }
         [self registerHook:[[LSASIHTTPRequestHook alloc] init]];

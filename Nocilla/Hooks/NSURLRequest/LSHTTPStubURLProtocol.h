@@ -4,5 +4,6 @@
 @interface LSHTTPStubURLProtocol : NSURLProtocol
 
 + (void)registerNocilla:(LSNocilla *)nocilla;
++ (Class)randomSubclass;
 
 @end

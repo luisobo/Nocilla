@@ -3,6 +3,7 @@
 #import "NSURLRequest+LSHTTPRequest.h"
 #import "LSStubRequest.h"
 #import "NSURLRequest+DSL.h"
+#import <objc/runtime.h>
 
 @interface NSHTTPURLResponse(UndocumentedInitializer)
 - (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;
@@ -11,6 +12,23 @@
 @implementation LSHTTPStubURLProtocol
 
 static __weak LSNocilla *staticNocila;
+
++ (Class)randomSubclass
+{
+    Class baseClass = [self class];
+    NSString * className = NSStringFromClass(baseClass);
+    
+    NSString * subclassName = [NSString stringWithFormat:@"%@%d", className, arc4random()];
+    Class subclass = NSClassFromString(subclassName);
+    
+    if (subclass == nil) {
+        subclass = objc_allocateClassPair(baseClass, [subclassName UTF8String], 0);
+        if (subclass != nil) {
+            objc_registerClassPair(subclass);
+        }
+    }
+    return subclass;
+}
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
     return [@[ @"http", @"https" ] containsObject:request.URL.scheme];
