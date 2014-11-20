@@ -38,7 +38,9 @@ static LSNocilla *sharedInstace = nil;
         _hooks = [NSMutableArray array];
         [self registerHook:[[LSNSURLHook alloc] init]];
         if (NSClassFromString(@"NSURLSession") != nil) {
-            [self registerHook:[[LSNSURLSessionHook alloc] init]];
+            LSNSURLSessionHook *sessionHook = [[LSNSURLSessionHook alloc] init];
+            sessionHook.nocilla = self;
+            [self registerHook:sessionHook];
         }
         [self registerHook:[[LSASIHTTPRequestHook alloc] init]];
     }
