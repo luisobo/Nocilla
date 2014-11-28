@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Luis Solano Bonet. All rights reserved.
 //
 
-#import <Nocilla/Nocilla.h>
-
+#import "Nocilla.h"
 #import "LSHTTPClientHook.h"
 
 @interface LSNSURLSessionHook : LSHTTPClientHook
