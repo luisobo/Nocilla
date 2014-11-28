@@ -48,14 +48,17 @@ static LSNocilla *sharedInstace = nil;
 }
 
 - (void)start {
-    if (!self.isStarted){
+    if (!self.isStarted) {
         [self loadHooks];
         self.started = YES;
     }
 }
 
 - (void)stop {
-    [self unloadHooks];
+    if (self.isStarted) {
+        [self unloadHooks];
+    }
+
     [self clearStubs];
     self.started = NO;
 }
