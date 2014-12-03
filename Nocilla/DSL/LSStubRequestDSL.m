@@ -49,7 +49,7 @@
 }
 
 - (AndReturnMethod)andReturnWithStatusCode {
-    return andReturn;
+	return self.andReturn;
 }
 
 - (AndReturnRawResponseMethod)andReturnRawResponse {
