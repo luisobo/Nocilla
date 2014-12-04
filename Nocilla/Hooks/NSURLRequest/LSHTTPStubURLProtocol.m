@@ -15,15 +15,21 @@
     if( ![@[ @"http", @"https" ] containsObject:request.URL.scheme] ) {
         return NO;
     }
-    if ([[LSNocilla sharedInstance] responseForRequest:request] != nil) {
-        return YES;
-    } else {
-        if ([LSNocilla sharedInstance].catchAllRequests) {
-            NSLog(@"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [[[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request] description]);
-            return YES;
-        }
-    }
-    return NO;
+	if ([LSNocilla sharedInstance].catchAllRequests) {
+		return YES;
+	}
+	
+	@try {
+		if ([[LSNocilla sharedInstance] responseForRequest:request] != nil) {
+			return YES;
+		}
+	}
+	@catch (NSException *exception) {
+		// there is no stub request, return no.
+		return NO;
+	}
+	
+	return NO;
 }
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
@@ -38,10 +44,7 @@
 	id<NSURLProtocolClient> client = [self client];
 
     LSStubResponse* stubbedResponse = [[LSNocilla sharedInstance] responseForRequest:request];
-    if (stubbedResponse == nil) {
-        [NSException raise:@"NocillaUnexpectedRequest" format:@"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [[[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request] description]];
-    }
-    
+	
     if (stubbedResponse.shouldFail) {
         [client URLProtocol:self didFailWithError:stubbedResponse.error];
     } else {
