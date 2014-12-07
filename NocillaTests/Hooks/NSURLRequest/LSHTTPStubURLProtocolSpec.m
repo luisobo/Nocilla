@@ -46,14 +46,17 @@ SPEC_BEGIN(LSHTTPStubURLProtocolSpec)
 
 describe(@"+canInitWithRequest", ^{
 	context(@"when NOT catching all request", ^{
-		beforeEach(^{
+		beforeEach(^{			
 			[[LSNocilla sharedInstance] stub:@selector(catchAllRequests) andReturn:@YES];
+		});
+		afterEach(^{
+			[[LSNocilla sharedInstance] clearStubs];
 		});
 		context(@"when there is a stub response", ^{
 			it(@"should return YES", ^{
-				NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.example.com/dogs.json"]];
+				NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.example.com/horse.json"]];
 
-				LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://api.example.com/dogs.json"];
+				LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"http://api.example.com/horse.json"];
 				LSStubResponse *stubResponse = [[LSStubResponse alloc] initWithStatusCode:403];
 				[stubResponse setHeader:@"Content-Type" value:@"application/xml"];
 				NSString *bodyString = @"<error>Error</error>" ;
@@ -68,7 +71,7 @@ describe(@"+canInitWithRequest", ^{
 		});
 		context(@"when there is NO stub response", ^{
 			it(@"should return NO", ^{
-				NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.example.com/dogs.json"]];
+				NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.example.com/sheep.json"]];
 				
 				BOOL result = [LSHTTPStubURLProtocol canInitWithRequest:request];
 				
