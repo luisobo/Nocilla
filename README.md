@@ -177,6 +177,7 @@ At this moment Nocilla will raise an exception with a meaningful message about t
 - [Pixable](http://www.pixable.com)
 - [Jackthreads](https://www.jackthreads.com)
 - [ShopKeep](http://www.shopkeep.com)
+- [Venmo](https://www.venmo.com)
 
 ## Other alternatives
 * [ILTesting](https://github.com/InfiniteLoopDK/ILTesting)
