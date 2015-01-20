@@ -19,7 +19,7 @@
     return [self initWithMethod:method urlMatcher:[url matcher]];
 }
 
-- (instancetype)initWithMethod:(NSString *)method urlMatcher:(LSMatcher *)urlMatcher; {
+- (instancetype)initWithMethod:(NSString *)method urlMatcher:(LSMatcher *)urlMatcher {
     self = [super init];
     if (self) {
         self.method = method;

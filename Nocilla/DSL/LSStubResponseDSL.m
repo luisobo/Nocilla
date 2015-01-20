@@ -21,7 +21,7 @@
     };
 }
 
-- (ResponseWithHeadersMethod)withHeaders; {
+- (ResponseWithHeadersMethod)withHeaders {
     return ^(NSDictionary *headers) {
         for (NSString *header in headers) {
             NSString *value = [headers objectForKey:header];
