@@ -171,7 +171,7 @@
 		A085B83B15E30749007D33C1 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A085B83F15E30749007D33C1 /* Nocilla-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nocilla-Prefix.pch"; sourceTree = "<group>"; };
 		A085B84015E30749007D33C1 /* Nocilla.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nocilla.h; sourceTree = "<group>"; };
-		A085B84915E30749007D33C1 /* NocillaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = NocillaTests.octest; path = NocillaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A085B84915E30749007D33C1 /* NocillaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NocillaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A085B85415E30749007D33C1 /* NocillaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NocillaTests-Info.plist"; sourceTree = "<group>"; };
 		A085B85615E30749007D33C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A085B85915E30749007D33C1 /* AFNetworkingStubbingSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFNetworkingStubbingSpec.m; path = Hooks/NSURLRequest/AFNetworkingStubbingSpec.m; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				A085B83815E30749007D33C1 /* libNocilla.a */,
-				A085B84915E30749007D33C1 /* NocillaTests.octest */,
+				A085B84915E30749007D33C1 /* NocillaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -600,7 +600,7 @@
 			);
 			name = NocillaTests;
 			productName = NocillaTests;
-			productReference = A085B84915E30749007D33C1 /* NocillaTests.octest */;
+			productReference = A085B84915E30749007D33C1 /* NocillaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
