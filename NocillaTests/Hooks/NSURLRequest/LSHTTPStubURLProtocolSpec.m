@@ -3,6 +3,7 @@
 #import "LSStubRequest.h"
 #import "LSStubResponse.h"
 #import "LSNocilla.h"
+#import "HPArgumentMatcher.h"
 
 @interface NSHTTPURLResponse(UndocumentedInitializer)
 - (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;
@@ -145,11 +146,22 @@ describe(@"#startLoading", ^{
             });
         });
         context(@"that doesn't match any stubbed request", ^{
-            it(@"should raise an exception with a meaningful message", ^{
+            it(@"should return timeout error with a meaningful message", ^{
                 NSString *expectedMessage = @"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\nstubRequest(@\"GET\", @\"http://api.example.com/dogs.xml\");\n";
-                [[theBlock(^{
-                    [protocol startLoading];
-                }) should] raiseWithName:@"NocillaUnexpectedRequest" reason:expectedMessage];
+
+                stringUrl = @"http://api.example.com/cats.xml";
+                LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
+                [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+
+                HPArgumentMatcher* errorMatch = [HPArgumentMatcher matcherWithBlock:^BOOL(NSError* error) {
+                    return [error isKindOfClass:[NSError class]]
+                    && [error.userInfo isEqualToDictionary:@{@"error": expectedMessage}];
+                }];
+                
+                [[client should] receive:@selector(URLProtocol:didFailWithError:) withArguments:protocol, errorMatch];
+                
+                [protocol startLoading];
+
             });
         });
     });

@@ -24,7 +24,7 @@ describe(@"-responseForRequest:", ^{
             [[LSNocilla sharedInstance] clearStubs];
         });
     });
-
+    
     context(@"when the specified request does not match any stubbed request", ^{
         it(@"raises an exception with a descriptive error message ", ^{
             NSObject<LSHTTPRequest> *actualRequest = [KWMock nullMockForProtocol:@protocol(LSHTTPRequest)];
@@ -32,11 +32,7 @@ describe(@"-responseForRequest:", ^{
             [actualRequest stub:@selector(method) andReturn:@"GET"];
 
 
-            NSString *expectedMessage = @"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\nstubRequest(@\"GET\", @\"http://www.google.com\");\n";
-            [[theBlock(^{
-                [[LSNocilla sharedInstance] responseForRequest:actualRequest];
-            }) should] raiseWithName:@"NocillaUnexpectedRequest" reason:expectedMessage];
-
+            [[[[LSNocilla sharedInstance] responseForRequest:actualRequest] should] beNil];
             [[LSNocilla sharedInstance] clearStubs];
         });
     });

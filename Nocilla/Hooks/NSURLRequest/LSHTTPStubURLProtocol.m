@@ -3,6 +3,7 @@
 #import "NSURLRequest+LSHTTPRequest.h"
 #import "LSStubRequest.h"
 #import "NSURLRequest+DSL.h"
+#import "LSHTTPRequestDSLRepresentation.h"
 
 @interface NSHTTPURLResponse(UndocumentedInitializer)
 - (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;
@@ -26,8 +27,14 @@
 	id<NSURLProtocolClient> client = [self client];
 
     LSStubResponse* stubbedResponse = [[LSNocilla sharedInstance] responseForRequest:request];
-
-    if (stubbedResponse.shouldFail) {
+    
+    if (!stubbedResponse) {
+        NSString* msg = [NSString stringWithFormat:@"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [[[LSHTTPRequestDSLRepresentation alloc] initWithRequest:request] description]];
+        NSError* error = [NSError errorWithDomain:@"NocillaUnexpectedRequest"
+                                             code:kCFURLErrorTimedOut
+                                         userInfo:@{@"error": msg}];
+        [client URLProtocol:self didFailWithError:error];
+    }else if (stubbedResponse.shouldFail) {
         [client URLProtocol:self didFailWithError:stubbedResponse.error];
     } else {
         NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
