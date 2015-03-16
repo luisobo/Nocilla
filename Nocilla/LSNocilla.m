@@ -1,7 +1,6 @@
 #import "LSNocilla.h"
 #import "LSNSURLHook.h"
 #import "LSStubRequest.h"
-#import "LSHTTPRequestDSLRepresentation.h"
 #import "LSASIHTTPRequestHook.h"
 #import "LSNSURLSessionHook.h"
 #import "LSASIHTTPRequestHook.h"
@@ -76,8 +75,7 @@ static LSNocilla *sharedInstace = nil;
             return someStubbedRequest.response;
         }
     }
-    [NSException raise:@"NocillaUnexpectedRequest" format:@"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\n%@\n", [[[LSHTTPRequestDSLRepresentation alloc] initWithRequest:actualRequest] description]];
-
+    
     return nil;
 }
 
