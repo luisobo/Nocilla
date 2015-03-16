@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Luis Solano" => "contact@luissolano.com" }
 
-  s.source       = { :git => "https://github.com/luisobo/Nocilla.git", :tag => "0.9.0" }
+  s.source       = { :git => "https://github.com/hepengzhang/Nocilla.git", :tag => "0.9.1" }
 
   s.ios.deployment_target = '4.0'
   s.osx.deployment_target = '10.7'
