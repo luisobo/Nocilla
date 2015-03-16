@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Nocilla"
-  s.version      = "0.9.0"
+  s.version      = "0.9.1"
   s.summary      = "Stunning HTTP stubbing for iOS. Testing HTTP requests has never been easier."
   s.homepage     = "https://github.com/luisobo/Nocilla"
 
