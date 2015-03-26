@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A085B83715E30749007D33C1"
-               BuildableName = "libNocilla.a"
+               BlueprintIdentifier = "5475C73C1AC4252300EB9514"
+               BuildableName = "Nocilla.framework"
                BlueprintName = "Nocilla"
                ReferencedContainer = "container:Nocilla.xcodeproj">
             </BuildableReference>
@@ -66,8 +66,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A085B83715E30749007D33C1"
-            BuildableName = "libNocilla.a"
+            BlueprintIdentifier = "5475C73C1AC4252300EB9514"
+            BuildableName = "Nocilla.framework"
             BlueprintName = "Nocilla"
             ReferencedContainer = "container:Nocilla.xcodeproj">
          </BuildableReference>
