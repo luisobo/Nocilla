@@ -30,7 +30,7 @@
 		5475C7681AC4254600EB9514 /* NSData+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A08A3B4C1A101DA20009482F /* NSData+Matcheable.m */; };
 		5475C7691AC4254600EB9514 /* LSHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630915ECCCBD00009A08 /* LSHTTPRequest.h */; };
 		5475C76A1AC4254600EB9514 /* LSHTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630A15ECCD2F00009A08 /* LSHTTPResponse.h */; };
-		5475C76B1AC4254600EB9514 /* LSHTTPBody.h in Headers */ = {isa = PBXBuildFile; fileRef = A092C5A9177BB0A000B5C5F9 /* LSHTTPBody.h */; };
+		5475C76B1AC4254600EB9514 /* LSHTTPBody.h in Headers */ = {isa = PBXBuildFile; fileRef = A092C5A9177BB0A000B5C5F9 /* LSHTTPBody.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C76C1AC4254600EB9514 /* LSStubRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAB15E30B0000730EE5 /* LSStubRequest.h */; };
 		5475C76D1AC4254600EB9514 /* LSStubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAC15E30B0000730EE5 /* LSStubRequest.m */; };
 		5475C76E1AC4254600EB9514 /* LSStubResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABAD15E30B0000730EE5 /* LSStubResponse.h */; };
@@ -38,9 +38,9 @@
 		5475C7701AC4254600EB9514 /* LSHTTPRequestDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = A0EE630515EC217A00009A08 /* LSHTTPRequestDiff.h */; };
 		5475C7711AC4254600EB9514 /* LSHTTPRequestDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EE630615EC217A00009A08 /* LSHTTPRequestDiff.m */; };
 		5475C7721AC4254600EB9514 /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF015ED795A0061FCEE /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5475C7731AC4254600EB9514 /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; };
+		5475C7731AC4254600EB9514 /* LSStubRequestDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C7741AC4254600EB9514 /* LSStubRequestDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */; };
-		5475C7751AC4254600EB9514 /* LSStubResponseDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */; };
+		5475C7751AC4254600EB9514 /* LSStubResponseDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C7761AC4254600EB9514 /* LSStubResponseDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AD915ED704F0061FCEE /* LSStubResponseDSL.m */; };
 		5475C7771AC4254600EB9514 /* LSHTTPRequestDSLRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = A02C7AF615EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.h */; };
 		5475C7781AC4254600EB9514 /* LSHTTPRequestDSLRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = A02C7AF715EE5CF80061FCEE /* LSHTTPRequestDSLRepresentation.m */; };
