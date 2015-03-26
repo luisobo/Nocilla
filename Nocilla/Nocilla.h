@@ -14,7 +14,9 @@ FOUNDATION_EXPORT double NocillaVersionNumber;
 //! Project version string for Nocilla.
 FOUNDATION_EXPORT const unsigned char NocillaVersionString[];
 
+#import <Nocilla/LSHTTPBody.h>
 #import <Nocilla/LSNocilla.h>
-#import <Nocilla/DSL.h>
-#import <Nocilla/NSString+Nocilla.h>
+#import <Nocilla/LSStubRequestDSL.h>
+#import <Nocilla/LSStubResponseDSL.h>
 #import <Nocilla/NSData+Nocilla.h>
+#import <Nocilla/NSString+Nocilla.h>
