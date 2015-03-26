@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Luis Solano Bonet. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Nocilla.
 FOUNDATION_EXPORT double NocillaVersionNumber;
