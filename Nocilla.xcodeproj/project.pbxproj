@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0FA3E7FE1680775B001DB582 /* LSStubResponseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */; };
 		54540B881AC426490042C146 /* Nocilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5475C73D1AC4252400EB9514 /* Nocilla.framework */; };
+		5460AD241AD4052C00681BF9 /* Nocilla.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5475C73D1AC4252400EB9514 /* Nocilla.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5475C7561AC4254600EB9514 /* NSString+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C7571AC4254600EB9514 /* NSString+Nocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A028893D1728CA5900288022 /* NSString+Nocilla.m */; };
 		5475C7581AC4254600EB9514 /* NSData+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A092C5AA177BBCC400B5C5F9 /* NSData+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +96,19 @@
 			remoteInfo = Nocilla;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5460AD231AD4052000681BF9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5460AD241AD4052C00681BF9 /* Nocilla.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponseSpec.m; sourceTree = "<group>"; };
@@ -576,6 +590,7 @@
 				A085B84515E30749007D33C1 /* Frameworks */,
 				A085B84615E30749007D33C1 /* Resources */,
 				C1CB41255F6241919E9FA64B /* Copy Pods Resources */,
+				5460AD231AD4052000681BF9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
