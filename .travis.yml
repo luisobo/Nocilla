@@ -1,4 +1,6 @@
 ---
 language: objective-c
+install:
+    - gem install xcpretty
 script:
-  - xcodebuild -workspace Nocilla.xcworkspace -scheme 'Nocilla' -sdk iphonesimulator build test CODE_SIGN_IDENTITY=-
+    - set -o pipefail && xcodebuild -workspace Nocilla.xcworkspace -scheme 'Nocilla' -sdk iphonesimulator build test CODE_SIGN_IDENTITY=- | xcpretty -c
