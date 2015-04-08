@@ -3,5 +3,6 @@ language: objective-c
 install:
     - gem install xcpretty
     - gem install cocoapods
+    - pod install
 script:
     - set -o pipefail && xcodebuild -workspace Nocilla.xcworkspace -scheme 'Nocilla' -sdk iphonesimulator build test CODE_SIGN_IDENTITY=- | xcpretty -c
