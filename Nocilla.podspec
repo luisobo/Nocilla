@@ -15,17 +15,17 @@ Pod::Spec.new do |s|
   s.source_files = 'Nocilla/**/*.{h,m}'
 
   s.public_header_files = [
-    'Nocilla/LSHTTPBody.h',
-    'Nocilla/LSMatcheable.h',
+    'Nocilla/Categories/NSData+Nocilla.h',
+    'Nocilla/Categories/NSString+Nocilla.h',
+    'Nocilla/DSL/LSStubRequestDSL.h',
+    'Nocilla/DSL/LSStubResponseDSL.h',
     'Nocilla/LSNocilla.h',
-    'Nocilla/LSStubRequestDSL.h',
-    'Nocilla/LSStubResponseDSL.h',
-    'Nocilla/Nocilla.h',
-    'Nocilla/NSData+Matcheable.h',
-    'Nocilla/NSData+Nocilla.h',
-    'Nocilla/NSRegularExpression+Matcheable.h',
-    'Nocilla/NSString+Matcheable.h',
-    'Nocilla/NSString+Nocilla.h'
+    'Nocilla/Matchers/LSMatcheable.h',
+    'Nocilla/Matchers/NSData+Matcheable.h',
+    'Nocilla/Matchers/NSRegularExpression+Matcheable.h',
+    'Nocilla/Matchers/NSString+Matcheable.h',
+    'Nocilla/Model/LSHTTPBody.h',
+    'Nocilla/Nocilla.h'
   ]
 
   s.requires_arc = true
