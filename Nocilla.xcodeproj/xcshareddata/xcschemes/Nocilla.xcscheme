@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A085B83715E30749007D33C1"
-               BuildableName = "libNocilla.a"
+               BlueprintIdentifier = "5475C73C1AC4252300EB9514"
+               BuildableName = "Nocilla.framework"
                BlueprintName = "Nocilla"
                ReferencedContainer = "container:Nocilla.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A085B84815E30749007D33C1"
-               BuildableName = "NocillaTests.octest"
+               BuildableName = "NocillaTests.xctest"
                BlueprintName = "NocillaTests"
                ReferencedContainer = "container:Nocilla.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A085B84815E30749007D33C1"
-               BuildableName = "NocillaTests.octest"
+               BuildableName = "NocillaTests.xctest"
                BlueprintName = "NocillaTests"
                ReferencedContainer = "container:Nocilla.xcodeproj">
             </BuildableReference>
@@ -63,6 +63,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5475C73C1AC4252300EB9514"
+            BuildableName = "Nocilla.framework"
+            BlueprintName = "Nocilla"
+            ReferencedContainer = "container:Nocilla.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
          <AdditionalOption
             key = "NSZombieEnabled"

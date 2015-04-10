@@ -1,12 +1,8 @@
 ---
-
-  language: objective-c
-
-  before_install: gem install cocoapods
-
-  before_script:
-    - chmod +x travis/before_script.sh
-    - chmod +x travis/script.sh
-    - travis/before_script.sh
-  script:
-    - travis/script.sh
+language: objective-c
+install:
+    - gem install xcpretty
+    - gem install cocoapods
+    - pod install
+script:
+    - set -o pipefail && xcodebuild -workspace Nocilla.xcworkspace -scheme 'Nocilla' -sdk iphonesimulator build test CODE_SIGN_IDENTITY=- | xcpretty -c
