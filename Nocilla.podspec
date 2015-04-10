@@ -14,17 +14,19 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Nocilla/**/*.{h,m}'
 
-  s.public_header_files = ['Nocilla/Nocilla.h',
+  s.public_header_files = [
+    'Nocilla/LSHTTPBody.h',
+    'Nocilla/LSMatcheable.h',
     'Nocilla/LSNocilla.h',
-    'Nocilla/DSL/DSL.h',
-    'Nocilla/DSL/LSStubRequestDSL.h',
-    'Nocilla/DSL/LSStubResponseDSL.h',
-    'Nocilla/Matchers/*.h',
-    'Nocilla/Model/LSHTTPBody.h',
-    'Nocilla/Categories/NSString+Nocilla.h',
-    'Nocilla/Categories/NSData+Nocilla.h',
-    'Nocilla/Hooks/LSHTTPClientHook.h',
-    'Nocilla/Hooks/ASIHTTPRequest/LSASIHTTPRequestHook.h']
+    'Nocilla/LSStubRequestDSL.h',
+    'Nocilla/LSStubResponseDSL.h',
+    'Nocilla/Nocilla.h',
+    'Nocilla/NSData+Matcheable.h',
+    'Nocilla/NSData+Nocilla.h',
+    'Nocilla/NSRegularExpression+Matcheable.h',
+    'Nocilla/NSString+Matcheable.h',
+    'Nocilla/NSString+Nocilla.h'
+  ]
 
   s.requires_arc = true
   s.frameworks = 'CFNetwork'
