@@ -282,6 +282,28 @@ context(@"AFNetworking", ^{
         [[[operation.response.allHeaderFields objectForKey:@"Content-Type"] should] equal:@"text/plain"];
     });
 
+    it(@"should properly sets cookies on a non-redirected request", ^{
+        stubRequest(@"GET", @"https://example.com/hello").
+        andReturn(200).
+        withBody(@"hola").
+        withHeader(@"Content-Type", @"text/plain").
+        withHeader(@"Set-Cookie", @"giveme=cookies;Path=/;");
+
+        NSURL *url = [NSURL URLWithString:@"https://example.com/hello"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        [operation start];
+
+        [operation waitUntilFinished];
+
+        NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+        NSArray *cookies = [cookieStorage cookiesForURL:[NSURL URLWithString:@"https://example.com/"]];
+        [[cookies should] haveCountOf:1];
+        NSHTTPCookie *cookie = cookies[0];
+        [[[cookie name] should] equal:@"giveme"];
+        [[[cookie value] should] equal:@"cookies"];
+    });
+
     it(@"should properly sets cookies on redirect", ^{
         stubRequest(@"GET", @"https://example.com/hello").
         andReturn(301).
