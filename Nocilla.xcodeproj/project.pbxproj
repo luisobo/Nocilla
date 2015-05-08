@@ -85,6 +85,7 @@
 		A0BB870615FE7D8F0090236F /* LSStubRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB870515FE7D8F0090236F /* LSStubRequestSpec.m */; };
 		A0BBF5CA16DD9BDD00D660D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BBF5C916DD9BDD00D660D2 /* CoreGraphics.framework */; };
 		AA0A44061758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0A44051758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m */; };
+		E48784AC1AFD7678001B5F2D /* LSDataMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E48784AB1AFD7678001B5F2D /* LSDataMatcherSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,7 @@
 		A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDiffSpec.m; path = Diff/LSHTTPRequestDiffSpec.m; sourceTree = "<group>"; };
 		AA0A44051758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequestSpec.m"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequestSpec.m"; sourceTree = "<group>"; };
 		CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48784AB1AFD7678001B5F2D /* LSDataMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSDataMatcherSpec.m; path = Matchers/LSDataMatcherSpec.m; sourceTree = "<group>"; };
 		F7621264AB6B45CE84724138 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -496,6 +498,7 @@
 		A08EE2201728A1FC001830E6 /* Matchers */ = {
 			isa = PBXGroup;
 			children = (
+				E48784AB1AFD7678001B5F2D /* LSDataMatcherSpec.m */,
 				A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */,
 				A02889421728CD6000288022 /* LSRegexMatcherSpec.m */,
 			);
@@ -738,6 +741,7 @@
 				A02889431728CD6000288022 /* LSRegexMatcherSpec.m in Sources */,
 				A01CEBED1760081F00637CE7 /* LSNocillaSpec.m in Sources */,
 				A01CEBDE175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m in Sources */,
+				E48784AC1AFD7678001B5F2D /* LSDataMatcherSpec.m in Sources */,
 				AA0A44061758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
