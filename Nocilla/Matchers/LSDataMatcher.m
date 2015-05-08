@@ -25,8 +25,8 @@
     return self;
 }
 
-- (BOOL)matches:(NSString *)string {
-    return [self.data isEqualToData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+- (BOOL)matches:(NSData *)data {
+    return [self.data isEqualToData:data];
 }
 
 @end

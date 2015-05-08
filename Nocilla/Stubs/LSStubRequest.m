@@ -73,7 +73,7 @@
 }
 
 -(BOOL)matchesURL:(id<LSHTTPRequest>)request {
-    return [self.urlMatcher matches:[request.url absoluteString]];
+    return [self.urlMatcher matchesString:[request.url absoluteString]];
 }
 
 -(BOOL)matchesHeaders:(id<LSHTTPRequest>)request {
@@ -87,7 +87,7 @@
 
 -(BOOL)matchesBody:(id<LSHTTPRequest>)request {
     NSData *reqBody = request.body;
-    if (!self.body || [self.body matches:[[NSString alloc] initWithData:reqBody encoding:NSUTF8StringEncoding]]) {
+    if (!self.body || [self.body matches:reqBody]) {
         return YES;
     }
     return NO;
