@@ -25,7 +25,7 @@
     return self;
 }
 
-- (BOOL)matches:(NSData *)data {
+- (BOOL)matchesData:(NSData *)data {
     return [self.data isEqualToData:data];
 }
 

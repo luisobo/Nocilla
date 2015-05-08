@@ -2,8 +2,8 @@
 
 @interface LSMatcher : NSObject
 
-- (BOOL)matchesString:(NSString *)string;
+- (BOOL)matches:(NSString *)string;
 
-- (BOOL)matches:(NSData *)data;
+- (BOOL)matchesData:(NSData *)data;
 
 @end

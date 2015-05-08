@@ -14,8 +14,7 @@
     return self;
 }
 
-- (BOOL)matches:(NSData *)data {
-    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+- (BOOL)matches:(NSString *)string {
     return [self.regex numberOfMatchesInString:string options:0 range:NSMakeRange(0, string.length)] > 0;
 }
 
