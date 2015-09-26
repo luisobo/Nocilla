@@ -90,6 +90,18 @@ describe(@"#startLoading", ^{
             protocol = [[LSHTTPStubURLProtocol alloc] initWithRequest:request cachedResponse:nil client:client]; 
         });
         context(@"that matches an stubbed request", ^{
+			it(@"should increment the requests call count", ^{
+				LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
+				[[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+				[[theValue(stubRequest.actualCallCount) should] equal:theValue(0)];
+
+				[protocol startLoading];
+				[[theValue(stubRequest.actualCallCount) should] equal:theValue(1)];
+
+				[protocol startLoading];
+				[[theValue(stubRequest.actualCallCount) should] equal:theValue(2)];
+			});
+
             context(@"and the response should succeed", ^{
                 beforeEach(^{
                     LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];

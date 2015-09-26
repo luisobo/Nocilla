@@ -20,4 +20,8 @@
     return [self.string isEqualToString:string];
 }
 
+- (NSString *)description {
+	return self.string.description;
+}
+
 @end

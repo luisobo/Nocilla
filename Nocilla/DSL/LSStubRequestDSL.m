@@ -33,6 +33,13 @@
     };
 }
 
+- (WithExpectedCallCountMethod)withExpectedCallCount {
+	return ^(NSInteger times) {
+		[self.request setExpectedCallCount:@(times)];
+		return self;
+	};
+}
+
 - (AndBodyMethod)withBody {
     return ^(id<LSMatcheable> body) {
         self.request.body = body.matcher;
@@ -69,4 +76,8 @@ LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {
     LSStubRequestDSL *dsl = [[LSStubRequestDSL alloc] initWithRequest:request];
     [[LSNocilla sharedInstance] addStubbedRequest:request];
     return dsl;
+}
+
+LSStubRequestDSL * expectRequest(NSString *method, id<LSMatcheable> url, NSInteger expectedCallCount) {
+    return stubRequest(method, url).withExpectedCallCount(expectedCallCount);
 }

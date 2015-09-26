@@ -68,6 +68,27 @@ static LSNocilla *sharedInstace = nil;
     [self.mutableRequests removeAllObjects];
 }
 
+- (void)verifyCallCount {
+	NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
+
+	for(LSStubRequest *someStubbedRequest in requests) {
+		if (someStubbedRequest.expectedCallCount != nil) {
+
+			NSInteger actualCount = someStubbedRequest.actualCallCount;
+			NSInteger expectedCount = someStubbedRequest.expectedCallCount.integerValue;
+
+			if (actualCount < expectedCount) {
+				NSString *msg = [NSString stringWithFormat:@"The request to \"%@\" should be fired %d times but was fired %d times.\n",
+								someStubbedRequest.urlMatcher.description, expectedCount, actualCount];
+				NSException *exception = [NSException exceptionWithName:@"NocillaMissingRequest" reason:msg userInfo:nil];
+				[exception raise];
+			}
+
+		}
+	}
+}
+
+
 - (LSStubResponse *)responseForRequest:(id<LSHTTPRequest>)actualRequest {
     NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
 
@@ -81,12 +102,35 @@ static LSNocilla *sharedInstace = nil;
     return nil;
 }
 
+- (void)countRequest:(id<LSHTTPRequest>)actualRequest {
+	NSArray* requests = [LSNocilla sharedInstance].stubbedRequests;
+
+	for(LSStubRequest *someStubbedRequest in requests) {
+		if ([someStubbedRequest matchesRequest:actualRequest]) {
+			someStubbedRequest.actualCallCount++;
+
+			// check if the request was already sent to often
+			if (someStubbedRequest.expectedCallCount != nil) {
+				NSInteger actualCount = someStubbedRequest.actualCallCount;
+				NSInteger expectedCount = someStubbedRequest.expectedCallCount.integerValue;
+				if(actualCount > expectedCount) {
+					NSString *msg = [NSString stringWithFormat:@"An unexpected HTTP request to \"%@\" was fired.\n"
+																	   "You already stubbed this request but it should be fired %d times but was fired %d times.\n",
+															   someStubbedRequest.urlMatcher.description, expectedCount, actualCount];
+					[NSException raise:@"NocillaUnexpectedRequest" format:msg];
+				}
+			}
+
+			return;
+		}
+	}
+}
+
 - (void)registerHook:(LSHTTPClientHook *)hook {
     if (![self hookWasRegistered:hook]) {
         [[self hooks] addObject:hook];
     }
 }
-
 - (BOOL)hookWasRegistered:(LSHTTPClientHook *)aHook {
     for (LSHTTPClientHook *hook in self.hooks) {
         if ([hook isMemberOfClass: [aHook class]]) {
@@ -96,6 +140,7 @@ static LSNocilla *sharedInstace = nil;
     return NO;
 }
 #pragma mark - Private
+
 - (void)loadHooks {
     for (LSHTTPClientHook *hook in self.hooks) {
         [hook load];
@@ -107,5 +152,4 @@ static LSNocilla *sharedInstace = nil;
         [hook unload];
     }
 }
-
 @end

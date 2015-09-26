@@ -11,6 +11,7 @@
 
 typedef LSStubRequestDSL *(^WithHeaderMethod)(NSString *, NSString *);
 typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);
+typedef LSStubRequestDSL *(^WithExpectedCallCountMethod)(NSInteger times);
 typedef LSStubRequestDSL *(^AndBodyMethod)(id<LSMatcheable>);
 typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
 typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData);
@@ -18,6 +19,8 @@ typedef void (^AndFailWithErrorMethod)(NSError *error);
 
 @interface LSStubRequestDSL : NSObject
 - (id)initWithRequest:(LSStubRequest *)request;
+
+- (WithExpectedCallCountMethod)withExpectedCallCount;
 
 @property (nonatomic, strong, readonly) WithHeaderMethod withHeader;
 @property (nonatomic, strong, readonly) WithHeadersMethod withHeaders;
@@ -33,7 +36,8 @@ extern "C" {
 #endif
     
 LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url);
-    
+LSStubRequestDSL * expectRequest(NSString *method, id<LSMatcheable> url, NSInteger expectedCallCount);
+
 #ifdef __cplusplus
 }
 #endif
