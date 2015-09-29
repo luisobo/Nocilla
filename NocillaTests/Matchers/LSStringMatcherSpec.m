@@ -20,4 +20,20 @@ context(@"when both strings are different", ^{
     });
 });
 
+describe(@"isEqual:", ^{
+    it(@"is equal to another string matcher with the same string", ^{
+        LSStringMatcher *matcherA = [[LSStringMatcher alloc] initWithString:@"same"];
+        LSStringMatcher *matcherB = [[LSStringMatcher alloc] initWithString:@"same"];
+
+        [[matcherA should] equal:matcherB];
+    });
+
+    it(@"is not equal to another string matcher with a different string", ^{
+        LSStringMatcher *matcherA = [[LSStringMatcher alloc] initWithString:@"omg"];
+        LSStringMatcher *matcherB = [[LSStringMatcher alloc] initWithString:@"different"];
+
+        [[matcherA shouldNot] equal:matcherB];
+    });
+});
+
 SPEC_END
