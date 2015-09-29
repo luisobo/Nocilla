@@ -27,4 +27,20 @@ context(@"when both data are different", ^{
     });
 });
 
+describe(@"isEqual:", ^{
+    it(@"is equal to another data matcher with the same data", ^{
+        LSDataMatcher *matcherA = [[LSDataMatcher alloc] initWithData:[@"same" dataUsingEncoding:NSUTF8StringEncoding]];
+        LSDataMatcher *matcherB = [[LSDataMatcher alloc] initWithData:[@"same" dataUsingEncoding:NSUTF8StringEncoding]];
+
+        [[matcherA should] equal:matcherB];
+    });
+
+    it(@"is not equal to another data matcher with a different data", ^{
+        LSDataMatcher *matcherA = [[LSDataMatcher alloc] initWithData:[@"omg" dataUsingEncoding:NSUTF8StringEncoding]];
+        LSDataMatcher *matcherB = [[LSDataMatcher alloc] initWithData:[@"different" dataUsingEncoding:NSUTF8StringEncoding]];
+
+        [[matcherA shouldNot] equal:matcherB];
+    });
+});
+
 SPEC_END

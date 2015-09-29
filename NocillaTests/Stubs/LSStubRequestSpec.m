@@ -4,6 +4,7 @@
 #import "NSString+Nocilla.h"
 #import "LSRegexMatcher.h"
 #import "LSDataMatcher.h"
+#import "LSStringMatcher.h"
 
 SPEC_BEGIN(LSStubRequestSpec)
 
@@ -232,6 +233,79 @@ describe(@"#matchesRequest:", ^{
                 [[theValue([stubRequest matchesRequest:actualRequest]) should] beYes];
             });
         });
+    });
+});
+
+describe(@"isEqual:", ^{
+    it(@"is equal to a stub with the same method, url, headers and body", ^{
+        // It may appear that there is needless duplication of matcher objects in this tests,
+        // however this is intended as we need to ensure the properties of the stub request
+        // are truly equal by value, not just equal pointers.
+
+        LSRegexMatcher *urlA = [[LSRegexMatcher alloc] initWithRegex:@"https://(.+)\\.example\\.com/(.+)/data\\.json".regex];
+        LSStubRequest *stubA = [[LSStubRequest alloc] initWithMethod:@"GET" urlMatcher:urlA];
+        LSRegexMatcher *urlB = [[LSRegexMatcher alloc] initWithRegex:@"https://(.+)\\.example\\.com/(.+)/data\\.json".regex];
+        LSStubRequest *stubB = [[LSStubRequest alloc] initWithMethod:@"GET" urlMatcher:urlB];
+
+        stubA.body = [[LSRegexMatcher alloc] initWithRegex:@"checkout my sexy body ([a-z]+?)".regex];
+        stubB.body = [[LSRegexMatcher alloc] initWithRegex:@"checkout my sexy body ([a-z]+?)".regex];
+
+        [stubA setHeader:@"Content-Type" value:@"application/json"];
+        [stubB setHeader:@"Content-Type" value:@"application/json"];
+
+        [[stubA should] equal:stubB];
+    });
+
+    it(@"is not equal with a different method", ^{
+        LSStubRequest *stubA = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"google.com"];
+        LSStubRequest *stubB = [[LSStubRequest alloc] initWithMethod:@"POST" url:@"google.com"];
+
+        [[stubA shouldNot] equal:stubB];
+    });
+
+    it(@"is not equal with a different url matcher", ^{
+        LSRegexMatcher *urlA = [[LSRegexMatcher alloc] initWithRegex:@"https://(.+)\\.example\\.com/(.+)/data\\.json".regex];
+        LSStubRequest *stubA = [[LSStubRequest alloc] initWithMethod:@"GET" urlMatcher:urlA];
+        LSRegexMatcher *urlB = [[LSRegexMatcher alloc] initWithRegex:@"https://github\\.com/(.+)/(.+)/".regex];
+        LSStubRequest *stubB = [[LSStubRequest alloc] initWithMethod:@"GET" urlMatcher:urlB];
+
+        [[stubA shouldNot] equal:stubB];
+    });
+
+    it(@"is not equal with different headers", ^{
+        LSStubRequest *stubA = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"google.com"];
+        LSStubRequest *stubB = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"google.com"];
+
+        [stubA setHeader:@"Content-Type" value:@"application/json"];
+        [stubB setHeader:@"Content-Type" value:@"application/json"];
+
+        [stubA setHeader:@"X-OMG" value:@"nothings compares"];
+        [stubB setHeader:@"X-DIFFERENT" value:@"to you"];
+
+        [[stubA shouldNot] equal:stubB];
+    });
+
+    it(@"is not equal with a different body", ^{
+        LSStubRequest *stubA = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"google.com"];
+        LSStubRequest *stubB = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"google.com"];
+
+        stubA.body = [[LSStringMatcher alloc] initWithString:@"omg"];
+        stubB.body = [[LSStringMatcher alloc] initWithString:@"different"];
+
+        [[stubA shouldNot] equal:stubB];
+    });
+
+    it(@"is equal with a nil bodies", ^{
+        // Body is special in that it's the only propery that may be nil,
+        // and [nil isEqual:nil] returns NO.
+
+        LSStubRequest *stubA = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"google.com"];
+        LSStubRequest *stubB = [[LSStubRequest alloc] initWithMethod:@"GET" url:@"google.com"];
+
+        stubA.body = nil;
+        stubB.body = nil;
+
+        [[stubA should] equal:stubB];
     });
 });
 
