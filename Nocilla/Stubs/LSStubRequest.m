@@ -87,11 +87,44 @@
 
 -(BOOL)matchesBody:(id<LSHTTPRequest>)request {
     NSData *reqBody = request.body;
-    if (!self.body || [self.body matches:[[NSString alloc] initWithData:reqBody encoding:NSUTF8StringEncoding]]) {
+    if (!self.body || [self.body matchesData:reqBody]) {
         return YES;
     }
     return NO;
 }
+
+
+#pragma mark - Equality
+
+- (BOOL)isEqual:(id)object {
+    if (self == object) {
+        return YES;
+    }
+
+    if (![object isKindOfClass:[LSStubRequest class]]) {
+        return NO;
+    }
+
+    return [self isEqualToStubRequest:object];
+}
+
+- (BOOL)isEqualToStubRequest:(LSStubRequest *)stubRequest {
+    if (!stubRequest) {
+        return NO;
+    }
+
+    BOOL methodEqual = [self.method isEqualToString:stubRequest.method];
+    BOOL urlMatcherEqual = [self.urlMatcher isEqual:stubRequest.urlMatcher];
+    BOOL headersEqual = [self.headers isEqual:stubRequest.headers];
+    BOOL bodyEqual = (self.body == nil && stubRequest.body == nil) || [self.body isEqual:stubRequest.body];
+
+    return methodEqual && urlMatcherEqual && headersEqual && bodyEqual;
+}
+
+- (NSUInteger)hash {
+    return self.method.hash ^ self.urlMatcher.hash ^ self.headers.hash ^ self.body.hash;
+}
+
 @end
 
 

@@ -25,4 +25,20 @@ context(@"when string does not match", ^{
     });
 });
 
+describe(@"isEqual:", ^{
+    it(@"is equal to another regex matcher with the same regex", ^{
+        LSRegexMatcher *matcherA = [[LSRegexMatcher alloc] initWithRegex:@"([same]+)".regex];
+        LSRegexMatcher *matcherB = [[LSRegexMatcher alloc] initWithRegex:@"([same]+)".regex];
+
+        [[matcherA should] equal:matcherB];
+    });
+
+    it(@"is not equal to another regex matcher with a different regex", ^{
+        LSRegexMatcher *matcherA = [[LSRegexMatcher alloc] initWithRegex:@"([omg]+)".regex];
+        LSRegexMatcher *matcherB = [[LSRegexMatcher alloc] initWithRegex:@"([different]+)".regex];
+
+        [[matcherA shouldNot] equal:matcherB];
+    });
+});
+
 SPEC_END
