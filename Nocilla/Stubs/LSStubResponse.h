@@ -2,8 +2,6 @@
 #import "LSBlockResponse.h"
 #import "LSHTTPResponse.h"
 
-@protocol LSHTTPBody;
-
 @interface LSStubResponse : NSObject<LSHTTPResponse>
 
 @property (nonatomic, assign, readonly) NSInteger statusCode;
