@@ -34,8 +34,8 @@
 }
 
 - (AndBodyMethod)withBody {
-    return ^(id<LSHTTPBody> body) {
-        self.request.body = [body data];
+    return ^(id<LSMatcheable> body) {
+        self.request.body = body.matcher;
         return self;
     };
 }

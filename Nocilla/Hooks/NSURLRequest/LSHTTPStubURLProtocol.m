@@ -28,11 +28,15 @@
 
     LSStubResponse* stubbedResponse = [[LSNocilla sharedInstance] responseForRequest:request];
 
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    [cookieStorage setCookies:[NSHTTPCookie cookiesWithResponseHeaderFields:stubbedResponse.headers forURL:request.url]
+                       forURL:request.URL mainDocumentURL:request.URL];
+
     if (stubbedResponse.shouldFail) {
         [client URLProtocol:self didFailWithError:stubbedResponse.error];
     } else {
         NSHTTPURLResponse* urlResponse;
-        id<LSHTTPBody> body = nil;
+        NSData* body = stubbedResponse.body;
         if (stubbedResponse.blockResponse) {
             NSDictionary *headers = stubbedResponse.headers;
             NSInteger status = stubbedResponse.statusCode;
@@ -46,13 +50,30 @@
                                                       statusCode:stubbedResponse.statusCode
                                                     headerFields:stubbedResponse.headers
                                                      requestTime:0];
-            body = stubbedResponse.body;
         }
 
-        [client URLProtocol:self didReceiveResponse:urlResponse
-         cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-        [client URLProtocol:self didLoadData:body.data];
-        [client URLProtocolDidFinishLoading:self];
+        if (stubbedResponse.statusCode < 300 || stubbedResponse.statusCode > 399
+            || stubbedResponse.statusCode == 304 || stubbedResponse.statusCode == 305 ) {
+
+            [client URLProtocol:self didReceiveResponse:urlResponse
+             cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+            [client URLProtocol:self didLoadData:body];
+            [client URLProtocolDidFinishLoading:self];
+        } else {
+
+            NSURL *newURL = [NSURL URLWithString:[stubbedResponse.headers objectForKey:@"Location"] relativeToURL:request.URL];
+            NSMutableURLRequest *redirectRequest = [NSMutableURLRequest requestWithURL:newURL];
+
+            [redirectRequest setAllHTTPHeaderFields:[NSHTTPCookie requestHeaderFieldsWithCookies:[cookieStorage cookiesForURL:newURL]]];
+
+            [client URLProtocol:self
+         wasRedirectedToRequest:redirectRequest
+               redirectResponse:urlResponse];
+            // According to: https://developer.apple.com/library/ios/samplecode/CustomHTTPProtocol/Listings/CustomHTTPProtocol_Core_Code_CustomHTTPProtocol_m.html
+            // needs to abort the original request
+            [client URLProtocol:self didFailWithError:[NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:nil]];
+
+        }
     }
 }
 

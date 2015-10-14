@@ -30,7 +30,7 @@
                 NSData *readData = [NSData dataWithBytes:buffer length:bytesRead];
                 [data appendData:readData];
             } else if (bytesRead < 0) {
-                [NSException raise:@"NocillaStreamReadError" format:@"An error occurred while reading HTTPBodyStream (%d)", bytesRead];
+                [NSException raise:@"NocillaStreamReadError" format:@"An error occurred while reading HTTPBodyStream (%ld)", (long)bytesRead];
             } else if (bytesRead == 0) {
                 break;
             }
