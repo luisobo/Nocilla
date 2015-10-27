@@ -6,6 +6,7 @@
 @property (nonatomic, strong, readwrite) NSString *method;
 @property (nonatomic, strong, readwrite) LSMatcher *urlMatcher;
 @property (nonatomic, strong, readwrite) NSMutableDictionary *mutableHeaders;
+@property (nonatomic, strong, readwrite) NSMutableDictionary *mutableCookies;
 
 -(BOOL)matchesMethod:(id<LSHTTPRequest>)request;
 -(BOOL)matchesURL:(id<LSHTTPRequest>)request;
@@ -30,18 +31,37 @@
 }
 
 - (void)setHeader:(NSString *)header value:(NSString *)value {
-    [self.mutableHeaders setValue:value forKey:header];
+	if ([header isEqualToString:@"Cookie"]) {
+		
+		[self processCookieString:value block:^BOOL(NSString *header, NSString *value) {
+			[self setCookie:header value:value];
+			return YES;
+		}];
+	} else {
+		[self.mutableHeaders setValue:value forKey:header];
+	}
 }
 
 - (NSDictionary *)headers {
     return [NSDictionary dictionaryWithDictionary:self.mutableHeaders];;
 }
 
+- (void)setCookie:(NSString *)cookieName value:(NSString *)value {
+	[self.mutableCookies setValue:value forKey:cookieName];
+}
+
+- (NSDictionary *)cookies {
+	return [NSDictionary dictionaryWithDictionary:self.mutableCookies];;
+}
+
+
+
 - (NSString *)description {
-    return [NSString stringWithFormat:@"StubRequest:\nMethod: %@\nURL: %@\nHeaders: %@\nBody: %@\nResponse: %@",
+    return [NSString stringWithFormat:@"StubRequest:\nMethod: %@\nURL: %@\nHeaders: %@\nCookies: %@\nBody: %@\nResponse: %@",
             self.method,
             self.urlMatcher,
             self.headers,
+			self.cookies,
             self.body,
             self.response];
 }
@@ -58,6 +78,7 @@
     if ([self matchesMethod:request]
         && [self matchesURL:request]
         && [self matchesHeaders:request]
+		&& [self matchesCookies:request]
         && [self matchesBody:request]
         ) {
         return YES;
@@ -76,13 +97,56 @@
     return [self.urlMatcher matches:[request.url absoluteString]];
 }
 
+-(BOOL) processCookieString:(NSString*)headerValue block:(BOOL (^)(NSString *header, NSString *value))block
+{
+	NSArray *cookieStrings = [headerValue componentsSeparatedByString:@"; "];
+
+	for (NSString *cookieString in cookieStrings) {
+		NSRange range = [cookieString rangeOfString:@"="];
+		if (range.location != NSNotFound) {
+			
+			NSString *name = [cookieString substringToIndex:range.location];
+			NSString *value = [cookieString substringFromIndex:range.location];
+			
+			if (! block(name, value)) {
+				return NO;
+			}
+		}
+		
+	}
+}
+
 -(BOOL)matchesHeaders:(id<LSHTTPRequest>)request {
     for (NSString *header in self.headers) {
+		if ([header isEqualToString:@"Cookie"]) {
+			// should never happen
+			return NO;
+		}
+		
         if (![[request.headers objectForKey:header] isEqualToString:[self.headers objectForKey:header]]) {
             return NO;
         }
     }
     return YES;
+}
+
+-(BOOL)matchesCookie:(NSString*)cookieName value:(NSString*)value
+{
+	if (![value isEqualToString:[self.cookies objectForKey:cookieName]]) {
+		return NO;
+	}
+	return YES;
+}
+
+
+-(BOOL)matchesCookies:(id<LSHTTPRequest>)request {
+	for (NSString *cookie in self.cookies) {
+		
+		if (![self matchesCookie:cookie value:[request.cookies objectForKey:cookie]]) {
+			return NO;
+		}
+	}
+	return YES;
 }
 
 -(BOOL)matchesBody:(id<LSHTTPRequest>)request {
