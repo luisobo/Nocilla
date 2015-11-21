@@ -140,7 +140,7 @@ withBody([@"bar" dataUsingEncoding:NSUTF8StringEncoding]);
 #### Returning raw responses recorded with `curl -is`
 `curl -is http://api.example.com/dogs.json > /tmp/example_curl_-is_output.txt`
 
-Or through tools such as [SWHttpTrafficRecorder](https://github.com/capitalone/SWHttpTrafficRecorder) which would recorded all raw responses used by an app while the app is accessed.
+Or through tools such as [SWHttpTrafficRecorder](https://github.com/capitalone/SWHttpTrafficRecorder) which would record all HTTP(s) responses in formats of raw reponses or content/body only (.json files for MIME type of `application/json` as in some of examples above) while the app is accessed. 
 
 ```objc
 stubRequest(@"GET", @"https://api.example.com/dogs.json").
