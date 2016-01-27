@@ -19,7 +19,7 @@
 		5475C75C1AC4254600EB9514 /* LSMatcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889251728C36B00288022 /* LSMatcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C75D1AC4254600EB9514 /* NSString+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892B1728C3FF00288022 /* NSString+Matcheable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C75E1AC4254600EB9514 /* NSString+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = A028892C1728C3FF00288022 /* NSString+Matcheable.m */; };
-		5475C75F1AC4254600EB9514 /* LSMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892F1728C52000288022 /* LSMatcher.h */; };
+		5475C75F1AC4254600EB9514 /* LSMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A028892F1728C52000288022 /* LSMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C7601AC4254600EB9514 /* LSMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889301728C52100288022 /* LSMatcher.m */; };
 		5475C7611AC4254600EB9514 /* LSRegexMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A02889331728C88D00288022 /* LSRegexMatcher.h */; };
 		5475C7621AC4254600EB9514 /* LSRegexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A02889341728C88D00288022 /* LSRegexMatcher.m */; };
