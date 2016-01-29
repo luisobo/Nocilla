@@ -2,6 +2,7 @@
 #import "NSString+Matcheable.h"
 #import "NSRegularExpression+Matcheable.h"
 #import "NSData+Matcheable.h"
+#import "LSBlockResponse.h"
 
 @class LSStubRequestDSL;
 @class LSStubResponseDSL;
@@ -14,6 +15,7 @@ typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);
 typedef LSStubRequestDSL *(^AndBodyMethod)(id<LSMatcheable>);
 typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
 typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData);
+typedef LSStubResponseDSL *(^AndDoResponseMethod)(LSBlockResponse);
 typedef void (^AndFailWithErrorMethod)(NSError *error);
 
 @interface LSStubRequestDSL : NSObject
@@ -25,6 +27,7 @@ typedef void (^AndFailWithErrorMethod)(NSError *error);
 @property (nonatomic, strong, readonly) AndReturnMethod andReturn;
 @property (nonatomic, strong, readonly) AndReturnRawResponseMethod andReturnRawResponse;
 @property (nonatomic, strong, readonly) AndFailWithErrorMethod andFailWithError;
+@property (nonatomic, strong, readonly) AndDoResponseMethod andDo;
 
 @end
 

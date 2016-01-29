@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03B83B5219DF866C00DC04E4 /* LSBlockResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 03B83B5119DF866C00DC04E4 /* LSBlockResponse.h */; };
 		0FA3E7FE1680775B001DB582 /* LSStubResponseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */; };
 		54540B881AC426490042C146 /* Nocilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5475C73D1AC4252400EB9514 /* Nocilla.framework */; };
 		5460AD241AD4052C00681BF9 /* Nocilla.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5475C73D1AC4252400EB9514 /* Nocilla.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -112,6 +113,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03B83B5119DF866C00DC04E4 /* LSBlockResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSBlockResponse.h; path = DSL/LSBlockResponse.h; sourceTree = "<group>"; };
 		0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponseSpec.m; sourceTree = "<group>"; };
 		301673065B73A4E081418B4F /* Pods-NocillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.release.xcconfig"; sourceTree = "<group>"; };
 		414F89A81D6BD988C531EE91 /* Pods-NocillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		A02C7ACF15ED70170061FCEE /* DSL */ = {
 			isa = PBXGroup;
 			children = (
+				03B83B5119DF866C00DC04E4 /* LSBlockResponse.h */,
 				A02C7AD015ED702B0061FCEE /* LSStubRequestDSL.h */,
 				A02C7AD115ED702B0061FCEE /* LSStubRequestDSL.m */,
 				A02C7AD815ED704F0061FCEE /* LSStubResponseDSL.h */,
@@ -560,6 +563,7 @@
 				5475C75D1AC4254600EB9514 /* NSString+Matcheable.h in Headers */,
 				5475C7871AC4254600EB9514 /* NSURLRequest+LSHTTPRequest.h in Headers */,
 				5475C7751AC4254600EB9514 /* LSStubResponseDSL.h in Headers */,
+				03B83B5219DF866C00DC04E4 /* LSBlockResponse.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

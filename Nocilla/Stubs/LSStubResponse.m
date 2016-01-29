@@ -2,6 +2,7 @@
 
 @interface LSStubResponse ()
 @property (nonatomic, assign, readwrite) NSInteger statusCode;
+@property (nonatomic, strong, readwrite) LSBlockResponse blockResponse;
 @property (nonatomic, strong) NSMutableDictionary *mutableHeaders;
 @property (nonatomic, assign) UInt64 offset;
 @property (nonatomic, assign, getter = isDone) BOOL done;
@@ -61,6 +62,14 @@
             }
             CFRelease(httpMessage);
         }
+    }
+    return self;
+}
+
+- (id)initWithBlock:(LSBlockResponse)block {
+    self = [self initDefaultResponse];
+    if (self) {
+        self.blockResponse = [block copy];
     }
     return self;
 }

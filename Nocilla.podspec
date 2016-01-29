@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
     'Nocilla/Categories/NSString+Nocilla.h',
     'Nocilla/DSL/LSStubRequestDSL.h',
     'Nocilla/DSL/LSStubResponseDSL.h',
+    'Nocilla/DSL/LSBlockResponse.h',
     'Nocilla/LSNocilla.h',
     'Nocilla/Matchers/LSMatcheable.h',
     'Nocilla/Matchers/LSMatcher.h',
