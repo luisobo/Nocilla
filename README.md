@@ -191,7 +191,7 @@ When testing asynchrounous requests your request will be sent on a different thr
 
 ### Submit a PR to add your company here!
 
-- [CM Telecom] (https://www.cmtelecom.com)
+- [CM Telecom](https://www.cmtelecom.com)
 - [MessageBird](https://www.messagebird.com)
 - [Groupon](http://www.groupon.com)
 - [Pixable](http://www.pixable.com)
