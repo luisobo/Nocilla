@@ -5,7 +5,6 @@ platform :ios, '9.0'
 project 'Nocilla'
 
 target :NocillaTests do
-   inhibit_all_warnings!
    inherit! :search_paths
 
    pod 'MKNetworkKit', '~> 0.87'
