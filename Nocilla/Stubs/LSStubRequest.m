@@ -31,6 +31,7 @@
 
 - (void)setHeader:(NSString *)header value:(NSString *)value {
     [self.mutableHeaders setValue:value forKey:header];
+    [self.response setHeader:header value:value];
 }
 
 - (NSDictionary *)headers {
