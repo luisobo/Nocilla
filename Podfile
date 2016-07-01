@@ -1,9 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '6.0'
+platform :ios, '9.0'
 
-target :NocillaTests, :exclusive => true do
+project 'Nocilla'
+
+target :NocillaTests do
    inhibit_all_warnings!
+   inherit! :search_paths
 
    pod 'MKNetworkKit', '~> 0.87'
    pod 'AFNetworking', '~> 2.4.1'
