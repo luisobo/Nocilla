@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FA3E7FE1680775B001DB582 /* LSStubResponseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */; };
+		41DAE4B53117AFF21ABD9650 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 980EDC1443827FA242C39295 /* libPods-NocillaTests.a */; };
 		54540B881AC426490042C146 /* Nocilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5475C73D1AC4252400EB9514 /* Nocilla.framework */; };
 		5460AD241AD4052C00681BF9 /* Nocilla.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5475C73D1AC4252400EB9514 /* Nocilla.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5475C7561AC4254600EB9514 /* NSString+Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A028893C1728CA5900288022 /* NSString+Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,7 +66,6 @@
 		5475C78B1AC4254600EB9514 /* Nocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A085B84015E30749007D33C1 /* Nocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C78C1AC4254600EB9514 /* LSNocilla.h in Headers */ = {isa = PBXBuildFile; fileRef = A074ABA915E30B0000730EE5 /* LSNocilla.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5475C78D1AC4254600EB9514 /* LSNocilla.m in Sources */ = {isa = PBXBuildFile; fileRef = A074ABAA15E30B0000730EE5 /* LSNocilla.m */; };
-		5B41631392BA47B7B7494C73 /* libPods-NocillaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */; };
 		A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A0708DBC15E70D9800352085 /* MKNetworkKitStubbingSpec.m */; };
 		A0055EE815EEAF8C005D6C85 /* LSTestingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */; };
 		A01CEBDE175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A01CEBDD175FFE3200637CE7 /* ASIHTTPRequestStubbingSpec.m */; };
@@ -113,9 +113,10 @@
 
 /* Begin PBXFileReference section */
 		0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponseSpec.m; sourceTree = "<group>"; };
-		301673065B73A4E081418B4F /* Pods-NocillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.release.xcconfig"; sourceTree = "<group>"; };
-		414F89A81D6BD988C531EE91 /* Pods-NocillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		15E14959C852D96F22BB841E /* Pods-NocillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5475C73D1AC4252400EB9514 /* Nocilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nocilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		851354E55E0FFF954387D292 /* Pods-NocillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.release.xcconfig"; sourceTree = "<group>"; };
+		980EDC1443827FA242C39295 /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0055EE615EEAF8C005D6C85 /* LSTestingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSTestingConnection.h; path = Support/LSTestingConnection.h; sourceTree = "<group>"; };
 		A0055EE715EEAF8C005D6C85 /* LSTestingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSTestingConnection.m; path = Support/LSTestingConnection.m; sourceTree = "<group>"; };
 		A0055F0115EFFA8B005D6C85 /* NSURLRequestHookSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSURLRequestHookSpec.m; path = Hooks/NSURLRequest/NSURLRequestHookSpec.m; sourceTree = "<group>"; };
@@ -195,9 +196,7 @@
 		A0EE631415ECD8B900009A08 /* NSURLRequest+LSHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequest.m"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequest.m"; sourceTree = "<group>"; };
 		A0EE631715ECDAF300009A08 /* LSHTTPRequestDiffSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSHTTPRequestDiffSpec.m; path = Diff/LSHTTPRequestDiffSpec.m; sourceTree = "<group>"; };
 		AA0A44051758E27100D2F909 /* NSURLRequest+LSHTTPRequestSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+LSHTTPRequestSpec.m"; path = "Hooks/NSURLRequest/NSURLRequest+LSHTTPRequestSpec.m"; sourceTree = "<group>"; };
-		CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48784AB1AFD7678001B5F2D /* LSDataMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSDataMatcherSpec.m; path = Matchers/LSDataMatcherSpec.m; sourceTree = "<group>"; };
-		F7621264AB6B45CE84724138 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,13 +215,22 @@
 				A0BBF5CA16DD9BDD00D660D2 /* CoreGraphics.framework in Frameworks */,
 				A0708DB415E70C6600352085 /* UIKit.framework in Frameworks */,
 				A085B84E15E30749007D33C1 /* Foundation.framework in Frameworks */,
-				5B41631392BA47B7B7494C73 /* libPods-NocillaTests.a in Frameworks */,
+				41DAE4B53117AFF21ABD9650 /* libPods-NocillaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6823E22447183B8DA2AC1B4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15E14959C852D96F22BB841E /* Pods-NocillaTests.debug.xcconfig */,
+				851354E55E0FFF954387D292 /* Pods-NocillaTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A0055EE515EEAF73005D6C85 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,7 +404,7 @@
 				A085B85215E30749007D33C1 /* NocillaTests */,
 				A085B83A15E30749007D33C1 /* Frameworks */,
 				A085B83915E30749007D33C1 /* Products */,
-				EA12116AA2722E6C154AC4C4 /* Pods */,
+				6823E22447183B8DA2AC1B4D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -415,8 +423,7 @@
 				A0BBF5C916DD9BDD00D660D2 /* CoreGraphics.framework */,
 				A0708DB315E70C6600352085 /* UIKit.framework */,
 				A085B83B15E30749007D33C1 /* Foundation.framework */,
-				CADACB517CAB41DD8263C667 /* libPods-NocillaTests.a */,
-				F7621264AB6B45CE84724138 /* libPods.a */,
+				980EDC1443827FA242C39295 /* libPods-NocillaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -514,15 +521,6 @@
 			name = Stubs;
 			sourceTree = "<group>";
 		};
-		EA12116AA2722E6C154AC4C4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				414F89A81D6BD988C531EE91 /* Pods-NocillaTests.debug.xcconfig */,
-				301673065B73A4E081418B4F /* Pods-NocillaTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -588,12 +586,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A085B86015E30749007D33C1 /* Build configuration list for PBXNativeTarget "NocillaTests" */;
 			buildPhases = (
-				9D4C7BC8F2DF4EA496967380 /* Check Pods Manifest.lock */,
+				F00951BFE94B7EF1B950B054 /* [CP] Check Pods Manifest.lock */,
 				A085B84415E30749007D33C1 /* Sources */,
 				A085B84515E30749007D33C1 /* Frameworks */,
 				A085B84615E30749007D33C1 /* Resources */,
-				C1CB41255F6241919E9FA64B /* Copy Pods Resources */,
 				5460AD231AD4052000681BF9 /* CopyFiles */,
+				A7B08B3F9C23409A17CCD273 /* [CP] Embed Pods Frameworks */,
+				1F0854094C7ADE3E46028DCE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -657,34 +656,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9D4C7BC8F2DF4EA496967380 /* Check Pods Manifest.lock */ = {
+		1F0854094C7ADE3E46028DCE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C1CB41255F6241919E9FA64B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7B08B3F9C23409A17CCD273 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F00951BFE94B7EF1B950B054 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -897,7 +911,7 @@
 		};
 		A085B86115E30749007D33C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 414F89A81D6BD988C531EE91 /* Pods-NocillaTests.debug.xcconfig */;
+			baseConfigurationReference = 15E14959C852D96F22BB841E /* Pods-NocillaTests.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nocilla/Nocilla-Prefix.pch";
@@ -909,7 +923,7 @@
 		};
 		A085B86215E30749007D33C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 301673065B73A4E081418B4F /* Pods-NocillaTests.release.xcconfig */;
+			baseConfigurationReference = 851354E55E0FFF954387D292 /* Pods-NocillaTests.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nocilla/Nocilla-Prefix.pch";
