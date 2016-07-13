@@ -4,10 +4,6 @@
 #import "LSStubRequest.h"
 #import "NSURLRequest+DSL.h"
 
-@interface NSHTTPURLResponse(UndocumentedInitializer)
-- (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;
-@end
-
 @implementation LSHTTPStubURLProtocol
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
@@ -35,9 +31,9 @@
         [client URLProtocol:self didFailWithError:stubbedResponse.error];
     } else {
         NSHTTPURLResponse* urlResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL
-                                                  statusCode:stubbedResponse.statusCode
-                                                headerFields:stubbedResponse.headers
-                                                 requestTime:0];
+                                                                     statusCode:stubbedResponse.statusCode
+                                                                    HTTPVersion:nil
+                                                                   headerFields:stubbedResponse.headers];
 
         if (stubbedResponse.statusCode < 300 || stubbedResponse.statusCode > 399
             || stubbedResponse.statusCode == 304 || stubbedResponse.statusCode == 305 ) {
