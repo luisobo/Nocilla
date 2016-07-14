@@ -4,6 +4,8 @@
 #import "LSStubRequest.h"
 #import "NSURLRequest+DSL.h"
 
+NSString * const kHTTPResponseHeaderLocationKey = @"Location";
+
 @interface NSHTTPURLResponse(UndocumentedInitializer)
 - (id)initWithURL:(NSURL*)URL statusCode:(NSInteger)statusCode headerFields:(NSDictionary*)headerFields requestTime:(double)requestTime;
 @end
@@ -38,9 +40,10 @@
                                                   statusCode:stubbedResponse.statusCode
                                                 headerFields:stubbedResponse.headers
                                                  requestTime:0];
-
+        
         if (stubbedResponse.statusCode < 300 || stubbedResponse.statusCode > 399
-            || stubbedResponse.statusCode == 304 || stubbedResponse.statusCode == 305 ) {
+            || stubbedResponse.statusCode == 304 || stubbedResponse.statusCode == 305
+            || ![stubbedResponse.headers.allKeys containsObject:kHTTPResponseHeaderLocationKey]) {
             NSData *body = stubbedResponse.body;
 
             [client URLProtocol:self didReceiveResponse:urlResponse
@@ -49,7 +52,7 @@
             [client URLProtocolDidFinishLoading:self];
         } else {
 
-            NSURL *newURL = [NSURL URLWithString:[stubbedResponse.headers objectForKey:@"Location"] relativeToURL:request.URL];
+            NSURL *newURL = [NSURL URLWithString:[stubbedResponse.headers objectForKey:kHTTPResponseHeaderLocationKey] relativeToURL:request.URL];
             NSMutableURLRequest *redirectRequest = [NSMutableURLRequest requestWithURL:newURL];
 
             [redirectRequest setAllHTTPHeaderFields:[NSHTTPCookie requestHeaderFieldsWithCookies:[cookieStorage cookiesForURL:newURL]]];

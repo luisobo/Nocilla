@@ -152,6 +152,25 @@ describe(@"#startLoading", ^{
                 }) should] raiseWithName:@"NocillaUnexpectedRequest" reason:expectedMessage];
             });
         });
+        
+        context(@"that returns a 303 without specifying a Location header", ^{
+            
+            beforeEach(^{
+                
+                LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"GET" url:stringUrl];
+                stubRequest.response = [[LSStubResponse alloc] initWithStatusCode:(NSInteger)303];
+                
+                [[LSNocilla sharedInstance] stub:@selector(stubbedRequests) andReturn:@[stubRequest]];
+                
+                [protocol startLoading];
+            });
+            
+            it(@"should send back a response with 303", ^{
+                
+                [[client.response should] beKindOfClass:[NSHTTPURLResponse class]];
+                [[theValue(((NSHTTPURLResponse *)client.response).statusCode) should] equal:theValue((NSInteger)303)];
+            });
+        });
     });
 });
 
