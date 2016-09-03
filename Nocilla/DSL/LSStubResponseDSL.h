@@ -5,15 +5,15 @@
 
 @protocol LSHTTPBody;
 
-typedef LSStubResponseDSL *(^ResponseWithBodyMethod)(id<LSHTTPBody>);
-typedef LSStubResponseDSL *(^ResponseWithHeaderMethod)(NSString *, NSString *);
-typedef LSStubResponseDSL *(^ResponseWithHeadersMethod)(NSDictionary *);
+typedef LSStubResponseDSL * _Nonnull (^ResponseWithBodyMethod)(_Nullable id<LSHTTPBody>);
+typedef LSStubResponseDSL * _Nonnull (^ResponseWithHeaderMethod)(NSString * _Nonnull, NSString * _Nullable);
+typedef LSStubResponseDSL * _Nonnull (^ResponseWithHeadersMethod)(NSDictionary * _Nonnull);
 
 @interface LSStubResponseDSL : NSObject
-- (id)initWithResponse:(LSStubResponse *)response;
+- (id _Nonnull)initWithResponse:(LSStubResponse * _Nonnull)response;
 
-@property (nonatomic, strong, readonly) ResponseWithHeaderMethod withHeader;
-@property (nonatomic, strong, readonly) ResponseWithHeadersMethod withHeaders;
-@property (nonatomic, strong, readonly) ResponseWithBodyMethod withBody;
+@property (nonatomic, strong, readonly) _Nonnull ResponseWithHeaderMethod withHeader;
+@property (nonatomic, strong, readonly) _Nonnull ResponseWithHeadersMethod withHeaders;
+@property (nonatomic, strong, readonly) _Nonnull ResponseWithBodyMethod withBody;
 
 @end
