@@ -199,6 +199,7 @@ When testing asynchrounous requests your request will be sent on a different thr
 - [Venmo](https://www.venmo.com)
 - [Lighthouse](http://www.lighthouselabs.co.uk)
 - [GE Digital](http://www.ge.com/digital/)
+- [Jobandtalent](http://www.jobandtalent.com)
 
 ## Other alternatives
 * [ILTesting](https://github.com/InfiniteLoopDK/ILTesting)
