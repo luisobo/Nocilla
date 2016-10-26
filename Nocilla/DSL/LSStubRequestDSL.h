@@ -9,31 +9,31 @@
 
 @protocol LSHTTPBody;
 
-typedef LSStubRequestDSL *(^WithHeaderMethod)(NSString *, NSString *);
-typedef LSStubRequestDSL *(^WithHeadersMethod)(NSDictionary *);
-typedef LSStubRequestDSL *(^AndBodyMethod)(id<LSMatcheable>);
-typedef LSStubResponseDSL *(^AndReturnMethod)(NSInteger);
-typedef LSStubResponseDSL *(^AndReturnRawResponseMethod)(NSData *rawResponseData);
-typedef void (^AndFailWithErrorMethod)(NSError *error);
+typedef LSStubRequestDSL * _Nonnull (^WithHeaderMethod)(NSString * _Nonnull, NSString * _Nullable);
+typedef LSStubRequestDSL * _Nonnull (^WithHeadersMethod)(NSDictionary * _Nullable);
+typedef LSStubRequestDSL * _Nonnull (^AndBodyMethod)(_Nullable id<LSMatcheable>);
+typedef LSStubResponseDSL * _Nonnull (^AndReturnMethod)(NSInteger);
+typedef LSStubResponseDSL * _Nonnull (^AndReturnRawResponseMethod)(NSData * _Nonnull rawResponseData);
+typedef void (^AndFailWithErrorMethod)(NSError * _Nonnull error);
 
 @interface LSStubRequestDSL : NSObject
-- (id)initWithRequest:(LSStubRequest *)request;
+- (id _Nonnull)initWithRequest:(LSStubRequest * _Nonnull)request;
 
-@property (nonatomic, strong, readonly) WithHeaderMethod withHeader;
-@property (nonatomic, strong, readonly) WithHeadersMethod withHeaders;
-@property (nonatomic, strong, readonly) AndBodyMethod withBody;
-@property (nonatomic, strong, readonly) AndReturnMethod andReturn;
-@property (nonatomic, strong, readonly) AndReturnRawResponseMethod andReturnRawResponse;
-@property (nonatomic, strong, readonly) AndFailWithErrorMethod andFailWithError;
+@property (nonatomic, strong, readonly) _Nonnull WithHeaderMethod withHeader;
+@property (nonatomic, strong, readonly) _Nonnull WithHeadersMethod withHeaders;
+@property (nonatomic, strong, readonly) _Nonnull AndBodyMethod withBody;
+@property (nonatomic, strong, readonly) _Nonnull AndReturnMethod andReturn;
+@property (nonatomic, strong, readonly) _Nonnull AndReturnRawResponseMethod andReturnRawResponse;
+@property (nonatomic, strong, readonly) _Nonnull AndFailWithErrorMethod andFailWithError;
 
 @end
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-    
-LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url);
-    
+
+LSStubRequestDSL * _Nonnull stubRequest(NSString * _Nonnull method, _Nonnull id<LSMatcheable> url);
+
 #ifdef __cplusplus
 }
 #endif
