@@ -33,6 +33,23 @@
     };
 }
 
+- (WithCookiesMethod)withCookies {
+	return ^(NSDictionary *cookies) {
+		for (NSString *cookieName in cookies) {
+			NSString *value = [cookies objectForKey:cookieName];
+			[self.request setCookie:cookieName value:value];
+		}
+		return self;
+	};
+}
+
+- (WithCookieMethod)withCookie {
+	return ^(NSString * cookieName, NSString * value) {
+		[self.request setCookie:cookieName value:value];
+		return self;
+	};
+}
+
 - (AndBodyMethod)withBody {
     return ^(id<LSMatcheable> body) {
         self.request.body = body.matcher;
