@@ -11,7 +11,7 @@
 
 @implementation LSStubResponse
 
-#pragma Initializers
+#pragma mark Initializers
 - (id)initDefaultResponse {
     self = [super init];
     if (self) {
