@@ -37,4 +37,10 @@
     return self.regex.hash;
 }
 
+#pragma mark - Describing Objects
+
+- (NSString *)description {
+	return [[super description] stringByAppendingFormat:@" %@", self.regex.pattern];
+}
+
 @end
