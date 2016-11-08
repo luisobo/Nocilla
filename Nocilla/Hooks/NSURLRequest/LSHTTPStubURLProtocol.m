@@ -27,6 +27,8 @@
     [cookieStorage setCookies:[NSHTTPCookie cookiesWithResponseHeaderFields:stubbedResponse.headers forURL:request.url]
                        forURL:request.URL mainDocumentURL:request.URL];
 
+    [stubbedResponse waitForGo];
+
     if (stubbedResponse.shouldFail) {
         [client URLProtocol:self didFailWithError:stubbedResponse.error];
     } else {
