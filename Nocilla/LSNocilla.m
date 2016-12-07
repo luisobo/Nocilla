@@ -71,6 +71,10 @@ static LSNocilla *sharedInstace = nil;
     [self.mutableRequests replaceObjectAtIndex:index withObject:request];
 }
 
+- (void)removeStubbedRequest:(LSStubRequest *)request {
+    [self.mutableRequests removeObject:request];
+}
+
 - (void)clearStubs {
     [self.mutableRequests removeAllObjects];
 }

@@ -70,3 +70,7 @@ LSStubRequestDSL * stubRequest(NSString *method, id<LSMatcheable> url) {
     [[LSNocilla sharedInstance] addStubbedRequest:request];
     return dsl;
 }
+
+void unstubRequest(LSStubRequestDSL *dsl) {
+    [[LSNocilla sharedInstance] removeStubbedRequest:dsl.request];
+}

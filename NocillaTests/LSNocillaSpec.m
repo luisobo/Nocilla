@@ -5,6 +5,10 @@
 
 SPEC_BEGIN(LSNocillaSpec)
 
+beforeEach(^{
+    [[LSNocilla sharedInstance] clearStubs];
+});
+
 describe(@"-responseForRequest:", ^{
     context(@"when the specified request matches a previously stubbed request", ^{
         it(@"returns the associated response", ^{
@@ -20,8 +24,6 @@ describe(@"-responseForRequest:", ^{
             LSStubResponse *result = [[LSNocilla sharedInstance] responseForRequest:actualRequest];
 
             [[result should] equal:stubbedResponse];
-
-            [[LSNocilla sharedInstance] clearStubs];
         });
 
         describe(@"when a stubbed request is replaced with a new stub", ^{
@@ -56,15 +58,47 @@ describe(@"-responseForRequest:", ^{
             [actualRequest stub:@selector(url) andReturn:[NSURL URLWithString:@"http://www.google.com"]];
             [actualRequest stub:@selector(method) andReturn:@"GET"];
 
-
             NSString *expectedMessage = @"An unexpected HTTP request was fired.\n\nUse this snippet to stub the request:\nstubRequest(@\"GET\", @\"http://www.google.com\");\n";
             [[theBlock(^{
                 [[LSNocilla sharedInstance] responseForRequest:actualRequest];
             }) should] raiseWithName:@"NocillaUnexpectedRequest" reason:expectedMessage];
-
-            [[LSNocilla sharedInstance] clearStubs];
         });
     });
 });
+
+describe(@"-addStubbedRequest:", ^{
+    it(@"adds the request to the stubbed requests", ^{
+        LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+        [[LSNocilla sharedInstance] addStubbedRequest:stubRequest];
+        [[[[LSNocilla sharedInstance] stubbedRequests] should] contain:stubRequest];
+    });
+});
+
+describe(@"-removeStubbedRequest:", ^{
+    it(@"remove any requests which match the given stubbed request", ^{
+        LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+        [[LSNocilla sharedInstance] addStubbedRequest:stubRequest];
+        [[[[LSNocilla sharedInstance] stubbedRequests] should] contain:stubRequest];
+
+        [[LSNocilla sharedInstance] removeStubbedRequest:stubRequest];
+
+        [[[[LSNocilla sharedInstance] stubbedRequests] should] beEmpty];
+    });
+});
+
+describe(@"-clearStubs", ^{
+    it(@"remove all requests from the stubbed requests", ^{
+        LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
+        LSStubRequest *otherRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/tails.json"];
+        [[LSNocilla sharedInstance] addStubbedRequest:stubRequest];
+        [[LSNocilla sharedInstance] addStubbedRequest:otherRequest];
+        [[[[LSNocilla sharedInstance] stubbedRequests] should] containObjects:stubRequest, otherRequest, nil];
+
+        [[LSNocilla sharedInstance] clearStubs];
+
+        [[[[LSNocilla sharedInstance] stubbedRequests] should] beEmpty];
+    });
+});
+
 
 SPEC_END
