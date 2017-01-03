@@ -80,6 +80,17 @@ static LSNocilla *sharedInstace = nil;
 
     for(LSStubRequest *someStubbedRequest in requests) {
         if ([someStubbedRequest matchesRequest:actualRequest]) {
+
+            LSStubResponse *response = someStubbedRequest.response;
+
+            if (![response.headers isEqualToDictionary:someStubbedRequest.headers])
+            {
+                for (NSString *header in someStubbedRequest.headers.keyEnumerator)
+                {
+                    [response setHeader:header value:someStubbedRequest.headers[header]];
+                }
+            }
+
             return someStubbedRequest.response;
         }
     }
