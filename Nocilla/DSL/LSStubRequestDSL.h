@@ -23,6 +23,7 @@ typedef void (^AndFailWithErrorMethod)(NSError *error);
 @property (nonatomic, strong, readonly) WithHeadersMethod withHeaders;
 @property (nonatomic, strong, readonly) AndBodyMethod withBody;
 @property (nonatomic, strong, readonly) AndReturnMethod andReturn;
+@property (nonatomic, strong, readonly) AndReturnMethod andReturnWithStatusCode;
 @property (nonatomic, strong, readonly) AndReturnRawResponseMethod andReturnRawResponse;
 @property (nonatomic, strong, readonly) AndFailWithErrorMethod andFailWithError;
 
