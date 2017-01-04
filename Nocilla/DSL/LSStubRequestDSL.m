@@ -48,6 +48,10 @@
     };
 }
 
+- (AndReturnMethod)andReturnWithStatusCode {
+  return self.andReturn;
+}
+
 - (AndReturnRawResponseMethod)andReturnRawResponse {
     return ^(NSData *rawResponseData) {
         self.request.response = [[LSStubResponse alloc] initWithRawResponse:rawResponseData];
