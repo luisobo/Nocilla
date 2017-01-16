@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012091811E2CF4A9008B0520 /* NSURL+Matcheable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0120917F1E2CF4A9008B0520 /* NSURL+Matcheable.h */; };
+		012091821E2CF4A9008B0520 /* NSURL+Matcheable.m in Sources */ = {isa = PBXBuildFile; fileRef = 012091801E2CF4A9008B0520 /* NSURL+Matcheable.m */; };
+		012091851E2CF502008B0520 /* LSURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 012091831E2CF502008B0520 /* LSURLMatcher.h */; };
+		012091861E2CF502008B0520 /* LSURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 012091841E2CF502008B0520 /* LSURLMatcher.m */; };
+		012091881E2CF97B008B0520 /* LSURLMatcherSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 012091871E2CF97B008B0520 /* LSURLMatcherSpec.m */; };
 		0FA3E7FE1680775B001DB582 /* LSStubResponseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */; };
 		54540B881AC426490042C146 /* Nocilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5475C73D1AC4252400EB9514 /* Nocilla.framework */; };
 		5460AD241AD4052C00681BF9 /* Nocilla.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5475C73D1AC4252400EB9514 /* Nocilla.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -222,6 +227,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0120917F1E2CF4A9008B0520 /* NSURL+Matcheable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+Matcheable.h"; path = "Matchers/NSURL+Matcheable.h"; sourceTree = "<group>"; };
+		012091801E2CF4A9008B0520 /* NSURL+Matcheable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Matcheable.m"; path = "Matchers/NSURL+Matcheable.m"; sourceTree = "<group>"; };
+		012091831E2CF502008B0520 /* LSURLMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSURLMatcher.h; path = Matchers/LSURLMatcher.h; sourceTree = "<group>"; };
+		012091841E2CF502008B0520 /* LSURLMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSURLMatcher.m; path = Matchers/LSURLMatcher.m; sourceTree = "<group>"; };
+		012091871E2CF97B008B0520 /* LSURLMatcherSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSURLMatcherSpec.m; path = Matchers/LSURLMatcherSpec.m; sourceTree = "<group>"; };
 		09F886D44E0926E9B288752D /* libPods-NocillaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NocillaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA3E7FD1680775B001DB582 /* LSStubResponseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSStubResponseSpec.m; sourceTree = "<group>"; };
 		15E14959C852D96F22BB841E /* Pods-NocillaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NocillaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NocillaTests/Pods-NocillaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -626,6 +636,10 @@
 				A08A3B481A101BBB0009482F /* LSDataMatcher.m */,
 				A08A3B4B1A101DA20009482F /* NSData+Matcheable.h */,
 				A08A3B4C1A101DA20009482F /* NSData+Matcheable.m */,
+				012091831E2CF502008B0520 /* LSURLMatcher.h */,
+				012091841E2CF502008B0520 /* LSURLMatcher.m */,
+				0120917F1E2CF4A9008B0520 /* NSURL+Matcheable.h */,
+				012091801E2CF4A9008B0520 /* NSURL+Matcheable.m */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -635,6 +649,7 @@
 			children = (
 				E48784AB1AFD7678001B5F2D /* LSDataMatcherSpec.m */,
 				A08EE2231728A241001830E6 /* LSStringMatcherSpec.m */,
+				012091871E2CF97B008B0520 /* LSURLMatcherSpec.m */,
 				A02889421728CD6000288022 /* LSRegexMatcherSpec.m */,
 			);
 			name = Matchers;
@@ -668,6 +683,7 @@
 				5475C75C1AC4254600EB9514 /* LSMatcheable.h in Headers */,
 				5475C78C1AC4254600EB9514 /* LSNocilla.h in Headers */,
 				5475C7631AC4254600EB9514 /* NSRegularExpression+Matcheable.h in Headers */,
+				012091811E2CF4A9008B0520 /* NSURL+Matcheable.h in Headers */,
 				5475C76B1AC4254600EB9514 /* LSHTTPBody.h in Headers */,
 				5475C77B1AC4254600EB9514 /* LSASIHTTPRequestHook.h in Headers */,
 				5475C78B1AC4254600EB9514 /* Nocilla.h in Headers */,
@@ -681,6 +697,7 @@
 				5475C7691AC4254600EB9514 /* LSHTTPRequest.h in Headers */,
 				5475C7731AC4254600EB9514 /* LSStubRequestDSL.h in Headers */,
 				5475C77D1AC4254600EB9514 /* ASIHTTPRequestStub.h in Headers */,
+				012091851E2CF502008B0520 /* LSURLMatcher.h in Headers */,
 				5475C7561AC4254600EB9514 /* NSString+Nocilla.h in Headers */,
 				5475C77F1AC4254600EB9514 /* LSASIHTTPRequestAdapter.h in Headers */,
 				5475C75D1AC4254600EB9514 /* NSString+Matcheable.h in Headers */,
@@ -849,7 +866,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0600;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Luis Solano Bonet";
 				TargetAttributes = {
 					5475C73C1AC4252300EB9514 = {
@@ -955,7 +972,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -974,6 +991,7 @@
 				5475C76F1AC4254600EB9514 /* LSStubResponse.m in Sources */,
 				5475C7711AC4254600EB9514 /* LSHTTPRequestDiff.m in Sources */,
 				5475C7621AC4254600EB9514 /* LSRegexMatcher.m in Sources */,
+				012091861E2CF502008B0520 /* LSURLMatcher.m in Sources */,
 				5475C77A1AC4254600EB9514 /* LSNSURLSessionHook.m in Sources */,
 				5475C7821AC4254600EB9514 /* LSHTTPClientHook.m in Sources */,
 				5475C7681AC4254600EB9514 /* NSData+Matcheable.m in Sources */,
@@ -989,6 +1007,7 @@
 				5475C76D1AC4254600EB9514 /* LSStubRequest.m in Sources */,
 				5475C7661AC4254600EB9514 /* LSDataMatcher.m in Sources */,
 				5475C7861AC4254600EB9514 /* LSNSURLHook.m in Sources */,
+				012091821E2CF4A9008B0520 /* NSURL+Matcheable.m in Sources */,
 				5475C77C1AC4254600EB9514 /* LSASIHTTPRequestHook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -997,6 +1016,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012091881E2CF97B008B0520 /* LSURLMatcherSpec.m in Sources */,
 				A02C7ACA15ECDD780061FCEE /* LSHTTPRequestDiffSpec.m in Sources */,
 				A02C7ADE15ED75480061FCEE /* LSHTTPRequestDSLRepresentationSpec.m in Sources */,
 				A0055EE415EEAE08005D6C85 /* MKNetworkKitStubbingSpec.m in Sources */,
@@ -1116,7 +1136,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1159,7 +1179,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1193,11 +1213,21 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1205,10 +1235,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1220,14 +1254,28 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1273,6 +1321,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1319,6 +1368,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
