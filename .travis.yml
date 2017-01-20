@@ -1,9 +1,10 @@
 ---
 language: objective-c
+osx_image: xcode8
+rvm: 1.9.3
 
 before_install:
-    - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-    - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+    - gem install cocoapods -v '0.32.1' --no-rdoc --no-ri --no-document --quiet
 
 install:
     - pod repo remove master
@@ -11,4 +12,4 @@ install:
     - pod install
 
 script:
-    - set -o pipefail && xcodebuild -workspace Nocilla.xcworkspace -scheme 'Nocilla' -sdk iphonesimulator build test CODE_SIGN_IDENTITY=- | xcpretty -c
+    - set -o pipefail && xcodebuild -workspace Nocilla.xcworkspace -scheme 'Nocilla' -sdk iphonesimulator build test CODE_SIGN_IDENTITY=-

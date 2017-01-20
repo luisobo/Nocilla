@@ -1,6 +1,6 @@
 #import "LSStubRequest.h"
 #import "LSMatcher.h"
-#import "NSString+Matcheable.h"
+#import "NSURL+Matcheable.h"
 
 @interface LSStubRequest ()
 @property (nonatomic, strong, readwrite) NSString *method;
@@ -16,7 +16,7 @@
 @implementation LSStubRequest
 
 - (instancetype)initWithMethod:(NSString *)method url:(NSString *)url {
-    return [self initWithMethod:method urlMatcher:[url matcher]];
+    return [self initWithMethod:method urlMatcher:[[NSURL URLWithString:url] matcher]];
 }
 
 - (instancetype)initWithMethod:(NSString *)method urlMatcher:(LSMatcher *)urlMatcher; {

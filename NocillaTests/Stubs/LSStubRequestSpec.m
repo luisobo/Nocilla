@@ -18,6 +18,15 @@ describe(@"#matchesRequest:", ^{
             [[theValue([stubRequest matchesRequest:other]) should] beYes];
         });
     });
+    context(@"when the methods are equal and the URLs are equivalent", ^{
+        it(@"should match", ^{
+            LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json?foo=bar&bar=foo"];
+
+            LSTestRequest *other = [[LSTestRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json?bar=foo&foo=bar"];
+
+            [[theValue([stubRequest matchesRequest:other]) should] beYes];
+        });
+    });
     context(@"when the method is different", ^{
         it(@"should not match", ^{
             LSStubRequest *stubRequest = [[LSStubRequest alloc] initWithMethod:@"PUT" url:@"https://api.example.com/cats/whiskas.json"];
