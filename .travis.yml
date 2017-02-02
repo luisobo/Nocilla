@@ -16,4 +16,4 @@ install:
     - pod install
 
 script:
-    - set -o pipefail && xcodebuild -workspace Nocilla.xcworkspace -scheme 'Nocilla' -destination 'platform=iOS Simulator' -sdk iphonesimulator build test CODE_SIGN_IDENTITY=- | xcpretty -c
+    - set -o pipefail && xcodebuild -workspace Nocilla.xcworkspace -scheme 'Nocilla' -destination 'platform=iOS Simulator,name=iPhone 6' -sdk iphonesimulator build test CODE_SIGN_IDENTITY=- | xcpretty -c
