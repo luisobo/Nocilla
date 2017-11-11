@@ -18,8 +18,12 @@
 }
 
 - (void)startLoading {
+    if (![LSNocilla sharedInstance].started) {
+        // Nocilla was stopped, but some request went through, let's not fail possibly other tests
+        return;
+    }
     NSURLRequest* request = [self request];
-	id<NSURLProtocolClient> client = [self client];
+    id<NSURLProtocolClient> client = [self client];
 
     LSStubResponse* stubbedResponse = [[LSNocilla sharedInstance] responseForRequest:request];
 
